@@ -3,7 +3,7 @@
   "year": 2026,
   "month_label": "February 2026",
   "stats": {
-    "total_signals": 246,
+    "total_signals": 300,
     "wins": 0,
     "losses": 0,
     "expired": 0,
@@ -23,5 +23,5 @@
     "System scanning 43 instruments across 46 active workflows",
     "Signal Intelligence tracking all setups automatically"
   ],
-  "generated_at": "2026-02-16T13:25:38.478Z"
+  "generated_at": "2026-02-16T16:00:02.222Z"
 }
