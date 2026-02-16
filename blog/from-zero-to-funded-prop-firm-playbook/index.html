@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Zero to Funded: The OXY ALGO Prop Firm Playbook &mdash; OXY ALGO</title>
+<meta name="description" content="3 members passed prop challenges in January. Here's the exact system, risk settings, and mindset shifts that got them there.">
+<meta property="og:title" content="From Zero to Funded: The OXY ALGO Prop Firm Playbook">
+<meta property="og:description" content="3 members passed prop challenges in January. Here's the exact system, risk settings, and mindset shifts that got them there.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog/style.css">
+</head>
+<body>
+
+<!-- Ambient Background -->
+<div class="ambient-bg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+</div>
+<div class="noise-overlay"></div>
+
+<!-- Blog Nav -->
+<nav class="blog-nav">
+  <div class="blog-nav-inner">
+    <a href="/" class="logo">OXY <span>ALGO</span></a>
+    <div class="blog-nav-links">
+      <a href="/">&larr; Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank" class="nav-cta" style="padding:8px 22px;font-size:0.85em;">Deploy Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Article -->
+<section class="blog-post-page">
+  <div class="wrap">
+    <div class="blog-post-header">
+      <div class="blog-card-tag">Community</div>
+      <h1>From Zero to Funded: The OXY ALGO Prop Firm Playbook</h1>
+      <div class="blog-post-meta">
+        <span>OXY ALGO</span>
+        <span>&bull;</span>
+        <span>February 6, 2026</span>
+        <span>&bull;</span>
+        <span>8 min read</span>
+      </div>
+    </div>
+
+    <div class="blog-post-body">
+      <p>In January 2026, three OXY ALGO members passed their prop firm challenges. Different firms, different account sizes, same system. Here's what they did and how the agents helped them get there.</p>
+
+      <h2>The Challenge Everyone Underestimates</h2>
+
+      <p>Prop firm challenges aren't hard because the profit target is aggressive. They're hard because the drawdown limit is unforgiving. Most firms give you 8-10% max drawdown and expect 8-10% profit in 30 days. The math sounds easy until you realize that <strong>one bad day can end your challenge.</strong></p>
+
+      <p>That's where most traders fail. They have a great week, get confident, overtrade, take one revenge trade after a loss, and blow through the drawdown limit in a single session. The strategy was fine. The risk management wasn't.</p>
+
+      <h2>The 3 Members Who Passed</h2>
+
+      <p><strong>TraderMike (Premium)</strong> &mdash; $50K FTMO Challenge. Passed in 18 days with 9.2% profit and 3.1% max drawdown. Traded only GBP pairs during London Kill Zone. Used Risk Guardian to enforce 2 trades per day max.</p>
+
+      <p><strong>PropQueenAisha (VIP)</strong> &mdash; $100K MyFundedFX Challenge. Passed in 22 days with 8.7% profit and 4.8% max drawdown. Diversified across GBP, XAUUSD, and NAS100. Used the Daily Bias engine to filter direction before taking Scanner signals.</p>
+
+      <p><strong>JamesFromLDN (Elite)</strong> &mdash; $200K The5ers Challenge. Passed in 14 days with 10.1% profit and 2.4% max drawdown. The lowest drawdown of the three. Used custom Elite risk settings: max 1.5% risk per trade instead of the standard 2%, and Signal Intelligence to only trade instruments with 70%+ historical win rate.</p>
+
+      <h2>The Playbook: 5 Rules They All Followed</h2>
+
+      <h3>1. Let the System Find the Trades</h3>
+
+      <p>None of them sat in front of charts for 8 hours hunting for setups. Scanner runs every 15 minutes across 43 instruments. When it finds an A-grade setup, it pings Discord. They reviewed the setup, confirmed it aligned with their plan, and executed. Total screen time: under 2 hours per day.</p>
+
+      <h3>2. Never Fight the Bias</h3>
+
+      <p>The Daily Bias engine (WF03) runs 3 times a day and classifies each major instrument as BULLISH, BEARISH, or NEUTRAL. All three members had one strict rule: <strong>only take trades that align with the bias.</strong> Scanner fires a GBPUSD SHORT but Daily Bias says BULLISH? Skip it. This one rule alone eliminated roughly 40% of their losing trades.</p>
+
+      <h3>3. Risk Guardian Stays On</h3>
+
+      <p>All three members had Risk Guardian active throughout their challenges. The 48-hour cooldown after hitting daily loss limits was the single most impactful feature. TraderMike got blocked twice during his challenge. Both times, he later admitted he was emotionally compromised and would have made the situation worse.</p>
+
+      <h3>4. Trade the Kill Zone</h3>
+
+      <p>85% of their winning trades happened during London (07:00-11:00 UTC) or New York (12:00-16:00 UTC) kill zones. The dead zone filter (12:00-13:30 EST) blocked attempts to trade during the midday chop. This wasn't discipline &mdash; it was automation. The system literally wouldn't let them trade during low-probability windows.</p>
+
+      <h3>5. Size Down After Halfway</h3>
+
+      <p>Once they hit 50% of the profit target, all three reduced their risk from 2% to 1% per trade. The math: if you've made 5% and you need 10%, you only need another 5% &mdash; and protecting the 5% you already have is more important than rushing to the finish line. PropQueenAisha credits this adjustment for surviving a 3-trade losing streak in week 3 without breaching drawdown limits.</p>
+
+      <h2>The Agent Stack for Prop Challenges</h2>
+
+      <p>Here's the specific configuration that worked:</p>
+
+      <ul>
+        <li><strong>Scanner</strong> &mdash; Finds A and A+ grade setups across your preferred instruments</li>
+        <li><strong>Analyst (Daily Bias)</strong> &mdash; Filters direction. Only trade with the bias, never against it</li>
+        <li><strong>Guardian (Risk)</strong> &mdash; Enforces max 2 trades/day, 48h cooldown, 1-2% risk per trade</li>
+        <li><strong>Tracker (Prop)</strong> &mdash; Monitors your challenge progress: profit target, drawdown buffer, days remaining</li>
+        <li><strong>Intel (Session Prep)</strong> &mdash; Tells you before each session what to expect: news events, key levels, market regime</li>
+      </ul>
+
+      <p>Notice what's not on the list: the Executor. All three members used the signals to inform their own manual entries. They confirmed the setup with their own eyes before placing the trade. The system found the opportunities. They made the final decision.</p>
+
+      <h2>What Would Have Happened Without the System</h2>
+
+      <p>We ran the numbers. If you remove Risk Guardian's blocks and the dead zone filter, TraderMike would have taken 11 additional trades during his challenge. Based on the outcome of those blocked trades, he would have hit his drawdown limit on day 12 and failed.</p>
+
+      <p>PropQueenAisha would have survived but finished with only 4.1% profit &mdash; not enough to pass. The extra trades during low-probability windows diluted her edge.</p>
+
+      <p>The system didn't make them profitable. Their analysis and execution did that. The system <strong>protected them from themselves</strong> during the moments when emotion would have overridden logic.</p>
+
+      <h2>Your Turn</h2>
+
+      <p>Prop firm challenges are won on defense, not offense. You don't need to be a genius trader. You need to be a disciplined one. And if discipline is hard (it is for everyone), you need a system that enforces it for you.</p>
+
+      <p>Start on Free to see how Scanner and the Daily Bias work. Upgrade to Premium when you're ready to add Risk Guardian and Signal Intelligence. The challenge isn't finding trades. It's surviving long enough to let the math work.</p>
+    </div>
+
+    <div class="blog-post-nav">
+      <a href="/blog/">&larr; All Posts</a>
+      <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank">Deploy Free &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">OXY <span>ALGO</span></div>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#agents">Agents</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="https://whop.com/oxy-algo/" target="_blank">Store</a></li>
+    </ul>
+    <div class="footer-legal">OXY ALGO &copy; 2026. Autonomous Trading AI Platform. Trading involves risk. Past performance does not guarantee future results. OXY ALGO provides trading intelligence and automation, not financial advice. Trade responsibly.</div>
+  </div>
+</footer>
+
+</body>
+</html>

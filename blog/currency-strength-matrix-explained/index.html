@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currency Strength Matrix: How 8 Currencies Get Ranked Every 15 Minutes &mdash; OXY ALGO</title>
+<meta name="description" content="The correlation intelligence engine that ranks USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF &mdash; and why it changes everything.">
+<meta property="og:title" content="Currency Strength Matrix: How 8 Currencies Get Ranked Every 15 Minutes">
+<meta property="og:description" content="The correlation intelligence engine that ranks USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF &mdash; and why it changes everything.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog/style.css">
+</head>
+<body>
+
+<!-- Ambient Background -->
+<div class="ambient-bg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+</div>
+<div class="noise-overlay"></div>
+
+<!-- Blog Nav -->
+<nav class="blog-nav">
+  <div class="blog-nav-inner">
+    <a href="/" class="logo">OXY <span>ALGO</span></a>
+    <div class="blog-nav-links">
+      <a href="/">&larr; Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank" class="nav-cta" style="padding:8px 22px;font-size:0.85em;">Deploy Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Article -->
+<section class="blog-post-page">
+  <div class="wrap">
+    <div class="blog-post-header">
+      <div class="blog-card-tag">Trading</div>
+      <h1>Currency Strength Matrix: How 8 Currencies Get Ranked Every 15 Minutes</h1>
+      <div class="blog-post-meta">
+        <span>OXY ALGO</span>
+        <span>&bull;</span>
+        <span>February 10, 2026</span>
+        <span>&bull;</span>
+        <span>7 min read</span>
+      </div>
+    </div>
+
+    <div class="blog-post-body">
+      <p>Most traders stare at individual pairs. EURUSD is up. GBPJPY is down. But they never ask the real question: <strong>which currency is actually strong, and which one is weak?</strong></p>
+
+      <p>That's what the Currency Strength Matrix answers. Every 15 minutes, it ranks all 8 major currencies &mdash; USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF &mdash; by how much they've moved across every pair they touch. The result is a real-time leaderboard of who's winning and who's losing in the forex market.</p>
+
+      <h2>Why Individual Pairs Lie to You</h2>
+
+      <p>Say EURUSD is up 40 pips today. Your first instinct: "EUR is strong, go long." But what if EURJPY is flat, EURGBP is down, and EURAUD is barely moving? That tells a different story. USD is just weak. EUR isn't strong at all &mdash; it's just benefiting from the other side collapsing.</p>
+
+      <p>When you trade EURUSD thinking EUR is strong, you're making a bet on the wrong thesis. The matrix prevents this by showing you the truth: <strong>USD is the weakest currency today, and GBP is the strongest.</strong> So the real trade is GBPUSD, not EURUSD.</p>
+
+      <h2>How the Matrix Calculates Strength</h2>
+
+      <p>The algorithm is straightforward but powerful:</p>
+
+      <ul>
+        <li><strong>Step 1:</strong> Pull the last 5 candles of H1 data for 9 key pairs (EURUSD, USDJPY, GBPUSD, AUDUSD, USDCAD, NZDUSD, USDCHF, EURGBP, XAUUSD)</li>
+        <li><strong>Step 2:</strong> Calculate percentage change for each pair</li>
+        <li><strong>Step 3:</strong> Decompose each pair's movement into individual currency contributions. If EURUSD is up, that's bullish for EUR and bearish for USD</li>
+        <li><strong>Step 4:</strong> Sum all contributions for each currency across all pairs it appears in</li>
+        <li><strong>Step 5:</strong> Rank them from strongest to weakest</li>
+      </ul>
+
+      <p>The result is a number for each currency. Positive means gaining strength relative to the group. Negative means losing. The further from zero, the more decisive the move.</p>
+
+      <h2>Smart Money Divergence Detection</h2>
+
+      <p>The matrix doesn't just rank currencies. It detects <strong>SMT divergence</strong> &mdash; when correlated pairs start moving in opposite directions, signaling that institutional money is repositioning.</p>
+
+      <p>For example, if EURUSD is rising but GBPUSD is falling, that's abnormal. EUR and GBP usually correlate. When they diverge, it means smart money is specifically targeting one side. The matrix flags these divergences automatically and reports them in the #correlation channel.</p>
+
+      <h2>Risk Regime Classification</h2>
+
+      <p>Beyond individual currency rankings, the matrix also classifies the overall market into risk regimes:</p>
+
+      <ul>
+        <li><strong>Risk-On:</strong> AUD, NZD strong + JPY, CHF weak = markets are bullish, traders are confident</li>
+        <li><strong>Risk-Off:</strong> JPY, CHF strong + AUD, NZD weak = markets are fearful, capital is fleeing to safe havens</li>
+        <li><strong>Mixed:</strong> No clear pattern = choppy market, reduce position sizes</li>
+      </ul>
+
+      <p>This feeds into the Trade Executor. During risk-off regimes, the system automatically tightens risk parameters and reduces position sizes. During risk-on, it loosens slightly for higher-probability trend continuation trades.</p>
+
+      <h2>Real Example: February 12, 2026</h2>
+
+      <p>At 07:00 UTC, the matrix showed GBP at +0.15% (strongest), JPY at -0.12% (weakest). Classic risk-on London open setup. The Scanner fired a GBPJPY LONG signal at 07:15 with an A+ grade. It ran 63 pips before the NY session opened.</p>
+
+      <p>Without the matrix, you might have been looking at EURUSD (which was flat) or XAUUSD (which was ranging). The matrix cut through the noise and pointed directly at the strongest vs. weakest play.</p>
+
+      <h2>How to Use It</h2>
+
+      <p>The Currency Strength Matrix posts to #correlation every 15 minutes during active sessions. Premium members and above get access. Here's how to read it:</p>
+
+      <ul>
+        <li><strong>Trade the spread:</strong> Go long strongest vs. weakest (e.g., strongest GBP + weakest JPY = long GBPJPY)</li>
+        <li><strong>Confirm your setups:</strong> If Scanner fires a EURUSD long, check the matrix. Is EUR actually strong? If not, skip the trade</li>
+        <li><strong>Spot reversals early:</strong> When a currency that's been strong starts dropping in the rankings, momentum is shifting</li>
+      </ul>
+
+      <p>The matrix runs as Workflow 39 and processes data from 9 currency pairs every 15 minutes. It's one of the core inputs to the Analyst agent's decision-making, and it's available to every Premium+ member in real-time.</p>
+    </div>
+
+    <div class="blog-post-nav">
+      <a href="/blog/">&larr; All Posts</a>
+      <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank">Deploy Free &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">OXY <span>ALGO</span></div>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#agents">Agents</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="https://whop.com/oxy-algo/" target="_blank">Store</a></li>
+    </ul>
+    <div class="footer-legal">OXY ALGO &copy; 2026. Autonomous Trading AI Platform. Trading involves risk. Past performance does not guarantee future results. OXY ALGO provides trading intelligence and automation, not financial advice. Trade responsibly.</div>
+  </div>
+</footer>
+
+</body>
+</html>

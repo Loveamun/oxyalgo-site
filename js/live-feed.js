@@ -1,20 +1,20 @@
 // ═══════════════════════════════════════════════
 //  OXY ALGO — Live Signal Feed
-//  Fetches recent signals from VPS API
+//  Fetches recent signals from auto-published JSON
 //  Auto-refreshes every 5 minutes
-//  Falls back to localStorage cache if VPS unreachable
+//  Falls back to localStorage cache → sample data
 // ═══════════════════════════════════════════════
 
 (function () {
   'use strict';
 
-  var API_URL = 'https://server.oxyalgo.com/api/live-signals';
+  var DATA_URL = '/data/live-signals.json';
   var CACHE_KEY = 'oxy-cached-signals';
   var REFRESH_MS = 300000; // 5 minutes
   var TIMEOUT_MS = 5000;
   var refreshTimer = null;
 
-  // ─── SAMPLE DATA (used when API is not yet deployed) ───
+  // ─── SAMPLE DATA (used when data file not yet published) ───
   var SAMPLE_SIGNALS = [
     { symbol: 'XAUUSD', direction: 'LONG', score: 87, grade: 'A+', session: 'London', outcome: 'WIN', pips: 45.3, timestamp: new Date(Date.now() - 3600000).toISOString() },
     { symbol: 'GBPUSD', direction: 'LONG', score: 82, grade: 'A', session: 'NY', outcome: 'WIN', pips: 58.0, timestamp: new Date(Date.now() - 7200000).toISOString() },
@@ -71,7 +71,7 @@
     html += '<div class="terminal-dot red"></div>';
     html += '<div class="terminal-dot yellow"></div>';
     html += '<div class="terminal-dot green"></div>';
-    html += '<div class="feed-terminal-title">SIGNAL FEED \u2014 Last 24 Hours</div>';
+    html += '<div class="feed-terminal-title">SIGNAL FEED \u2014 Last 48 Hours</div>';
     html += '<div class="feed-status-dot"></div>';
     html += '</div>';
     html += '<div class="feed-terminal-body">';
@@ -106,7 +106,7 @@
     if (status) {
       html += '<span class="feed-footer-status">' + status + '</span>';
     } else {
-      html += '<span class="feed-footer-status">Auto-refreshes every 5 min</span>';
+      html += '<span class="feed-footer-status">Updated automatically from Signal Intelligence</span>';
     }
     html += '<span class="feed-footer-count">' + signals.length + ' signals</span>';
     html += '</div>';
@@ -124,14 +124,19 @@
       var controller = new AbortController();
       var timeout = setTimeout(function () { controller.abort(); }, TIMEOUT_MS);
 
-      var resp = await fetch(API_URL, { signal: controller.signal });
+      var resp = await fetch(DATA_URL + '?t=' + Math.floor(Date.now() / 300000), { signal: controller.signal });
       clearTimeout(timeout);
 
       if (!resp.ok) throw new Error('API ' + resp.status);
 
       var data = await resp.json();
+      var signals = data.signals || data;
+
+      // If signals array is empty, use sample
+      if (!signals || signals.length === 0) throw new Error('empty');
+
       localStorage.setItem(CACHE_KEY, JSON.stringify(data));
-      renderSignals(container, data.signals || data, null);
+      renderSignals(container, signals, null);
 
     } catch (e) {
       // Try cache first
@@ -139,8 +144,11 @@
       if (cached) {
         try {
           var cData = JSON.parse(cached);
-          renderSignals(container, cData.signals || cData, 'Showing cached data');
-          return;
+          var cSignals = cData.signals || cData;
+          if (cSignals && cSignals.length > 0) {
+            renderSignals(container, cSignals, 'Showing cached data');
+            return;
+          }
         } catch (_) {}
       }
       // Fall back to sample data
