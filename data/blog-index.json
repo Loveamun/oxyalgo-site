@@ -1,0 +1,35 @@
+{
+  "posts": [
+    {
+      "slug": "how-risk-guardian-blocked-47-revenge-trades",
+      "title": "How Risk Guardian Blocked 47 Revenge Trades in One Week",
+      "excerpt": "When emotions run high, code stays cold. Inside the algorithm that enforces discipline when you can\u2019t.",
+      "category": "Architecture",
+      "date": "2026-02-14",
+      "author": "OXY ALGO",
+      "featured": true,
+      "read_time": "5 min"
+    },
+    {
+      "slug": "currency-strength-matrix-explained",
+      "title": "Currency Strength Matrix: How 8 Currencies Get Ranked Every 15 Minutes",
+      "excerpt": "The correlation intelligence engine that ranks USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF \u2014 and why it changes everything.",
+      "category": "Trading",
+      "date": "2026-02-10",
+      "author": "OXY ALGO",
+      "featured": false,
+      "read_time": "7 min"
+    },
+    {
+      "slug": "from-zero-to-funded-prop-firm-playbook",
+      "title": "From Zero to Funded: The OXY ALGO Prop Firm Playbook",
+      "excerpt": "3 members passed prop challenges in January. Here\u2019s the exact system, risk settings, and mindset shifts that got them there.",
+      "category": "Community",
+      "date": "2026-02-06",
+      "author": "OXY ALGO",
+      "featured": false,
+      "read_time": "8 min"
+    }
+  ],
+  "updated_at": "2026-02-14T12:00:00Z"
+}

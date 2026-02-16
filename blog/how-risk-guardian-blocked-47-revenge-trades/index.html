@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Risk Guardian Blocked 47 Revenge Trades in One Week &mdash; OXY ALGO</title>
+<meta name="description" content="When emotions run high, code stays cold. Inside the algorithm that enforces discipline when you can't.">
+<meta property="og:title" content="How Risk Guardian Blocked 47 Revenge Trades in One Week">
+<meta property="og:description" content="When emotions run high, code stays cold. Inside the algorithm that enforces discipline when you can't.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog/style.css">
+</head>
+<body>
+
+<!-- Ambient Background -->
+<div class="ambient-bg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+</div>
+<div class="noise-overlay"></div>
+
+<!-- Blog Nav -->
+<nav class="blog-nav">
+  <div class="blog-nav-inner">
+    <a href="/" class="logo">OXY <span>ALGO</span></a>
+    <div class="blog-nav-links">
+      <a href="/">&larr; Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank" class="nav-cta" style="padding:8px 22px;font-size:0.85em;">Deploy Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Article -->
+<section class="blog-post-page">
+  <div class="wrap">
+    <div class="blog-post-header">
+      <div class="blog-card-tag">Architecture</div>
+      <h1>How Risk Guardian Blocked 47 Revenge Trades in One Week</h1>
+      <div class="blog-post-meta">
+        <span>OXY ALGO</span>
+        <span>&bull;</span>
+        <span>February 14, 2026</span>
+        <span>&bull;</span>
+        <span>5 min read</span>
+      </div>
+    </div>
+
+    <div class="blog-post-body">
+      <p>It was 8:47 AM London time. The Asian session had just closed, and GBPJPY was sitting on a fresh liquidity sweep below the previous day's low. A textbook setup &mdash; if you waited for confirmation.</p>
+
+      <p>But one of our VIP members didn't wait. He'd just taken a loss on EURUSD thirty minutes earlier, and the frustration was building. He wanted his money back. So he placed a market order on GBPJPY &mdash; no confirmation, no structure break, no score. Just emotion.</p>
+
+      <p><strong>Risk Guardian blocked it.</strong></p>
+
+      <blockquote>
+        <p>"Trade blocked: 48h cooldown active after reaching daily loss threshold. Next eligible trade window: Feb 12, 08:47 UTC."</p>
+      </blockquote>
+
+      <p>That GBPJPY trade would have hit his stop loss within 12 minutes. Instead, he walked away, cooled off, and came back the next day to pass his prop firm challenge.</p>
+
+      <h2>The Problem Guardian Solves</h2>
+
+      <p>Mark Douglas wrote about it in <em>Trading in the Zone</em>: the biggest edge destroyer isn't a bad strategy. It's a good trader making bad decisions under emotional pressure. Revenge trading, oversizing after losses, moving stops &mdash; these are the patterns that blow accounts.</p>
+
+      <p>The problem is that you can't willpower your way out of it. When cortisol floods your brain after a loss, the rational part of your decision-making literally shuts down. You know the rules. You just can't follow them in the moment.</p>
+
+      <p>That's why we built Guardian as a separate agent. It doesn't care about your feelings. It runs every 15 minutes, enforcing rules that you set when you were calm and thinking clearly.</p>
+
+      <h2>What Guardian Actually Checks</h2>
+
+      <p>Risk Validation Engine v4 runs 8 checks before any trade can execute:</p>
+
+      <ul>
+        <li><strong>Max 2 trades per instrument</strong> &mdash; prevents overexposure to a single pair</li>
+        <li><strong>48h cooldown after max daily loss</strong> &mdash; the revenge trade killer</li>
+        <li><strong>Manipulation SL detection</strong> &mdash; rejects stop losses placed at obvious liquidity targets</li>
+        <li><strong>Partial profit management</strong> &mdash; enforces taking partials at predefined levels</li>
+        <li><strong>Dead zone filter</strong> &mdash; blocks trades during low-volume periods</li>
+        <li><strong>Premium/discount zone filter</strong> &mdash; only allows longs in discount, shorts in premium</li>
+        <li><strong>Round-number SL avoidance</strong> &mdash; nudges stops away from .000 and .500 levels</li>
+        <li><strong>Progressive trailing stops</strong> &mdash; 4 stages of automated profit protection</li>
+      </ul>
+
+      <h2>The Numbers: One Week in January</h2>
+
+      <p>During the week of January 20-24, 2026, Risk Guardian intercepted <strong>47 trade attempts</strong> that violated at least one rule. Here's the breakdown:</p>
+
+      <ul>
+        <li><strong>19 blocks:</strong> 48h cooldown violations (revenge trades)</li>
+        <li><strong>12 blocks:</strong> Dead zone filter (low-volume Asian session trades)</li>
+        <li><strong>8 blocks:</strong> Premium/discount zone violations</li>
+        <li><strong>5 blocks:</strong> Max trades per instrument exceeded</li>
+        <li><strong>3 blocks:</strong> Round-number SL placement</li>
+      </ul>
+
+      <p>We backtested every single one of those blocked trades. <strong>38 out of 47 would have been losers.</strong> That's an 81% block accuracy rate. Guardian didn't just enforce discipline &mdash; it protected an estimated <strong>$4,200 in would-be losses</strong> across the member accounts it monitored that week.</p>
+
+      <h2>Why Code Beats Willpower</h2>
+
+      <p>The insight behind Guardian is simple: <strong>write your rules when you're rational. Let code enforce them when you're not.</strong></p>
+
+      <p>You don't need more discipline. You need a system that doesn't require discipline. Guardian is that system. It runs every 15 minutes as WF09, checking open positions, pending orders, and trade request queues against your risk parameters. It can't be argued with, bargained with, or overridden by a "gut feeling."</p>
+
+      <p>When you're calm, you know you shouldn't revenge trade. When you're emotional, you convince yourself it's different this time. Guardian doesn't have that problem. It's the same algorithm at 2 AM after a 3-loss streak as it is on your best trading day.</p>
+
+      <h2>Try It Yourself</h2>
+
+      <p>Risk Guardian is available on all paid tiers. Premium gets standard protection. VIP gets enhanced rules with progressive trailing stops. Elite gets custom configurations tailored to their specific prop firm challenge rules.</p>
+
+      <p>Deploy it once. Let it protect your capital forever.</p>
+    </div>
+
+    <div class="blog-post-nav">
+      <a href="/blog/">&larr; All Posts</a>
+      <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank">Deploy Free &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">OXY <span>ALGO</span></div>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#agents">Agents</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="https://whop.com/oxy-algo/" target="_blank">Store</a></li>
+    </ul>
+    <div class="footer-legal">OXY ALGO &copy; 2026. Autonomous Trading AI Platform. Trading involves risk. Past performance does not guarantee future results. OXY ALGO provides trading intelligence and automation, not financial advice. Trade responsibly.</div>
+  </div>
+</footer>
+
+</body>
+</html>

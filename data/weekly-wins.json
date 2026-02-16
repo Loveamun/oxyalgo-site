@@ -1,0 +1,76 @@
+{
+  "week_of": "2026-02-10",
+  "week_label": "Feb 10 \u2013 16, 2026",
+  "summary": {
+    "total_signals": 47,
+    "wins": 31,
+    "losses": 12,
+    "expired": 4,
+    "win_rate": 72.1,
+    "net_pips": 287.5,
+    "best_trade": { "symbol": "XAUUSD", "pips": 45.3, "rr": "3.2:1" }
+  },
+  "top_trades": [
+    {
+      "symbol": "XAUUSD",
+      "direction": "LONG",
+      "entry": 2648.50,
+      "exit": 2693.80,
+      "pips": 45.3,
+      "rr": "3.2:1",
+      "grade": "A+",
+      "score": 87,
+      "session": "London",
+      "timestamp": "2026-02-12T08:30:00Z"
+    },
+    {
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "entry": 1.2645,
+      "exit": 1.2703,
+      "pips": 58.0,
+      "rr": "2.8:1",
+      "grade": "A",
+      "score": 82,
+      "session": "NY",
+      "timestamp": "2026-02-13T14:15:00Z"
+    },
+    {
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "entry": 97450.00,
+      "exit": 96280.00,
+      "pips": 117.0,
+      "rr": "2.1:1",
+      "grade": "A",
+      "score": 79,
+      "session": "24/7",
+      "timestamp": "2026-02-11T03:45:00Z"
+    },
+    {
+      "symbol": "NAS100",
+      "direction": "LONG",
+      "entry": 17845.50,
+      "exit": 17923.20,
+      "pips": 77.7,
+      "rr": "2.5:1",
+      "grade": "A+",
+      "score": 91,
+      "session": "NY",
+      "timestamp": "2026-02-14T15:00:00Z"
+    },
+    {
+      "symbol": "EURJPY",
+      "direction": "SHORT",
+      "entry": 161.450,
+      "exit": 160.820,
+      "pips": 63.0,
+      "rr": "3.0:1",
+      "grade": "A",
+      "score": 84,
+      "session": "London",
+      "timestamp": "2026-02-10T09:00:00Z"
+    }
+  ],
+  "generated_at": "2026-02-14T22:30:00Z"
+}

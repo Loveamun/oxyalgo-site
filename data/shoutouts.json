@@ -1,0 +1,47 @@
+{
+  "shoutouts": [
+    {
+      "username": "TraderMike",
+      "tier": "Premium",
+      "avatar_initials": "TM",
+      "quote": "Risk Guardian blocked my revenge trade after a bad morning. I cooled off, came back, and passed my prop challenge the next week. That one feature paid for a year of access.",
+      "date": "2026-02-14"
+    },
+    {
+      "username": "CryptoSarah",
+      "tier": "VIP",
+      "avatar_initials": "CS",
+      "quote": "The BTC.D Quadrant called ALT_SEASON before anyone on Twitter. I rotated into SOL and LINK and caught a 12% move while everyone else was stuck in BTC.",
+      "date": "2026-02-12"
+    },
+    {
+      "username": "JamesFromLDN",
+      "tier": "Elite",
+      "avatar_initials": "JF",
+      "quote": "Signal Intelligence showed me GBPJPY had a 78% win rate during London Kill Zone. I stopped trading it during NY and my results flipped overnight. Data over gut feeling.",
+      "date": "2026-02-10"
+    },
+    {
+      "username": "NoviceNate",
+      "tier": "Free",
+      "avatar_initials": "NN",
+      "quote": "Even on the free tier, the daily education and Amun AI taught me more about ICT concepts in 2 weeks than 6 months of YouTube. Just upgraded to Premium.",
+      "date": "2026-02-08"
+    },
+    {
+      "username": "PropQueenAisha",
+      "tier": "VIP",
+      "avatar_initials": "PA",
+      "quote": "3 prop challenges passed in 2 months. The Mentor AI analyzed my patterns and told me I was overtrading during Asia. Cut those trades, everything changed.",
+      "date": "2026-02-06"
+    },
+    {
+      "username": "DayTraderDex",
+      "tier": "Premium",
+      "avatar_initials": "DD",
+      "quote": "I used to watch 6 charts at once and still miss entries. Now Scanner finds the setups, I get a Discord ping, and I just confirm and execute. My screen time dropped 80%.",
+      "date": "2026-02-04"
+    }
+  ],
+  "updated_at": "2026-02-14T12:00:00Z"
+}

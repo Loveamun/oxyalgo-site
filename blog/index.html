@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog &mdash; OXY ALGO</title>
+<meta name="description" content="Deep dives into how OXY ALGO thinks, trades, and evolves. Architecture breakdowns, trading insights, and community stories.">
+<meta property="og:title" content="Blog &mdash; OXY ALGO">
+<meta property="og:description" content="Inside the machine. Architecture breakdowns, trading insights, and community stories from OXY ALGO.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog/style.css">
+</head>
+<body>
+
+<!-- Ambient Background -->
+<div class="ambient-bg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+</div>
+<div class="noise-overlay"></div>
+
+<!-- Blog Nav -->
+<nav class="blog-nav">
+  <div class="blog-nav-inner">
+    <a href="/" class="logo">OXY <span>ALGO</span></a>
+    <div class="blog-nav-links">
+      <a href="/">&larr; Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank" class="nav-cta" style="padding:8px 22px;font-size:0.85em;">Deploy Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Blog Listing -->
+<section class="blog-listing">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag section-tag-bracket">[ STORIES ]</div>
+      <h2>Inside the <span class="grad">Machine.</span></h2>
+      <p class="lead">Deep dives into how OXY ALGO thinks, trades, and evolves.</p>
+    </div>
+    <div class="blog-listing-grid" id="blog-listing-grid">
+      <p style="color:var(--text3);text-align:center;font-size:0.9em;grid-column:1/-1;">Loading posts&hellip;</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">OXY <span>ALGO</span></div>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#agents">Agents</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="https://whop.com/oxy-algo/" target="_blank">Store</a></li>
+    </ul>
+    <div class="footer-legal">OXY ALGO &copy; 2026. Autonomous Trading AI Platform. Trading involves risk. Past performance does not guarantee future results. OXY ALGO provides trading intelligence and automation, not financial advice. Trade responsibly.</div>
+  </div>
+</footer>
+
+<script>
+// Load blog posts from JSON
+(async function() {
+  var grid = document.getElementById('blog-listing-grid');
+  if (!grid) return;
+
+  try {
+    var resp = await fetch('/data/blog-index.json?t=' + Math.floor(Date.now() / 300000));
+    if (!resp.ok) throw new Error(resp.status);
+    var data = await resp.json();
+
+    var html = '';
+    data.posts.forEach(function(post, i) {
+      var isFeatured = post.featured && i === 0;
+      var cls = 'blog-card' + (isFeatured ? ' blog-card-featured' : '');
+
+      html += '<a href="/blog/' + post.slug + '/" class="' + cls + '">';
+      html += '<div>';
+      html += '<div class="blog-card-tag">' + post.category + '</div>';
+      html += '<h2>' + post.title + '</h2>';
+      html += '<p>' + post.excerpt + '</p>';
+      html += '<div class="blog-card-meta">';
+      html += '<span>' + new Date(post.date).toLocaleDateString('en-US', {month:'long',day:'numeric',year:'numeric'}) + '</span>';
+      html += '<span>' + post.read_time + ' read</span>';
+      html += '</div>';
+      html += '<div class="blog-card-cta">Read More &rarr;</div>';
+      html += '</div>';
+      if (isFeatured) html += '<div></div>';
+      html += '</a>';
+    });
+
+    grid.innerHTML = html;
+
+  } catch(e) {
+    grid.innerHTML = '<p style="color:var(--text3);text-align:center;font-size:0.9em;grid-column:1/-1;">No posts yet. Check back soon.</p>';
+  }
+})();
+</script>
+</body>
+</html>

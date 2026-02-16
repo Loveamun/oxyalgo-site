@@ -1,0 +1,31 @@
+{
+  "month": "January",
+  "year": 2026,
+  "month_label": "January 2026",
+  "stats": {
+    "total_signals": 194,
+    "wins": 132,
+    "losses": 48,
+    "expired": 14,
+    "win_rate": 73.3,
+    "prev_win_rate": 68.7,
+    "net_pips": 1247.8,
+    "prev_net_pips": 983.2,
+    "trades_executed": 86,
+    "prev_trades_executed": 72,
+    "avg_rr": "2.4:1",
+    "prev_avg_rr": "2.1:1",
+    "best_instrument": "XAUUSD",
+    "best_instrument_winrate": 81.2,
+    "best_instrument_pips": 312.5,
+    "active_members": 47,
+    "prev_active_members": 31
+  },
+  "highlights": [
+    "XAUUSD hit 81% win rate \u2014 highest ever recorded in Signal Intelligence",
+    "3 members passed prop firm challenges using Risk Guardian",
+    "Currency Strength Matrix predicted GBP weakness 48 hours before NFP drop",
+    "BTC.D Quadrant correctly called CRYPTO_WINTER regime on Jan 18"
+  ],
+  "generated_at": "2026-02-01T00:30:00Z"
+}
