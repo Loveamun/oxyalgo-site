@@ -1,206 +1,206 @@
 {
   "signals": [
     {
-      "symbol": "EURGBP",
-      "direction": "UNKNOWN",
-      "score": 73,
+      "symbol": "XRPUSD",
+      "direction": "LONG",
+      "score": 63,
       "grade": "B",
-      "session": "NY Kill Zone",
+      "session": "crypto_24_7",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-16 13:21:54"
+      "timestamp": "2026-02-16 15:46:57"
     },
     {
-      "symbol": "GBPJPY",
-      "direction": "UNKNOWN",
-      "score": 61,
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "score": 68,
       "grade": "B",
-      "session": "NY Kill Zone",
+      "session": "crypto_24_7",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-16 13:21:53"
-    },
-    {
-      "symbol": "GBPAUD",
-      "direction": "UNKNOWN",
-      "score": 61,
-      "grade": "B",
-      "session": "NY Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 13:16:55"
-    },
-    {
-      "symbol": "GBPJPY",
-      "direction": "UNKNOWN",
-      "score": 62,
-      "grade": "B",
-      "session": "NY Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 13:16:53"
-    },
-    {
-      "symbol": "GBPJPY",
-      "direction": "UNKNOWN",
-      "score": 61,
-      "grade": "B",
-      "session": "NY Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 13:12:01"
+      "timestamp": "2026-02-16 15:46:56"
     },
     {
       "symbol": "GBPJPY",
       "direction": "UNKNOWN",
       "score": 65,
       "grade": "B",
-      "session": "NY Kill Zone",
+      "session": "Silver Bullet + NY",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-16 13:06:58"
+      "timestamp": "2026-02-16 15:26:52"
     },
     {
-      "symbol": "GBPUSD",
-      "direction": "UNKNOWN",
-      "score": 62,
-      "grade": "B",
-      "session": "NY Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 13:06:58"
-    },
-    {
-      "symbol": "GBPAUD",
-      "direction": "UNKNOWN",
-      "score": 61,
-      "grade": "B",
-      "session": "NY Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 13:02:16"
-    },
-    {
-      "symbol": "GBPUSD",
-      "direction": "UNKNOWN",
-      "score": 63,
-      "grade": "B",
-      "session": "NY Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 13:02:13"
-    },
-    {
-      "symbol": "GBPJPY",
+      "symbol": "EURGBP",
       "direction": "UNKNOWN",
       "score": 68,
       "grade": "B",
-      "session": "NY Kill Zone",
+      "session": "Silver Bullet + NY",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-16 13:02:13"
+      "timestamp": "2026-02-16 15:26:52"
     },
     {
-      "symbol": "GBPAUD",
-      "direction": "UNKNOWN",
-      "score": 78,
-      "grade": "B",
-      "session": "NY Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 12:56:51"
-    },
-    {
-      "symbol": "GBPJPY",
-      "direction": "UNKNOWN",
-      "score": 58,
-      "grade": "B",
-      "session": "NY Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 12:56:51"
-    },
-    {
-      "symbol": "GBPJPY",
-      "direction": "UNKNOWN",
-      "score": 48,
-      "grade": "B",
-      "session": "NY Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 12:51:54"
-    },
-    {
-      "symbol": "GBPAUD",
-      "direction": "UNKNOWN",
-      "score": 78,
-      "grade": "B",
-      "session": "NY Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 12:51:53"
-    },
-    {
-      "symbol": "GBPAUD",
-      "direction": "UNKNOWN",
-      "score": 78,
-      "grade": "A",
-      "session": "NY Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 12:46:53"
-    },
-    {
-      "symbol": "GBPUSD",
-      "direction": "UNKNOWN",
-      "score": 52,
-      "grade": "B",
-      "session": "NY Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 12:41:55"
-    },
-    {
-      "symbol": "GBPAUD",
+      "symbol": "EURGBP",
       "direction": "UNKNOWN",
       "score": 64,
       "grade": "B",
-      "session": "NY Kill Zone",
+      "session": "Silver Bullet + NY",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-16 12:41:53"
+      "timestamp": "2026-02-16 15:21:52"
     },
     {
       "symbol": "GBPJPY",
       "direction": "UNKNOWN",
-      "score": 58,
+      "score": 65,
       "grade": "B",
-      "session": "NY Kill Zone",
+      "session": "Silver Bullet + NY",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-16 12:41:53"
+      "timestamp": "2026-02-16 15:21:51"
     },
     {
       "symbol": "GBPJPY",
       "direction": "UNKNOWN",
-      "score": 58,
+      "score": 67,
       "grade": "B",
-      "session": "NY Kill Zone",
+      "session": "Silver Bullet + NY",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-16 12:36:52"
+      "timestamp": "2026-02-16 15:17:10"
+    },
+    {
+      "symbol": "GBPCAD",
+      "direction": "UNKNOWN",
+      "score": 78,
+      "grade": "A",
+      "session": "Silver Bullet + NY",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-16 15:17:07"
+    },
+    {
+      "symbol": "EURGBP",
+      "direction": "UNKNOWN",
+      "score": 68,
+      "grade": "B",
+      "session": "Silver Bullet + NY",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-16 15:11:51"
+    },
+    {
+      "symbol": "GBPJPY",
+      "direction": "UNKNOWN",
+      "score": 53,
+      "grade": "B",
+      "session": "Silver Bullet + NY",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-16 15:11:51"
+    },
+    {
+      "symbol": "GBPJPY",
+      "direction": "UNKNOWN",
+      "score": 53,
+      "grade": "B",
+      "session": "Silver Bullet + NY",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-16 15:06:53"
+    },
+    {
+      "symbol": "EURGBP",
+      "direction": "UNKNOWN",
+      "score": 69,
+      "grade": "B",
+      "session": "Silver Bullet + NY",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-16 15:06:52"
     },
     {
       "symbol": "GBPAUD",
       "direction": "UNKNOWN",
-      "score": 69,
+      "score": 63,
+      "grade": "B",
+      "session": "Silver Bullet + NY",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-16 15:06:52"
+    },
+    {
+      "symbol": "GBPJPY",
+      "direction": "UNKNOWN",
+      "score": 0,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-16 15:01:30"
+    },
+    {
+      "symbol": "GBPAUD",
+      "direction": "UNKNOWN",
+      "score": 0,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-16 15:01:30"
+    },
+    {
+      "symbol": "GBPNZD",
+      "direction": "UNKNOWN",
+      "score": 0,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-16 15:01:30"
+    },
+    {
+      "symbol": "GBPCAD",
+      "direction": "UNKNOWN",
+      "score": 0,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-16 15:01:30"
+    },
+    {
+      "symbol": "EURGBP",
+      "direction": "UNKNOWN",
+      "score": 0,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-16 15:01:30"
+    },
+    {
+      "symbol": "GBPJPY",
+      "direction": "UNKNOWN",
+      "score": 53,
       "grade": "B",
       "session": "NY Kill Zone",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-16 12:36:52"
+      "timestamp": "2026-02-16 14:56:53"
+    },
+    {
+      "symbol": "GBPAUD",
+      "direction": "UNKNOWN",
+      "score": 73,
+      "grade": "B",
+      "session": "NY Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-16 14:56:53"
     }
   ],
-  "generated_at": "2026-02-16T13:25:38.478Z",
+  "generated_at": "2026-02-16T16:00:02.223Z",
   "signal_count": 20
 }
