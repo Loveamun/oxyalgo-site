@@ -3,204 +3,204 @@
     {
       "symbol": "BNBUSD",
       "direction": "SHORT",
+      "score": 0,
+      "grade": "B",
+      "session": "crypto_24_7",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 07:21:29"
+    },
+    {
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "score": 0,
+      "grade": "B",
+      "session": "crypto_24_7",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 07:21:27"
+    },
+    {
+      "symbol": "BNBUSD",
+      "direction": "SHORT",
+      "score": 0,
+      "grade": "B",
+      "session": "crypto_24_7",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 07:20:58"
+    },
+    {
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "score": 0,
+      "grade": "B",
+      "session": "crypto_24_7",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 07:20:57"
+    },
+    {
+      "symbol": "BNBUSD",
+      "direction": "SHORT",
+      "score": 95,
+      "grade": "A",
+      "session": "LONDON",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 07:07:38"
+    },
+    {
+      "symbol": "BNBUSD",
+      "direction": "SHORT",
+      "score": 0,
+      "grade": "B",
+      "session": "crypto_24_7",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 07:07:12"
+    },
+    {
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "score": 0,
+      "grade": "B",
+      "session": "crypto_24_7",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 07:07:11"
+    },
+    {
+      "symbol": "BNBUSD",
+      "direction": "SHORT",
+      "score": 0,
+      "grade": "B",
+      "session": "crypto_24_7",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 07:06:42"
+    },
+    {
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "score": 0,
+      "grade": "B",
+      "session": "crypto_24_7",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 07:06:40"
+    },
+    {
+      "symbol": "CORREL",
+      "direction": "UNKNOWN",
+      "score": 0,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 07:06:05"
+    },
+    {
+      "symbol": "GBPCAD",
+      "direction": "UNKNOWN",
+      "score": 0,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 07:02:29"
+    },
+    {
+      "symbol": "GBPAUD",
+      "direction": "UNKNOWN",
+      "score": 0,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 07:02:29"
+    },
+    {
+      "symbol": "EURGBP",
+      "direction": "UNKNOWN",
+      "score": 0,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 07:02:29"
+    },
+    {
+      "symbol": "GBPNZD",
+      "direction": "UNKNOWN",
+      "score": 0,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 07:02:29"
+    },
+    {
+      "symbol": "GBPJPY",
+      "direction": "UNKNOWN",
+      "score": 0,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 07:02:28"
+    },
+    {
+      "symbol": "XRPUSD",
+      "direction": "SHORT",
       "score": 85,
       "grade": "A",
       "session": "ASIAN",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-17 03:20:30"
+      "timestamp": "2026-02-17 06:52:38"
     },
     {
-      "symbol": "BNBUSD",
-      "direction": "LONG",
-      "score": 70,
-      "grade": "B",
-      "session": "ASIAN",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-17 03:04:35"
-    },
-    {
-      "symbol": "BNBUSD",
-      "direction": "LONG",
-      "score": 63,
+      "symbol": "XRPUSD",
+      "direction": "SHORT",
+      "score": 0,
       "grade": "B",
       "session": "crypto_24_7",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-17 03:04:20"
+      "timestamp": "2026-02-17 06:52:20"
     },
     {
-      "symbol": "GBPJPY",
-      "direction": "UNKNOWN",
+      "symbol": "BNBUSD",
+      "direction": "SHORT",
       "score": 0,
       "grade": "B",
-      "session": "N/A",
+      "session": "crypto_24_7",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-17 03:02:47"
+      "timestamp": "2026-02-17 06:52:20"
     },
     {
-      "symbol": "EURGBP",
-      "direction": "UNKNOWN",
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
       "score": 0,
       "grade": "B",
-      "session": "N/A",
+      "session": "crypto_24_7",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-17 03:02:47"
+      "timestamp": "2026-02-17 06:52:17"
     },
     {
-      "symbol": "GBPCAD",
-      "direction": "UNKNOWN",
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
       "score": 0,
       "grade": "B",
-      "session": "N/A",
+      "session": "crypto_24_7",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-17 03:02:47"
-    },
-    {
-      "symbol": "GBPCHF",
-      "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-17 03:02:47"
-    },
-    {
-      "symbol": "GBPAUD",
-      "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-17 03:02:47"
-    },
-    {
-      "symbol": "GBPJPY",
-      "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 23:02:15"
-    },
-    {
-      "symbol": "GBPUSD",
-      "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 23:02:14"
-    },
-    {
-      "symbol": "GBPCAD",
-      "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 23:02:13"
-    },
-    {
-      "symbol": "GBPAUD",
-      "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 23:02:13"
-    },
-    {
-      "symbol": "EURGBP",
-      "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 23:02:13"
-    },
-    {
-      "symbol": "EURGBP",
-      "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 23:01:52"
-    },
-    {
-      "symbol": "GBPJPY",
-      "direction": "UNKNOWN",
-      "score": 54,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 22:17:07"
-    },
-    {
-      "symbol": "GBPUSD",
-      "direction": "UNKNOWN",
-      "score": 56,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 22:17:06"
-    },
-    {
-      "symbol": "GBPUSD",
-      "direction": "UNKNOWN",
-      "score": 61,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 22:02:08"
-    },
-    {
-      "symbol": "GBPJPY",
-      "direction": "UNKNOWN",
-      "score": 66,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 22:02:06"
-    },
-    {
-      "symbol": "GBPUSD",
-      "direction": "UNKNOWN",
-      "score": 61,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 21:47:15"
-    },
-    {
-      "symbol": "GBPJPY",
-      "direction": "UNKNOWN",
-      "score": 66,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-16 21:47:12"
+      "timestamp": "2026-02-17 06:52:16"
     }
   ],
-  "generated_at": "2026-02-17T04:00:02.902Z",
+  "generated_at": "2026-02-17T08:00:02.445Z",
   "signal_count": 20
 }
