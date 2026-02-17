@@ -3,17 +3,17 @@
   "year": 2026,
   "month_label": "February 2026",
   "stats": {
-    "total_signals": 359,
+    "total_signals": 437,
     "wins": 0,
     "losses": 0,
     "expired": 0,
     "win_rate": 0,
     "prev_win_rate": 0,
-    "net_pips": 0,
+    "net_pips": -7.2,
     "prev_net_pips": 0,
-    "trades_executed": 0,
+    "trades_executed": 1,
     "prev_trades_executed": 0,
-    "avg_rr": "2.5:1",
+    "avg_rr": "2.4:1",
     "prev_avg_rr": "0:1",
     "best_instrument": "N/A",
     "best_instrument_winrate": 0,
@@ -23,5 +23,5 @@
     "System scanning 43 instruments across 46 active workflows",
     "Signal Intelligence tracking all setups automatically"
   ],
-  "generated_at": "2026-02-17T04:00:02.901Z"
+  "generated_at": "2026-02-17T08:00:02.445Z"
 }
