@@ -1,16 +1,6 @@
 {
   "signals": [
     {
-      "symbol": "CURREN",
-      "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-17 11:11:53"
-    },
-    {
       "symbol": "LTCUSD",
       "direction": "SHORT",
       "score": 80,
@@ -199,8 +189,18 @@
       "outcome": "PENDING",
       "pips": null,
       "timestamp": "2026-02-17 08:40:37"
+    },
+    {
+      "symbol": "ETHUSD",
+      "direction": "LONG",
+      "score": 80,
+      "grade": "A",
+      "session": "LONDON",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 08:37:48"
     }
   ],
-  "generated_at": "2026-02-17T12:00:02.654Z",
+  "generated_at": "2026-02-17T12:09:42.002Z",
   "signal_count": 20
 }
