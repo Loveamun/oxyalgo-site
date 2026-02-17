@@ -219,7 +219,9 @@
       html += '</div>';
 
       html += '<div class="monthly-stat-card reveal reveal-delay-2">';
-      html += '<div class="monthly-stat-num monthly-green">+' + st.net_pips.toFixed(1) + '</div>';
+      var pipPrefix = st.net_pips >= 0 ? '+' : '';
+      var pipClass = st.net_pips >= 0 ? 'monthly-green' : 'monthly-red';
+      html += '<div class="monthly-stat-num ' + pipClass + '">' + pipPrefix + st.net_pips.toFixed(1) + '</div>';
       html += '<div class="monthly-stat-label">Net Pips</div>';
       html += delta(st.net_pips, st.prev_net_pips);
       html += '</div>';
