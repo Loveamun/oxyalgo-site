@@ -1,6 +1,66 @@
 {
   "signals": [
     {
+      "symbol": "SOLUSD",
+      "direction": "SHORT",
+      "score": 80,
+      "grade": "A",
+      "session": "CRYPTO",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 19:40:02"
+    },
+    {
+      "symbol": "ETHUSD",
+      "direction": "LONG",
+      "score": 70,
+      "grade": "B",
+      "session": "CRYPTO",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 17:55:01"
+    },
+    {
+      "symbol": "ETHUSD",
+      "direction": "LONG",
+      "score": 70,
+      "grade": "B",
+      "session": "CRYPTO",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 17:40:30"
+    },
+    {
+      "symbol": "BNBUSD",
+      "direction": "LONG",
+      "score": 70,
+      "grade": "B",
+      "session": "CRYPTO",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 17:25:05"
+    },
+    {
+      "symbol": "BNBUSD",
+      "direction": "LONG",
+      "score": 70,
+      "grade": "B",
+      "session": "CRYPTO",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 17:10:30"
+    },
+    {
+      "symbol": "BNBUSD",
+      "direction": "SHORT",
+      "score": 85,
+      "grade": "A",
+      "session": "NY",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 16:55:00"
+    },
+    {
       "symbol": "XAUUSD",
       "direction": "UNKNOWN",
       "score": 71,
@@ -59,56 +119,6 @@
       "outcome": "PENDING",
       "pips": null,
       "timestamp": "2026-02-17 11:10:00"
-    },
-    {
-      "symbol": "GBPNZD",
-      "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-17 11:02:36"
-    },
-    {
-      "symbol": "GBPCHF",
-      "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-17 11:02:36"
-    },
-    {
-      "symbol": "GBPCAD",
-      "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-17 11:02:36"
-    },
-    {
-      "symbol": "GBPAUD",
-      "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-17 11:02:36"
-    },
-    {
-      "symbol": "GBPUSD",
-      "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-17 11:02:36"
     },
     {
       "symbol": "EURGBP",
@@ -189,18 +199,8 @@
       "outcome": "PENDING",
       "pips": null,
       "timestamp": "2026-02-17 08:47:27"
-    },
-    {
-      "symbol": "GBPUSD",
-      "direction": "UNKNOWN",
-      "score": 66,
-      "grade": "B",
-      "session": "Silver Bullet + London KZ",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-17 08:47:27"
     }
   ],
-  "generated_at": "2026-02-17T16:00:03.213Z",
+  "generated_at": "2026-02-17T20:00:01.685Z",
   "signal_count": 20
 }
