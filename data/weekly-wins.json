@@ -2,19 +2,31 @@
   "week_of": "2026-02-16",
   "week_label": "Feb 16 – Feb 22, 2026",
   "summary": {
-    "total_signals": 278,
+    "total_signals": 356,
     "wins": 0,
     "losses": 0,
     "expired": 0,
     "win_rate": 0,
-    "net_pips": 0,
+    "net_pips": -7.2,
     "best_trade": {
-      "symbol": "EURGBP",
+      "symbol": "BNBUSD",
       "pips": 0,
-      "rr": "N/A"
+      "rr": "1.1:1"
     }
   },
   "top_trades": [
+    {
+      "symbol": "BNBUSD",
+      "direction": "SHORT",
+      "entry": 623.75,
+      "exit": 614.68,
+      "pips": 0,
+      "rr": "1.1:1",
+      "grade": "A",
+      "score": 95,
+      "session": "LONDON",
+      "timestamp": "2026-02-17 07:07:38"
+    },
     {
       "symbol": "EURGBP",
       "direction": "UNKNOWN",
@@ -28,53 +40,41 @@
       "timestamp": "2026-02-16 13:41:51"
     },
     {
-      "symbol": "BNBUSD",
+      "symbol": "XRPUSD",
       "direction": "SHORT",
-      "entry": 627.39,
-      "exit": 616.45,
+      "entry": 1.47619,
+      "exit": 1.44956,
+      "pips": 0,
+      "rr": "2.4:1",
+      "grade": "A",
+      "score": 85,
+      "session": "ASIAN",
+      "timestamp": "2026-02-17 06:52:38"
+    },
+    {
+      "symbol": "XRPUSD",
+      "direction": "SHORT",
+      "entry": 1.47385,
+      "exit": 1.44363,
+      "pips": 0,
+      "rr": "2.4:1",
+      "grade": "A",
+      "score": 85,
+      "session": "ASIAN",
+      "timestamp": "2026-02-17 06:48:24"
+    },
+    {
+      "symbol": "SOLUSD",
+      "direction": "SHORT",
+      "entry": 86.47,
+      "exit": 84.78,
       "pips": 0,
       "rr": "2.5:1",
       "grade": "A",
       "score": 85,
       "session": "ASIAN",
-      "timestamp": "2026-02-17 03:20:30"
-    },
-    {
-      "symbol": "EURGBP",
-      "direction": "UNKNOWN",
-      "entry": 0,
-      "exit": 0.86877,
-      "pips": 0,
-      "rr": "N/A",
-      "grade": "B",
-      "score": 83,
-      "session": "NY Kill Zone",
-      "timestamp": "2026-02-16 13:26:54"
-    },
-    {
-      "symbol": "GBPCAD",
-      "direction": "UNKNOWN",
-      "entry": 0,
-      "exit": 0,
-      "pips": 0,
-      "rr": "N/A",
-      "grade": "A",
-      "score": 83,
-      "session": "London Kill Zone",
-      "timestamp": "2026-02-16 09:47:01"
-    },
-    {
-      "symbol": "GBPCAD",
-      "direction": "UNKNOWN",
-      "entry": 0,
-      "exit": 0,
-      "pips": 0,
-      "rr": "N/A",
-      "grade": "A",
-      "score": 83,
-      "session": "London Kill Zone",
-      "timestamp": "2026-02-16 09:32:11"
+      "timestamp": "2026-02-17 06:37:38"
     }
   ],
-  "generated_at": "2026-02-17T04:00:02.872Z"
+  "generated_at": "2026-02-17T08:00:02.380Z"
 }
