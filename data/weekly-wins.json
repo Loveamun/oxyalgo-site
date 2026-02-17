@@ -2,7 +2,7 @@
   "week_of": "2026-02-16",
   "week_label": "Feb 16 – Feb 22, 2026",
   "summary": {
-    "total_signals": 384,
+    "total_signals": 379,
     "wins": 0,
     "losses": 1,
     "expired": 0,
@@ -76,5 +76,5 @@
       "timestamp": "2026-02-17 06:48:24"
     }
   ],
-  "generated_at": "2026-02-17T12:00:02.640Z"
+  "generated_at": "2026-02-17T12:09:41.994Z"
 }
