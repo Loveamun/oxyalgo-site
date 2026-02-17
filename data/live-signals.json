@@ -1,6 +1,56 @@
 {
   "signals": [
     {
+      "symbol": "XAUUSD",
+      "direction": "UNKNOWN",
+      "score": 71,
+      "grade": "B",
+      "session": "NY Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 13:47:17"
+    },
+    {
+      "symbol": "ETHUSD",
+      "direction": "LONG",
+      "score": 80,
+      "grade": "A",
+      "session": "NY",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 13:22:35"
+    },
+    {
+      "symbol": "BNBUSD",
+      "direction": "LONG",
+      "score": 80,
+      "grade": "A",
+      "session": "NY",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 13:07:35"
+    },
+    {
+      "symbol": "LTCUSD",
+      "direction": "LONG",
+      "score": 75,
+      "grade": "B",
+      "session": "NY",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 12:40:23"
+    },
+    {
+      "symbol": "LTCUSD",
+      "direction": "LONG",
+      "score": 75,
+      "grade": "B",
+      "session": "NY",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-17 12:10:30"
+    },
+    {
       "symbol": "LTCUSD",
       "direction": "SHORT",
       "score": 80,
@@ -149,58 +199,8 @@
       "outcome": "PENDING",
       "pips": null,
       "timestamp": "2026-02-17 08:47:27"
-    },
-    {
-      "symbol": "EURGBP",
-      "direction": "UNKNOWN",
-      "score": 69,
-      "grade": "B",
-      "session": "Silver Bullet + London KZ",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-17 08:42:27"
-    },
-    {
-      "symbol": "GBPUSD",
-      "direction": "UNKNOWN",
-      "score": 66,
-      "grade": "B",
-      "session": "Silver Bullet + London KZ",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-17 08:42:27"
-    },
-    {
-      "symbol": "ETHUSD",
-      "direction": "LONG",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-17 08:40:38"
-    },
-    {
-      "symbol": "ETHUSD",
-      "direction": "LONG",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-17 08:40:37"
-    },
-    {
-      "symbol": "ETHUSD",
-      "direction": "LONG",
-      "score": 80,
-      "grade": "A",
-      "session": "LONDON",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-17 08:37:48"
     }
   ],
-  "generated_at": "2026-02-17T12:09:42.002Z",
+  "generated_at": "2026-02-17T16:00:03.213Z",
   "signal_count": 20
 }
