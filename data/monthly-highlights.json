@@ -3,25 +3,25 @@
   "year": 2026,
   "month_label": "February 2026",
   "stats": {
-    "total_signals": 353,
-    "wins": 0,
-    "losses": 1,
+    "total_signals": 365,
+    "wins": 13,
+    "losses": 6,
     "expired": 0,
-    "win_rate": 0,
+    "win_rate": 68.4,
     "prev_win_rate": 0,
-    "net_pips": -7.2,
+    "net_pips": 77.3,
     "prev_net_pips": 0,
-    "trades_executed": 1,
+    "trades_executed": 19,
     "prev_trades_executed": 0,
     "avg_rr": "2.4:1",
     "prev_avg_rr": "0:1",
-    "best_instrument": "N/A",
-    "best_instrument_winrate": 0,
-    "best_instrument_pips": 0
+    "best_instrument": "LTCUSD",
+    "best_instrument_winrate": 33.3,
+    "best_instrument_pips": 0.1
   },
   "highlights": [
-    "System scanning 43 instruments across 46 active workflows",
-    "Signal Intelligence tracking all setups automatically"
+    "LTCUSD hit 33.3% win rate — top performer this month",
+    "+77.3 net pips captured across all instruments"
   ],
-  "generated_at": "2026-02-17T20:00:01.685Z"
+  "generated_at": "2026-02-18T00:00:02.641Z"
 }
