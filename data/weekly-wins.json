@@ -2,79 +2,79 @@
   "week_of": "2026-02-16",
   "week_label": "Feb 16 – Feb 22, 2026",
   "summary": {
-    "total_signals": 291,
-    "wins": 0,
-    "losses": 1,
+    "total_signals": 303,
+    "wins": 13,
+    "losses": 6,
     "expired": 0,
-    "win_rate": 0,
-    "net_pips": -7.2,
+    "win_rate": 68.4,
+    "net_pips": 77.3,
     "best_trade": {
-      "symbol": "BNBUSD",
-      "pips": 0,
-      "rr": "1.1:1"
+      "symbol": "ETHUSD",
+      "pips": 52.1,
+      "rr": "2.5:1"
     }
   },
   "top_trades": [
     {
-      "symbol": "BNBUSD",
-      "direction": "SHORT",
-      "entry": 623.75,
-      "exit": 614.68,
-      "pips": 0,
-      "rr": "1.1:1",
-      "grade": "A",
-      "score": 95,
-      "session": "LONDON",
-      "timestamp": "2026-02-17 07:07:38"
-    },
-    {
-      "symbol": "EURGBP",
-      "direction": "UNKNOWN",
-      "entry": 0,
-      "exit": 0.87183,
-      "pips": 0,
-      "rr": "N/A",
+      "symbol": "ETHUSD",
+      "direction": "LONG",
+      "entry": 1958.87,
+      "exit": 2010.97,
+      "pips": 52.1,
+      "rr": "2.5:1",
       "grade": "B",
-      "score": 86,
-      "session": "Silver Bullet + London KZ",
-      "timestamp": "2026-02-17 08:52:36"
-    },
-    {
-      "symbol": "EURGBP",
-      "direction": "UNKNOWN",
-      "entry": 0,
-      "exit": 0.86898,
-      "pips": 0,
-      "rr": "N/A",
-      "grade": "B",
-      "score": 86,
-      "session": "NY Kill Zone",
-      "timestamp": "2026-02-16 13:41:51"
+      "score": 70,
+      "session": "CRYPTO",
+      "timestamp": "2026-02-17 17:55:01"
     },
     {
       "symbol": "BNBUSD",
       "direction": "SHORT",
-      "entry": 619.61,
-      "exit": 607.38,
-      "pips": 0,
+      "entry": 626.11,
+      "exit": 611.97,
+      "pips": 14.14,
       "rr": "2.5:1",
       "grade": "A",
       "score": 85,
-      "session": "NY",
-      "timestamp": "2026-02-17 16:55:00"
+      "session": "ASIAN",
+      "timestamp": "2026-02-17 04:51:24"
     },
     {
-      "symbol": "XRPUSD",
+      "symbol": "BNBUSD",
       "direction": "SHORT",
-      "entry": 1.47619,
-      "exit": 1.44956,
-      "pips": 0,
-      "rr": "2.4:1",
+      "entry": 623.31,
+      "exit": 610.66,
+      "pips": 12.65,
+      "rr": "2.5:1",
       "grade": "A",
       "score": 85,
       "session": "ASIAN",
-      "timestamp": "2026-02-17 06:52:38"
+      "timestamp": "2026-02-17 06:06:13"
+    },
+    {
+      "symbol": "BNBUSD",
+      "direction": "SHORT",
+      "entry": 623.35,
+      "exit": 610.82,
+      "pips": 12.53,
+      "rr": "2.5:1",
+      "grade": "A",
+      "score": 85,
+      "session": "ASIAN",
+      "timestamp": "2026-02-17 06:21:17"
+    },
+    {
+      "symbol": "BNBUSD",
+      "direction": "SHORT",
+      "entry": 627.39,
+      "exit": 616.45,
+      "pips": 10.94,
+      "rr": "2.5:1",
+      "grade": "A",
+      "score": 85,
+      "session": "ASIAN",
+      "timestamp": "2026-02-17 03:20:30"
     }
   ],
-  "generated_at": "2026-02-17T20:00:01.670Z"
+  "generated_at": "2026-02-18T00:00:02.628Z"
 }
