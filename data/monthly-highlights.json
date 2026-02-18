@@ -3,7 +3,7 @@
   "year": 2026,
   "month_label": "February 2026",
   "stats": {
-    "total_signals": 365,
+    "total_signals": 416,
     "wins": 13,
     "losses": 6,
     "expired": 0,
@@ -15,13 +15,13 @@
     "prev_trades_executed": 0,
     "avg_rr": "2.4:1",
     "prev_avg_rr": "0:1",
-    "best_instrument": "LTCUSD",
-    "best_instrument_winrate": 33.3,
-    "best_instrument_pips": 0.1
+    "best_instrument": "BNBUSD",
+    "best_instrument_winrate": 13.5,
+    "best_instrument_pips": 48.2
   },
   "highlights": [
-    "LTCUSD hit 33.3% win rate — top performer this month",
+    "BNBUSD hit 13.5% win rate — top performer this month",
     "+77.3 net pips captured across all instruments"
   ],
-  "generated_at": "2026-02-18T00:00:02.641Z"
+  "generated_at": "2026-02-18T04:00:02.812Z"
 }
