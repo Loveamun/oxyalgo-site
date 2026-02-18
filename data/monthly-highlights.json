@@ -3,15 +3,15 @@
   "year": 2026,
   "month_label": "February 2026",
   "stats": {
-    "total_signals": 884,
-    "wins": 14,
-    "losses": 24,
-    "expired": 1,
-    "win_rate": 36.8,
+    "total_signals": 886,
+    "wins": 16,
+    "losses": 27,
+    "expired": 2,
+    "win_rate": 37.2,
     "prev_win_rate": 0,
-    "net_pips": -401909.1,
+    "net_pips": -1187940.4,
     "prev_net_pips": 0,
-    "trades_executed": 39,
+    "trades_executed": 45,
     "prev_trades_executed": 0,
     "avg_rr": "2.3:1",
     "prev_avg_rr": "0:1",
@@ -22,5 +22,5 @@
   "highlights": [
     "BNBUSD hit 9.8% win rate — top performer this month"
   ],
-  "generated_at": "2026-02-18T16:00:01.834Z"
+  "generated_at": "2026-02-18T20:00:01.660Z"
 }
