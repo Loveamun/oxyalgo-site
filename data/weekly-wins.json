@@ -2,19 +2,31 @@
   "week_of": "2026-02-16",
   "week_label": "Feb 16 – Feb 22, 2026",
   "summary": {
-    "total_signals": 354,
+    "total_signals": 482,
     "wins": 13,
-    "losses": 6,
-    "expired": 0,
-    "win_rate": 68.4,
-    "net_pips": 77.3,
+    "losses": 8,
+    "expired": 1,
+    "win_rate": 61.9,
+    "net_pips": 462.2,
     "best_trade": {
-      "symbol": "ETHUSD",
-      "pips": 52.1,
+      "symbol": "BTCUSD",
+      "pips": 410.89,
       "rr": "2.5:1"
     }
   },
   "top_trades": [
+    {
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "entry": 68101.1,
+      "exit": 66162.21,
+      "pips": 410.89,
+      "rr": "2.5:1",
+      "grade": "A",
+      "score": 85,
+      "session": "ASIAN",
+      "timestamp": "2026-02-17 05:21:09"
+    },
     {
       "symbol": "ETHUSD",
       "direction": "LONG",
@@ -62,19 +74,7 @@
       "score": 85,
       "session": "ASIAN",
       "timestamp": "2026-02-17 06:21:17"
-    },
-    {
-      "symbol": "BNBUSD",
-      "direction": "SHORT",
-      "entry": 627.39,
-      "exit": 616.45,
-      "pips": 10.94,
-      "rr": "2.5:1",
-      "grade": "A",
-      "score": 85,
-      "session": "ASIAN",
-      "timestamp": "2026-02-17 03:20:30"
     }
   ],
-  "generated_at": "2026-02-18T04:00:02.756Z"
+  "generated_at": "2026-02-18T08:00:02.976Z"
 }
