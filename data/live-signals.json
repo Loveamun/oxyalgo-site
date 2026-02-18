@@ -1,206 +1,206 @@
 {
   "signals": [
     {
-      "symbol": "AUDCAD",
+      "symbol": "AUDNZD",
       "direction": "UNKNOWN",
-      "score": 61,
-      "grade": "B",
+      "score": 80,
+      "grade": "A",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-18 11:44:29"
+      "timestamp": "2026-02-18 15:59:32"
     },
     {
-      "symbol": "AUDCAD",
+      "symbol": "AUDNZD",
       "direction": "UNKNOWN",
-      "score": 61,
-      "grade": "B",
+      "score": 80,
+      "grade": "A",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-18 11:44:27"
+      "timestamp": "2026-02-18 15:59:31"
     },
     {
-      "symbol": "AUDCAD",
+      "symbol": "AUDNZD",
       "direction": "UNKNOWN",
-      "score": 61,
-      "grade": "B",
+      "score": 80,
+      "grade": "A",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-18 11:44:26"
+      "timestamp": "2026-02-18 15:59:29"
     },
     {
-      "symbol": "BNBUSD",
-      "direction": "SHORT",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-18 11:40:16"
-    },
-    {
-      "symbol": "ETHUSD",
-      "direction": "SHORT",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-18 11:40:15"
-    },
-    {
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-18 11:40:13"
-    },
-    {
-      "symbol": "BNBUSD",
-      "direction": "SHORT",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-18 11:40:10"
-    },
-    {
-      "symbol": "ETHUSD",
-      "direction": "SHORT",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-18 11:40:09"
-    },
-    {
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-18 11:40:07"
-    },
-    {
-      "symbol": "GBPUSD",
-      "direction": "UNKNOWN",
-      "score": 61,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-18 11:36:39"
-    },
-    {
-      "symbol": "EURAUD",
-      "direction": "UNKNOWN",
-      "score": 67,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-18 11:29:28"
-    },
-    {
-      "symbol": "EURAUD",
-      "direction": "UNKNOWN",
-      "score": 67,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-18 11:29:27"
-    },
-    {
-      "symbol": "EURAUD",
-      "direction": "UNKNOWN",
-      "score": 67,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-18 11:29:25"
-    },
-    {
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-18 11:24:56"
-    },
-    {
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-18 11:24:56"
-    },
-    {
-      "symbol": "GBPJPY",
+      "symbol": "XAGUSD",
       "direction": "UNKNOWN",
       "score": 60,
       "grade": "B",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-18 11:21:41"
+      "timestamp": "2026-02-18 15:59:27"
+    },
+    {
+      "symbol": "XAUUSD",
+      "direction": "UNKNOWN",
+      "score": 65,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-18 15:59:26"
+    },
+    {
+      "symbol": "XRPUSD",
+      "direction": "LONG",
+      "score": 0,
+      "grade": "B",
+      "session": "crypto_24_7",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-18 15:54:39"
+    },
+    {
+      "symbol": "ETHUSD",
+      "direction": "LONG",
+      "score": 70,
+      "grade": "B",
+      "session": "NY",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-18 15:54:37"
+    },
+    {
+      "symbol": "ETHUSD",
+      "direction": "LONG",
+      "score": 0,
+      "grade": "B",
+      "session": "crypto_24_7",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-18 15:54:37"
+    },
+    {
+      "symbol": "XRPUSD",
+      "direction": "LONG",
+      "score": 0,
+      "grade": "B",
+      "session": "crypto_24_7",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-18 15:54:07"
+    },
+    {
+      "symbol": "ETHUSD",
+      "direction": "LONG",
+      "score": 0,
+      "grade": "B",
+      "session": "crypto_24_7",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-18 15:54:05"
     },
     {
       "symbol": "GBPUSD",
       "direction": "UNKNOWN",
-      "score": 66,
+      "score": 68,
       "grade": "B",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-18 11:21:39"
+      "timestamp": "2026-02-18 15:51:41"
     },
     {
-      "symbol": "AUDNZD",
-      "direction": "LONG",
-      "score": 75,
-      "grade": "B",
-      "session": "LONDON",
+      "symbol": "GBPCAD",
+      "direction": "UNKNOWN",
+      "score": 83,
+      "grade": "A",
+      "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-18 11:14:45"
+      "timestamp": "2026-02-18 15:51:39"
+    },
+    {
+      "symbol": "USTEC",
+      "direction": "SHORT",
+      "score": 80,
+      "grade": "A",
+      "session": "NY",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-18 15:45:08"
     },
     {
       "symbol": "AUDNZD",
       "direction": "UNKNOWN",
-      "score": 65,
-      "grade": "B",
+      "score": 80,
+      "grade": "A",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-18 11:14:29"
+      "timestamp": "2026-02-18 15:44:40"
     },
     {
       "symbol": "AUDNZD",
       "direction": "UNKNOWN",
-      "score": 65,
+      "score": 80,
+      "grade": "A",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-18 15:44:38"
+    },
+    {
+      "symbol": "AUDNZD",
+      "direction": "UNKNOWN",
+      "score": 80,
+      "grade": "A",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-18 15:44:37"
+    },
+    {
+      "symbol": "XAGUSD",
+      "direction": "UNKNOWN",
+      "score": 60,
       "grade": "B",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-18 11:14:27"
+      "timestamp": "2026-02-18 15:44:35"
+    },
+    {
+      "symbol": "US500",
+      "direction": "UNKNOWN",
+      "score": 61,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-18 15:44:34"
+    },
+    {
+      "symbol": "USTEC",
+      "direction": "UNKNOWN",
+      "score": 61,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-18 15:44:32"
+    },
+    {
+      "symbol": "SOLUSD",
+      "direction": "SHORT",
+      "score": 0,
+      "grade": "B",
+      "session": "crypto_24_7",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-18 15:40:14"
     }
   ],
-  "generated_at": "2026-02-18T12:00:01.937Z",
+  "generated_at": "2026-02-18T16:00:01.834Z",
   "signal_count": 20
 }
