@@ -1,6 +1,26 @@
 {
   "signals": [
     {
+      "symbol": "USTEC",
+      "direction": "UNKNOWN",
+      "score": 75,
+      "grade": "A",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-18 17:12:36"
+    },
+    {
+      "symbol": "US30",
+      "direction": "UNKNOWN",
+      "score": 65,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-18 16:15:22"
+    },
+    {
       "symbol": "AUDNZD",
       "direction": "UNKNOWN",
       "score": 80,
@@ -66,8 +86,8 @@
       "score": 70,
       "grade": "B",
       "session": "NY",
-      "outcome": "PENDING",
-      "pips": null,
+      "outcome": "LOSS",
+      "pips": -37.85,
       "timestamp": "2026-02-18 15:54:37"
     },
     {
@@ -126,8 +146,8 @@
       "score": 80,
       "grade": "A",
       "session": "NY",
-      "outcome": "PENDING",
-      "pips": null,
+      "outcome": "LOSS",
+      "pips": -387000,
       "timestamp": "2026-02-18 15:45:08"
     },
     {
@@ -179,28 +199,8 @@
       "outcome": "PENDING",
       "pips": null,
       "timestamp": "2026-02-18 15:44:34"
-    },
-    {
-      "symbol": "USTEC",
-      "direction": "UNKNOWN",
-      "score": 61,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-18 15:44:32"
-    },
-    {
-      "symbol": "SOLUSD",
-      "direction": "SHORT",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-18 15:40:14"
     }
   ],
-  "generated_at": "2026-02-18T16:00:01.834Z",
+  "generated_at": "2026-02-18T20:00:01.660Z",
   "signal_count": 20
 }
