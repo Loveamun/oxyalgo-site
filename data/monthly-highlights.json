@@ -3,25 +3,25 @@
   "year": 2026,
   "month_label": "February 2026",
   "stats": {
-    "total_signals": 544,
+    "total_signals": 669,
     "wins": 13,
-    "losses": 8,
+    "losses": 15,
     "expired": 1,
-    "win_rate": 61.9,
+    "win_rate": 46.4,
     "prev_win_rate": 0,
-    "net_pips": 462.2,
+    "net_pips": 390.8,
     "prev_net_pips": 0,
-    "trades_executed": 22,
+    "trades_executed": 29,
     "prev_trades_executed": 0,
     "avg_rr": "2.3:1",
     "prev_avg_rr": "0:1",
     "best_instrument": "BNBUSD",
-    "best_instrument_winrate": 10.2,
-    "best_instrument_pips": 48.2
+    "best_instrument_winrate": 9.8,
+    "best_instrument_pips": 36
   },
   "highlights": [
-    "BNBUSD hit 10.2% win rate — top performer this month",
-    "+462.2 net pips captured across all instruments"
+    "BNBUSD hit 9.8% win rate — top performer this month",
+    "+390.8 net pips captured across all instruments"
   ],
-  "generated_at": "2026-02-18T08:00:02.989Z"
+  "generated_at": "2026-02-18T12:00:01.936Z"
 }
