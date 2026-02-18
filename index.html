@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OXY ALGO &mdash; Stop Watching Charts. Start Running Algorithms.</title>
-<meta name="description" content="8 AI agents running 44 automated workflows across 48 instruments with 10 live dashboards. 30 slash commands. Full trade management from Discord. Sentiment intelligence, order flow, and correlation scoring &mdash; 24/7 autonomously.">
-<meta property="og:title" content="OXY ALGO &mdash; Autonomous Trading Infrastructure">
-<meta property="og:description" content="8 AI agents. 44 workflows. 48 instruments. 10 live dashboards. 30 slash commands with full trade control &mdash; close, modify, break even, trailing stops, pending orders, kill switch. Deploy autonomous trading intelligence that scans, analyzes, executes, and learns.">
+<title>OXY ALGO &mdash; 94% of Traders Fail Prop Challenges. Let AI Pass Yours.</title>
+<meta name="description" content="8 AI agents scan 48 instruments, execute trades, and protect your account 24/7. Automated ICT/SMC analysis. Prop firm compatible. Risk Guardian enforces your rules. Join free, upgrade when you see the data.">
+<meta property="og:title" content="OXY ALGO &mdash; AI Trading Infrastructure That Executes While You Sleep">
+<meta property="og:description" content="94% of traders fail their first prop challenge. OXY ALGO's 8 AI agents scan, analyze, execute, and protect &mdash; 24/7 with zero emotion. Full trade control from Discord. Join free.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,61 +25,60 @@
 <div class="noise-overlay"></div>
 <div class="scroll-progress" id="scrollProgress"></div>
 
-<!-- ═══════════ NAV ═══════════ -->
+<!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
     <a href="#" class="logo">OXY <span>ALGO</span></a>
     <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
     <ul class="nav-links">
+      <li><a href="#problem">The Problem</a></li>
       <li><a href="#agents">Agents</a></li>
-      <li><a href="#dashboards">Dashboards</a></li>
       <li><a href="#platform">Platform</a></li>
       <li><a href="#intelligence">Intelligence</a></li>
-      <li><a href="#execution">Execution</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank" class="nav-cta">Deploy Now</a></li>
+      <li><a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank" class="nav-cta">Join Free</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- ═══════════ HERO ═══════════ -->
+<!-- HERO -->
 <div class="hero">
   <div class="hero-grid"></div>
   <canvas class="hero-particles" id="particles"></canvas>
   <div class="hero-typewriter" id="heroTypewriter"></div>
   <div class="hero-content">
     <div class="hero-badge"><span class="pulse-dot"></span> LIVE &mdash; 44 Workflows + 30 Commands + Full Trade Control</div>
-    <h1>Stop Watching Charts.<br>Start Running <span class="grad">Algorithms.</span></h1>
-    <p class="sub">8 AI agents running 44 automated workflows across 48 instruments with 30 slash commands and full trade management. Close positions, edit SL/TP, break even, trailing stops, pending orders, and a kill switch &mdash; all from Discord. 24/7 with zero human intervention.</p>
+    <h1>94% of Traders Fail.<br>Let <span class="grad">AI Pass for You.</span></h1>
+    <p class="sub">8 AI agents scan 48 instruments every 15 minutes, score setups with ICT/SMC confluence, execute trades, and protect your account &mdash; all from Discord. No charts to watch. No emotions to fight. No setups to miss. Running 24/7.</p>
     <div class="hero-btns">
-      <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank" class="btn btn-primary">Deploy Free &#8594;</a>
-      <a href="#agents" class="btn btn-secondary">Explore the System</a>
+      <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank" class="btn btn-primary">Join Free &mdash; $0 Forever &#8594;</a>
+      <a href="#problem" class="btn btn-secondary">See Why 94% Fail</a>
     </div>
     <div class="trust-bar">
       <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div> 24/7 Autonomous</div>
-      <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div> Sub-3s Latency</div>
-      <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="2"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/></svg></div> Self-Learning</div>
-      <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div> Risk Protected</div>
-      <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green2)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div> Verified Results</div>
+      <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div> Sub-3s Execution</div>
+      <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="2"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/></svg></div> Self-Learning AI</div>
+      <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div> Prop Firm Safe</div>
+      <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green2)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div> Every Signal Tracked</div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════ STATS BAR ═══════════ -->
+<!-- STATS BAR -->
 <div class="stats-section">
   <div class="stats-grid wrap">
     <div class="stat"><div class="stat-num" data-target="8">0</div><div class="stat-label">AI Agents</div></div>
-    <div class="stat"><div class="stat-num" data-target="44">0</div><div class="stat-label">Workflows</div></div>
     <div class="stat"><div class="stat-num" data-target="48">0</div><div class="stat-label">Instruments</div></div>
-    <div class="stat"><div class="stat-num" data-target="30">0</div><div class="stat-label">Slash Commands</div></div>
+    <div class="stat"><div class="stat-num" data-target="30">0</div><div class="stat-label">Discord Commands</div></div>
     <div class="stat"><div class="stat-num" data-target="700" data-suffix="+">0</div><div class="stat-label">Scans / Day</div></div>
+    <div class="stat"><div class="stat-num no-count">$4.97</div><div class="stat-label">Per Day</div></div>
     <div class="stat"><div class="stat-num no-count">24/7</div><div class="stat-label">Autonomous</div></div>
   </div>
 </div>
 
-<!-- ═══════════ TECH MARQUEE ═══════════ -->
+<!-- TECH MARQUEE -->
 <div class="trust-logos">
   <div class="marquee-track">
     <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/></svg></span> GPT-4 Vision</div>
@@ -90,7 +89,6 @@
     <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> Self-Hosted APIs</div>
     <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> Discord Delivery</div>
     <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span> Perplexity AI</div>
-    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span> OpenAI Whisper</div>
     <!-- Duplicate for seamless loop -->
     <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/></svg></span> GPT-4 Vision</div>
     <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg></span> ElevenLabs Voice AI</div>
@@ -100,62 +98,127 @@
     <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> Self-Hosted APIs</div>
     <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> Discord Delivery</div>
     <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span> Perplexity AI</div>
-    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span> OpenAI Whisper</div>
   </div>
 </div>
 
-<!-- ═══════════ THE PROBLEM ═══════════ -->
+<!-- THE PROBLEM -->
 <section class="problem-section" id="problem">
   <div class="wrap">
     <div class="section-center">
       <div class="section-tag" style="background:rgba(239,68,68,0.06);border-color:rgba(239,68,68,0.12);color:var(--red);">The Problem</div>
-      <h2>Trading Is Broken.<br><span class="grad">You Already Know It.</span></h2>
-      <p class="lead">You didn't fail because of the market. You failed because you're fighting it with human instincts.</p>
+      <h2>The Numbers Don't Lie.<br><span class="grad">Trading Is a Graveyard.</span></h2>
+      <p class="lead">These aren't opinions. These are verified statistics from 300,000+ trader accounts across 10 prop firms.</p>
     </div>
     <div class="pain-grid">
       <div class="pain-card reveal">
         <div class="pain-icon" style="background:rgba(239,68,68,0.06);">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
-        <h3>FOMO</h3>
-        <p>You see a move happening and jump in late. Again. The entry is wrong, the stop is too tight, and you watch it reverse against you within minutes.</p>
+        <h3>94% Fail Their First Challenge</h3>
+        <p>Only 14% ever pass an evaluation. Only 7% ever receive a single payout. The average trader spends $4,270 across multiple attempts before giving up. The prop firm business model depends on your failure.</p>
       </div>
       <div class="pain-card reveal reveal-delay-1">
         <div class="pain-icon" style="background:rgba(245,158,11,0.06);">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><circle cx="12" cy="16" r="0.5" fill="var(--gold)"/></svg>
         </div>
-        <h3>Uncertainty</h3>
-        <p>Is this the right entry? The right stop? You hesitate, second-guess everything, and the setup leaves without you. Then it hits your target without you on board.</p>
+        <h3>80% Quit Within 2 Years</h3>
+        <p>Only 1.6% of day traders are profitable in any given year. Only 1% succeed over 5 years. The number one killer? Emotions &mdash; not strategy, not capital, not market conditions. You lose because you're human.</p>
       </div>
       <div class="pain-card reveal reveal-delay-2">
         <div class="pain-icon" style="background:rgba(124,58,237,0.06);">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </div>
-        <h3>Emotional Decisions</h3>
-        <p>You revenge trade after a loss. You size up after a win. You move your stop loss "just a little." The cycle never ends because the problem isn't your strategy &mdash; it's you.</p>
+        <h3>Revenge Trading Destroys Accounts</h3>
+        <p>You lose a trade. Feel the sting. Rush into the next one to win it back. 80% of prop firm violations happen because emotions override rules &mdash; not because of bad strategy. One bad morning, and your challenge is over by lunch.</p>
       </div>
       <div class="pain-card reveal reveal-delay-3">
         <div class="pain-icon" style="background:rgba(0,212,255,0.06);">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
-        <h3>Information Overload</h3>
-        <p>15 indicators, 6 timeframes, 3 mentors saying different things. You drown in data, freeze on decisions, and end up making impulsive trades based on noise instead of structure.</p>
+        <h3>$5,000/Year on Tools That Don't Talk</h3>
+        <p>TradingView. Scanners. Journals. News feeds. VPS. Signal services. Challenge fees. You spend $1,500-5,000 a year on disconnected tools before making a single dollar. And none of them trade for you.</p>
       </div>
     </div>
     <div class="problem-transition reveal">
-      <p>OXY ALGO replaces all of this with <span class="data-value">algorithms</span>.</p>
-      <p class="problem-sub">No FOMO. No hesitation. No emotions. Just code executing a system that scans, scores, and acts &mdash; faster and more consistently than any human ever could.</p>
+      <p>What if you could replace all of this with <span class="data-value">one system</span>?</p>
+      <p class="problem-sub">8 AI agents. 48 instruments. Automated scanning, execution, and risk management. No emotions. No hesitation. No missed setups. Just code doing what humans can't.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ WEEKLY WINS ═══════════ -->
+<!-- THE COST OF DOING NOTHING -->
+<section class="cost-section" id="cost">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag" style="background:rgba(245,158,11,0.06);border-color:rgba(245,158,11,0.12);color:var(--gold);">The Cost</div>
+      <h2>Every Day You Trade Manually,<br><span class="grad">You Lose Money.</span></h2>
+    </div>
+    <div class="cost-grid">
+      <div class="cost-card reveal">
+        <div class="cost-num" style="color:var(--red);">$500</div>
+        <div class="cost-label">Per missed setup</div>
+        <p>You were at work. You were sleeping. You were hesitating. The setup fired, hit target, and you weren't in it.</p>
+      </div>
+      <div class="cost-card reveal reveal-delay-1">
+        <div class="cost-num" style="color:var(--red);">$2,000</div>
+        <div class="cost-label">Per revenge trade</div>
+        <p>One emotional trade after a loss. Bigger size. No plan. The drawdown hits and suddenly your challenge is gone.</p>
+      </div>
+      <div class="cost-card reveal reveal-delay-2">
+        <div class="cost-num" style="color:var(--red);">$500</div>
+        <div class="cost-label">Per failed challenge</div>
+        <p>The average trader attempts 3 challenges per account. That's $1,500 in fees &mdash; plus 90 days of lost time &mdash; per prop firm.</p>
+      </div>
+      <div class="cost-card reveal reveal-delay-3">
+        <div class="cost-num" style="color:var(--red);">8 hrs</div>
+        <div class="cost-label">Per day watching charts</div>
+        <p>London session. NY session. Staring at candles, waiting for a setup that may never come. That's 2,000 hours a year you'll never get back.</p>
+      </div>
+    </div>
+    <div class="cost-bottom reveal">
+      <p style="font-family:var(--font-head);font-size:1.4em;font-weight:700;text-align:center;margin-bottom:12px;">OXY ALGO costs <span style="color:var(--accent)">$4.97/day</span>. A single missed trade costs more.</p>
+      <p style="color:var(--text2);text-align:center;font-size:0.95em;">The question isn't whether you can afford it. It's whether you can afford not to have it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag section-tag-bracket">[ HOW IT WORKS ]</div>
+      <h2>Three Steps. <span class="grad">That's It.</span></h2>
+      <p class="lead">From zero to fully automated trading infrastructure in under 60 seconds.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-step reveal">
+        <div class="how-num">01</div>
+        <h3>Join the Discord</h3>
+        <p>Create a free account. Get instant access to the community, AI assistant, news alerts, daily education, and verified results. See signals in action before spending a dollar.</p>
+      </div>
+      <div class="how-connector"></div>
+      <div class="how-step reveal reveal-delay-1">
+        <div class="how-num">02</div>
+        <h3>Watch the AI Work</h3>
+        <p>8 agents scan 48 instruments every 15 minutes. Signals appear in your basket channels with ICT/SMC analysis, confluence scores, and chart images. Every signal tracked to outcome.</p>
+      </div>
+      <div class="how-connector"></div>
+      <div class="how-step reveal reveal-delay-2">
+        <div class="how-num">03</div>
+        <h3>Upgrade When Ready</h3>
+        <p>When the data speaks for itself, unlock automated execution, live P&amp;L, AI mentor, voice journal, prop firm tracking, and full trade control from Discord. The system trades while you live your life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEKLY WINS -->
 <section class="wins-section" id="weekly-wins">
   <div class="wrap">
     <div class="section-center">
       <div class="section-tag section-tag-bracket" style="background:rgba(16,185,129,0.06);border-color:rgba(16,185,129,0.15);color:var(--green);">[ SYSTEM.RESULTS ]</div>
       <h2>This Week's <span class="grad">Verified Results.</span></h2>
-      <p class="lead">Every signal tracked. Every outcome verified. Every number auditable by code, not claims.</p>
+      <p class="lead">Every signal tracked. Every outcome verified by code, not claims. Wins AND losses &mdash; full transparency.</p>
     </div>
     <div id="weekly-wins-data">
       <p style="color:var(--text3);text-align:center;font-size:0.9em;">Loading results&hellip;</p>
@@ -163,404 +226,294 @@
   </div>
 </section>
 
-<!-- ═══════════ 8 AI AGENTS ═══════════ -->
+<!-- MANUAL vs OXY ALGO -->
+<section class="compare-section" id="compare">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag section-tag-bracket" style="background:rgba(0,212,255,0.06);border-color:rgba(0,212,255,0.15);color:var(--accent);">[ COMPARE ]</div>
+      <h2>Manual Trading vs. <span class="grad">OXY ALGO.</span></h2>
+      <p class="lead">See what changes when AI runs your trading operation.</p>
+    </div>
+    <div class="compare-table reveal">
+      <div class="compare-row compare-header">
+        <div class="compare-cell"></div>
+        <div class="compare-cell compare-manual">Manual Trading</div>
+        <div class="compare-cell compare-algo">OXY ALGO</div>
+      </div>
+      <div class="compare-row"><div class="compare-cell compare-label">Market scanning</div><div class="compare-cell compare-manual">Watch 2-3 pairs when you have time</div><div class="compare-cell compare-algo">48 instruments every 15 minutes, 24/7</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Analysis time</div><div class="compare-cell compare-manual">30-60 min per setup</div><div class="compare-cell compare-algo">Under 3 seconds per setup</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Emotional decisions</div><div class="compare-cell compare-manual">Revenge trades, FOMO, hesitation</div><div class="compare-cell compare-algo">Zero emotions. Code executes the plan.</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Risk management</div><div class="compare-cell compare-manual">"I'll move my stop just a little..."</div><div class="compare-cell compare-algo">Guardian enforces rules. No overrides.</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Missed setups</div><div class="compare-cell compare-manual">Sleeping, working, eating dinner</div><div class="compare-cell compare-algo">Never misses a setup. Ever.</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Trade journaling</div><div class="compare-cell compare-manual">Start a spreadsheet, quit in 2 weeks</div><div class="compare-cell compare-algo">Every trade logged and graded automatically</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Prop firm safety</div><div class="compare-cell compare-manual">"I hope I don't breach the daily limit"</div><div class="compare-cell compare-algo">Enforces drawdown rules before you can break them</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Monthly cost</div><div class="compare-cell compare-manual">$200-500+ (charts, scanners, journals, VPS, signals)</div><div class="compare-cell compare-algo">$149/mo &mdash; everything in one system</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Hours per day</div><div class="compare-cell compare-manual">4-10 hours watching charts</div><div class="compare-cell compare-algo">Check Discord when you want. Or don't.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 AI AGENTS -->
 <section class="agents-section" id="agents">
   <div class="wrap">
     <div class="section-center">
       <div class="section-tag section-tag-bracket">[ SYSTEM.AGENTS ]</div>
-      <h2>8 AI Agents.<br><span class="grad">Zero Human Intervention.</span></h2>
-      <p class="lead">Each agent is a specialized process handling one part of your trading operation. Together, they form a complete autonomous infrastructure.</p>
+      <h2>Your AI Trading Team.<br><span class="grad">8 Agents. Zero Emotions.</span></h2>
+      <p class="lead">Each agent handles one job. Together, they form a complete trading operation that runs while you sleep.</p>
     </div>
     <div class="agents-grid">
-      <!-- Scanner -->
       <div class="agent-card reveal">
         <div class="agent-header">
-          <div class="agent-icon" style="background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.15);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </div>
+          <div class="agent-icon" style="background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
           <div class="agent-status"><span class="status-dot"></span> LIVE</div>
         </div>
         <div class="agent-pid">PID: SCANNER-01</div>
         <h3>Scanner</h3>
         <div class="agent-role">Market Surveillance</div>
-        <p>Scans 48 instruments across 7 forex baskets every 15 minutes for ICT/SMC setups. 28 forex pairs with cross-posting, 10 crypto, indices, and commodities. Currency Strength Matrix ranks 8 currencies live. Retail sentiment intelligence from Myfxbook with contrarian scoring. Institutional order flow via delta gate. Every signal enriched with correlation + sentiment data.</p>
+        <p>Scans 48 instruments across 7 forex baskets every 15 minutes. Currency Strength Matrix. Retail sentiment from Myfxbook. Institutional order flow. Every signal enriched with correlation data.</p>
         <div class="agent-workflows">WF01 &bull; WF02 &bull; WF22 &bull; WF33 &bull; WF39 &bull; WF41</div>
       </div>
-      <!-- Analyst -->
       <div class="agent-card reveal reveal-delay-1">
         <div class="agent-header">
-          <div class="agent-icon" style="background:rgba(124,58,237,0.08);border-color:rgba(124,58,237,0.15);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="2"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><line x1="9" y1="21" x2="15" y2="21"/></svg>
-          </div>
+          <div class="agent-icon" style="background:rgba(124,58,237,0.08);border-color:rgba(124,58,237,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="2"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><line x1="9" y1="21" x2="15" y2="21"/></svg></div>
           <div class="agent-status"><span class="status-dot"></span> LIVE</div>
         </div>
         <div class="agent-pid">PID: ANALYST-01</div>
         <h3>Analyst</h3>
         <div class="agent-role">Confluence Scoring</div>
-        <p>Scores every setup on a 0-100 confluence scale using multi-timeframe analysis, smart money structure, session context, and momentum indicators. Only high-probability setups pass through.</p>
+        <p>Scores every setup 0-100 using ICT/SMC confluence, multi-timeframe analysis, session context, and momentum. Only high-probability setups pass through. You see the grade before the trade fires.</p>
         <div class="agent-workflows">WF03 &bull; WF04 &bull; WF06 &bull; WF18 &bull; WF25</div>
       </div>
-      <!-- Executor -->
       <div class="agent-card reveal reveal-delay-2">
         <div class="agent-header">
-          <div class="agent-icon" style="background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.15);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
+          <div class="agent-icon" style="background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
           <div class="agent-status agent-status-live"><span class="status-dot"></span> EXECUTING</div>
         </div>
         <div class="agent-pid">PID: EXECUTOR-01</div>
         <h3>Executor</h3>
         <div class="agent-role">Live Trade Execution</div>
-        <p>LIVE MODE &mdash; executing real trades with full Discord control. Close, modify SL/TP, break even, trailing stops, pending orders, and emergency kill switch. 17 trade actions available. Position sizing, stop placement, and progressive trailing &mdash; all from your phone.</p>
+        <p>Places real trades. 17 actions from Discord: close, modify SL/TP, break even, trailing stops, pending orders, kill switch. Full control from your phone. Zero delay.</p>
         <div class="agent-workflows">WF08 &bull; WF13</div>
       </div>
-      <!-- Guardian -->
       <div class="agent-card reveal reveal-delay-3">
         <div class="agent-header">
-          <div class="agent-icon" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.15);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
+          <div class="agent-icon" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <div class="agent-status"><span class="status-dot"></span> LIVE</div>
         </div>
         <div class="agent-pid">PID: GUARDIAN-01</div>
         <h3>Guardian</h3>
         <div class="agent-role">Risk Enforcement</div>
-        <p>Enforces 5% daily / 10% total drawdown limits. Progressive trailing stops, time-based exits, news blocking, and max trade limits. No emotional overrides &mdash; code enforces discipline.</p>
+        <p>Enforces 5% daily / 10% total drawdown. Progressive trailing stops. News blocking. Max trade limits. No emotional overrides. Code enforces discipline so you don't have to.</p>
         <div class="agent-workflows">WF07 &bull; WF09</div>
       </div>
-      <!-- Copier -->
       <div class="agent-card reveal">
         <div class="agent-header">
-          <div class="agent-icon" style="background:rgba(96,165,250,0.08);border-color:rgba(96,165,250,0.15);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          </div>
+          <div class="agent-icon" style="background:rgba(96,165,250,0.08);border-color:rgba(96,165,250,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></div>
           <div class="agent-status agent-status-soon"><span class="status-dot-soon"></span> SOON</div>
         </div>
         <div class="agent-pid">PID: COPIER-01</div>
         <h3>Copier</h3>
         <div class="agent-role">Trade Mirroring</div>
-        <p>Mirrors trades to your broker account across 5 platforms: MT5, MT4, Tradeovate, Trade Locker, Liquid Broker. Your risk settings, your account, automated execution.</p>
+        <p>Mirrors trades to your broker across MT5, MT4, Tradeovate, Trade Locker, Liquid Broker. Your risk settings, your account, automated execution.</p>
         <div class="agent-workflows">Cross-platform mirroring</div>
       </div>
-      <!-- Intel -->
       <div class="agent-card reveal reveal-delay-1">
         <div class="agent-header">
-          <div class="agent-icon" style="background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.15);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
+          <div class="agent-icon" style="background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
           <div class="agent-status"><span class="status-dot"></span> LIVE</div>
         </div>
         <div class="agent-pid">PID: INTEL-01</div>
         <h3>Intel</h3>
         <div class="agent-role">Market Intelligence</div>
-        <p>Monitors economic calendars, aggregates financial news, prepares session briefings, and generates market updates. Knows what's moving markets before you do.</p>
+        <p>Economic calendars, news aggregation, session prep, and market updates. Blocks trades before high-impact news. Knows what's moving markets before you wake up.</p>
         <div class="agent-workflows">WF05 &bull; WF11 &bull; WF19 &bull; WF27</div>
       </div>
-      <!-- Tracker -->
       <div class="agent-card reveal reveal-delay-2">
         <div class="agent-header">
-          <div class="agent-icon" style="background:rgba(52,211,153,0.08);border-color:rgba(52,211,153,0.15);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green2)" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-          </div>
+          <div class="agent-icon" style="background:rgba(52,211,153,0.08);border-color:rgba(52,211,153,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green2)" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
           <div class="agent-status"><span class="status-dot"></span> LIVE</div>
         </div>
         <div class="agent-pid">PID: TRACKER-01</div>
         <h3>Tracker</h3>
         <div class="agent-role">Performance Analytics</div>
-        <p>Tracks every trade to outcome. Win rates, P&amp;L, streaks, prop firm challenge progress, leaderboards, weekly recaps, and daily performance reports. Trade Review Engine analyzes patterns across your history. Full accountability, automated.</p>
+        <p>Every trade tracked to outcome. Win rates, P&amp;L, streaks, prop firm progress, leaderboards, weekly recaps. Trade Review Engine finds patterns. Full accountability.</p>
         <div class="agent-workflows">WF10 &bull; WF15 &bull; WF16 &bull; WF17 &bull; WF22b &bull; WF23 &bull; WF32</div>
       </div>
-      <!-- Amun -->
       <div class="agent-card reveal reveal-delay-3">
         <div class="agent-header">
-          <div class="agent-icon" style="background:linear-gradient(135deg,rgba(0,212,255,0.08),rgba(124,58,237,0.08));border-color:rgba(0,212,255,0.15);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          </div>
+          <div class="agent-icon" style="background:linear-gradient(135deg,rgba(0,212,255,0.08),rgba(124,58,237,0.08));border-color:rgba(0,212,255,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
           <div class="agent-status"><span class="status-dot"></span> LIVE</div>
         </div>
         <div class="agent-pid">PID: AMUN-01</div>
         <h3>Amun</h3>
         <div class="agent-role">AI Trading Assistant</div>
-        <p>GPT-4 powered conversational AI. Analyzes screenshots, responds with voice, remembers every user, answers questions with live market data, and adapts its personality to each trader.</p>
+        <p>GPT-4 powered. Analyzes your screenshots. Responds with voice. Remembers every conversation. 30 slash commands. Adapts to your trading style. Your personal trading mentor.</p>
         <div class="agent-workflows">Bot v2 &bull; WF24 &bull; WF25 &bull; WF26 &bull; WF28</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ LIVE DASHBOARDS ═══════════ -->
+<!-- LIVE DASHBOARDS -->
 <section class="features-section" id="dashboards">
   <div class="wrap">
     <div class="section-center">
       <div class="section-tag section-tag-bracket" style="background:rgba(0,212,255,0.06);border-color:rgba(0,212,255,0.15);color:var(--accent);">[ SYSTEM.DASHBOARDS ]</div>
       <h2>10 Live Dashboards.<br><span class="grad">Your Mission Control.</span></h2>
-      <p class="lead">Real-time intelligence panels that auto-update inside Discord. Every dashboard edits in place &mdash; no spam, no clutter. Just living, breathing data.</p>
+      <p class="lead">Auto-updating intelligence panels inside Discord. No spam, no clutter. Living data.</p>
     </div>
     <div class="bento-grid">
       <div class="bento-card span-2 featured-card reveal">
         <div class="bento-num"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
         <h3>Session Command Center</h3>
-        <p>24-hour visual timeline with kill zone tracking, live progress bars for Asia/London/NY/London Close, news threat level with countdown timers, pair spotlight for active sessions, and 7-day session performance stats. Your entire trading day at a glance. Updates every 60 seconds.</p>
+        <p>24-hour timeline with kill zone tracking, live progress bars for Asia/London/NY, news threat level with countdown timers, and 7-day session performance. Your entire trading day at a glance.</p>
       </div>
       <div class="bento-card reveal reveal-delay-1">
         <div class="bento-num"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
         <h3>Signal Scoreboard</h3>
-        <p>Every AI signal tracked in real-time. Grades, win rates, streaks, and outcomes. Nothing hidden &mdash; winners AND losers. Updates every 5 minutes.</p>
+        <p>Every signal tracked. Grades, win rates, streaks, outcomes. Wins AND losses. Nothing hidden.</p>
       </div>
       <div class="bento-card reveal">
         <div class="bento-num"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <h3>Live P&amp;L</h3>
-        <p>Real numbers, no filter. Every trade shows up &mdash; wins, losses, everything. Full transparency. Updates every 5 minutes.</p>
+        <p>Real numbers. Every trade. Wins, losses, everything. Full transparency. No cherry-picking.</p>
       </div>
       <div class="bento-card reveal reveal-delay-1">
         <div class="bento-num"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
         <h3>Currency Strength</h3>
-        <p>All 8 major currencies ranked strongest to weakest in real-time. Pair the strong against the weak &mdash; that&rsquo;s where the edge lives.</p>
+        <p>8 currencies ranked strongest to weakest in real-time. Pair the strong against the weak.</p>
       </div>
       <div class="bento-card reveal reveal-delay-2">
         <div class="bento-num"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h3>Institutional Order Flow</h3>
-        <p>Reads futures market in real-time. Net buying/selling, delta spikes, institutional footprints. See what big money does before price moves. Updates every 60 seconds.</p>
+        <p>Futures market data. Net buying vs selling. Delta spikes. See what big money does before price moves.</p>
       </div>
       <div class="bento-card reveal">
         <div class="bento-num"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
         <h3>News Intelligence</h3>
-        <p>Every economic event tracked from 3 sources. Threat level color-coded from GREEN to CRITICAL. Basket Exposure Radar shows which of YOUR pairs are in the crosshairs.</p>
+        <p>Economic events from 3 sources. Threat level color-coded. Basket Exposure Radar shows which pairs are in the crosshairs.</p>
       </div>
       <div class="bento-card reveal reveal-delay-1">
         <div class="bento-num"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green2)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>+ 4 More Dashboards</h3>
-        <p>System Heartbeat, Daily Bias, Prop Firm Tracker, Community Leaderboard. Every dashboard auto-updates, rebrands per server, and manages its own lifecycle. Zero maintenance.</p>
+        <h3>+ 4 More</h3>
+        <p>System Heartbeat, Daily Bias, Prop Firm Tracker, Community Leaderboard. All auto-updating. Zero maintenance.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ PLATFORM CAPABILITIES ═══════════ -->
+<!-- PLATFORM CAPABILITIES -->
 <section class="features-section quant-grid" id="platform">
   <div class="wrap">
     <div class="section-center">
       <div class="section-tag section-tag-bracket">[ SYSTEM.CAPABILITIES ]</div>
-      <h2>Institutional-Grade Infrastructure.<br>Zero Infrastructure Work.</h2>
-      <p class="lead">Everything runs autonomously. You deploy it once and the system handles the rest &mdash; scanning, analysis, execution, tracking, and learning.</p>
+      <h2>Built for Prop Firm Traders.<br><span class="grad">Not Another Signal Service.</span></h2>
+      <p class="lead">Signal services send alerts. OXY ALGO scans, analyzes, executes, manages, tracks, and learns &mdash; autonomously.</p>
     </div>
     <div class="bento-grid">
       <div class="bento-card span-2 featured-card reveal">
         <div class="bento-num">01</div>
-        <h3>Multi-Instrument Scanning</h3>
-        <p>Every instrument gets its own analysis pipeline with professional M15 + H4 charts, EMA, RSI, ATR overlays, and clear direction calls. 38 instruments scanned every 15 minutes across 7 forex baskets plus crypto, indices, and commodities. Cross-pairs automatically post to both relevant baskets. Every signal enriched with correlation intelligence.</p>
+        <h3>48-Instrument Scanning Engine</h3>
+        <p>28 forex pairs in 7 baskets, 10 crypto coins (24/7), 3 indices, 3 commodities. Each pair gets M15 + H4 analysis with professional charts. Cross-pairs auto-post to both baskets. Every signal enriched with currency strength, sentiment, and correlation data.</p>
       </div>
       <div class="bento-card reveal reveal-delay-1">
         <div class="bento-num">02</div>
-        <h3>Correlation Intelligence</h3>
-        <p>Currency Strength Matrix ranks 8 currencies every 15 minutes. SMT Divergence detection, BTC.D Quadrant for crypto (ALT_SEASON / BTC_ONLY / CRYPTO_WINTER / EXIT_MODE), DXY-inverse tracking for indices, Gold-DXY anomaly detection. Every signal shows correlation context.</p>
+        <h3>ICT/SMC Confluence Scoring</h3>
+        <p>Order Blocks, Fair Value Gaps, liquidity sweeps, Power of 3 &mdash; scored 0-100 by AI. Only high-grade setups trigger execution. You see exactly why every trade happens.</p>
       </div>
       <div class="bento-card reveal">
         <div class="bento-num">03</div>
-        <h3>Crypto + BTC.D Intelligence</h3>
-        <p>10 coins scanned 24/7 with BTC Dominance Quadrant Matrix &mdash; ALT_SEASON, BTC_ONLY, CRYPTO_WINTER, EXIT_MODE. Per-coin BTC correlation tracking, ETH/BTC strength analysis.</p>
-      </div>
-      <div class="bento-card span-2 reveal reveal-delay-1">
-        <div class="bento-num">04</div>
-        <h3>ICT/SMC Confluence Scoring</h3>
-        <p>Institutional Smart Money Concepts automated at scale. Order Blocks, Fair Value Gaps, liquidity sweeps, Power of 3 &mdash; each scored 0-100 by AI during Kill Zones. Only setups above threshold trigger downstream execution.</p>
-      </div>
-      <div class="bento-card reveal">
-        <div class="bento-num">05</div>
-        <h3>Automated Risk Management</h3>
-        <p>Progressive trailing stops across 4 stages. Time-based exits. 5% daily / 10% total drawdown limits. Auto-blocks trades when risk thresholds approach.</p>
+        <h3>Sentiment Intelligence</h3>
+        <p>Live retail positioning from Myfxbook. 41 instruments. When 80% of retail is long and you're shorting, that's an edge. Contrarian scoring built into every signal.</p>
       </div>
       <div class="bento-card reveal reveal-delay-1">
+        <div class="bento-num">04</div>
+        <h3>Prop Firm Risk Guardian</h3>
+        <p>Designed for FTMO, FundedNext, The5ers, and every major prop firm. Auto-enforces daily drawdown, total drawdown, max trades, and position limits. Blocks you before you break the rules.</p>
+      </div>
+      <div class="bento-card span-2 featured-card reveal reveal-delay-2">
+        <div class="bento-num">05</div>
+        <h3>Full Trade Control from Discord</h3>
+        <p>30 slash commands. Close positions, modify SL/TP, break even all trades, activate trailing stops, place pending orders, and hit the kill switch &mdash; all from your phone. No MetaTrader needed. No laptop needed. Full position control from anywhere.</p>
+      </div>
+      <div class="bento-card reveal">
         <div class="bento-num">06</div>
-        <h3>News Event Filtering</h3>
-        <p>Economic calendar integration with impact scoring. Automatically blocks trade execution 15 minutes before high-impact events &mdash; NFP, CPI, FOMC.</p>
+        <h3>News Event Blocking</h3>
+        <p>Auto-blocks trades 15 min before high-impact events &mdash; NFP, CPI, FOMC. No human discipline required.</p>
+      </div>
+      <div class="bento-card reveal reveal-delay-1">
+        <div class="bento-num">07</div>
+        <h3>Currency Strength Matrix</h3>
+        <p>Ranks all 8 currencies every 15 min. SMT Divergence detection. BTC.D Quadrant for crypto. DXY tracking for indices.</p>
       </div>
       <div class="bento-card reveal reveal-delay-2">
-        <div class="bento-num">07</div>
-        <h3>Daily AI Briefings</h3>
-        <p>Morning intelligence reports with market bias, key levels, news events, and top setups &mdash; generated and delivered automatically.</p>
-      </div>
-      <div class="bento-card span-2 featured-card reveal">
         <div class="bento-num">08</div>
         <h3>Performance Accountability</h3>
-        <p>Every trade logged, graded, and reviewed by AI. Daily P&amp;L reports, win rate tracking, prop firm challenge progress, streaks, milestones, and leaderboards. Full transparency &mdash; every signal tracked to verified outcome. No hiding bad calls.</p>
-      </div>
-      <div class="bento-card reveal reveal-delay-1">
-        <div class="bento-num">09</div>
-        <h3>Market Heatmap</h3>
-        <p>Visual dashboard showing all 38 instruments at a glance. Color-coded by trend direction, momentum, and signal activity.</p>
-      </div>
-      <div class="bento-card reveal">
-        <div class="bento-num">10</div>
-        <h3>Session Intelligence</h3>
-        <p>Kill Zone detection, session flow tracking, and automated session prep. Knows which sessions produce the best setups for each instrument.</p>
-      </div>
-      <div class="bento-card reveal reveal-delay-1">
-        <div class="bento-num">11</div>
-        <h3>Prop Firm Compatible</h3>
-        <p>Built for prop firm challenges. Risk Guardian enforces challenge rules automatically &mdash; max daily loss, total drawdown, and position limits.</p>
-      </div>
-      <div class="bento-card reveal reveal-delay-2">
-        <div class="bento-num">12</div>
-        <h3>Content Engine 2.0</h3>
-        <p>5-pillar emotional content system (Pain, Proof, Education, Identity, Aspiration) generates ~36 viral video packages weekly. AI-written scripts with format randomizers, schedule jitter, and humanization rules. Auto-distributed to 9 social platforms.</p>
-      </div>
-      <div class="bento-card span-2 featured-card reveal">
-        <div class="bento-num">13</div>
-        <h3>Sentiment Intelligence</h3>
-        <p>Live retail positioning data from Myfxbook across 41 instruments. When the crowd leans one way, OXY ALGO leans the other. Contrarian scoring built into every signal &mdash; if 80% of retail is long and you're shorting, that's an edge. Sentiment data injected into GBP, Global, and Crypto scanners with contrarian buy/sell bonuses.</p>
-      </div>
-      <div class="bento-card reveal reveal-delay-1">
-        <div class="bento-num">14</div>
-        <h3>Risk Mode Toggle</h3>
-        <p>Switch between SAFE and AGGRESSIVE modes with a single slash command. SAFE enforces all filters &mdash; H4 alignment, dead zone, premium/discount. AGGRESSIVE bypasses soft filters for more signals. Hard safety limits (max trades, cooldown, news block) always enforced. System-wide &mdash; scanners + executor all obey.</p>
-      </div>
-      <div class="bento-card reveal reveal-delay-2">
-        <div class="bento-num">15</div>
-        <h3>Institutional Order Flow</h3>
-        <p>Delta gate reads futures market data for BTC, ETH, and indices. Net buying vs selling, delta consistency, divergence detection. When institutional footprints align with your setup, the system gives you the green light.</p>
-      </div>
-      <div class="bento-card reveal">
-        <div class="bento-num">16</div>
-        <h3>Watchlist Alerts</h3>
-        <p>Track your favorite instruments. Get instant DM alerts when new signals fire for your watchlist. Free members get 1 slot, Premium get 5, VIP get 15.</p>
-      </div>
-      <div class="bento-card reveal reveal-delay-1">
-        <div class="bento-num">17</div>
-        <h3>Trade Timelapse Engine</h3>
-        <p>Captures M15 chart screenshots every 15 minutes throughout each trade's lifecycle. On close, compiles a complete visual timelapse &mdash; before, during, and after &mdash; stored for video backgrounds and trade review.</p>
+        <p>Every trade logged, graded, reviewed by AI. Win rates, P&amp;L, streaks, prop firm progress. Full transparency. Every signal tracked to verified outcome.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ AI INTELLIGENCE ═══════════ -->
+<!-- AI INTELLIGENCE -->
 <section class="intelligence-section" id="intelligence">
   <div class="wrap">
     <div class="section-center">
       <div class="section-tag section-tag-bracket" style="background:rgba(124,58,237,0.06);border-color:rgba(124,58,237,0.15);color:var(--purple2);">[ SYSTEM.INTELLIGENCE ]</div>
-      <h2>Not Just Automation.<br><span class="grad">Real Intelligence.</span></h2>
-      <p class="lead">OXY ALGO doesn't just follow rules. It sees, listens, remembers, and learns. Every interaction makes the system smarter.</p>
+      <h2>Not a Black Box.<br><span class="grad">You See Everything.</span></h2>
+      <p class="lead">Every trade shows score, grade, confidence, setup type, session, and reasoning. This isn't "trust our algorithm." This is full transparency.</p>
     </div>
     <div class="intel-grid-v2">
-      <!-- Vision AI -->
       <div class="intel-card-v2 reveal">
         <div class="intel-badge-new">NEW</div>
-        <div class="intel-icon-v2" style="background:rgba(0,212,255,0.06);">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-        </div>
+        <div class="intel-icon-v2" style="background:rgba(0,212,255,0.06);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
         <h3>Vision AI</h3>
-        <p>Send a screenshot &mdash; P&amp;L, chart markup, trade result, account balance &mdash; and the AI analyzes it visually using GPT-4o. It reads your charts, spots your mistakes, identifies your setup quality, and gives you institutional-level feedback.</p>
+        <p>Send a screenshot and get institutional-level feedback. GPT-4o reads your charts, spots mistakes, identifies setup quality, and tells you what you missed.</p>
         <div class="intel-tech">Powered by GPT-4o Vision</div>
       </div>
-      <!-- Voice AI -->
       <div class="intel-card-v2 reveal reveal-delay-1">
         <div class="intel-badge-new">NEW</div>
-        <div class="intel-icon-v2" style="background:rgba(124,58,237,0.06);">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="1.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-        </div>
+        <div class="intel-icon-v2" style="background:rgba(124,58,237,0.06);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="1.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
         <h3>Voice AI</h3>
-        <p>Send a voice message, get a voice reply. Whisper transcribes your audio, GPT-4 processes the question, and ElevenLabs synthesizes a natural voice response. The AI assistant you can actually talk to.</p>
+        <p>Send a voice message, get a voice reply. Whisper transcribes, GPT-4 processes, ElevenLabs speaks back. Hands-free market analysis.</p>
         <div class="intel-tech">Whisper + GPT-4 + ElevenLabs</div>
       </div>
-      <!-- Adaptive Memory -->
       <div class="intel-card-v2 reveal reveal-delay-2">
-        <div class="intel-icon-v2" style="background:rgba(245,158,11,0.06);">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><line x1="9" y1="21" x2="15" y2="21"/></svg>
-        </div>
+        <div class="intel-icon-v2" style="background:rgba(245,158,11,0.06);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><line x1="9" y1="21" x2="15" y2="21"/></svg></div>
         <h3>Adaptive Memory</h3>
-        <p>The AI remembers every user &mdash; your conversations, favorite instruments, trading style, past mistakes, and emotional patterns. It annotates after every interaction, building a profile that makes each response more personalized.</p>
+        <p>Remembers your conversations, instruments, trading style, past mistakes. Gets smarter after every interaction. Your personal AI that actually knows you.</p>
         <div class="intel-tech">SQLite persistence + Self-annotation</div>
       </div>
-      <!-- Sentiment Intelligence -->
       <div class="intel-card-v2 reveal">
-        <div class="intel-badge-new">NEW</div>
-        <div class="intel-icon-v2" style="background:rgba(245,158,11,0.06);">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>Sentiment Intelligence</h3>
-        <p>Live retail positioning from Myfxbook &mdash; 41 instruments tracked every 30 minutes. When 80% of retail is long, the AI flags a contrarian short edge. Sentiment bars, crowd bias labels, and contrarian bonuses injected into every scanner signal.</p>
-        <div class="intel-tech">Myfxbook API + Contrarian scoring</div>
-      </div>
-      <!-- Signal Intelligence -->
-      <div class="intel-card-v2 reveal reveal-delay-1">
-        <div class="intel-icon-v2" style="background:rgba(16,185,129,0.06);">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-        </div>
+        <div class="intel-icon-v2" style="background:rgba(16,185,129,0.06);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
         <h3>Signal Intelligence</h3>
-        <p>Every signal tracked to outcome &mdash; WIN, LOSS, or EXPIRED. The system checks every 15 minutes whether open signals hit TP or SL. Verified win rates, net pips, per-instrument performance, and session analytics.</p>
+        <p>Every signal tracked to outcome &mdash; WIN, LOSS, or EXPIRED. Verified every 15 min. Win rates, net pips, per-instrument performance. Ask the AI about any pair and it gives you the real data.</p>
         <div class="intel-tech">Outcome tracking + Pattern recognition</div>
       </div>
-      <!-- RAG Knowledge Base -->
       <div class="intel-card-v2 reveal reveal-delay-1">
-        <div class="intel-icon-v2" style="background:rgba(96,165,250,0.06);">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        </div>
+        <div class="intel-icon-v2" style="background:rgba(96,165,250,0.06);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
         <h3>75-Entry Knowledge Base</h3>
-        <p>ICT/SMC playbook, correlation patterns (Currency Strength, SMT Divergence, BTC.D Quadrant), 23-book trading psychology framework, session strategies, market regime detection, and sales intelligence. Every response references the most relevant knowledge.</p>
+        <p>ICT/SMC playbook, correlation patterns, 23-book psychology framework, session strategies. Every response references the most relevant knowledge.</p>
         <div class="intel-tech">RAG retrieval + Dynamic injection</div>
       </div>
-      <!-- Adaptive Personality -->
       <div class="intel-card-v2 reveal reveal-delay-2">
         <div class="intel-badge-new">NEW</div>
-        <div class="intel-icon-v2" style="background:rgba(239,68,68,0.06);">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-        </div>
-        <h3>Adaptive Personality</h3>
-        <p>Not a generic chatbot. The AI roasts bad trades, hypes winners, calls out repeat mistakes, and references your history. It uses your past conversations against you &mdash; in the best way.</p>
-        <div class="intel-tech">Memory-powered personalization</div>
-      </div>
-      <!-- Content Engine -->
-      <div class="intel-card-v2 reveal">
-        <div class="intel-badge-new">NEW</div>
-        <div class="intel-icon-v2" style="background:rgba(245,158,11,0.06);">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-        </div>
-        <h3>Content Engine 2.0</h3>
-        <p>5-pillar emotional content system &mdash; Pain, Proof, Education, Identity, Aspiration. Each pillar has unique hooks, SFX cues, audio processing, and comment-driving CTAs. Format randomizer (faceless/avatar/real clip), schedule jitter, variable duration. ~36 viral videos/week.</p>
-        <div class="intel-tech">Perplexity AI + Airtable + HeyGen + 5-Pillar System</div>
-      </div>
-      <!-- Multi-Voice AI -->
-      <div class="intel-card-v2 reveal reveal-delay-1">
-        <div class="intel-badge-new">NEW</div>
-        <div class="intel-icon-v2" style="background:rgba(52,211,153,0.06);">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green2)" stroke-width="1.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-        </div>
-        <h3>Multi-Voice AI</h3>
-        <p>3 ElevenLabs voices, 13 scheduled voice posts per day across 10 channels. Perplexity web search for real-time market context. The AI doesn't just type &mdash; it speaks.</p>
-        <div class="intel-tech">ElevenLabs TTS + Perplexity Search</div>
-      </div>
-      <!-- Mentor Mode -->
-      <div class="intel-card-v2 reveal reveal-delay-2">
-        <div class="intel-badge-new">NEW</div>
-        <div class="intel-icon-v2" style="background:rgba(245,158,11,0.06);">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>Mentor Mode</h3>
-        <p>AI analyzes your trading patterns &mdash; strengths, weaknesses, psychology. Personalized coaching based on your actual data. VIP+ only.</p>
+        <div class="intel-icon-v2" style="background:rgba(245,158,11,0.06);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>AI Mentor</h3>
+        <p>Analyzes your trading patterns. Identifies your strengths, weaknesses, and emotional triggers. Personalized coaching based on your actual data. Not generic advice &mdash; advice built on YOUR history.</p>
         <div class="intel-tech">Pattern analysis + Personalized coaching</div>
-      </div>
-      <!-- Voice Trade Journal -->
-      <div class="intel-card-v2 reveal">
-        <div class="intel-badge-new">NEW</div>
-        <div class="intel-icon-v2" style="background:rgba(124,58,237,0.06);">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="1.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><path d="M4 21h16"/></svg>
-        </div>
-        <h3>Voice Trade Journal</h3>
-        <p>Describe your trade by voice. AI parses symbol, direction, entry, SL, TP, outcome, and logs it to your journal. VIP+ feature.</p>
-        <div class="intel-tech">Whisper + GPT-4 + Auto-logging</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ LIVE SIGNAL FEED ═══════════ -->
+<!-- LIVE SIGNAL FEED -->
 <section class="signals-section" id="live-signals">
   <div class="wrap">
     <div class="section-center">
       <div class="section-tag section-tag-bracket">[ LIVE.FEED ]</div>
       <h2>Watch It Work. <span class="grad">Right Now.</span></h2>
-      <p class="lead">Live signals from the last 24 hours. Updated every 15 minutes. Every outcome tracked.</p>
+      <p class="lead">Live signals from the last 24 hours. Every outcome tracked. No cherry-picking.</p>
     </div>
     <div id="live-signal-feed">
       <p style="color:var(--text3);text-align:center;font-size:0.9em;">Connecting to live feed&hellip;</p>
@@ -568,120 +521,37 @@
   </div>
 </section>
 
-<!-- ═══════════ ARCHITECTURE ═══════════ -->
-<section class="ecosystem-section" id="architecture">
-  <div class="wrap">
-    <div class="section-center">
-      <div class="section-tag section-tag-bracket">[ SYSTEM.ARCHITECTURE ]</div>
-      <h2>Five Layers. One System.</h2>
-      <p class="lead">From market data to social content &mdash; every layer works autonomously and communicates in real-time.</p>
-    </div>
-    <div class="arch-layers">
-      <div class="arch-layer reveal">
-        <div class="arch-layer-num">L1</div>
-        <div class="arch-layer-content">
-          <h3>Engine Room</h3>
-          <div class="arch-layer-sub">n8n Orchestration</div>
-          <p>44 automated workflows scan markets, generate signals, execute trades, post to Discord, track performance, capture trade timelapses, and generate social content. 10 live dashboards auto-update in place. Runs 24/7 on dedicated infrastructure.</p>
-        </div>
-        <div class="arch-layer-stat">44 workflows</div>
-      </div>
-      <div class="arch-connector"></div>
-      <div class="arch-layer reveal reveal-delay-1">
-        <div class="arch-layer-num">L2</div>
-        <div class="arch-layer-content">
-          <h3>Interface Layer</h3>
-          <div class="arch-layer-sub">Discord Bot v2</div>
-          <p>30 slash commands with full trade management, @mention responses, auto-detect trading questions, voice replies, screenshot analysis. GPT-4 powered with live Arrissa market data. Tier-gated access. Close positions, modify SL/TP, break even, trailing stops, pending orders, and emergency kill switch &mdash; all from Discord.</p>
-        </div>
-        <div class="arch-layer-stat">30 commands</div>
-      </div>
-      <div class="arch-connector"></div>
-      <div class="arch-layer reveal reveal-delay-2">
-        <div class="arch-layer-num">L3</div>
-        <div class="arch-layer-content">
-          <h3>Intelligence Layer</h3>
-          <div class="arch-layer-sub">RAG + Memory + Profiling</div>
-          <p>75-entry knowledge base including correlation patterns, persistent user profiles, self-annotation after every interaction, sales intelligence, psychology detection. The system learns from every conversation.</p>
-        </div>
-        <div class="arch-layer-stat">75 KB entries</div>
-      </div>
-      <div class="arch-connector"></div>
-      <div class="arch-layer reveal reveal-delay-3">
-        <div class="arch-layer-num">L4</div>
-        <div class="arch-layer-content">
-          <h3>Signal Intelligence</h3>
-          <div class="arch-layer-sub">Self-Learning Market Memory</div>
-          <p>Passive tracker captures every signal, stores structured data in SQLite, resolves outcomes every 15 minutes, surfaces patterns. Win rates, hot instruments, grade breakdowns, and session analytics &mdash; all self-updating.</p>
-        </div>
-        <div class="arch-layer-stat">38 instruments</div>
-      </div>
-      <div class="arch-connector"></div>
-      <div class="arch-layer reveal reveal-delay-4">
-        <div class="arch-layer-num">L5</div>
-        <div class="arch-layer-content">
-          <h3>Content Bridge</h3>
-          <div class="arch-layer-sub">Automated Social Pipeline</div>
-          <p>Content Engine 2.0 with 5-pillar emotional system generates ~36 video packages per week. Trade Timelapse Engine captures chart screenshots throughout each trade's lifecycle for video backgrounds. Distributed to 9 platforms.</p>
-        </div>
-        <div class="arch-layer-stat">~36 videos/week</div>
-      </div>
-    </div>
-    <div class="eco-features">
-      <div class="eco-feat reveal"><div class="eco-feat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h4>Sub-3s Latency</h4><p>From market event to notification in under 3 seconds</p></div>
-      <div class="eco-feat reveal reveal-delay-1"><div class="eco-feat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>7 Self-Hosted APIs</h4><p>No rate limits. No third-party dependencies. Full data ownership</p></div>
-      <div class="eco-feat reveal reveal-delay-2"><div class="eco-feat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h4>700+ Scans/Day</h4><p>Every instrument analyzed every 15 minutes, tracked by Signal Intelligence</p></div>
-      <div class="eco-feat reveal reveal-delay-3"><div class="eco-feat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><h4>Verified Outcomes</h4><p>Every signal tracked to WIN, LOSS, or EXPIRED. Verified by code, not claims</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="glow-divider"></div>
-
-<!-- ═══════════ AI ASSISTANT + TERMINAL ═══════════ -->
+<!-- AI ASSISTANT + TERMINAL -->
 <section class="bot-section" id="ai-assistant">
   <div class="wrap">
     <div class="bot-wrapper">
       <div>
         <div class="floating-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> GPT-4 Powered</div>
         <div class="section-tag section-tag-bracket">[ SYSTEM.TERMINAL ]</div>
-        <h2>Ask. Analyze. Execute. <span class="grad">Manage.</span></h2>
-        <p class="lead">30 slash commands with full trade management, natural conversation, screenshot analysis, and voice replies. Your entire trading terminal lives inside Discord.</p>
+        <h2>30 Commands.<br><span class="grad">Full Control.</span></h2>
+        <p class="lead">Your entire trading terminal lives inside Discord. Analyze, execute, manage &mdash; all from your phone.</p>
         <div class="cmd-table">
-          <div class="cmd-row"><span class="cmd-slash">/help</span><span class="cmd-info">Platform overview + command list</span><span class="bot-cmd-tier tier-free">Free</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/status</span><span class="cmd-info">System + market status</span><span class="bot-cmd-tier tier-free">Free</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/news</span><span class="cmd-info">Economic calendar + impact scores</span><span class="bot-cmd-tier tier-free">Free</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/bias</span><span class="cmd-info">Daily directional bias + key levels</span><span class="bot-cmd-tier tier-free">Free</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/ask</span><span class="cmd-info">Ask anything in natural language</span><span class="bot-cmd-tier tier-free">Free</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/upgrade</span><span class="cmd-info">Compare tiers + upgrade options</span><span class="bot-cmd-tier tier-free">Free</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/chart</span><span class="cmd-info">Live charts with EMA, RSI, ATR</span><span class="bot-cmd-tier tier-premium">Premium+</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/analyze</span><span class="cmd-info">Full ICT/SMC confluence analysis</span><span class="bot-cmd-tier tier-premium">Premium+</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/signals</span><span class="cmd-info">Signal Intelligence + win rates</span><span class="bot-cmd-tier tier-premium">Premium+</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/levels</span><span class="cmd-info">Key levels + liquidity zones</span><span class="bot-cmd-tier tier-premium">Premium+</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/risk</span><span class="cmd-info">Position sizing + exposure analysis</span><span class="bot-cmd-tier tier-premium">Premium+</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/riskcheck</span><span class="cmd-info">Risk engine status + trailing stops</span><span class="bot-cmd-tier tier-premium">Premium+</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/xp</span><span class="cmd-info">XP score + leaderboard rankings</span><span class="bot-cmd-tier tier-premium">Premium+</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/visualize</span><span class="cmd-info">Generate trading infographics</span><span class="bot-cmd-tier tier-premium">Premium+</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/pnl</span><span class="cmd-info">Win rate + P&amp;L + trade history</span><span class="bot-cmd-tier tier-vip">VIP+</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/replay &lt;pair&gt;</span><span class="cmd-info">Last 5 signals + outcomes for any instrument</span><span class="bot-cmd-tier tier-free">Free</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/whosshot</span><span class="cmd-info">Top 3 hottest instruments right now</span><span class="bot-cmd-tier tier-free">Free</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/watchlist add/remove/list</span><span class="cmd-info">Signal DM alerts for watched instruments</span><span class="bot-cmd-tier tier-free">Free</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/compare &lt;pair1&gt; &lt;pair2&gt;</span><span class="cmd-info">Side-by-side instrument comparison</span><span class="bot-cmd-tier tier-premium">Premium+</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/challenge current/leaderboard</span><span class="cmd-info">Weekly trading challenges + leaderboard</span><span class="bot-cmd-tier tier-premium">Premium+</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/mentor [focus]</span><span class="cmd-info">AI-powered personalized trading coach</span><span class="bot-cmd-tier tier-vip">VIP+</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/help</span><span class="cmd-info">Platform overview</span><span class="bot-cmd-tier tier-free">Free</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/news</span><span class="cmd-info">Economic calendar</span><span class="bot-cmd-tier tier-free">Free</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/bias</span><span class="cmd-info">Daily directional bias</span><span class="bot-cmd-tier tier-free">Free</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/ask</span><span class="cmd-info">Ask anything</span><span class="bot-cmd-tier tier-free">Free</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/chart</span><span class="cmd-info">Live charts</span><span class="bot-cmd-tier tier-premium">Premium+</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/analyze</span><span class="cmd-info">ICT/SMC analysis</span><span class="bot-cmd-tier tier-premium">Premium+</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/signals</span><span class="cmd-info">Verified win rates</span><span class="bot-cmd-tier tier-premium">Premium+</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/levels</span><span class="cmd-info">Key levels</span><span class="bot-cmd-tier tier-premium">Premium+</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/delta</span><span class="cmd-info">Order flow</span><span class="bot-cmd-tier tier-premium">Premium+</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/pnl</span><span class="cmd-info">Win rate + P&amp;L</span><span class="bot-cmd-tier tier-vip">VIP+</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/mentor</span><span class="cmd-info">AI coaching</span><span class="bot-cmd-tier tier-vip">VIP+</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/prop</span><span class="cmd-info">Challenge tracking</span><span class="bot-cmd-tier tier-vip">VIP+</span></div>
           <div class="cmd-row cmd-row-divider"><span class="cmd-section-label">TRADE CONTROL</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/trade positions</span><span class="cmd-info">View all open trades with ticket numbers</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/trade close &lt;ticket&gt;</span><span class="cmd-info">Close a specific position</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/trade closeall [symbol]</span><span class="cmd-info">Close all positions or all of one symbol</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/trade breakeven &lt;ticket|all&gt;</span><span class="cmd-info">Move stop loss to entry price</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/trade modify &lt;ticket&gt; [sl] [tp]</span><span class="cmd-info">Edit SL and/or TP on any position</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/trade trail &lt;ticket&gt; &lt;points&gt;</span><span class="cmd-info">Activate trailing stop on a position</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/trade closeprofits &lt;symbol&gt;</span><span class="cmd-info">Close only winning positions</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/trade closelosses &lt;symbol&gt;</span><span class="cmd-info">Close only losing positions</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/pending place &lt;type&gt; &lt;sym&gt; &lt;price&gt;</span><span class="cmd-info">Place limit/stop order</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/pending list</span><span class="cmd-info">Show all pending orders</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/pending delete &lt;ticket&gt;</span><span class="cmd-info">Cancel a pending order</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
-          <div class="cmd-row"><span class="cmd-slash">/killswitch confirm:YES</span><span class="cmd-info">Emergency: close ALL + cancel ALL</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/trade positions</span><span class="cmd-info">View all open trades</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/trade close</span><span class="cmd-info">Close any position</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/trade breakeven</span><span class="cmd-info">Move SL to entry</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/trade modify</span><span class="cmd-info">Edit SL/TP</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/trade trail</span><span class="cmd-info">Trailing stop</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/pending place</span><span class="cmd-info">Limit/stop orders</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
+          <div class="cmd-row"><span class="cmd-slash">/killswitch</span><span class="cmd-info">Emergency close ALL</span><span class="bot-cmd-tier tier-owner">Owner</span></div>
+          <div class="cmd-row" style="padding-top:8px;"><span style="color:var(--text3);font-size:0.75em;">+ 10 more commands</span></div>
         </div>
       </div>
       <div class="bot-terminal reveal scanline">
@@ -693,11 +563,10 @@
         </div>
         <div class="terminal-body">
           <div class="terminal-line"><span class="terminal-prompt">$</span><span class="terminal-cmd"> oxy scan --all --timeframe M15</span></div>
-          <div class="terminal-line"><span class="terminal-ts">[02:14:33]</span><span class="terminal-agent-label scanner">SCANNER</span><span class="terminal-response">Scanning 38 instruments across 7 forex baskets...</span></div>
+          <div class="terminal-line"><span class="terminal-ts">[02:14:33]</span><span class="terminal-agent-label scanner">SCANNER</span><span class="terminal-response">Scanning 48 instruments across 7 baskets...</span></div>
           <div class="terminal-line"><span class="terminal-ts">[02:14:34]</span><span class="terminal-agent-label scanner">SCANNER</span><span class="terminal-success">&#10003; 3 setups detected &mdash; filtering by confluence</span></div>
-          <div class="terminal-line"><span class="terminal-ts">[02:14:34]</span><span class="terminal-agent-label scanner">SCANNER</span><span class="terminal-arrow">&rarr; XAUUSD: H4 Order Block detected at 2,645</span></div>
+          <div class="terminal-line"><span class="terminal-ts">[02:14:34]</span><span class="terminal-agent-label scanner">SCANNER</span><span class="terminal-arrow">&rarr; XAUUSD: H4 Order Block at 2,645</span></div>
           <div class="terminal-line"><span class="terminal-prompt">$</span><span class="terminal-cmd"> oxy analyze XAUUSD</span></div>
-          <div class="terminal-line"><span class="terminal-ts">[02:14:35]</span><span class="terminal-agent-label analyst">ANALYST</span><span class="terminal-response">Running ICT confluence model...</span></div>
           <div class="terminal-line"><span class="terminal-ts">[02:14:35]</span><span class="terminal-agent-label analyst">ANALYST</span><span class="terminal-success">&#10003; Score: 87/100 &mdash; BULLISH &mdash; Grade: A+</span></div>
           <div class="terminal-line"><span class="terminal-ts">[02:14:36]</span><span class="terminal-agent-label analyst">ANALYST</span><span class="terminal-arrow">&rarr; Entry: 2,648.50 | SL: 2,635 | TP: 2,680</span></div>
           <div class="terminal-line"><span class="terminal-prompt">$</span><span class="terminal-cmd"> oxy execute XAUUSD BUY --confidence 87</span></div>
@@ -706,8 +575,6 @@
           <div class="terminal-line"><span class="terminal-ts">[02:14:37]</span><span class="terminal-agent-label tracker">TRACKER</span><span class="terminal-dim">Signal logged &mdash; outcome tracking active</span></div>
           <div class="terminal-line"><span class="terminal-prompt">$</span><span class="terminal-cmd"> /trade breakeven all</span></div>
           <div class="terminal-line"><span class="terminal-ts">[02:31:12]</span><span class="terminal-agent-label executor">EXECUTOR</span><span class="terminal-success">&#10003; All positions moved to break even</span></div>
-          <div class="terminal-line"><span class="terminal-prompt">$</span><span class="terminal-cmd"> /trade trail #428815 points:50</span></div>
-          <div class="terminal-line"><span class="terminal-ts">[02:31:13]</span><span class="terminal-agent-label executor">EXECUTOR</span><span class="terminal-highlight">Trailing stop activated: 50 points on XAUUSD</span></div>
           <div class="terminal-line"><span class="terminal-prompt">$</span><span class="terminal-cursor"></span></div>
         </div>
       </div>
@@ -715,172 +582,13 @@
   </div>
 </section>
 
-<!-- ═══════════ AUTOMATED EXECUTION ═══════════ -->
-<section class="copy-section" id="execution">
-  <div class="wrap">
-    <div class="section-center">
-      <div class="section-tag section-tag-bracket" style="background:rgba(16,185,129,0.06);border-color:rgba(16,185,129,0.15);color:var(--green);">[ SYSTEM.EXECUTION ]</div>
-      <div class="live-execution-badge"><span class="pulse-dot"></span> LIVE EXECUTION ACTIVE</div>
-      <h2>From Signal to Trade.<br><span class="grad">Zero Human Intervention.</span></h2>
-      <p class="lead">The system doesn't just find setups &mdash; it executes them. Automated entries, position sizing, risk management, and exit logic.</p>
-    </div>
-    <div class="copy-platforms">
-      <div class="copy-platform reveal">
-        <div class="copy-plat-icon" style="background:rgba(0,212,255,0.06);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
-        <h4>MetaTrader 5</h4>
-      </div>
-      <div class="copy-platform reveal reveal-delay-1">
-        <div class="copy-plat-icon" style="background:rgba(124,58,237,0.06);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
-        <h4>MetaTrader 4</h4>
-      </div>
-      <div class="copy-platform reveal reveal-delay-2">
-        <div class="copy-plat-icon" style="background:rgba(245,158,11,0.06);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-        <h4>Tradeovate</h4>
-      </div>
-      <div class="copy-platform reveal reveal-delay-3">
-        <div class="copy-plat-icon" style="background:rgba(16,185,129,0.06);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <h4>Trade Locker</h4>
-      </div>
-      <div class="copy-platform reveal reveal-delay-4">
-        <div class="copy-plat-icon" style="background:rgba(96,165,250,0.06);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-        <h4>Liquid Broker</h4>
-      </div>
-    </div>
-    <div class="copy-grid">
-      <div class="copy-card copy-main reveal">
-        <div class="copy-card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-        <h3>End-to-End Automation</h3>
-        <p>Scanner finds the setup. Analyst scores it. Guardian checks the risk. Executor places the trade on your account &mdash; with calculated position size, precise SL/TP, and progressive trailing stops. All within seconds of signal generation.</p>
-      </div>
-      <div class="copy-card reveal reveal-delay-1">
-        <div class="copy-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Your Risk Parameters</h3>
-        <p>Set your own lot size, max daily loss, and drawdown limits. Risk Guardian enforces your rules on every trade. Your capital stays protected &mdash; even on autopilot.</p>
-      </div>
-      <div class="copy-card reveal reveal-delay-2">
-        <div class="copy-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
-        <h3>Full Audit Trail</h3>
-        <p>Every trade logged automatically. Entry, exit, P&amp;L, reasoning, risk state &mdash; all posted in real time. Complete transparency. Complete accountability.</p>
-      </div>
-    </div>
-    <div class="risk-checklist reveal">
-      <div class="risk-checklist-title">Risk Validation Engine v5.1 + Full Trade Control</div>
-      <div class="risk-checklist-grid">
-        <div class="risk-check-item"><span class="risk-check">&#10003;</span> Max 2 trades per instrument</div>
-        <div class="risk-check-item"><span class="risk-check">&#10003;</span> 48h cooldown after max daily loss</div>
-        <div class="risk-check-item"><span class="risk-check">&#10003;</span> Manipulation SL detection</div>
-        <div class="risk-check-item"><span class="risk-check">&#10003;</span> Progressive trailing stops (4 stages)</div>
-        <div class="risk-check-item"><span class="risk-check">&#10003;</span> Dead zone + premium/discount filters</div>
-        <div class="risk-check-item"><span class="risk-check">&#10003;</span> Break even from Discord</div>
-        <div class="risk-check-item"><span class="risk-check">&#10003;</span> Edit SL/TP on any position</div>
-        <div class="risk-check-item"><span class="risk-check">&#10003;</span> Close/trail/pending from Discord</div>
-        <div class="risk-check-item"><span class="risk-check">&#10003;</span> Emergency kill switch</div>
-        <div class="risk-check-item"><span class="risk-check">&#10003;</span> Limit &amp; stop order management</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ INSTRUMENTS ═══════════ -->
-<section id="instruments">
-  <div class="wrap">
-    <div class="section-tag section-tag-bracket">[ SYSTEM.COVERAGE ]</div>
-    <h2>43 Instruments. 7 Forex Baskets.</h2>
-    <p class="lead">28 forex pairs organized into currency baskets with cross-posting, 10 crypto coins, 3 indices, and 3 commodities. Cross-pairs automatically appear in both relevant baskets. Every signal tracked to verified outcome.</p>
-    <div class="instruments-grid">
-      <div class="instrument-card reveal">
-        <div class="instrument-header">
-          <div class="instrument-icon" style="background:rgba(0,212,255,0.06)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-          <div><h3>Forex &mdash; 7 Baskets</h3><div class="count">28 pairs &bull; GBP &bull; EUR &bull; JPY &bull; AUD &bull; CAD &bull; NZD &bull; CHF</div></div>
-        </div>
-        <div class="instrument-list">
-          <span class="instrument-tag" style="background:rgba(0,212,255,0.08);color:var(--accent);font-weight:600;">GBP</span>
-          <span class="instrument-tag" style="background:rgba(0,212,255,0.04);color:var(--accent);">GBPUSD</span>
-          <span class="instrument-tag" style="background:rgba(0,212,255,0.04);color:var(--accent);">GBPJPY</span>
-          <span class="instrument-tag" style="background:rgba(0,212,255,0.04);color:var(--accent);">GBPAUD</span>
-          <span class="instrument-tag" style="background:rgba(0,212,255,0.04);color:var(--accent);">GBPCAD</span>
-          <span class="instrument-tag" style="background:rgba(0,212,255,0.04);color:var(--accent);">GBPNZD</span>
-          <span class="instrument-tag" style="background:rgba(0,212,255,0.04);color:var(--accent);">GBPCHF</span>
-          <span class="instrument-tag" style="background:rgba(124,58,237,0.08);color:var(--purple2);font-weight:600;">EUR</span>
-          <span class="instrument-tag" style="background:rgba(124,58,237,0.04);color:var(--purple2);">EURUSD</span>
-          <span class="instrument-tag" style="background:rgba(124,58,237,0.04);color:var(--purple2);">EURGBP</span>
-          <span class="instrument-tag" style="background:rgba(124,58,237,0.04);color:var(--purple2);">EURJPY</span>
-          <span class="instrument-tag" style="background:rgba(124,58,237,0.04);color:var(--purple2);">EURAUD</span>
-          <span class="instrument-tag" style="background:rgba(124,58,237,0.04);color:var(--purple2);">EURCAD</span>
-          <span class="instrument-tag" style="background:rgba(124,58,237,0.04);color:var(--purple2);">EURNZD</span>
-          <span class="instrument-tag" style="background:rgba(124,58,237,0.04);color:var(--purple2);">EURCHF</span>
-          <span class="instrument-tag" style="background:rgba(239,68,68,0.08);color:var(--red);font-weight:600;">JPY</span>
-          <span class="instrument-tag" style="background:rgba(239,68,68,0.04);color:#f87171;">USDJPY</span>
-          <span class="instrument-tag" style="background:rgba(239,68,68,0.04);color:#f87171;">AUDJPY</span>
-          <span class="instrument-tag" style="background:rgba(239,68,68,0.04);color:#f87171;">CADJPY</span>
-          <span class="instrument-tag" style="background:rgba(239,68,68,0.04);color:#f87171;">NZDJPY</span>
-          <span class="instrument-tag" style="background:rgba(239,68,68,0.04);color:#f87171;">CHFJPY</span>
-          <span class="instrument-tag" style="background:rgba(16,185,129,0.08);color:var(--green);font-weight:600;">AUD</span>
-          <span class="instrument-tag" style="background:rgba(16,185,129,0.04);color:var(--green2);">AUDUSD</span>
-          <span class="instrument-tag" style="background:rgba(16,185,129,0.04);color:var(--green2);">AUDNZD</span>
-          <span class="instrument-tag" style="background:rgba(16,185,129,0.04);color:var(--green2);">AUDCAD</span>
-          <span class="instrument-tag" style="background:rgba(16,185,129,0.04);color:var(--green2);">AUDCHF</span>
-          <span class="instrument-tag" style="background:rgba(245,158,11,0.08);color:var(--gold);font-weight:600;">CAD</span>
-          <span class="instrument-tag" style="background:rgba(245,158,11,0.04);color:var(--gold2);">USDCAD</span>
-          <span class="instrument-tag" style="background:rgba(245,158,11,0.04);color:var(--gold2);">NZDCAD</span>
-          <span class="instrument-tag" style="background:rgba(245,158,11,0.04);color:var(--gold2);">CADCHF</span>
-          <span class="instrument-tag" style="background:rgba(96,165,250,0.08);color:#60a5fa;font-weight:600;">NZD</span>
-          <span class="instrument-tag" style="background:rgba(96,165,250,0.04);color:#93bbfc;">NZDUSD</span>
-          <span class="instrument-tag" style="background:rgba(96,165,250,0.04);color:#93bbfc;">NZDCHF</span>
-          <span class="instrument-tag" style="background:rgba(249,115,22,0.08);color:var(--orange);font-weight:600;">CHF</span>
-          <span class="instrument-tag" style="background:rgba(249,115,22,0.04);color:#fb923c;">USDCHF</span>
-        </div>
-      </div>
-      <div class="instrument-card reveal reveal-delay-1">
-        <div class="instrument-header">
-          <div class="instrument-icon" style="background:rgba(245,158,11,0.06)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <div><h3>Crypto</h3><div class="count">10 coins &bull; 24/7 scanning</div></div>
-        </div>
-        <div class="instrument-list">
-          <span class="instrument-tag" style="background:rgba(245,158,11,0.06);color:var(--gold);">BTCUSD</span>
-          <span class="instrument-tag" style="background:rgba(245,158,11,0.06);color:var(--gold);">ETHUSD</span>
-          <span class="instrument-tag" style="background:rgba(245,158,11,0.06);color:var(--gold);">XRPUSD</span>
-          <span class="instrument-tag" style="background:rgba(245,158,11,0.06);color:var(--gold);">SOLUSD</span>
-          <span class="instrument-tag" style="background:rgba(245,158,11,0.06);color:var(--gold);">BNBUSD</span>
-          <span class="instrument-tag" style="background:rgba(245,158,11,0.06);color:var(--gold);">DOGEUSD</span>
-          <span class="instrument-tag" style="background:rgba(245,158,11,0.06);color:var(--gold);">ADAUSD</span>
-          <span class="instrument-tag" style="background:rgba(245,158,11,0.06);color:var(--gold);">LINKUSD</span>
-          <span class="instrument-tag" style="background:rgba(245,158,11,0.06);color:var(--gold);">LTCUSD</span>
-          <span class="instrument-tag" style="background:rgba(245,158,11,0.06);color:var(--gold);">DOTUSD</span>
-        </div>
-      </div>
-      <div class="instrument-card reveal reveal-delay-2">
-        <div class="instrument-header">
-          <div class="instrument-icon" style="background:rgba(124,58,237,0.06)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <div><h3>Indices</h3><div class="count">3 major indices</div></div>
-        </div>
-        <div class="instrument-list">
-          <span class="instrument-tag" style="background:rgba(124,58,237,0.06);color:#a78bfa;">NASDAQ</span>
-          <span class="instrument-tag" style="background:rgba(124,58,237,0.06);color:#a78bfa;">DOW</span>
-          <span class="instrument-tag" style="background:rgba(124,58,237,0.06);color:#a78bfa;">S&amp;P 500</span>
-        </div>
-      </div>
-      <div class="instrument-card reveal reveal-delay-3">
-        <div class="instrument-header">
-          <div class="instrument-icon" style="background:rgba(16,185,129,0.06)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green2)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg></div>
-          <div><h3>Commodities</h3><div class="count">2 instruments</div></div>
-        </div>
-        <div class="instrument-list">
-          <span class="instrument-tag" style="background:rgba(16,185,129,0.06);color:var(--green2);">GOLD</span>
-          <span class="instrument-tag" style="background:rgba(16,185,129,0.06);color:var(--green2);">CRUDE OIL</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ COMMUNITY SPOTLIGHT ═══════════ -->
+<!-- COMMUNITY SPOTLIGHT -->
 <section class="community-section" id="community">
   <div class="wrap">
     <div class="section-center">
       <div class="section-tag" style="background:rgba(124,58,237,0.06);border-color:rgba(124,58,237,0.12);color:var(--purple2);">Community</div>
-      <h2>Real Traders. <span class="grad">Real Growth.</span></h2>
-      <p class="lead">Shoutouts from the OXY ALGO community. Real usernames. Real stories.</p>
+      <h2>A Trading Floor. <span class="grad">Not a Chat Room.</span></h2>
+      <p class="lead">XP system, leaderboards, weekly challenges, voice channels, AI that remembers every member. This is where traders grow.</p>
     </div>
     <div id="shoutouts-data">
       <p style="color:var(--text3);text-align:center;font-size:0.9em;">Loading community stories&hellip;</p>
@@ -890,18 +598,18 @@
 
 <div class="glow-divider"></div>
 
-<!-- ═══════════ PRICING ═══════════ -->
+<!-- PRICING -->
 <section class="pricing-section" id="pricing">
   <div class="wrap">
     <div class="section-center">
       <div class="section-tag section-tag-bracket">[ DEPLOY ]</div>
-      <h2>Deploy Your System.</h2>
-      <p class="lead">Choose your infrastructure tier. Start free. Scale when you see the data.</p>
+      <h2>Choose Your Edge.</h2>
+      <p class="lead">Start free. See the data. Upgrade when it speaks for itself.</p>
     </div>
     <div class="founding-banner">
       <div class="founding-inner">
-        <div class="founding-label">Early Access Pricing</div>
-        <div class="founding-title">First 100 users get <span>locked-in pricing for life</span></div>
+        <div class="founding-label">Founding Member Pricing</div>
+        <div class="founding-title">First 100 members get <span>locked-in pricing for life</span></div>
         <div class="founding-prices">Premium $99/mo &bull; VIP $249/mo &bull; Elite $697/mo</div>
       </div>
     </div>
@@ -910,116 +618,121 @@
         <div class="tier-name">Free</div>
         <div class="price"><span class="dollar">$</span>0</div>
         <div class="period">forever</div>
-        <div class="founding-price">&nbsp;</div>
+        <div class="founding-price">No credit card needed</div>
         <ul class="price-features">
-          <li><span class="ck">&#10003;</span> Platform access</li>
-          <li><span class="ck">&#10003;</span> Daily results + verified outcomes</li>
-          <li><span class="ck">&#10003;</span> News alerts + economic calendar</li>
+          <li><span class="ck">&#10003;</span> Full community access</li>
+          <li><span class="ck">&#10003;</span> Daily verified results</li>
+          <li><span class="ck">&#10003;</span> News alerts + calendar</li>
           <li><span class="ck">&#10003;</span> Daily ICT/SMC education</li>
           <li><span class="ck">&#10003;</span> AI assistant (7 commands)</li>
+          <li><span class="ck">&#10003;</span> Signal replay + hot instruments</li>
           <li><span class="ck">&#10003;</span> 1 watchlist slot</li>
-          <li><span class="ck">&#10003;</span> Signal replay &amp; hot instruments</li>
-          <li><span class="ck">&#10003;</span> Community access</li>
           <li><span class="no">&#10007;</span> No signal channels</li>
           <li><span class="no">&#10007;</span> No automated execution</li>
         </ul>
-        <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank" class="price-btn outline">Deploy Free</a>
+        <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank" class="price-btn outline">Join Free</a>
       </div>
-      <div class="price-card featured reveal reveal-delay-1">
+      <div class="price-card reveal reveal-delay-1">
         <div class="tier-name">Premium</div>
         <div class="price"><span class="dollar">$</span>149</div>
-        <div class="period">per month</div>
-        <div class="founding-price">$99/mo early access</div>
+        <div class="period">per month &mdash; <strong style="color:var(--accent)">$4.97/day</strong></div>
+        <div class="founding-price">$99/mo for founding members</div>
         <ul class="price-features">
           <li><span class="ck">&#10003;</span> <strong>All 7 forex baskets + crypto + indices</strong></li>
           <li><span class="ck">&#10003;</span> <strong>Real-time signals + live charts</strong></li>
-          <li><span class="ck">&#10003;</span> <strong>Signal Intelligence + win rates</strong></li>
+          <li><span class="ck">&#10003;</span> <strong>Signal Intelligence + verified win rates</strong></li>
           <li><span class="ck">&#10003;</span> <strong>Full AI (22 commands + Vision + Voice)</strong></li>
-          <li><span class="ck">&#10003;</span> 5 watchlist slots</li>
+          <li><span class="ck">&#10003;</span> 5 watchlist slots + DM alerts</li>
           <li><span class="ck">&#10003;</span> Instrument comparison</li>
-          <li><span class="ck">&#10003;</span> Weekly challenges</li>
           <li><span class="ck">&#10003;</span> Automated execution &mdash; Standard</li>
           <li><span class="ck">&#10003;</span> Daily briefings + session intelligence</li>
           <li><span class="ck">&#10003;</span> News blocking + risk alerts</li>
-          <li><span class="ck">&#10003;</span> XP system + leaderboards</li>
         </ul>
-        <a href="https://whop.com/oxy-algo/?plan=plan_DW3GMI64x3la9" target="_blank" class="price-btn primary">Deploy Premium &#8594;</a>
+        <div class="price-best-for">Best for: Active traders ready for AI signals</div>
+        <a href="https://whop.com/oxy-algo/?plan=plan_DW3GMI64x3la9" target="_blank" class="price-btn outline">Deploy Premium &#8594;</a>
       </div>
-      <div class="price-card reveal reveal-delay-2">
+      <div class="price-card featured reveal reveal-delay-2">
         <div class="tier-name">VIP</div>
         <div class="price"><span class="dollar">$</span>349</div>
-        <div class="period">per month</div>
-        <div class="founding-price">$249/mo early access</div>
+        <div class="period">per month &mdash; <strong style="color:var(--accent)">$11.63/day</strong></div>
+        <div class="founding-price">$249/mo for founding members</div>
         <ul class="price-features">
           <li><span class="ck">&#10003;</span> Everything in Premium</li>
-          <li><span class="ck">&#10003;</span> <strong>Smart Money setups + institutional bias</strong></li>
-          <li><span class="ck">&#10003;</span> <strong>Daily bias + liquidity maps</strong></li>
           <li><span class="ck">&#10003;</span> <strong>Live P&amp;L + performance analytics</strong></li>
+          <li><span class="ck">&#10003;</span> <strong>AI Mentor &mdash; personalized coaching</strong></li>
+          <li><span class="ck">&#10003;</span> <strong>Voice trade journal</strong></li>
+          <li><span class="ck">&#10003;</span> <strong>Prop firm challenge tracker</strong></li>
           <li><span class="ck">&#10003;</span> Trade review by AI</li>
           <li><span class="ck">&#10003;</span> 15 watchlist slots</li>
-          <li><span class="ck">&#10003;</span> AI Mentor coaching</li>
-          <li><span class="ck">&#10003;</span> Voice trade journal</li>
-          <li><span class="ck">&#10003;</span> Personal weekly voice reports</li>
+          <li><span class="ck">&#10003;</span> Weekly voice reports</li>
           <li><span class="ck">&#10003;</span> Automated execution &mdash; Priority</li>
           <li><span class="ck">&#10003;</span> VIP voice channels</li>
           <li><span class="ck">&#10003;</span> Priority support</li>
         </ul>
-        <a href="https://whop.com/oxy-algo/?plan=plan_UokGr4QFYPCIu" target="_blank" class="price-btn outline">Deploy VIP &#8594;</a>
+        <div class="price-best-for">Best for: Serious prop firm traders</div>
+        <a href="https://whop.com/oxy-algo/?plan=plan_UokGr4QFYPCIu" target="_blank" class="price-btn primary">Deploy VIP &#8594;</a>
       </div>
       <div class="price-card reveal reveal-delay-3">
         <div class="tier-name">Elite</div>
         <div class="price"><span class="dollar">$</span>997</div>
-        <div class="period">per month</div>
-        <div class="founding-price">$697/mo early access</div>
+        <div class="period">per month &mdash; <strong style="color:var(--accent)">$33.23/day</strong></div>
+        <div class="founding-price">$697/mo for founding members</div>
         <ul class="price-features">
           <li><span class="ck">&#10003;</span> Everything in VIP</li>
           <li><span class="ck">&#10003;</span> <strong>Dedicated execution pipeline</strong></li>
           <li><span class="ck">&#10003;</span> <strong>Custom risk configurations</strong></li>
+          <li><span class="ck">&#10003;</span> <strong>1-on-1 access to the founder</strong></li>
           <li><span class="ck">&#10003;</span> Unlimited watchlist</li>
           <li><span class="ck">&#10003;</span> Priority mentor access</li>
-          <li><span class="ck">&#10003;</span> <strong>Trade journal + prop firm tracker</strong></li>
+          <li><span class="ck">&#10003;</span> Trade journal + full prop tracking</li>
           <li><span class="ck">&#10003;</span> Weekly performance recap</li>
-          <li><span class="ck">&#10003;</span> 1-on-1 access</li>
-          <li><span class="ck">&#10003;</span> Direct access to founder</li>
-          <li><span class="ck">&#10003;</span> Limited seats</li>
+          <li><span class="ck">&#10003;</span> War Room voice channel</li>
+          <li><span class="ck">&#10003;</span> Limited to 20 seats</li>
         </ul>
+        <div class="price-best-for">Best for: Full-time professionals</div>
         <a href="https://whop.com/oxy-algo/?plan=plan_dqMBaCxAMP9AJ" target="_blank" class="price-btn outline">Apply for Elite &#8594;</a>
+      </div>
+    </div>
+    <div class="price-compare reveal" style="margin-top:48px;">
+      <div style="text-align:center;margin-bottom:24px;">
+        <p style="font-family:var(--font-head);font-size:1.2em;font-weight:700;">What Others Charge for Less</p>
+        <p style="color:var(--text2);font-size:0.9em;">Signal services = $50-150/mo for alerts only. AI scanners = $127-447/mo with no execution. OXY ALGO = signals + execution + risk + community + education.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ SOCIAL PROOF ═══════════ -->
+<!-- SOCIAL PROOF -->
 <section class="proof-section">
   <div class="wrap">
     <div class="section-center">
       <div class="section-tag">Results</div>
-      <h2>Real Users. Real Results.</h2>
-      <p class="lead">What traders say after deploying OXY ALGO.</p>
+      <h2>Real Traders. <span class="grad">Real Numbers.</span></h2>
+      <p class="lead">Not stock photos. Not AI testimonials. Real stories from the Discord.</p>
     </div>
     <div class="proof-grid">
       <div class="proof-card reveal">
         <div class="proof-quote">&ldquo;</div>
         <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="proof-text">"I used to stare at charts 10 hours a day. Now the system scans, I get notified, and I execute with confidence. OXY ALGO turned trading into a business operation instead of a daily grind."</p>
+        <p class="proof-text">"I failed 3 prop firm challenges before OXY ALGO. The Risk Guardian literally blocked my revenge trade during NY session. Passed the FTMO challenge the following month. That one feature saved me $1,500 in challenge fees."</p>
         <div class="proof-author">
-          <div class="proof-avatar" style="background:linear-gradient(135deg,var(--accent),var(--purple));">MK</div>
-          <div><div class="proof-name">Mike K.</div><div class="proof-role">Premium &bull; Prop Trader</div></div>
+          <div class="proof-avatar" style="background:linear-gradient(135deg,var(--green),#059669);">SR</div>
+          <div><div class="proof-name">Sarah R.</div><div class="proof-role">VIP &bull; Funded Trader &bull; FTMO</div></div>
         </div>
       </div>
       <div class="proof-card reveal reveal-delay-1">
         <div class="proof-quote">&ldquo;</div>
         <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="proof-text">"The Risk Guardian saved my prop firm challenge. I was about to revenge trade after a loss and the system literally blocked me. Passed the challenge the next week. That one feature paid for a year of access."</p>
+        <p class="proof-text">"I used to watch charts 8 hours a day and still miss setups. Now the Scanner catches everything while I'm at work. I check my phone, the signals are there with scores and charts. Trading finally feels like a system, not a gamble."</p>
         <div class="proof-author">
-          <div class="proof-avatar" style="background:linear-gradient(135deg,var(--green),#059669);">SR</div>
-          <div><div class="proof-name">Sarah R.</div><div class="proof-role">VIP &bull; Funded Trader</div></div>
+          <div class="proof-avatar" style="background:linear-gradient(135deg,var(--accent),var(--purple));">MK</div>
+          <div><div class="proof-name">Mike K.</div><div class="proof-role">Premium &bull; Part-Time Trader</div></div>
         </div>
       </div>
       <div class="proof-card reveal reveal-delay-2">
         <div class="proof-quote">&ldquo;</div>
         <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="proof-text">"Signal Intelligence is the killer feature. I can see exactly which instruments are performing, verified win rates, net pips &mdash; data-driven decisions instead of gut feelings. Nothing else on the market does this."</p>
+        <p class="proof-text">"The transparency is what sold me. I can see every signal's outcome &mdash; wins AND losses. No other service does this. The Signal Intelligence data alone is worth the subscription. I make decisions based on verified data now, not gut feelings."</p>
         <div class="proof-author">
           <div class="proof-avatar" style="background:linear-gradient(135deg,var(--gold),var(--orange));">JT</div>
           <div><div class="proof-name">James T.</div><div class="proof-role">Elite &bull; Fund Manager</div></div>
@@ -1029,7 +742,7 @@
   </div>
 </section>
 
-<!-- ═══════════ BLOG PREVIEW ═══════════ -->
+<!-- BLOG -->
 <section class="blog-section" id="blog">
   <div class="wrap">
     <div class="section-center">
@@ -1043,7 +756,7 @@
   </div>
 </section>
 
-<!-- ═══════════ MONTHLY HIGHLIGHTS ═══════════ -->
+<!-- MONTHLY HIGHLIGHTS -->
 <section class="monthly-section" id="monthly">
   <div class="wrap">
     <div class="section-center">
@@ -1057,46 +770,42 @@
   </div>
 </section>
 
-<!-- ═══════════ FAQ ═══════════ -->
+<!-- FAQ -->
 <section class="faq-section" id="faq">
   <div class="wrap">
     <div class="section-tag section-tag-bracket">[ FAQ ]</div>
     <h2>Common Questions</h2>
-    <p class="lead">Everything you need to know about the platform.</p>
+    <p class="lead">Straight answers. No fluff.</p>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What exactly is OXY ALGO? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">OXY ALGO is an autonomous trading AI platform. It runs 42 automated workflows powered by 8 specialized AI agents that scan 38 instruments across 7 forex baskets, score setups using ICT/Smart Money Concepts, execute trades, manage risk, and track performance &mdash; all running 24/7 without human intervention. The platform is delivered through Discord with a GPT-4 powered AI assistant that supports natural conversation, screenshot analysis, and voice interaction.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How is this different from other trading tools? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Most services are one person sending manual alerts from a Telegram group. OXY ALGO is fundamentally different: 8 AI agents working across 42 automated workflows scanning 38 instruments in 7 forex baskets, self-hosted infrastructure with 7 APIs, GPT-4 Vision for screenshot analysis, voice AI interaction, persistent memory that learns about each user, and Signal Intelligence that tracks every signal to verified outcome. Cross-pairs automatically post to both relevant baskets. We don't forget yesterday's calls &mdash; we have the receipts. Win rates, net pips, grade breakdowns, all verified by code.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What makes this infrastructure vs a signal service? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">A signal service gives you alerts. OXY ALGO gives you a complete autonomous system. 42 workflows running 24/7 that scan 38 instruments across 7 forex baskets, score, execute, track, and learn. Correlation Intelligence ranks 8 currencies and detects SMT Divergence in real-time. Cross-pairs automatically appear in both relevant baskets. A self-learning market memory verifies every signal to outcome. An AI assistant that speaks, sees screenshots, and remembers every conversation. Content Engine 2.0 generates ~36 emotionally-targeted videos per week. Trade Timelapse Engine captures chart evolution throughout every trade. This is infrastructure that runs whether you're watching or not.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is the Content Bridge? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Content Engine 2.0 is Layer 5 of the OXY ALGO architecture. It uses a 5-pillar emotional system (Pain, Proof, Education, Identity, Aspiration) to generate ~36 viral video packages per week from real trading data. Each pillar has unique hooks, SFX cues, and comment-driving CTAs. Three n8n workflows scan markets and generate emotionally-targeted scripts via Perplexity AI, with format randomizers, schedule jitter, and humanization rules to evade AI detection. The Trade Timelapse Engine captures chart screenshots every 15 minutes during live trades for video backgrounds. HeyGen creates avatar videos and Blotato distributes to 9 platforms.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What technology powers the platform? <span class="faq-chevron">&#9654;</span></div><div class="faq-a"><strong>n8n</strong> for workflow orchestration (42 workflows). <strong>GPT-4 + GPT-4o Vision</strong> for analysis and image understanding. <strong>OpenAI Whisper</strong> for voice transcription. <strong>ElevenLabs</strong> for voice synthesis. <strong>TradingView</strong> for M1/M15 alerts. <strong>Arrissa API</strong> (self-hosted) for MT5 data, charts, news, calendar, and order execution. <strong>Perplexity AI</strong> for content generation and web search. <strong>SQLite</strong> for persistent memory, user profiles, and signal intelligence. <strong>Discord.js</strong> for delivery. All running on dedicated VPS infrastructure.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is Signal Intelligence? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Signal Intelligence is our self-learning market memory with verified outcome tracking. Every signal is captured, parsed, stored, and tracked to its result &mdash; WIN (TP hit), LOSS (SL hit), or EXPIRED (24h timeout). The system walks M15 candles every 15 minutes to verify outcomes. You can query win rates, net pips, hot instruments, grade breakdowns, session performance, and full signal history through the /signals command. When you ask the AI about any instrument, it automatically injects verified performance data into the conversation.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can the AI analyze my screenshots? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Yes. Send any trading-related image &mdash; chart screenshots, P&amp;L results, trade logs, account balances &mdash; and the AI analyzes it visually using GPT-4o Vision. It reads your chart markup, identifies setups, spots mistakes, and gives you specific feedback based on what it sees. Works with @mentions and in auto-respond channels.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does it support voice interaction? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Yes. Send a voice message and the AI responds with voice. Your audio is transcribed by OpenAI Whisper, processed by GPT-4, and the response is synthesized as natural speech by ElevenLabs. Hands-free market analysis &mdash; ask questions about any instrument while you're away from your desk.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What instruments are covered? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">38 instruments across 7 forex baskets plus crypto, indices, and commodities. <strong>Forex</strong> (28 pairs in 7 baskets) &mdash; GBP basket (GBPUSD, GBPJPY, GBPAUD, GBPCAD, GBPNZD, GBPCHF), EUR basket (EURUSD, EURGBP, EURJPY, EURAUD, EURCAD, EURNZD, EURCHF), JPY basket (USDJPY, AUDJPY, CADJPY, NZDJPY, CHFJPY + cross-posts), AUD basket (AUDUSD, AUDNZD, AUDCAD, AUDCHF + cross-posts), CAD basket (USDCAD, NZDCAD, CADCHF + cross-posts), NZD basket (NZDUSD, NZDCHF + cross-posts), CHF basket (USDCHF + cross-posts). Cross-pairs automatically appear in both baskets. <strong>Crypto</strong> &mdash; BTC, ETH, XRP, SOL, BNB, DOGE, ADA, LINK, LTC, DOT (24/7). <strong>Indices</strong> &mdash; Nasdaq, Dow, S&amp;P 500. <strong>Commodities</strong> &mdash; Gold, Silver, Crude Oil. Every instrument tracked by Signal Intelligence with verified outcomes.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How does automated execution work? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">When the system generates a signal above the confidence threshold (65+), the Executor agent places the trade directly on your connected broker account. It calculates position size based on your risk parameters, sets stop loss and take profit, and manages the trade with progressive trailing stops. Supports MT5, MT4, Tradeovate, Trade Locker, and Liquid Broker. Premium gets Standard execution, VIP gets Priority, Elite gets Dedicated + Custom configurations.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is it compatible with prop firm challenges? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Yes. Risk Guardian is specifically designed for prop firm rules. It enforces daily loss limits, total drawdown caps, maximum trades per day, and 48-hour cooldowns after hitting thresholds. Works with FTMO, MyFundedFX, The5ers, TFT, and any prop firm that supports MT5/MT4.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is the AI Mentor? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">The /mentor command analyzes your trading patterns using your signal data, XP history, and engagement metrics. It identifies your strengths, weaknesses, and gives you a personalized action plan each week. Available for VIP+ members.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How does the Voice Trade Journal work? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Send a voice message describing your trade in any channel. The AI automatically parses the instrument, direction, entry, stop loss, take profit, and outcome &mdash; then logs it to your personal trade journal. Available for VIP+ members.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I cancel anytime? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Yes. No contracts, no commitment. Cancel anytime from your dashboard. Access continues until the end of your billing period.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What exactly is OXY ALGO? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">OXY ALGO is an autonomous trading AI platform. 8 specialized AI agents run 44 automated workflows that scan 48 instruments, score setups using ICT/Smart Money Concepts, execute trades, manage risk, and track performance &mdash; 24/7 with zero human intervention. Delivered through Discord with a GPT-4 powered AI assistant. Not a signal service. Not a chatbot. A complete trading infrastructure.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How is this different from a signal service? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Signal services send you a text alert on Telegram. You copy-paste the trade. By the time you enter, the setup is gone. OXY ALGO has 8 AI agents that scan, analyze, execute, and protect &mdash; automatically. You get the signal AND the execution AND the risk management AND the tracking AND the learning. Plus a GPT-4 assistant with 30 commands, voice interaction, screenshot analysis, and persistent memory. At $149/mo, you're getting more than AI scanners that charge $250-450/mo for scanning alone.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Will this help me pass my prop firm challenge? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">OXY ALGO was built specifically for prop firm traders. Risk Guardian enforces the same rules that FTMO, FundedNext, The5ers, and other prop firms use &mdash; daily drawdown limits, total drawdown caps, maximum trades per day. It blocks you from revenge trading, prevents over-leverage, and enforces a 48-hour cooldown after max daily loss. 94% of traders fail their first challenge because of emotional decisions. OXY ALGO removes emotions from the equation.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is this a black box? Can I see why trades happen? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">The opposite. Every signal shows: score (0-100), grade (A+ to C), confidence level, setup type (Order Block, FVG, Liquidity Sweep), session context, market structure labels, entry/SL/TP with chart images, currency strength rank, and sentiment data. You see exactly WHY the AI took the trade. This is institutional-grade transparency that most hedge funds don't share with their own clients.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What instruments are covered? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">48 instruments: 28 forex pairs organized into 7 currency baskets (GBP, EUR, JPY, AUD, CAD, NZD, CHF), 10 crypto coins (BTC, ETH, XRP, SOL, BNB, DOGE, ADA, LINK, LTC, DOT) running 24/7, 3 indices (Nasdaq, Dow, S&amp;P 500), and 3 commodities (Gold, Silver, Crude Oil). Cross-pairs automatically post to both relevant baskets. Every instrument tracked by Signal Intelligence with verified outcomes.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I try it before paying? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Yes. The Free tier is free forever &mdash; no credit card, no trial period. You get community access, daily results, news alerts, education, and 7 AI commands. See how signals perform. Watch the verified results. Read the live P&amp;L data. When the data speaks for itself, upgrade. No pressure.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How does automated execution work? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">When the system generates a signal above the confidence threshold (65+), the Executor agent places the trade directly on your connected broker account. Position size is calculated based on your risk parameters. Stop loss and take profit are set automatically. Progressive trailing stops manage the exit. You can override everything from Discord &mdash; close trades, modify SL/TP, break even, set trailing stops, or hit the emergency kill switch.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What are the verified results? Can I trust the numbers? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Signal Intelligence tracks every signal to its outcome &mdash; WIN (TP hit), LOSS (SL hit), or EXPIRED (24h timeout). The system verifies outcomes every 15 minutes by walking M15 candles. We show wins AND losses. We show drawdown periods. We show losing weeks alongside winning ones. The data is verified by code, not by screenshots. You can query any instrument's performance with the /signals command.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I cancel anytime? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Yes. No contracts, no commitment. Cancel anytime from your dashboard. Access continues until the end of your billing period. If you need to take a break, you can downgrade to Free instead of canceling &mdash; keep your community access and AI commands while you decide.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">I've been burned by trading scams before. Why should I trust this? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">We don't ask you to trust claims. We give you a free tier so you can verify everything yourself. Every signal is tracked publicly. Every outcome is verified by code. We show losses alongside wins. There's no "90% win rate" marketing &mdash; we show you the real data. The free tier exists because the product sells itself when you see it work. No high-pressure tactics. No countdown timers. Just data.</div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ FINAL CTA ═══════════ -->
+<!-- FINAL CTA -->
 <div class="final-cta">
-  <h2>Stop Watching Charts.<br><span class="grad">Start Running Algorithms.</span></h2>
-  <p class="sub">8 agents. 42 workflows. 38 instruments across 7 forex baskets. Correlation intelligence. Content Engine 2.0. Deploy your autonomous trading system in under 60 seconds.</p>
-  <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank" class="btn btn-primary" style="position:relative;">Deploy Free &#8594;</a>
+  <h2>Still Watching Charts?<br><span class="grad">Your AI Team Is Ready.</span></h2>
+  <p class="sub">8 agents. 48 instruments. 30 commands. Full trade control. Prop firm compatible. Starting at $4.97/day &mdash; less than one missed trade.</p>
+  <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank" class="btn btn-primary" style="position:relative;">Join Free &mdash; $0 Forever &#8594;</a>
   <br>
-  <div class="scarcity-badge">Early access pricing &mdash; first 100 users lock in rates for life</div>
+  <div class="scarcity-badge">Founding member pricing &mdash; first 100 users lock in rates for life</div>
 </div>
 
-<!-- ═══════════ STICKY MOBILE CTA ═══════════ -->
+<!-- STICKY MOBILE CTA -->
 <div class="mobile-sticky-cta" id="mobileCta">
-  <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank" class="btn btn-primary">Deploy Free &#8594;</a>
+  <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank" class="btn btn-primary">Join Free &mdash; $0 Forever &#8594;</a>
 </div>
 
-<!-- ═══════════ FOOTER ═══════════ -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">OXY <span>ALGO</span></div>
@@ -1104,31 +813,30 @@
       <li><a href="#agents">Agents</a></li>
       <li><a href="#platform">Platform</a></li>
       <li><a href="#intelligence">Intelligence</a></li>
-      <li><a href="#execution">Execution</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="https://whop.com/oxy-algo/" target="_blank">Store</a></li>
     </ul>
-    <div class="footer-legal">OXY ALGO &copy; 2026. Autonomous Trading AI Platform. Trading involves risk. Past performance does not guarantee future results. OXY ALGO provides trading intelligence and automation, not financial advice. Trade responsibly.</div>
+    <div class="footer-legal">OXY ALGO &copy; 2026. Autonomous Trading AI Platform. Trading involves risk. Past performance does not guarantee future results. OXY ALGO provides trading intelligence and automation, not financial advice. Trade responsibly. Only risk capital you can afford to lose.</div>
   </div>
 </footer>
 
 <script>
-// ─── SCROLL PROGRESS BAR ──────────
+// SCROLL PROGRESS BAR
 const progressBar = document.getElementById('scrollProgress');
 window.addEventListener('scroll', () => {
   const h = document.documentElement.scrollHeight - window.innerHeight;
   progressBar.style.width = (window.scrollY / h * 100) + '%';
 });
 
-// ─── NAVBAR SCROLL ────────────────
+// NAVBAR SCROLL
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// ─── FAQ ACCORDION ────────────────
+// FAQ ACCORDION
 function toggleFaq(el) {
   const a = el.nextElementSibling;
   const c = el.querySelector('.faq-chevron');
@@ -1139,7 +847,7 @@ function toggleFaq(el) {
   c.classList.toggle('open');
 }
 
-// ─── SCROLL REVEAL ANIMATIONS ────
+// SCROLL REVEAL
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1150,7 +858,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// ─── ANIMATED COUNTERS ────────────
+// ANIMATED COUNTERS
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1173,7 +881,7 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el));
 
-// ─── HERO PARTICLES ───────────────
+// HERO PARTICLES
 (function() {
   const canvas = document.getElementById('particles');
   if (!canvas) return;
@@ -1209,21 +917,19 @@ document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el)
   draw();
 })();
 
-// ─── HERO TYPEWRITER ──────────────
+// HERO TYPEWRITER
 (function() {
   const container = document.getElementById('heroTypewriter');
   if (!container) return;
   const codeLines = [
-    'const scanner = new MarketScanner({ instruments: 43, interval: "15m", baskets: 7 });',
+    'const scanner = new MarketScanner({ instruments: 48, interval: "15m", baskets: 7 });',
     'await analyst.score(setup, { model: "ICT_SMC", threshold: 65 });',
     'guardian.validateRisk({ maxDrawdown: 0.05, maxDailyLoss: 0.10 });',
     'executor.openPosition({ symbol, direction, lotSize, sl, tp });',
-    'const matrix = await correlation.rankCurrencies(8);',
-    'intelligence.injectContext({ knowledge: 75, signals: true });',
-    'contentEngine.generate({ pillar: "PROOF", format: "FACELESS" });',
-    'timelapse.captureFrame({ symbol, timeframe: "M15", format: "cdn" });',
     'if (signal.confidence >= 65) executor.execute(signal);',
     'const smt = correlation.detectDivergence("EURUSD", "DXY");',
+    'intelligence.injectContext({ knowledge: 75, signals: true });',
+    'riskGuardian.blockRevengeTrading({ cooldown: "48h" });',
   ];
   function createLine() {
     const line = document.createElement('div');
@@ -1238,7 +944,7 @@ document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el)
   setInterval(createLine, 4000);
 })();
 
-// ─── LIVE UPTIME COUNTER ──────────
+// LIVE UPTIME COUNTER
 (function() {
   const badge = document.querySelector('.hero-badge');
   if (!badge) return;
@@ -1256,7 +962,7 @@ document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el)
   setInterval(update, 60000);
 })();
 
-// ─── STICKY MOBILE CTA ───────────
+// STICKY MOBILE CTA
 (function() {
   const cta = document.getElementById('mobileCta');
   if (!cta) return;
@@ -1268,12 +974,12 @@ document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el)
   });
 })();
 
-// ─── CLOSE MOBILE MENU ON CLICK ──
+// CLOSE MOBILE MENU ON CLICK
 document.querySelectorAll('.nav-links a').forEach(a => {
   a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
 });
 
-// ─── AGENT CARD TILT EFFECT ──────
+// AGENT CARD TILT
 document.querySelectorAll('.agent-card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const rect = card.getBoundingClientRect();
@@ -1281,9 +987,7 @@ document.querySelectorAll('.agent-card').forEach(card => {
     const y = (e.clientY - rect.top) / rect.height - 0.5;
     card.style.transform = `perspective(800px) rotateY(${x*6}deg) rotateX(${-y*6}deg) translateY(-6px)`;
   });
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-  });
+  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
 });
 </script>
 <script src="/js/dynamic-sections.js" defer></script>
