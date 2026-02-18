@@ -2,12 +2,12 @@
   "week_of": "2026-02-16",
   "week_label": "Feb 16 – Feb 22, 2026",
   "summary": {
-    "total_signals": 482,
+    "total_signals": 607,
     "wins": 13,
-    "losses": 8,
+    "losses": 15,
     "expired": 1,
-    "win_rate": 61.9,
-    "net_pips": 462.2,
+    "win_rate": 46.4,
+    "net_pips": 390.8,
     "best_trade": {
       "symbol": "BTCUSD",
       "pips": 410.89,
@@ -76,5 +76,5 @@
       "timestamp": "2026-02-17 06:21:17"
     }
   ],
-  "generated_at": "2026-02-18T08:00:02.976Z"
+  "generated_at": "2026-02-18T12:00:01.917Z"
 }
