@@ -2,12 +2,12 @@
   "week_of": "2026-02-16",
   "week_label": "Feb 16 – Feb 22, 2026",
   "summary": {
-    "total_signals": 607,
-    "wins": 13,
-    "losses": 15,
+    "total_signals": 822,
+    "wins": 14,
+    "losses": 24,
     "expired": 1,
-    "win_rate": 46.4,
-    "net_pips": 390.8,
+    "win_rate": 36.8,
+    "net_pips": -401909.1,
     "best_trade": {
       "symbol": "BTCUSD",
       "pips": 410.89,
@@ -40,6 +40,18 @@
       "timestamp": "2026-02-17 17:55:01"
     },
     {
+      "symbol": "AUDNZD",
+      "direction": "LONG",
+      "entry": 1.17782,
+      "exit": 1.1799,
+      "pips": 20.8,
+      "rr": "1.6:1",
+      "grade": "B",
+      "score": 75,
+      "session": "LONDON",
+      "timestamp": "2026-02-18 11:14:45"
+    },
+    {
       "symbol": "BNBUSD",
       "direction": "SHORT",
       "entry": 626.11,
@@ -62,19 +74,7 @@
       "score": 85,
       "session": "ASIAN",
       "timestamp": "2026-02-17 06:06:13"
-    },
-    {
-      "symbol": "BNBUSD",
-      "direction": "SHORT",
-      "entry": 623.35,
-      "exit": 610.82,
-      "pips": 12.53,
-      "rr": "2.5:1",
-      "grade": "A",
-      "score": 85,
-      "session": "ASIAN",
-      "timestamp": "2026-02-17 06:21:17"
     }
   ],
-  "generated_at": "2026-02-18T12:00:01.917Z"
+  "generated_at": "2026-02-18T16:00:01.806Z"
 }
