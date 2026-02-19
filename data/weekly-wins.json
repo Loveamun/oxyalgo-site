@@ -2,79 +2,18 @@
   "week_of": "2026-02-16",
   "week_label": "Feb 16 – Feb 22, 2026",
   "summary": {
-    "total_signals": 1251,
-    "wins": 20,
-    "losses": 42,
-    "expired": 6,
-    "win_rate": 32.3,
-    "net_pips": -1189896.6,
+    "total_signals": 1,
+    "wins": 0,
+    "losses": 1,
+    "expired": 0,
+    "win_rate": 0,
+    "net_pips": -30.4,
     "best_trade": {
-      "symbol": "BTCUSD",
-      "pips": 410.89,
-      "rr": "2.5:1"
+      "symbol": "N/A",
+      "pips": 0,
+      "rr": "0:1"
     }
   },
-  "top_trades": [
-    {
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "entry": 68101.1,
-      "exit": 66162.21,
-      "pips": 410.89,
-      "rr": "2.5:1",
-      "grade": "A",
-      "score": 85,
-      "session": "ASIAN",
-      "timestamp": "2026-02-17 05:21:09"
-    },
-    {
-      "symbol": "CHFJPY",
-      "direction": "LONG",
-      "entry": 199.516,
-      "exit": 200.368,
-      "pips": 85.2,
-      "rr": "2.5:1",
-      "grade": "B",
-      "score": 75,
-      "session": "NY",
-      "timestamp": "2026-02-18 13:15:10"
-    },
-    {
-      "symbol": "EURJPY",
-      "direction": "SHORT",
-      "entry": 182.836,
-      "exit": 182.092,
-      "pips": 74.4,
-      "rr": "2.5:1",
-      "grade": "A",
-      "score": 85,
-      "session": "LONDON",
-      "timestamp": "2026-02-19 09:18:10"
-    },
-    {
-      "symbol": "EURAUD",
-      "direction": "SHORT",
-      "entry": 1.67392,
-      "exit": 1.66815,
-      "pips": 57.7,
-      "rr": "2.0:1",
-      "grade": "A",
-      "score": 90,
-      "session": "LONDON",
-      "timestamp": "2026-02-18 07:59:51"
-    },
-    {
-      "symbol": "ETHUSD",
-      "direction": "LONG",
-      "entry": 1958.87,
-      "exit": 2010.97,
-      "pips": 52.1,
-      "rr": "2.5:1",
-      "grade": "B",
-      "score": 70,
-      "session": "CRYPTO",
-      "timestamp": "2026-02-17 17:55:01"
-    }
-  ],
-  "generated_at": "2026-02-19T16:00:01.768Z"
+  "top_trades": [],
+  "generated_at": "2026-02-19T20:00:01.467Z"
 }
