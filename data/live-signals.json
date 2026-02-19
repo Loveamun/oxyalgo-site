@@ -1,206 +1,206 @@
 {
   "signals": [
     {
-      "symbol": "AUDNZD",
-      "direction": "UNKNOWN",
-      "score": 81,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:48:34"
-    },
-    {
-      "symbol": "AUDNZD",
-      "direction": "UNKNOWN",
-      "score": 81,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:48:33"
-    },
-    {
-      "symbol": "EURJPY",
-      "direction": "UNKNOWN",
-      "score": 75,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:48:31"
-    },
-    {
-      "symbol": "EURJPY",
-      "direction": "UNKNOWN",
-      "score": 75,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:48:30"
-    },
-    {
-      "symbol": "AUDNZD",
-      "direction": "UNKNOWN",
-      "score": 73,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:44:58"
-    },
-    {
-      "symbol": "AUDNZD",
-      "direction": "UNKNOWN",
-      "score": 73,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:44:56"
-    },
-    {
-      "symbol": "GBPAUD",
+      "symbol": "GBPUSD",
       "direction": "UNKNOWN",
       "score": 63,
-      "grade": "B",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:41:29"
-    },
-    {
-      "symbol": "GBPAUD",
-      "direction": "UNKNOWN",
-      "score": 63,
-      "grade": "B",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:41:27"
-    },
-    {
-      "symbol": "AUDCAD",
-      "direction": "UNKNOWN",
-      "score": 73,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:32:37"
-    },
-    {
-      "symbol": "AUDCAD",
-      "direction": "UNKNOWN",
-      "score": 73,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:32:35"
-    },
-    {
-      "symbol": "EURJPY",
-      "direction": "UNKNOWN",
-      "score": 78,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:32:34"
-    },
-    {
-      "symbol": "EURJPY",
-      "direction": "UNKNOWN",
-      "score": 78,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:32:32"
-    },
-    {
-      "symbol": "LONDON",
-      "direction": "UNKNOWN",
-      "score": 0,
       "grade": "B",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-19 07:19:11"
+      "timestamp": "2026-02-19 11:56:37"
     },
     {
-      "symbol": "AUDNZD",
+      "symbol": "GBPAUD",
       "direction": "UNKNOWN",
-      "score": 83,
+      "score": 76,
       "grade": "A",
-      "session": "London Kill Zone",
+      "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-19 07:18:19"
+      "timestamp": "2026-02-19 11:56:29"
     },
     {
-      "symbol": "AUDNZD",
+      "symbol": "GBPAUD",
       "direction": "UNKNOWN",
-      "score": 83,
+      "score": 76,
       "grade": "A",
-      "session": "London Kill Zone",
+      "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-19 07:18:18"
+      "timestamp": "2026-02-19 11:56:28"
     },
     {
-      "symbol": "AUDCAD",
+      "symbol": "NZDUSD",
+      "direction": "UNKNOWN",
+      "score": 71,
+      "grade": "A",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 11:44:26"
+    },
+    {
+      "symbol": "GBPNZD",
       "direction": "UNKNOWN",
       "score": 63,
-      "grade": "B",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:05:04"
-    },
-    {
-      "symbol": "AUDCAD",
-      "direction": "UNKNOWN",
-      "score": 63,
-      "grade": "B",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:05:02"
-    },
-    {
-      "symbol": "EURJPY",
-      "direction": "UNKNOWN",
-      "score": 68,
-      "grade": "B",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:05:01"
-    },
-    {
-      "symbol": "EURJPY",
-      "direction": "UNKNOWN",
-      "score": 68,
-      "grade": "B",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 07:04:59"
-    },
-    {
-      "symbol": "US30",
-      "direction": "UNKNOWN",
-      "score": 0,
       "grade": "B",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-19 05:06:49"
+      "timestamp": "2026-02-19 11:30:56"
+    },
+    {
+      "symbol": "GBPNZD",
+      "direction": "UNKNOWN",
+      "score": 63,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 11:30:54"
+    },
+    {
+      "symbol": "GBPCAD",
+      "direction": "UNKNOWN",
+      "score": 63,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 11:30:47"
+    },
+    {
+      "symbol": "GBPCAD",
+      "direction": "UNKNOWN",
+      "score": 63,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 11:30:45"
+    },
+    {
+      "symbol": "GBPUSD",
+      "direction": "UNKNOWN",
+      "score": 63,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 11:30:41"
+    },
+    {
+      "symbol": "GBPAUD",
+      "direction": "UNKNOWN",
+      "score": 78,
+      "grade": "A",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 11:30:33"
+    },
+    {
+      "symbol": "GBPAUD",
+      "direction": "UNKNOWN",
+      "score": 78,
+      "grade": "A",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 11:30:32"
+    },
+    {
+      "symbol": "NZDUSD",
+      "direction": "UNKNOWN",
+      "score": 76,
+      "grade": "A",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 10:59:51"
+    },
+    {
+      "symbol": "GBPUSD",
+      "direction": "UNKNOWN",
+      "score": 73,
+      "grade": "A",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 10:53:34"
+    },
+    {
+      "symbol": "CADJPY",
+      "direction": "UNKNOWN",
+      "score": 73,
+      "grade": "A",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 10:48:33"
+    },
+    {
+      "symbol": "CADJPY",
+      "direction": "UNKNOWN",
+      "score": 73,
+      "grade": "A",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 10:48:32"
+    },
+    {
+      "symbol": "AUDCAD",
+      "direction": "UNKNOWN",
+      "score": 60,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 10:48:30"
+    },
+    {
+      "symbol": "AUDCAD",
+      "direction": "UNKNOWN",
+      "score": 60,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 10:48:29"
+    },
+    {
+      "symbol": "EURJPY",
+      "direction": "UNKNOWN",
+      "score": 62,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 10:48:27"
+    },
+    {
+      "symbol": "EURJPY",
+      "direction": "UNKNOWN",
+      "score": 62,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 10:48:26"
+    },
+    {
+      "symbol": "GBPUSD",
+      "direction": "UNKNOWN",
+      "score": 63,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 10:41:36"
     }
   ],
-  "generated_at": "2026-02-19T08:00:02.305Z",
+  "generated_at": "2026-02-19T12:00:02.695Z",
   "signal_count": 20
 }
