@@ -3,15 +3,15 @@
   "year": 2026,
   "month_label": "February 2026",
   "stats": {
-    "total_signals": 887,
-    "wins": 17,
+    "total_signals": 954,
+    "wins": 18,
     "losses": 27,
     "expired": 2,
-    "win_rate": 38.6,
+    "win_rate": 40,
     "prev_win_rate": 0,
-    "net_pips": -1187855.2,
+    "net_pips": -1187797.5,
     "prev_net_pips": 0,
-    "trades_executed": 46,
+    "trades_executed": 47,
     "prev_trades_executed": 0,
     "avg_rr": "2.3:1",
     "prev_avg_rr": "0:1",
@@ -22,5 +22,5 @@
   "highlights": [
     "CHFJPY hit 25% win rate — top performer this month"
   ],
-  "generated_at": "2026-02-19T00:00:02.871Z"
+  "generated_at": "2026-02-19T04:00:02.904Z"
 }
