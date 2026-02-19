@@ -1,206 +1,206 @@
 {
   "signals": [
     {
-      "symbol": "LINKUSD",
-      "direction": "SHORT",
+      "symbol": "AUDNZD",
+      "direction": "UNKNOWN",
+      "score": 81,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:48:34"
+    },
+    {
+      "symbol": "AUDNZD",
+      "direction": "UNKNOWN",
+      "score": 81,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:48:33"
+    },
+    {
+      "symbol": "EURJPY",
+      "direction": "UNKNOWN",
+      "score": 75,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:48:31"
+    },
+    {
+      "symbol": "EURJPY",
+      "direction": "UNKNOWN",
+      "score": 75,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:48:30"
+    },
+    {
+      "symbol": "AUDNZD",
+      "direction": "UNKNOWN",
+      "score": 73,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:44:58"
+    },
+    {
+      "symbol": "AUDNZD",
+      "direction": "UNKNOWN",
+      "score": 73,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:44:56"
+    },
+    {
+      "symbol": "GBPAUD",
+      "direction": "UNKNOWN",
+      "score": 63,
+      "grade": "B",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:41:29"
+    },
+    {
+      "symbol": "GBPAUD",
+      "direction": "UNKNOWN",
+      "score": 63,
+      "grade": "B",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:41:27"
+    },
+    {
+      "symbol": "AUDCAD",
+      "direction": "UNKNOWN",
+      "score": 73,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:32:37"
+    },
+    {
+      "symbol": "AUDCAD",
+      "direction": "UNKNOWN",
+      "score": 73,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:32:35"
+    },
+    {
+      "symbol": "EURJPY",
+      "direction": "UNKNOWN",
+      "score": 78,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:32:34"
+    },
+    {
+      "symbol": "EURJPY",
+      "direction": "UNKNOWN",
+      "score": 78,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:32:32"
+    },
+    {
+      "symbol": "LONDON",
+      "direction": "UNKNOWN",
       "score": 0,
       "grade": "B",
-      "session": "crypto_24_7",
+      "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-19 03:46:29"
+      "timestamp": "2026-02-19 07:19:11"
     },
     {
-      "symbol": "BNB",
-      "direction": "LONG",
+      "symbol": "AUDNZD",
+      "direction": "UNKNOWN",
+      "score": 83,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:18:19"
+    },
+    {
+      "symbol": "AUDNZD",
+      "direction": "UNKNOWN",
+      "score": 83,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:18:18"
+    },
+    {
+      "symbol": "AUDCAD",
+      "direction": "UNKNOWN",
+      "score": 63,
+      "grade": "B",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:05:04"
+    },
+    {
+      "symbol": "AUDCAD",
+      "direction": "UNKNOWN",
+      "score": 63,
+      "grade": "B",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:05:02"
+    },
+    {
+      "symbol": "EURJPY",
+      "direction": "UNKNOWN",
+      "score": 68,
+      "grade": "B",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:05:01"
+    },
+    {
+      "symbol": "EURJPY",
+      "direction": "UNKNOWN",
+      "score": 68,
+      "grade": "B",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-19 07:04:59"
+    },
+    {
+      "symbol": "US30",
+      "direction": "UNKNOWN",
       "score": 0,
       "grade": "B",
-      "session": "crypto_24_7",
+      "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-19 03:46:25"
-    },
-    {
-      "symbol": "BTCUSD",
-      "direction": "LONG",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:46:20"
-    },
-    {
-      "symbol": "LINKUSD",
-      "direction": "SHORT",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:46:17"
-    },
-    {
-      "symbol": "BNB",
-      "direction": "LONG",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:46:13"
-    },
-    {
-      "symbol": "BTCUSD",
-      "direction": "LONG",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:46:08"
-    },
-    {
-      "symbol": "LINKUSD",
-      "direction": "SHORT",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:45:35"
-    },
-    {
-      "symbol": "BNB",
-      "direction": "LONG",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:45:30"
-    },
-    {
-      "symbol": "BTCUSD",
-      "direction": "LONG",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:45:25"
-    },
-    {
-      "symbol": "BTCUSD",
-      "direction": "LONG",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:30:50"
-    },
-    {
-      "symbol": "BTCUSD",
-      "direction": "LONG",
-      "score": 70,
-      "grade": "B",
-      "session": "ASIAN",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:30:47"
-    },
-    {
-      "symbol": "BTCUSD",
-      "direction": "LONG",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:30:47"
-    },
-    {
-      "symbol": "BTCUSD",
-      "direction": "LONG",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:30:29"
-    },
-    {
-      "symbol": "LTCUSD",
-      "direction": "SHORT",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:18:00"
-    },
-    {
-      "symbol": "BNB",
-      "direction": "LONG",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:17:56"
-    },
-    {
-      "symbol": "BTCUSD",
-      "direction": "LONG",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:17:51"
-    },
-    {
-      "symbol": "LTCUSD",
-      "direction": "SHORT",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:17:48"
-    },
-    {
-      "symbol": "BNB",
-      "direction": "LONG",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:17:43"
-    },
-    {
-      "symbol": "BTCUSD",
-      "direction": "LONG",
-      "score": 70,
-      "grade": "B",
-      "session": "ASIAN",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:17:39"
-    },
-    {
-      "symbol": "BTCUSD",
-      "direction": "LONG",
-      "score": 0,
-      "grade": "B",
-      "session": "crypto_24_7",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-19 03:17:39"
+      "timestamp": "2026-02-19 05:06:49"
     }
   ],
-  "generated_at": "2026-02-19T04:00:02.905Z",
+  "generated_at": "2026-02-19T08:00:02.305Z",
   "signal_count": 20
 }
