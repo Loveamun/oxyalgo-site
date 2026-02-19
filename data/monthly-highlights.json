@@ -3,7 +3,7 @@
   "year": 2026,
   "month_label": "February 2026",
   "stats": {
-    "total_signals": 954,
+    "total_signals": 986,
     "wins": 18,
     "losses": 27,
     "expired": 2,
@@ -22,5 +22,5 @@
   "highlights": [
     "CHFJPY hit 25% win rate — top performer this month"
   ],
-  "generated_at": "2026-02-19T04:00:02.904Z"
+  "generated_at": "2026-02-19T08:00:02.304Z"
 }
