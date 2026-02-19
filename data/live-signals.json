@@ -1,6 +1,16 @@
 {
   "signals": [
     {
+      "symbol": "EURGBP",
+      "direction": "UNKNOWN",
+      "score": 0,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-18 23:05:54"
+    },
+    {
       "symbol": "USTEC",
       "direction": "UNKNOWN",
       "score": 75,
@@ -189,18 +199,8 @@
       "outcome": "PENDING",
       "pips": null,
       "timestamp": "2026-02-18 15:44:35"
-    },
-    {
-      "symbol": "US500",
-      "direction": "UNKNOWN",
-      "score": 61,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-18 15:44:34"
     }
   ],
-  "generated_at": "2026-02-18T20:00:01.660Z",
+  "generated_at": "2026-02-19T00:00:02.871Z",
   "signal_count": 20
 }
