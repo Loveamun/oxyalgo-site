@@ -3,24 +3,25 @@
   "year": 2026,
   "month_label": "February 2026",
   "stats": {
-    "total_signals": 1313,
-    "wins": 20,
-    "losses": 42,
-    "expired": 6,
-    "win_rate": 32.3,
+    "total_signals": 1,
+    "wins": 0,
+    "losses": 1,
+    "expired": 0,
+    "win_rate": 0,
     "prev_win_rate": 0,
-    "net_pips": -1189896.6,
+    "net_pips": -30.4,
     "prev_net_pips": 0,
-    "trades_executed": 68,
+    "trades_executed": 1,
     "prev_trades_executed": 0,
-    "avg_rr": "2:1",
+    "avg_rr": "1:1",
     "prev_avg_rr": "0:1",
-    "best_instrument": "CHFJPY",
-    "best_instrument_winrate": 16.7,
-    "best_instrument_pips": 85.2
+    "best_instrument": "N/A",
+    "best_instrument_winrate": 0,
+    "best_instrument_pips": 0
   },
   "highlights": [
-    "CHFJPY hit 16.7% win rate — top performer this month"
+    "System scanning 43 instruments across 46 active workflows",
+    "Signal Intelligence tracking all setups automatically"
   ],
-  "generated_at": "2026-02-19T16:00:01.825Z"
+  "generated_at": "2026-02-19T20:00:01.468Z"
 }
