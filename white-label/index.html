@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OXY ALGO &mdash; White-Label Partner Program</title>
+<meta name="description" content="Launch your own branded AI trading service. 42 workflows, 38 instruments, 30 Discord commands, 8 AI agents. Full white-label system — deploy under your brand in 7 days.">
+<meta property="og:title" content="OXY ALGO &mdash; White-Label Partner Program">
+<meta property="og:description" content="Launch your own branded AI trading service. Full trading automation system — deploy under your brand.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #050508;
+  --bg2: #08080e;
+  --surface: #0c0c16;
+  --surface2: #111120;
+  --surface3: #16162a;
+  --border: rgba(255,255,255,0.06);
+  --border2: rgba(255,255,255,0.1);
+  --border3: rgba(255,255,255,0.15);
+  --accent: #00d4ff;
+  --accent2: #0099cc;
+  --accent-glow: rgba(0,212,255,0.15);
+  --purple: #7c3aed;
+  --purple2: #a78bfa;
+  --purple-glow: rgba(124,58,237,0.15);
+  --green: #10b981;
+  --green2: #34d399;
+  --red: #ef4444;
+  --gold: #f59e0b;
+  --gold2: #fbbf24;
+  --orange: #f97316;
+  --text: #e8eaf0;
+  --text2: #8890a8;
+  --text3: #555d78;
+  --font-head: 'Space Grotesk', 'Inter', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-sm: 12px;
+  --radius-pill: 100px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.wrap-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+/* AMBIENT */
+.ambient-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.blob { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.4; }
+.blob-1 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,212,255,0.12), transparent 70%); top: -200px; left: -200px; animation: drift1 25s ease-in-out infinite; }
+.blob-2 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(124,58,237,0.1), transparent 70%); top: 40%; right: -150px; animation: drift2 30s ease-in-out infinite; }
+.blob-3 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,212,255,0.08), transparent 70%); bottom: 10%; left: 20%; animation: drift3 28s ease-in-out infinite; }
+@keyframes drift1 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(80px, 60px); } }
+@keyframes drift2 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-60px, -80px); } }
+@keyframes drift3 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(40px, -50px); } }
+.noise-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 32px; transition: all 0.4s var(--ease); }
+nav.scrolled { background: rgba(5,5,8,0.8); backdrop-filter: blur(24px) saturate(180%); border-bottom: 1px solid var(--border); padding: 14px 32px; }
+.nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-family: var(--font-head); font-size: 1.4em; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+.logo span { color: var(--accent); }
+.nav-links { list-style: none; display: flex; align-items: center; gap: 32px; }
+.nav-links a { color: var(--text2); text-decoration: none; font-size: 0.88em; font-weight: 500; transition: color 0.3s; position: relative; }
+.nav-links a:hover { color: var(--text); }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s var(--ease); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta { background: var(--accent) !important; color: #000 !important; padding: 10px 28px; border-radius: var(--radius-pill); font-weight: 700 !important; font-size: 0.88em; box-shadow: 0 0 20px rgba(0,212,255,0.2); transition: all 0.3s var(--ease); }
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(0,212,255,0.35); }
+.nav-cta::after { display: none !important; }
+.mobile-menu { display: none; background: none; border: none; color: var(--text); font-size: 1.5em; cursor: pointer; }
+
+/* HERO */
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; z-index: 2; padding: 120px 24px 80px; }
+.hero-content { max-width: 900px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,212,255,0.06); border: 1px solid rgba(0,212,255,0.15); border-radius: var(--radius-pill); padding: 8px 20px; font-size: 0.82em; font-weight: 500; color: var(--accent); margin-bottom: 28px; backdrop-filter: blur(8px); letter-spacing: 0.03em; }
+.pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.hero h1 { font-family: var(--font-head); font-size: clamp(2.4em, 5.5vw, 4.2em); font-weight: 700; line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.03em; }
+.grad { background: linear-gradient(135deg, var(--accent) 0%, #60a5fa 30%, var(--purple2) 70%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero .sub { font-size: 1.15em; color: var(--text2); max-width: 700px; margin: 0 auto 36px; line-height: 1.7; }
+.hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* BUTTONS */
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 40px; border-radius: var(--radius-pill); font-weight: 700; font-size: 0.95em; text-decoration: none; transition: all 0.4s var(--ease); cursor: pointer; border: none; }
+.btn-primary { background: var(--accent); color: #000; box-shadow: 0 0 30px rgba(0,212,255,0.25), 0 4px 20px rgba(0,212,255,0.2); }
+.btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 0 50px rgba(0,212,255,0.35), 0 8px 30px rgba(0,212,255,0.3); }
+.btn-secondary { background: rgba(255,255,255,0.04); backdrop-filter: blur(8px); color: var(--text); border: 1px solid var(--border2); }
+.btn-secondary:hover { border-color: var(--accent); transform: translateY(-2px); color: var(--accent); }
+
+/* STATS */
+.stats-section { padding: 40px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; z-index: 2; background: linear-gradient(180deg, rgba(0,212,255,0.02), transparent); }
+.stats-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; text-align: center; }
+.stat-num { font-family: var(--font-head); font-size: 2em; font-weight: 700; color: var(--accent); }
+.stat-label { font-size: 0.82em; color: var(--text2); margin-top: 4px; font-weight: 500; }
+
+/* SECTION SYSTEM */
+section { padding: 100px 0; position: relative; z-index: 2; }
+.section-tag { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.78em; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+.section-tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.section-title { font-family: var(--font-head); font-size: clamp(1.8em, 3.5vw, 2.8em); font-weight: 700; line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.02em; }
+.section-sub { color: var(--text2); font-size: 1.05em; max-width: 640px; line-height: 1.7; }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-header .section-sub { margin: 0 auto; }
+
+/* GLOW DIVIDER */
+.glow-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--accent), var(--purple), var(--accent), transparent); opacity: 0.3; margin: 0; }
+
+/* CARDS */
+.card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 36px 28px; transition: all 0.5s var(--ease); position: relative; overflow: hidden; }
+.card:hover { transform: translateY(-6px); border-color: rgba(0,212,255,0.2); }
+.card-icon { width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.4em; }
+.card h3 { font-family: var(--font-head); font-size: 1.2em; font-weight: 600; margin-bottom: 10px; }
+.card p { color: var(--text2); font-size: 0.92em; line-height: 1.7; }
+
+/* FEATURED CARD */
+.card-featured { background: linear-gradient(180deg, rgba(0,212,255,0.06), rgba(124,58,237,0.03)); border-color: rgba(0,212,255,0.12); box-shadow: 0 0 60px rgba(0,212,255,0.06); }
+
+/* LAYERS GRID */
+.layers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
+
+/* AGENT TABLE */
+.agent-table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 32px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.agent-table th { background: rgba(0,212,255,0.06); padding: 14px 20px; text-align: left; font-family: var(--font-head); font-size: 0.85em; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+.agent-table td { padding: 14px 20px; border-bottom: 1px solid var(--border); font-size: 0.9em; color: var(--text2); }
+.agent-table tr:last-child td { border-bottom: none; }
+.agent-table tr:hover td { background: rgba(0,212,255,0.02); color: var(--text); }
+.agent-table td:first-child { font-weight: 600; color: var(--text); }
+
+/* TECH STACK */
+.tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.tech-item { display: flex; align-items: center; gap: 14px; padding: 16px 20px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-sm); transition: all 0.3s var(--ease); }
+.tech-item:hover { border-color: rgba(0,212,255,0.15); transform: translateX(4px); }
+.tech-label { font-weight: 600; font-size: 0.9em; }
+.tech-desc { font-size: 0.8em; color: var(--text2); }
+.tech-icon { font-size: 1.3em; width: 36px; text-align: center; }
+
+/* REVENUE MODEL */
+.revenue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.revenue-card { text-align: center; padding: 32px 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-lg); transition: all 0.4s var(--ease); }
+.revenue-card:hover { transform: translateY(-4px); border-color: rgba(0,212,255,0.2); }
+.revenue-price { font-family: var(--font-head); font-size: 2.2em; font-weight: 700; margin-bottom: 4px; }
+.revenue-tier { font-weight: 600; font-size: 1em; margin-bottom: 8px; }
+.revenue-desc { font-size: 0.85em; color: var(--text2); line-height: 1.6; }
+.tier-free .revenue-price { color: var(--green); }
+.tier-premium .revenue-price { color: var(--accent); }
+.tier-vip .revenue-price { color: var(--purple2); }
+.tier-elite .revenue-price { color: var(--gold); }
+
+/* TIMELINE */
+.timeline { max-width: 700px; margin: 0 auto; }
+.timeline-item { display: flex; gap: 24px; padding-bottom: 32px; position: relative; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-marker { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+.timeline-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); box-shadow: 0 0 12px rgba(0,212,255,0.3); z-index: 1; }
+.timeline-line { width: 2px; flex-grow: 1; background: linear-gradient(180deg, var(--accent), var(--purple), transparent); margin-top: 4px; }
+.timeline-item:last-child .timeline-line { display: none; }
+.timeline-content h4 { font-family: var(--font-head); font-size: 1.05em; font-weight: 600; margin-bottom: 6px; }
+.timeline-content p { font-size: 0.88em; color: var(--text2); line-height: 1.6; }
+.timeline-day { font-family: var(--font-mono); font-size: 0.75em; color: var(--accent); font-weight: 700; margin-bottom: 4px; letter-spacing: 0.05em; }
+
+/* COST TABLE */
+.cost-table { width: 100%; border-collapse: separate; border-spacing: 0; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-top: 24px; }
+.cost-table th { background: rgba(0,212,255,0.06); padding: 14px 20px; text-align: left; font-family: var(--font-head); font-size: 0.85em; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+.cost-table td { padding: 12px 20px; border-bottom: 1px solid var(--border); font-size: 0.9em; }
+.cost-table tr:last-child td { border-bottom: none; font-weight: 700; color: var(--accent); }
+.cost-table tr:hover td { background: rgba(0,212,255,0.02); }
+.cost-label { color: var(--text); }
+.cost-price { color: var(--green); font-family: var(--font-mono); font-weight: 600; }
+.cost-note { color: var(--text3); font-size: 0.85em; }
+
+/* DOCS SECTION */
+.docs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.doc-card { padding: 28px 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-lg); transition: all 0.4s var(--ease); text-decoration: none; color: var(--text); display: block; }
+.doc-card:hover { transform: translateY(-4px); border-color: rgba(0,212,255,0.2); background: rgba(0,212,255,0.03); }
+.doc-card h4 { font-family: var(--font-head); font-size: 1em; font-weight: 600; margin-bottom: 8px; }
+.doc-card p { font-size: 0.85em; color: var(--text2); line-height: 1.6; }
+.doc-icon { font-size: 1.6em; margin-bottom: 12px; }
+
+/* CTA SECTION */
+.cta-section { text-align: center; padding: 100px 24px; background: linear-gradient(180deg, var(--bg2), var(--bg)); }
+.cta-section h2 { font-family: var(--font-head); font-size: clamp(1.8em, 3.5vw, 2.8em); font-weight: 700; margin-bottom: 16px; letter-spacing: -0.02em; }
+.cta-section p { color: var(--text2); font-size: 1.05em; max-width: 600px; margin: 0 auto 32px; }
+.cta-box { display: inline-flex; flex-direction: column; align-items: center; gap: 16px; padding: 40px 48px; background: rgba(0,212,255,0.04); border: 1px solid rgba(0,212,255,0.12); border-radius: var(--radius-lg); backdrop-filter: blur(12px); }
+.cta-box .contact-method { font-family: var(--font-mono); font-size: 1.1em; color: var(--accent); font-weight: 600; }
+.cta-box .contact-label { font-size: 0.85em; color: var(--text2); }
+
+/* FOOTER */
+footer { padding: 48px 32px; border-top: 1px solid var(--border); text-align: center; position: relative; z-index: 2; }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-brand { font-family: var(--font-head); font-size: 1.2em; font-weight: 700; margin-bottom: 16px; }
+.footer-brand span { color: var(--accent); }
+.footer-links { list-style: none; display: flex; justify-content: center; gap: 24px; margin-bottom: 20px; flex-wrap: wrap; }
+.footer-links a { color: var(--text2); text-decoration: none; font-size: 0.85em; transition: color 0.3s; }
+.footer-links a:hover { color: var(--accent); }
+.footer-legal { font-size: 0.78em; color: var(--text3); max-width: 700px; margin: 0 auto; line-height: 1.7; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  .layers-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(5,5,8,0.95); backdrop-filter: blur(24px); padding: 24px; gap: 20px; border-bottom: 1px solid var(--border); }
+  .nav-links.open { display: flex; }
+  .mobile-menu { display: block; }
+  .hero { min-height: auto; padding: 140px 24px 60px; }
+  .hero h1 { font-size: 2em; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .revenue-grid { grid-template-columns: 1fr 1fr; }
+  section { padding: 60px 0; }
+}
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-btns { flex-direction: column; align-items: center; }
+  .revenue-grid { grid-template-columns: 1fr; }
+  .docs-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Ambient Background -->
+<div class="ambient-bg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+<div class="noise-overlay"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="logo">OXY <span>ALGO</span></a>
+    <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="#what">The System</a></li>
+      <li><a href="#layers">Architecture</a></li>
+      <li><a href="#agents">Agents</a></li>
+      <li><a href="#revenue">Revenue</a></li>
+      <li><a href="#cost">Costs</a></li>
+      <li><a href="#docs">Documentation</a></li>
+      <li><a href="#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badge"><span class="pulse-dot"></span> WHITE-LABEL PARTNER PROGRAM</div>
+    <h1>Launch Your Own<br><span class="grad">AI Trading Service.</span></h1>
+    <p class="sub">Get the complete OXY ALGO system &mdash; 42 workflows, 38 instruments, 30 Discord commands, 8 AI agents, and a full content engine &mdash; deployed under your brand. Running autonomously in 7 days.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-primary">Become a Partner &#8594;</a>
+      <a href="#what" class="btn btn-secondary">See What You Get</a>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-section">
+  <div class="stats-grid wrap">
+    <div class="stat"><div class="stat-num">42</div><div class="stat-label">Active Workflows</div></div>
+    <div class="stat"><div class="stat-num">38</div><div class="stat-label">Instruments</div></div>
+    <div class="stat"><div class="stat-num">30</div><div class="stat-label">Discord Commands</div></div>
+    <div class="stat"><div class="stat-num">8</div><div class="stat-label">AI Agents</div></div>
+    <div class="stat"><div class="stat-num">36+</div><div class="stat-label">Videos / Week</div></div>
+    <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Autonomous</div></div>
+  </div>
+</div>
+
+<!-- WHAT YOU GET -->
+<section id="what" style="background: var(--bg2);">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-tag"><span class="dot"></span> THE SYSTEM</div>
+      <h2 class="section-title">A Complete Trading Business<br>In a Box</h2>
+      <p class="section-sub">OXY ALGO is not a signal service. It's an autonomous trading infrastructure &mdash; the entire engine, customer-facing AI, intelligence layer, and content pipeline. You get all of it.</p>
+    </div>
+    <div class="layers-grid">
+      <div class="card card-featured reveal">
+        <div class="card-icon" style="background: rgba(0,212,255,0.1);">&#9881;</div>
+        <h3>42 n8n Workflows</h3>
+        <p>The engine room. Scans markets, generates signals, executes trades, posts to Discord, tracks performance, creates social content. Runs on autopilot 24/5. Every 15 minutes, every instrument scored against 8 ICT/Smart Money factors.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon" style="background: rgba(124,58,237,0.1);">&#129302;</div>
+        <h3>Discord Bot v2</h3>
+        <p>The face of your business. GPT-4 personality brain + Claude analysis brain. 30 slash commands including full trade management. RAG knowledge base, user profiling, self-annotation. Learns from every conversation.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon" style="background: rgba(16,185,129,0.1);">&#128200;</div>
+        <h3>Signal Intelligence</h3>
+        <p>Every signal captured and stored in SQLite. Win rates, accuracy by session, grade breakdowns, hot instruments. The system builds a self-learning market memory over time. Members can query signal stats via commands.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon" style="background: rgba(245,158,11,0.1);">&#128737;</div>
+        <h3>Risk Engine v6.1</h3>
+        <p>Multi-layer risk protection built for prop firm compliance. Hard limits that never bypass, soft filters with two modes (SAFE / AGGRESSIVE), progressive trailing stops, time-based exits. Keeps capital safe on autopilot.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon" style="background: rgba(249,115,22,0.1);">&#127909;</div>
+        <h3>Content Bridge</h3>
+        <p>3 workflows auto-generate ~36 viral video packages per week. Trading data flows to Perplexity AI scripts, then to Airtable, then to HeyGen clone video, then to 9 social platforms. Drives organic traffic 24/7.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon" style="background: rgba(239,68,68,0.1);">&#128272;</div>
+        <h3>Full White-Label Kit</h3>
+        <p>90% of rebranding is automatic via .env and guilds.js. The remaining 10% is documented line-by-line. Branding guide, credentials checklist, risk system guide, and deployment playbook included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- FIVE LAYERS -->
+<section id="layers">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-tag"><span class="dot"></span> ARCHITECTURE</div>
+      <h2 class="section-title">Five Interconnected Layers</h2>
+      <p class="section-sub">Each layer handles a distinct responsibility. Together, they form a fully autonomous trading business.</p>
+    </div>
+    <div class="layers-grid">
+      <div class="card reveal">
+        <h3 style="color: var(--accent);">Layer 1: n8n Engine</h3>
+        <p>42 workflows scan markets, generate signals, execute trades, post to Discord, track performance, and create social content. The backbone that runs everything on autopilot.</p>
+      </div>
+      <div class="card reveal">
+        <h3 style="color: var(--purple2);">Layer 2: Discord Bot</h3>
+        <p>Customer-facing AI assistant. Two-brain architecture (GPT-4 + Claude). 30 slash commands, @mention support, auto-respond, tier-gated access. 3 agent personas with distinct voices.</p>
+      </div>
+      <div class="card reveal">
+        <h3 style="color: var(--green2);">Layer 3: Intelligence</h3>
+        <p>RAG knowledge base (68 ICT/SMC entries), user profiling, self-annotation, sales intelligence, psychology detection. The bot gets smarter with every interaction.</p>
+      </div>
+      <div class="card reveal">
+        <h3 style="color: var(--gold);">Layer 4: Signal Intelligence</h3>
+        <p>Passive tracker captures every signal embed. SQLite stores 25+ fields per signal. Win rates, accuracy by session, grade breakdown, hot instruments. Self-learning market memory.</p>
+      </div>
+      <div class="card reveal">
+        <h3 style="color: var(--orange);">Layer 5: Content Bridge</h3>
+        <p>Auto-generates viral short-form videos from real trading data. ~36 packages/week across 3 content types. Perplexity AI scripts, HeyGen avatar rendering, 9-platform distribution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- 8 AI AGENTS -->
+<section id="agents" style="background: var(--bg2);">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-tag"><span class="dot"></span> THE TEAM</div>
+      <h2 class="section-title">8 AI Agents Working 24/7</h2>
+      <p class="section-sub">Each agent maps to real workflows. Your members see a team of specialists. Under the hood, it's a fully automated pipeline.</p>
+    </div>
+    <table class="agent-table reveal">
+      <thead>
+        <tr><th>Agent</th><th>Role</th><th>What It Does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Scanner "Hawk"</td><td>Setup Detection</td><td>Scans 38 instruments every 15 min, scores with 8 ICT factors</td></tr>
+        <tr><td>Analyst</td><td>Confluence Scoring</td><td>Daily bias, liquidity maps, multi-timeframe analysis</td></tr>
+        <tr><td>Executor</td><td>Trade Placement</td><td>Risk validation + live execution via MT5</td></tr>
+        <tr><td>Guardian "Shield"</td><td>Risk Enforcement</td><td>Account monitoring, drawdown alerts, risk rules 24/5</td></tr>
+        <tr><td>Copier</td><td>Trade Mirroring</td><td>Cross-platform copy trading (planned feature)</td></tr>
+        <tr><td>Intel</td><td>Market News</td><td>Session prep, pre-news alerts, market updates</td></tr>
+        <tr><td>Tracker "Scoreboard"</td><td>Performance</td><td>P&L tracking, streaks, prop firm progress, leaderboard</td></tr>
+        <tr><td>Amun (Your Bot)</td><td>AI Assistant</td><td>Discord conversations, commands, education, sales</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top: 24px; text-align: center;" class="reveal">
+      <p style="color: var(--text2); font-size: 0.9em;">3 agents (Scanner, Guardian, Tracker) have <strong style="color: var(--text);">live personas</strong> with cyberpunk avatars, Gen Z personalities, and ElevenLabs voices. They react to trading events in Discord, creating authentic squad conversation.</p>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- TECH STACK -->
+<section id="tech">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-tag"><span class="dot"></span> TECHNOLOGY</div>
+      <h2 class="section-title">Enterprise-Grade Stack</h2>
+      <p class="section-sub">Battle-tested infrastructure running in production since January 2025.</p>
+    </div>
+    <div class="tech-grid reveal">
+      <div class="tech-item"><div class="tech-icon">&#9881;</div><div><div class="tech-label">n8n (Self-Hosted)</div><div class="tech-desc">42-workflow automation engine</div></div></div>
+      <div class="tech-item"><div class="tech-icon">&#129302;</div><div><div class="tech-label">Discord.js Bot v2</div><div class="tech-desc">30 commands, dual-brain AI</div></div></div>
+      <div class="tech-item"><div class="tech-icon">&#128202;</div><div><div class="tech-label">OXY API Suite</div><div class="tech-desc">Ticks, bars, calendar, charts, news, orders</div></div></div>
+      <div class="tech-item"><div class="tech-icon">&#129504;</div><div><div class="tech-label">OpenAI GPT-4</div><div class="tech-desc">Personality brain, conversations, sales</div></div></div>
+      <div class="tech-item"><div class="tech-icon">&#128161;</div><div><div class="tech-label">Claude Sonnet / Opus</div><div class="tech-desc">Analysis brain, Smart Money narratives</div></div></div>
+      <div class="tech-item"><div class="tech-icon">&#127912;</div><div><div class="tech-label">Perplexity AI</div><div class="tech-desc">Viral content script generation</div></div></div>
+      <div class="tech-item"><div class="tech-icon">&#128200;</div><div><div class="tech-label">TradingView</div><div class="tech-desc">M15 alerts, H4 order flow</div></div></div>
+      <div class="tech-item"><div class="tech-icon">&#128176;</div><div><div class="tech-label">MT5 via OXY Orders</div><div class="tech-desc">Live trade execution</div></div></div>
+      <div class="tech-item"><div class="tech-icon">&#127908;</div><div><div class="tech-label">ElevenLabs TTS</div><div class="tech-desc">Agent voice notes</div></div></div>
+      <div class="tech-item"><div class="tech-icon">&#128230;</div><div><div class="tech-label">Airtable</div><div class="tech-desc">Content pipeline management</div></div></div>
+      <div class="tech-item"><div class="tech-icon">&#128187;</div><div><div class="tech-label">SQLite</div><div class="tech-desc">Signal logs, profiles, predictions</div></div></div>
+      <div class="tech-item"><div class="tech-icon">&#128260;</div><div><div class="tech-label">Whop</div><div class="tech-desc">Payments + Discord role sync</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- DISCORD STRUCTURE -->
+<section style="background: var(--bg2);">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-tag"><span class="dot"></span> DISCORD</div>
+      <h2 class="section-title">9 Categories. 30+ Channels.<br>Fully Automated.</h2>
+      <p class="section-sub">A complete Discord server structure with tier-gated access, automated content in every channel, and AI-powered engagement.</p>
+    </div>
+    <table class="agent-table reveal">
+      <thead>
+        <tr><th>Category</th><th>Tier</th><th>Channels</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>START HERE</td><td style="color: var(--green);">Free</td><td>welcome, announcements, rules, results, resources, upgrade</td></tr>
+        <tr><td>COMMUNITY</td><td style="color: var(--green);">Free</td><td>general, learn (daily AI classroom)</td></tr>
+        <tr><td>SCANNER &mdash; Forex</td><td style="color: var(--accent);">Premium+</td><td>7 basket channels (GBP, EUR, JPY, AUD, CAD, NZD, CHF)</td></tr>
+        <tr><td>MARKETS</td><td style="color: var(--accent);">Premium+</td><td>indices, commodities, crypto, smart-money, liquidity-map, live-trades</td></tr>
+        <tr><td>ANALYST &mdash; Intel</td><td style="color: var(--accent);">Premium+</td><td>correlation, daily-bias, briefing, news, sessions</td></tr>
+        <tr><td>TRACKER &mdash; Performance</td><td style="color: var(--purple2);">VIP+</td><td>live-pnl, journal, prop-tracker, weekly-recap, timelapses</td></tr>
+        <tr><td>THE VAULT</td><td style="color: var(--gold);">Elite</td><td>inner-circle, direct-line, War Room voice</td></tr>
+        <tr><td>VOICE</td><td style="color: var(--accent);">Mixed</td><td>Trading Floor (Premium+), Strategy Room (VIP+)</td></tr>
+        <tr><td>SYSTEM</td><td style="color: var(--text3);">Internal</td><td>bot-status (not visible to members)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- REVENUE MODEL -->
+<section id="revenue">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-tag"><span class="dot"></span> REVENUE</div>
+      <h2 class="section-title">Built-In Monetization</h2>
+      <p class="section-sub">Four subscription tiers with clear value escalation. The system sells itself through automated upsell workflows and signal proof.</p>
+    </div>
+    <div class="revenue-grid reveal">
+      <div class="revenue-card tier-free">
+        <div class="revenue-tier">Free</div>
+        <div class="revenue-price">$0</div>
+        <div class="revenue-desc">Onboarding, community, learn channel, basic bot access. Drives signups.</div>
+      </div>
+      <div class="revenue-card tier-premium" style="border-color: rgba(0,212,255,0.15);">
+        <div class="revenue-tier">Premium</div>
+        <div class="revenue-price">$149<span style="font-size: 0.4em; color: var(--text2);">/mo</span></div>
+        <div class="revenue-desc">All 38-instrument signals, market intel, live trades, 7 forex baskets. Core revenue driver.</div>
+      </div>
+      <div class="revenue-card tier-vip">
+        <div class="revenue-tier">VIP</div>
+        <div class="revenue-price">$349<span style="font-size: 0.4em; color: var(--text2);">/mo</span></div>
+        <div class="revenue-desc">Performance tracking, journal, prop firm tracker, weekly recap, timelapses.</div>
+      </div>
+      <div class="revenue-card tier-elite">
+        <div class="revenue-tier">Elite</div>
+        <div class="revenue-price">$997<span style="font-size: 0.4em; color: var(--text2);">/mo</span></div>
+        <div class="revenue-desc">Inner circle, direct line, War Room, priority support. High-ticket anchor.</div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 32px;" class="reveal">
+      <p style="color: var(--text2); font-size: 0.9em;">Content Bridge generates ~36 viral videos/week driving organic traffic from 9 social platforms. Automated upsell workflows detect and convert hot leads.</p>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- YOUR COST -->
+<section id="cost" style="background: var(--bg2);">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-tag"><span class="dot"></span> YOUR COSTS</div>
+      <h2 class="section-title">What It Costs to Run</h2>
+      <p class="section-sub">Minimal infrastructure costs. All credentials are pay-as-you-go. No long-term contracts.</p>
+    </div>
+    <div class="wrap-sm">
+      <table class="cost-table reveal">
+        <thead>
+          <tr><th>Service</th><th>Monthly Cost</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="cost-label">VPS + n8n Hosting</td><td class="cost-price">$5 &ndash; $13</td><td class="cost-note">2 vCPU, 8GB RAM (Hostinger recommended)</td></tr>
+          <tr><td class="cost-label">Discord Bot Application</td><td class="cost-price">Free</td><td class="cost-note">Discord Developer Portal</td></tr>
+          <tr><td class="cost-label">OpenAI GPT-4 API</td><td class="cost-price">$20 &ndash; $50</td><td class="cost-note">Personality brain, conversations</td></tr>
+          <tr><td class="cost-label">OXY Financial Data API</td><td class="cost-price">Included</td><td class="cost-note">Provided with white-label license</td></tr>
+          <tr><td class="cost-label">Anthropic Claude API</td><td class="cost-price">$10 &ndash; $30</td><td class="cost-note">Recommended &mdash; analysis brain</td></tr>
+          <tr><td class="cost-label">ElevenLabs (optional)</td><td class="cost-price">$5 &ndash; $22</td><td class="cost-note">Voice system for agents</td></tr>
+          <tr><td class="cost-label">Perplexity (optional)</td><td class="cost-price">$5</td><td class="cost-note">Content script generation</td></tr>
+          <tr><td class="cost-label">Total (required)</td><td class="cost-price">$25 &ndash; $63/mo</td><td class="cost-note"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- DEPLOYMENT TIMELINE -->
+<section>
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-tag"><span class="dot"></span> DEPLOYMENT</div>
+      <h2 class="section-title">Live in 7 Days</h2>
+      <p class="section-sub">From zero to a fully branded, autonomous trading service in one week.</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-content">
+          <div class="timeline-day">DAY 1</div>
+          <h4>Credentials + Infrastructure</h4>
+          <p>Set up VPS, install n8n, collect Discord bot token, OpenAI key, and API credentials. Follow the credentials checklist.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-content">
+          <div class="timeline-day">DAY 2 &ndash; 3</div>
+          <h4>Workflow Import + Discord Setup</h4>
+          <p>Import all 42 workflow JSON files into n8n. Create Discord server with 9 categories, 30+ channels, and 4 tier roles. Deploy the bot.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-content">
+          <div class="timeline-day">DAY 4 &ndash; 5</div>
+          <h4>Branding + Webhook Mapping</h4>
+          <p>Apply your brand (name, colors, personality). Map n8n webhook outputs to your Discord channels. Configure payment processing.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-content">
+          <div class="timeline-day">DAY 6 &ndash; 7</div>
+          <h4>Testing + Soft Launch</h4>
+          <p>Run verification checklist. Test every command, every signal flow, every tier gate. Activate workflows and invite your first members.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- DOCUMENTATION -->
+<section id="docs" style="background: var(--bg2);">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="section-tag"><span class="dot"></span> DOCUMENTATION</div>
+      <h2 class="section-title">Everything Documented</h2>
+      <p class="section-sub">Four comprehensive guides cover every aspect of deployment and operation.</p>
+    </div>
+    <div class="docs-grid reveal">
+      <div class="doc-card">
+        <div class="doc-icon">&#128214;</div>
+        <h4>System Overview</h4>
+        <p>Complete system architecture, all 5 layers, 8 AI agents, Discord structure, revenue model, and technology stack. Start here.</p>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">&#128273;</div>
+        <h4>Credentials Checklist</h4>
+        <p>Step-by-step guide to collect every API key, bot token, server ID, and role ID needed. Includes cost breakdown.</p>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">&#127912;</div>
+        <h4>Branding Guide</h4>
+        <p>Line-by-line code rebrand map. Every file, every reference, every find-and-replace. 90% automatic, 10% documented.</p>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">&#128737;</div>
+        <h4>Risk System Guide</h4>
+        <p>Complete risk engine technical reference. Hard limits, soft filters, trailing stops, tuning parameters. For operators.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="wrap reveal">
+    <h2>Ready to Launch<br><span class="grad">Your Trading Service?</span></h2>
+    <p>Full system access. Complete documentation. Ongoing API support. Deploy under your brand and start generating revenue.</p>
+    <div class="cta-box">
+      <div class="contact-label">Reach out to discuss partnership</div>
+      <div class="contact-method">Discord: oxyalgo</div>
+      <div class="contact-label" style="margin-top: 8px;">or</div>
+      <a href="/" class="btn btn-primary" style="margin-top: 8px;">View Live System &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">OXY <span>ALGO</span></div>
+    <ul class="footer-links">
+      <li><a href="/">Main Site</a></li>
+      <li><a href="#what">The System</a></li>
+      <li><a href="#agents">Agents</a></li>
+      <li><a href="#revenue">Revenue</a></li>
+      <li><a href="#docs">Documentation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="footer-legal">OXY ALGO &copy; 2026. White-Label Partner Program. This page is for prospective and current white-label partners only. System details are confidential.</div>
+  </div>
+</footer>
+
+<script>
+// NAVBAR SCROLL
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// REVEAL ON SCROLL
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// CLOSE MOBILE MENU ON CLICK
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
+});
+</script>
+</body>
+</html>
