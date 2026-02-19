@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OXY ALGO - Command Center</title>
+<style>
+  :root {
+    --bg: #0a0e17;
+    --surface: #111827;
+    --surface2: #1a2332;
+    --border: #1e293b;
+    --accent: #00d4ff;
+    --accent2: #7c3aed;
+    --green: #10b981;
+    --red: #ef4444;
+    --yellow: #f59e0b;
+    --orange: #f97316;
+    --text: #e2e8f0;
+    --text2: #94a3b8;
+    --gold: #fbbf24;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Segoe UI', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── HEADER ────────────────────────────── */
+  .hero {
+    background: linear-gradient(135deg, #0a0e17 0%, #1a1040 50%, #0a0e17 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 40px 20px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(0,212,255,0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(124,58,237,0.05) 0%, transparent 50%);
+    animation: pulse 8s ease-in-out infinite alternate;
+  }
+  @keyframes pulse {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  .hero h1 {
+    font-size: 2.8em;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    letter-spacing: -1px;
+  }
+  .hero .subtitle {
+    color: var(--text2);
+    font-size: 1.1em;
+    margin-top: 8px;
+    position: relative;
+  }
+  .hero .stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .stat-item {
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 2em;
+    font-weight: 800;
+    color: var(--accent);
+  }
+  .stat-label {
+    font-size: 0.75em;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ─── NAV ──────────────────────────────── */
+  .nav {
+    position: sticky;
+    top: 0;
+    background: rgba(10,14,23,0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 0 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4px;
+  }
+  .nav-btn {
+    padding: 14px 20px;
+    background: none;
+    border: none;
+    color: var(--text2);
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+  }
+  .nav-btn:hover { color: var(--text); }
+  .nav-btn.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ─── CONTENT ──────────────────────────── */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .section-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-desc {
+    color: var(--text2);
+    margin-bottom: 30px;
+    font-size: 0.95em;
+  }
+
+  /* ─── CARDS ────────────────────────────── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.25s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,212,255,0.08);
+  }
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    margin-bottom: 16px;
+  }
+  .card h3 {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .card .cmd {
+    font-family: 'Cascadia Code', 'Fira Code', monospace;
+    color: var(--accent);
+    font-size: 0.82em;
+    margin-bottom: 10px;
+    background: rgba(0,212,255,0.08);
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+  }
+  .card p {
+    color: var(--text2);
+    font-size: 0.88em;
+    line-height: 1.5;
+  }
+  .card .tag-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .tag {
+    font-size: 0.7em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .tag.ai { background: rgba(124,58,237,0.2); color: #a78bfa; }
+  .tag.live { background: rgba(16,185,129,0.2); color: #34d399; }
+  .tag.api { background: rgba(0,212,255,0.15); color: var(--accent); }
+  .tag.core { background: rgba(249,115,22,0.2); color: #fb923c; }
+  .tag.risk { background: rgba(239,68,68,0.2); color: #f87171; }
+  .tag.edu { background: rgba(251,191,36,0.2); color: #fcd34d; }
+
+  /* color strips on cards */
+  .card.blue::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--accent), var(--accent2)); }
+  .card.green::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--green), #059669); }
+  .card.gold::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--gold), var(--orange)); }
+  .card.red::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--red), #dc2626); }
+  .card.purple::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--accent2), #9333ea); }
+
+  /* ─── EXPANDED DETAIL CARDS ────────────── */
+  .detail-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .detail-header {
+    padding: 20px 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.2s;
+  }
+  .detail-header:hover { background: var(--surface2); }
+  .detail-header h3 {
+    font-size: 1.05em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .detail-body {
+    padding: 0 24px 20px;
+    display: none;
+    border-top: 1px solid var(--border);
+  }
+  .detail-body.open { display: block; padding-top: 20px; }
+  .detail-body table { width: 100%; border-collapse: collapse; }
+  .detail-body th, .detail-body td {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88em;
+  }
+  .detail-body th { color: var(--text2); font-weight: 600; text-transform: uppercase; font-size: 0.75em; letter-spacing: 0.5px; }
+  .detail-body td code {
+    background: rgba(0,212,255,0.1);
+    color: var(--accent);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: 'Cascadia Code', monospace;
+  }
+  .chevron { transition: transform 0.2s; color: var(--text2); font-size: 0.8em; }
+  .chevron.open { transform: rotate(90deg); }
+
+  /* ─── EXAMPLE BOX ──────────────────────── */
+  .example-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 12px 0;
+    font-family: 'Cascadia Code', monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+    line-height: 1.6;
+    overflow-x: auto;
+  }
+  .example-label {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text2);
+    font-family: 'Segoe UI', sans-serif;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+
+  /* ─── WORKFLOW TABLE ────────────────────── */
+  .wf-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  .wf-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+  }
+  .wf-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88em;
+  }
+  .wf-table tr:hover td { background: rgba(0,212,255,0.03); }
+  .status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+  .status-dot.active { background: var(--green); box-shadow: 0 0 6px rgba(16,185,129,0.4); }
+  .status-dot.inactive { background: var(--red); }
+
+  /* ─── SEARCH ────────────────────────────── */
+  .search-box {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 30px;
+    position: relative;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 14px 20px 14px 48px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    font-size: 0.95em;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-box input:focus { border-color: var(--accent); }
+  .search-box input::placeholder { color: #475569; }
+  .search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text2);
+    font-size: 1.1em;
+  }
+
+  /* ─── RESPONSIVE ────────────────────────── */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 1.8em; }
+    .stats-bar { gap: 20px; }
+    .stat-num { font-size: 1.5em; }
+    .card-grid { grid-template-columns: 1fr; }
+    .nav-btn { padding: 12px 14px; font-size: 0.78em; }
+  }
+
+  /* ─── QUICK TIP CALLOUT ─────────────────── */
+  .callout {
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 0.88em;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .callout.info { background: rgba(0,212,255,0.08); border-left: 3px solid var(--accent); }
+  .callout.warn { background: rgba(245,158,11,0.08); border-left: 3px solid var(--yellow); }
+  .callout.success { background: rgba(16,185,129,0.08); border-left: 3px solid var(--green); }
+  .callout-icon { font-size: 1.2em; flex-shrink: 0; margin-top: 2px; }
+
+  .list-item { padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; gap: 10px; align-items: flex-start; }
+  .list-item:last-child { border-bottom: none; }
+  .list-bullet { color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+  .list-text strong { color: var(--text); }
+  .list-text { color: var(--text2); font-size: 0.88em; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HERO ═══════════ -->
+<div class="hero">
+  <h1>OXY ALGO COMMAND CENTER</h1>
+  <div class="subtitle">Your Complete Guide to Every Skill, Command & Superpower</div>
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">8</div><div class="stat-label">Trading Skills</div></div>
+    <div class="stat-item"><div class="stat-num">8</div><div class="stat-label">n8n Skills</div></div>
+    <div class="stat-item"><div class="stat-num">25</div><div class="stat-label">Active Workflows</div></div>
+    <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">Live APIs</div></div>
+    <div class="stat-item"><div class="stat-num">42</div><div class="stat-label">Discord Channels</div></div>
+  </div>
+</div>
+
+<!-- ═══════════ NAV ═══════════ -->
+<div class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="showSection('skills')">Trading Skills</button>
+    <button class="nav-btn" onclick="showSection('n8nskills')">n8n Skills</button>
+    <button class="nav-btn" onclick="showSection('claude')">Claude Code</button>
+    <button class="nav-btn" onclick="showSection('workflows')">Workflows</button>
+    <button class="nav-btn" onclick="showSection('apis')">APIs</button>
+    <button class="nav-btn" onclick="showSection('discord')">Discord</button>
+    <button class="nav-btn" onclick="showSection('n8n')">n8n Tools</button>
+    <button class="nav-btn" onclick="showSection('quickref')">Quick Reference</button>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 1: TRADING SKILLS                         -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="section active" id="skills">
+  <div class="section-title">Custom Trading Skills</div>
+  <div class="section-desc">8 powerful slash commands built on top of your live APIs. Each one fetches real market data and delivers professional ICT/SMC analysis instantly.</div>
+
+  <div class="callout info">
+    <span class="callout-icon">&#9889;</span>
+    <div><strong>How to use:</strong> Type the command in Claude Code. Example: <code>/project:analyze GBPUSD</code> &mdash; Claude will call your OXY APIs, fetch live data, and deliver a full ICT analysis.</div>
+  </div>
+
+  <div class="card-grid">
+
+    <!-- ANALYZE -->
+    <div class="card blue">
+      <div class="card-icon" style="background:rgba(0,212,255,0.15)">&#128270;</div>
+      <h3>Market Analysis</h3>
+      <div class="cmd">/project:analyze SYMBOL</div>
+      <p>Full ICT/SMC analysis on any instrument. Fetches D1, H4, H1, M15 data plus news. Outputs daily bias, market structure, key levels, FVGs, Order Blocks, Discount/Premium zones, PO3 phase assessment, and a plain-English bottom line.</p>
+      <div class="tag-row">
+        <span class="tag ai">AI Analysis</span>
+        <span class="tag live">Live Data</span>
+        <span class="tag api">4 Timeframes</span>
+      </div>
+    </div>
+
+    <!-- SCORE -->
+    <div class="card purple">
+      <div class="card-icon" style="background:rgba(124,58,237,0.15)">&#127919;</div>
+      <h3>Trade Scorer</h3>
+      <div class="cmd">/project:score SYMBOL DIRECTION PRICE</div>
+      <p>10-factor confluence scoring (0-100). Checks HTF bias, zone, Order Block, OTE, IDM sweep, Kill Zone timing, FVG, news, PO3 phase, and institutional levels. Gives GO / CAUTION / NO TRADE verdict with SL/TP levels.</p>
+      <div class="tag-row">
+        <span class="tag ai">AI Scoring</span>
+        <span class="tag risk">Risk Check</span>
+        <span class="tag core">10 Factors</span>
+      </div>
+    </div>
+
+    <!-- BRIEFING -->
+    <div class="card gold">
+      <div class="card-icon" style="background:rgba(251,191,36,0.15)">&#128220;</div>
+      <h3>Session Briefing</h3>
+      <div class="cmd">/project:briefing</div>
+      <p>Pre-session intelligence report covering ALL 25+ instruments. Scans the GBP basket + crypto + indices/commodities, identifies top 3 setups, checks news events, and gives a session game plan. Auto-detects London or NY session.</p>
+      <div class="tag-row">
+        <span class="tag live">25+ Instruments</span>
+        <span class="tag ai">AI Report</span>
+        <span class="tag core">Session Plan</span>
+      </div>
+    </div>
+
+    <!-- LEVELS -->
+    <div class="card green">
+      <div class="card-icon" style="background:rgba(16,185,129,0.15)">&#128200;</div>
+      <h3>Key Levels</h3>
+      <div class="cmd">/project:levels SYMBOL</div>
+      <p>Complete liquidity map: PDH/PDL, PWH/PWL, PMH/PML, equal highs/lows, Asian Range, OTE zones (62%, 70.5%, 79%), unfilled FVGs with CE levels, active Order Blocks, round numbers, and Draw on Liquidity targets.</p>
+      <div class="tag-row">
+        <span class="tag live">Live Levels</span>
+        <span class="tag api">4 Timeframes</span>
+        <span class="tag core">Liquidity Map</span>
+      </div>
+    </div>
+
+    <!-- RISK -->
+    <div class="card red">
+      <div class="card-icon" style="background:rgba(239,68,68,0.15)">&#128176;</div>
+      <h3>Risk Calculator</h3>
+      <div class="cmd">/project:risk BALANCE SYMBOL ENTRY SL</div>
+      <p>Exact position size calculation. Gives lot size (rounded down), TP1/TP2/TP3 at 1:2, 1:3, 1:5 R:R, scaling plan based on HTF trend, ADR check, daily drawdown limit verification, and a quick-copy block for MT5.</p>
+      <div class="tag-row">
+        <span class="tag risk">Risk Management</span>
+        <span class="tag core">Position Sizing</span>
+        <span class="tag live">ADR Data</span>
+      </div>
+    </div>
+
+    <!-- CORRELATION -->
+    <div class="card blue">
+      <div class="card-icon" style="background:rgba(0,212,255,0.15)">&#128279;</div>
+      <h3>GBP Correlation</h3>
+      <div class="cmd">/project:correlation</div>
+      <p>EUR/GBP compass + 6-pair basket scan. Determines GBP strength/weakness, scores each execution pair (0-100), detects divergences, flags correlated risk, and recommends which pairs to trade with adjusted position sizing.</p>
+      <div class="tag-row">
+        <span class="tag live">7 Pairs</span>
+        <span class="tag ai">Basket Scoring</span>
+        <span class="tag risk">Correlation Risk</span>
+      </div>
+    </div>
+
+    <!-- KILLZONE -->
+    <div class="card gold">
+      <div class="card-icon" style="background:rgba(251,191,36,0.15)">&#9200;</div>
+      <h3>Kill Zone Status</h3>
+      <div class="cmd">/project:killzone</div>
+      <p>Real-time session timer with traffic light system: GREEN (Kill Zone active, look for entries), YELLOW (starting soon, get ready), RED (outside KZ, do NOT trade). Shows PO3 phase, Asian Range, countdown to next KZ, and weekly PO3.</p>
+      <div class="tag-row">
+        <span class="tag live">Real-Time</span>
+        <span class="tag core">Traffic Light</span>
+        <span class="tag edu">PO3 Phase</span>
+      </div>
+    </div>
+
+    <!-- JOURNAL -->
+    <div class="card green">
+      <div class="card-icon" style="background:rgba(16,185,129,0.15)">&#128214;</div>
+      <h3>Trade Journal</h3>
+      <div class="cmd">/project:journal SYMBOL DIR ENTRY EXIT</div>
+      <p>Post-trade ICT review. Scores the closed trade against all 10 confluence factors, calculates R:R, identifies what worked and what to improve, generates a key lesson, logs to CSV, and shows running statistics (win rate, avg R).</p>
+      <div class="tag-row">
+        <span class="tag ai">AI Review</span>
+        <span class="tag edu">Learning</span>
+        <span class="tag core">CSV Tracking</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout success">
+    <span class="callout-icon">&#9989;</span>
+    <div><strong>Pro Tip:</strong> Chain skills together for a complete workflow. Run <code>/project:briefing</code> before the session, <code>/project:score</code> before each entry, <code>/project:risk</code> to size, and <code>/project:journal</code> after closing. This is your edge.</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 1B: n8n SKILLS                              -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="section" id="n8nskills">
+  <div class="section-title">n8n Expert Skills</div>
+  <div class="section-desc">8 specialized skills that make Claude an n8n workflow expert. These activate automatically when you ask about n8n topics &mdash; or you can reference them directly.</div>
+
+  <div class="callout info">
+    <span class="callout-icon">&#9889;</span>
+    <div><strong>How they work:</strong> These skills load automatically when Claude detects you need n8n help. Just describe what you want to build or fix &mdash; Claude picks the right skill. Example: <em>"Write a Code node that filters items by date"</em> triggers the JavaScript skill.</div>
+  </div>
+
+  <div class="card-grid">
+
+    <div class="card blue">
+      <div class="card-icon" style="background:rgba(0,212,255,0.15)">&#128187;</div>
+      <h3>JavaScript Code Nodes</h3>
+      <div class="cmd">n8n-code-javascript</div>
+      <p>Write JavaScript in n8n Code nodes. Knows <code>$input</code>, <code>$json</code>, <code>$node</code>, <code>$helpers</code> syntax. Handles HTTP requests via <code>$helpers</code> (no fetch!), date manipulation with DateTime/Luxon, and runOnceForAllItems vs runOnceForEachItem modes.</p>
+      <div class="tag-row">
+        <span class="tag core">Code Nodes</span>
+        <span class="tag api">$input/$json</span>
+      </div>
+    </div>
+
+    <div class="card blue">
+      <div class="card-icon" style="background:rgba(0,212,255,0.15)">&#128013;</div>
+      <h3>Python Code Nodes</h3>
+      <div class="cmd">n8n-code-python</div>
+      <p>Write Python in n8n Code nodes. Uses <code>_input</code>, <code>_json</code>, <code>_node</code> syntax (underscores not dollars). Standard library only. Understands Python-specific limitations and workarounds in n8n sandbox.</p>
+      <div class="tag-row">
+        <span class="tag core">Python</span>
+        <span class="tag api">_input/_json</span>
+      </div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-icon" style="background:rgba(251,191,36,0.15)">&#128196;</div>
+      <h3>Expression Syntax</h3>
+      <div class="cmd">n8n-expression-syntax</div>
+      <p>Master n8n <code>{{ }}</code> expressions. Access <code>$json</code>, <code>$node</code>, webhook data, previous node outputs. Fix common errors like missing <code>=</code> prefix, wrong variable paths, and expression vs static field confusion.</p>
+      <div class="tag-row">
+        <span class="tag core">Expressions</span>
+        <span class="tag edu">Debugging</span>
+      </div>
+    </div>
+
+    <div class="card green">
+      <div class="card-icon" style="background:rgba(16,185,129,0.15)">&#128295;</div>
+      <h3>MCP Tools Expert</h3>
+      <div class="cmd">n8n-mcp-tools-expert</div>
+      <p>Guide for using n8n MCP tools effectively. Tool selection (when to use search_nodes vs get_node vs get_template), parameter formats, validation workflows, and common multi-tool patterns.</p>
+      <div class="tag-row">
+        <span class="tag api">MCP</span>
+        <span class="tag core">Tool Selection</span>
+      </div>
+    </div>
+
+    <div class="card purple">
+      <div class="card-icon" style="background:rgba(124,58,237,0.15)">&#9881;</div>
+      <h3>Node Configuration</h3>
+      <div class="cmd">n8n-node-configuration</div>
+      <p>Operation-aware node setup. Understands property dependencies (e.g., Slack: resource=channel, operation=create reveals specific fields). Required fields, detail levels, common patterns for HTTP Request, Code, Discord, Schedule nodes.</p>
+      <div class="tag-row">
+        <span class="tag core">Config</span>
+        <span class="tag api">Dependencies</span>
+      </div>
+    </div>
+
+    <div class="card red">
+      <div class="card-icon" style="background:rgba(239,68,68,0.15)">&#128681;</div>
+      <h3>Validation Expert</h3>
+      <div class="cmd">n8n-validation-expert</div>
+      <p>Interpret and fix validation errors/warnings. Understands false positives, operator structure issues, validation profiles (minimal/runtime/strict). Guides through the validate &rarr; fix &rarr; revalidate loop.</p>
+      <div class="tag-row">
+        <span class="tag risk">Errors</span>
+        <span class="tag edu">Fix Loop</span>
+      </div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-icon" style="background:rgba(251,191,36,0.15)">&#127959;</div>
+      <h3>Workflow Patterns</h3>
+      <div class="cmd">n8n-workflow-patterns</div>
+      <p>Proven architectural patterns from real workflows. Webhook processing, HTTP API integration, database ops, AI agent chains, scheduled tasks, error handling. Use when designing new workflow structure.</p>
+      <div class="tag-row">
+        <span class="tag core">Architecture</span>
+        <span class="tag ai">Patterns</span>
+      </div>
+    </div>
+
+    <div class="card purple">
+      <div class="card-icon" style="background:rgba(124,58,237,0.15)">&#9000;</div>
+      <h3>Keybindings Help</h3>
+      <div class="cmd">keybindings-help</div>
+      <p>Customize Claude Code keyboard shortcuts. Rebind keys, add chord bindings (two-key combos), modify <code>~/.claude/keybindings.json</code>. Change submit key, add custom shortcuts for common actions.</p>
+      <div class="tag-row">
+        <span class="tag core">Shortcuts</span>
+        <span class="tag edu">Config</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout success">
+    <span class="callout-icon">&#9989;</span>
+    <div><strong>Example prompts that trigger these skills:</strong><br>
+    &bull; <em>"Write a Code node that groups items by symbol"</em> &rarr; JavaScript skill<br>
+    &bull; <em>"Fix this expression: {{ $json.data.price }}"</em> &rarr; Expression skill<br>
+    &bull; <em>"Build me a webhook workflow that processes Stripe events"</em> &rarr; Workflow patterns<br>
+    &bull; <em>"Why is my HTTP Request node showing a validation error?"</em> &rarr; Validation expert</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 2: CLAUDE CODE FEATURES                    -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="section" id="claude">
+  <div class="section-title">Claude Code Superpowers</div>
+  <div class="section-desc">Built-in commands, keyboard shortcuts, and features that make Claude Code your ultimate coding companion.</div>
+
+  <h3 style="margin: 20px 0 15px; color: var(--accent);">Built-in Slash Commands</h3>
+  <div class="card-grid">
+    <div class="card blue">
+      <h3>/help</h3>
+      <p>Show all available commands and features. Your starting point for discovering what Claude Code can do.</p>
+    </div>
+    <div class="card blue">
+      <h3>/clear</h3>
+      <p>Clear the conversation history and start fresh. Useful when context gets cluttered.</p>
+    </div>
+    <div class="card blue">
+      <h3>/compact</h3>
+      <p>Compress the conversation to save context window space. Claude summarizes prior messages so you can keep working longer.</p>
+    </div>
+    <div class="card blue">
+      <h3>/cost</h3>
+      <p>Show how much the current session has cost in API tokens/dollars. Monitor your usage.</p>
+    </div>
+    <div class="card blue">
+      <h3>/doctor</h3>
+      <p>Run diagnostics to check Claude Code's configuration, MCP servers, permissions, and overall health.</p>
+    </div>
+    <div class="card blue">
+      <h3>/fast</h3>
+      <p>Toggle fast mode. Same Claude Opus 4.6 model, faster output. Great for quick tasks.</p>
+    </div>
+    <div class="card blue">
+      <h3>/init</h3>
+      <p>Initialize or update the CLAUDE.md project file. Sets up project instructions that persist across sessions.</p>
+    </div>
+    <div class="card blue">
+      <h3>/memory</h3>
+      <p>View and manage Claude's auto-memory files. Memory persists across conversations for long-term project context.</p>
+    </div>
+    <div class="card blue">
+      <h3>/review</h3>
+      <p>Ask Claude to review code changes, pull requests, or files for bugs, style issues, and improvements.</p>
+    </div>
+    <div class="card blue">
+      <h3>/terminal-setup</h3>
+      <p>Configure terminal settings for optimal Claude Code experience.</p>
+    </div>
+  </div>
+
+  <h3 style="margin: 30px 0 15px; color: var(--accent2);">Core Capabilities</h3>
+  <div class="card-grid">
+    <div class="card purple">
+      <h3>File Reading & Editing</h3>
+      <p>Read any file, edit with surgical precision (find-and-replace), write new files. Claude sees your entire codebase and can make targeted changes without touching surrounding code.</p>
+    </div>
+    <div class="card purple">
+      <h3>Terminal / Bash Execution</h3>
+      <p>Run any terminal command: git operations, npm, docker, curl, PowerShell. Claude can execute build scripts, run tests, deploy, and manage your development environment.</p>
+    </div>
+    <div class="card purple">
+      <h3>Web Search & Fetch</h3>
+      <p>Search the web and fetch pages for up-to-date information. Research APIs, documentation, troubleshooting guides, and latest best practices without leaving Claude Code.</p>
+    </div>
+    <div class="card purple">
+      <h3>Multi-Agent Tasks</h3>
+      <p>Spawn specialized sub-agents for parallel research, code exploration, and complex multi-step tasks. Like having a team of junior engineers working simultaneously.</p>
+    </div>
+    <div class="card purple">
+      <h3>MCP Server Integration</h3>
+      <p>Connect to external tools via MCP (Model Context Protocol). Your n8n MCP server gives Claude direct control over 1100+ n8n nodes, workflow CRUD, validation, and deployment.</p>
+    </div>
+    <div class="card purple">
+      <h3>Auto-Memory</h3>
+      <p>Claude remembers project context, your preferences, and lessons learned across sessions. Stored in <code>~/.claude/projects/</code> and automatically loaded every conversation.</p>
+    </div>
+    <div class="card purple">
+      <h3>CLAUDE.md Project Config</h3>
+      <p>Project-specific instructions in CLAUDE.md. Define coding standards, architecture rules, safety constraints. Claude follows these rules in every session automatically.</p>
+    </div>
+    <div class="card purple">
+      <h3>Plan Mode</h3>
+      <p>Before making changes, Claude explores the codebase and presents a detailed implementation plan for your approval. No surprise changes, no wasted effort.</p>
+    </div>
+  </div>
+
+  <h3 style="margin: 30px 0 15px; color: var(--green);">Keyboard Shortcuts</h3>
+  <div class="detail-card">
+    <div class="detail-header" onclick="toggleDetail(this)">
+      <h3>Essential Shortcuts</h3>
+      <span class="chevron">&#9654;</span>
+    </div>
+    <div class="detail-body">
+      <table>
+        <tr><th>Shortcut</th><th>Action</th></tr>
+        <tr><td><code>Enter</code></td><td>Submit your message to Claude</td></tr>
+        <tr><td><code>Shift+Enter</code></td><td>New line (don't submit)</td></tr>
+        <tr><td><code>Ctrl+C</code></td><td>Cancel current Claude operation</td></tr>
+        <tr><td><code>Ctrl+L</code></td><td>Clear terminal</td></tr>
+        <tr><td><code>Up Arrow</code></td><td>Recall previous message</td></tr>
+        <tr><td><code>Escape</code></td><td>Cancel current input / dismiss</td></tr>
+        <tr><td><code>Tab</code></td><td>Autocomplete file paths and commands</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout info">
+    <span class="callout-icon">&#128161;</span>
+    <div><strong>Power Move:</strong> You can highlight code in VS Code, then ask Claude about it. Claude sees your selection context and can analyze, explain, or modify exactly what you highlighted.</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 3: WORKFLOWS                               -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="section" id="workflows">
+  <div class="section-title">Active n8n Workflows</div>
+  <div class="section-desc">25 workflows running 24/7 on your n8n instance. Scanning Forex, Crypto, Indices & Commodities, posting signals, managing risk, and driving conversions automatically.</div>
+
+  <table class="wf-table">
+    <tr><th>#</th><th>Name</th><th>Purpose</th><th>Schedule</th><th>Status</th></tr>
+    <tr><td>0</td><td>Discord Server Setup</td><td>Created channels, categories, roles, webhooks</td><td>One-time</td><td><span class="status-dot active"></span>Complete</td></tr>
+    <tr><td>1</td><td>GBP Correlation Scanner</td><td>EUR/GBP compass + 6 execution pairs. Posts per-instrument signals with dual charts</td><td>:00/:15/:30/:45 Mon-Fri</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>2</td><td>Indices & Commodities Scanner</td><td>Gold, NAS100, US30, SPX500, USOIL. Independent setups with dual M15+H4 charts</td><td>:07/:22/:37/:52 Mon-Fri</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>3</td><td>Daily Bias Engine</td><td>HTF bias analysis, 4-question ICT roadmap, DOL targets via AI</td><td>0:00, 6:00, 12:00 UTC Mon-Fri</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>4</td><td>Smart Money Signal Generator</td><td>ICT setups during Kill Zones only. AI confluence scoring 0-100</td><td>Every 5 min (KZ hours)</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>5</td><td>Session Flow Tracker</td><td>Real-time PO3 phase tracking: Accumulation &rarr; Manipulation &rarr; Distribution</td><td>Every 15 min</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>6</td><td>Liquidity Map Generator</td><td>BSL/SSL pools, ERL/IRL levels before each session via AI</td><td>6:00, 12:00 UTC Mon-Fri</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>7</td><td>News Monitor + Trade Blocker</td><td>Economic calendar scan, Red Folder alerts, auto-blocks high-impact news</td><td>Every 15 min</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>8</td><td>Trade Executor</td><td>Place trades on MT5 via Orders API. Called by other workflows</td><td>Execute Workflow Trigger</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>9</td><td>Risk Guardian</td><td>Enforce 5% daily / 10% total drawdown limits. Auto-block if breached</td><td>Every 15 min</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>10</td><td>Performance Tracker</td><td>Win rate, P&L, ICT breakdown of closed trades via AI review</td><td>5:00 PM EST Mon-Fri</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>11</td><td>Daily Briefing</td><td>AI morning intelligence report. Scans all 25+ instruments</td><td>7:00 AM EST Mon-Fri</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>12</td><td>Education Bot</td><td>Daily ICT/SMC concept education with examples and charts</td><td>8:00 AM EST Mon-Fri</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>13</td><td>Trade Catcher Receiver</td><td>Receives webhook from MT4 EA, posts manual trades to Discord</td><td>Webhook trigger</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>14</td><td>VPS Health Monitor</td><td>Checks VPS/MT4/MT5/API health, alerts to #bot-status if down</td><td>Every 15 min</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>15</td><td>Prop Firm Challenge Tracker</td><td>Tracks prop firm challenge progress, profit targets, drawdown limits</td><td>Every 4 hours</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>16</td><td>Live P&amp;L Updater</td><td>Real-time profit/loss updates from open positions</td><td>Every 15 min</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>17</td><td>Streak &amp; Milestone Tracker</td><td>Win/loss streaks, milestone celebrations (10 wins, $1K day, etc.)</td><td>10:30 PM EST Mon-Fri</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>18</td><td>Analysis Model (Sub-WF)</td><td>Shared AI analysis: News + Calendar + Market Data &rarr; Final decision</td><td>Execute Workflow Trigger</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>19</td><td>Market Update Bot</td><td>4-hour market updates with CDN charts + GPT-4.1 commentary</td><td>Every 4 hours</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>20</td><td>Send Discord (Sub-WF)</td><td>Centralized Discord posting sub-workflow for all signal senders</td><td>Execute Workflow Trigger</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>21</td><td>Telegram Bot</td><td>Voice I/O, chart delivery, trade management. 25 symbols, 9 commands</td><td>Telegram Trigger</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>22</td><td>Crypto Scanner</td><td>BTC, ETH, XRP, SOL, BNB. 15-min scans with live charts &amp; scoring</td><td>Every 15 min</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>23</td><td>Results Showcase Bot</td><td>Daily P&amp;L summary to #results-showcase (free tier visible)</td><td>10:00 PM UTC</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>24</td><td>Welcome Sequence</td><td>New member onboarding: DM welcome + #general announcement</td><td>Webhook POST</td><td><span class="status-dot active"></span>Active</td></tr>
+  </table>
+
+  <div class="callout warn">
+    <span class="callout-icon">&#9888;</span>
+    <div><strong>Important:</strong> After any workflow update, always deactivate then reactivate to re-register triggers. Never modify production workflows without testing first.</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 4: APIs                                    -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="section" id="apis">
+  <div class="section-title">OXY Financial Data APIs</div>
+  <div class="section-desc">7 self-hosted APIs on your VPS. No rate limits, no recurring fees, complete data ownership. Base URL: <code>https://server.oxyalgo.com</code></div>
+
+  <div class="card-grid">
+    <div class="card blue">
+      <div class="card-icon" style="background:rgba(0,212,255,0.15)">&#128202;</div>
+      <h3>MT5 Market Data API v1.4</h3>
+      <div class="cmd">/market-data-api-v1/market-data-api.php</div>
+      <p>Real-time OHLCV data with 30+ technical indicators (EMA, RSI, ATR, BB, Ichimoku, etc). Up to 5000 candles. Supports all timeframes M1 to MN1. Backtesting mode with pretend_date.</p>
+      <div class="tag-row">
+        <span class="tag live">Real-Time</span>
+        <span class="tag api">30+ Indicators</span>
+      </div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-icon" style="background:rgba(251,191,36,0.15)">&#128240;</div>
+      <h3>Economic News API</h3>
+      <div class="cmd">/news-api-v1/news-api.php</div>
+      <p>Historical and scheduled economic events. 200+ tracked events with consistent IDs. Currency filtering, future events (TBD), minimal display mode. Essential for Red Folder trade blocking.</p>
+      <div class="tag-row">
+        <span class="tag live">Live Calendar</span>
+        <span class="tag risk">Trade Blocker</span>
+      </div>
+    </div>
+
+    <div class="card green">
+      <div class="card-icon" style="background:rgba(16,185,129,0.15)">&#128248;</div>
+      <h3>Chart Image API</h3>
+      <div class="cmd">/chart-image-api-v1/chart-image-api.php</div>
+      <p>Professional 16:9 candlestick charts as PNG. Technical indicators, Fibonacci, period separators. CDN mode (<code>&amp;format=cdn</code>) for instant Discord embeds. 24hr auto-cleanup.</p>
+      <div class="tag-row">
+        <span class="tag api">PNG Output</span>
+        <span class="tag core">CDN Mode</span>
+      </div>
+    </div>
+
+    <div class="card red">
+      <div class="card-icon" style="background:rgba(239,68,68,0.15)">&#128184;</div>
+      <h3>MT5 Trading API</h3>
+      <div class="cmd">/orders-api-v1/orders-api.php</div>
+      <p>Complete MT5 trading control via HTTP. Market/pending orders, position management, close/modify, trail SL, break-even. Queue-based system: API &rarr; JSON &rarr; EA processes.</p>
+      <div class="tag-row">
+        <span class="tag risk">Trading</span>
+        <span class="tag core">Queue System</span>
+      </div>
+    </div>
+
+    <div class="card purple">
+      <div class="card-icon" style="background:rgba(124,58,237,0.15)">&#128200;</div>
+      <h3>Movement Analysis API</h3>
+      <div class="cmd">/daily-average-api/daily-average-api.php</div>
+      <p>Multi-timeframe movement analysis. ADR, bullish/bearish/doji patterns, streak detection, trend persistence. Timeframe-specific lookback periods (not days!).</p>
+      <div class="tag-row">
+        <span class="tag ai">Analysis</span>
+        <span class="tag api">Multi-TF</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-card">
+    <div class="detail-header" onclick="toggleDetail(this)">
+      <h3>&#128273; Authentication</h3>
+      <span class="chevron">&#9654;</span>
+    </div>
+    <div class="detail-body">
+      <div class="example-box">
+        <div class="example-label">All APIs use the same key</div>
+        ?api_key=fAvjpL0WAJTfzeE1a
+      </div>
+      <p style="color:var(--text2); font-size:0.85em; margin-top:8px;">Add <code>?api_key=fAvjpL0WAJTfzeE1a</code> to every request. Self-hosted = no rate limits.</p>
+    </div>
+  </div>
+
+  <div class="detail-card">
+    <div class="detail-header" onclick="toggleDetail(this)">
+      <h3>&#128214; Key Response Fields</h3>
+      <span class="chevron">&#9654;</span>
+    </div>
+    <div class="detail-body">
+      <table>
+        <tr><th>API</th><th>Response Path</th><th>Key Fields</th></tr>
+        <tr><td>Market Data</td><td><code>vestor_data.candles[]</code></td><td>time, open, high, low, close, ema1_e_p_20, ema2_e_p_50, rsi_p_14, atr_p_14</td></tr>
+        <tr><td>News</td><td><code>vestor_data.events[]</code></td><td>event_name, currency, actual_value, impact, consistent_event_id</td></tr>
+        <tr><td>Chart (CDN)</td><td><code>image_url</code></td><td>Static PNG URL (expires 24hr)</td></tr>
+        <tr><td>Orders</td><td><code>result</code></td><td>ticket, action, symbol, volume, price</td></tr>
+        <tr><td>Movement</td><td><code>arrissa_data.symbol_behaviour_data</code></td><td>Text analysis summary</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 5: DISCORD                                 -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="section" id="discord">
+  <div class="section-title">Discord Architecture</div>
+  <div class="section-desc">25+ per-instrument channels with dedicated webhooks across Forex, Crypto, Indices & Commodities, plus system and conversion channels. Every instrument gets its own feed with dual M15 + H4 charts.</div>
+
+  <h3 style="margin: 20px 0 12px; color: var(--accent);">GBP Basket Channels</h3>
+  <table class="wf-table">
+    <tr><th>Channel</th><th>Instrument</th><th>Futures</th><th>Type</th></tr>
+    <tr><td>#eurgbp-compass</td><td>EUR/GBP</td><td>&mdash;</td><td>Leader / Compass</td></tr>
+    <tr><td>#gbpusd</td><td>GBP/USD</td><td>6B</td><td>Execution</td></tr>
+    <tr><td>#gbpjpy</td><td>GBP/JPY</td><td>&mdash;</td><td>Execution</td></tr>
+    <tr><td>#gbpaud</td><td>GBP/AUD</td><td>&mdash;</td><td>Execution</td></tr>
+    <tr><td>#gbpcad</td><td>GBP/CAD</td><td>&mdash;</td><td>Execution</td></tr>
+    <tr><td>#gbpnzd</td><td>GBP/NZD</td><td>&mdash;</td><td>Execution</td></tr>
+    <tr><td>#gbpchf</td><td>GBP/CHF</td><td>&mdash;</td><td>Execution</td></tr>
+  </table>
+
+  <h3 style="margin: 20px 0 12px; color: var(--gold);">Commodities & Indices Channels</h3>
+  <table class="wf-table">
+    <tr><th>Channel</th><th>Instrument</th><th>Futures</th></tr>
+    <tr><td>#gold-xauusd</td><td>Gold / XAU/USD</td><td>GC</td></tr>
+    <tr><td>#nasdaq-ustec</td><td>Nasdaq 100 / USTEC</td><td>NQ</td></tr>
+    <tr><td>#dow-us30</td><td>Dow Jones / US30</td><td>YM</td></tr>
+    <tr><td>#sp500-us500</td><td>S&P 500 / US500</td><td>ES</td></tr>
+    <tr><td>#crude-usoil</td><td>Crude Oil / USOIL</td><td>CL</td></tr>
+  </table>
+
+  <h3 style="margin: 20px 0 12px; color: var(--green);">Crypto Channels</h3>
+  <table class="wf-table">
+    <tr><th>Channel</th><th>Instrument</th><th>Scanner</th></tr>
+    <tr><td>#btcusd</td><td>Bitcoin / BTC/USD</td><td>WF22</td></tr>
+    <tr><td>#ethusd</td><td>Ethereum / ETH/USD</td><td>WF22</td></tr>
+    <tr><td>#xrpusd</td><td>XRP / XRP/USD</td><td>WF22</td></tr>
+    <tr><td>#solusd</td><td>Solana / SOL/USD</td><td>WF22</td></tr>
+    <tr><td>#bnbusd</td><td>BNB / BNB/USD</td><td>WF22</td></tr>
+  </table>
+
+  <h3 style="margin: 20px 0 12px; color: var(--orange);">Conversion Channels</h3>
+  <table class="wf-table">
+    <tr><th>Channel</th><th>Tier Access</th><th>Purpose</th></tr>
+    <tr><td>#results-showcase</td><td>Free (visible)</td><td>Daily P&L visible to free members (FOMO)</td></tr>
+    <tr><td>#upgrade-info</td><td>Free (visible)</td><td>Tier pricing, comparison, founding member offer</td></tr>
+  </table>
+
+  <h3 style="margin: 20px 0 12px; color: var(--accent2);">System Channels</h3>
+  <table class="wf-table">
+    <tr><th>Category</th><th>Channel</th><th>Purpose</th></tr>
+    <tr><td>SIGNALS</td><td>#gbp-correlation</td><td>GBP basket summary signals</td></tr>
+    <tr><td>SIGNALS</td><td>#indices-commodities</td><td>Indices/commodities summary</td></tr>
+    <tr><td>TRADE LOG</td><td>#live-trades</td><td>Real-time trade executions</td></tr>
+    <tr><td>TRADE LOG</td><td>#performance</td><td>Performance reports, win rate</td></tr>
+    <tr><td>MARKET INTEL</td><td>#daily-briefing</td><td>AI morning briefing</td></tr>
+    <tr><td>MARKET INTEL</td><td>#news-alerts</td><td>Economic calendar alerts</td></tr>
+    <tr><td>SYSTEM</td><td>#bot-status</td><td>System health, errors, heartbeat</td></tr>
+  </table>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 6: n8n MCP TOOLS                           -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="section" id="n8n">
+  <div class="section-title">n8n MCP Tools</div>
+  <div class="section-desc">Claude has direct access to your n8n instance through MCP. These tools let Claude build, modify, validate, and manage workflows without you touching the n8n UI.</div>
+
+  <div class="card-grid">
+    <div class="card blue">
+      <h3>search_nodes</h3>
+      <div class="cmd">Search 1100+ n8n nodes</div>
+      <p>Find the right node for any task. Supports keyword search with OR/AND/FUZZY modes. Includes real-world config examples from 2700+ templates.</p>
+    </div>
+    <div class="card blue">
+      <h3>get_node</h3>
+      <div class="cmd">Node schema + docs</div>
+      <p>Get detailed node info: properties, parameters, version history, docs. Use search_properties mode to find specific fields like "auth" or "body".</p>
+    </div>
+    <div class="card green">
+      <h3>n8n_create_workflow</h3>
+      <div class="cmd">Create new workflows</div>
+      <p>Build complete workflows from scratch. Define nodes, connections, triggers, and settings. Created inactive by default for safety.</p>
+    </div>
+    <div class="card green">
+      <h3>n8n_update_partial_workflow</h3>
+      <div class="cmd">Incremental updates</div>
+      <p>Surgically modify workflows: add/remove/update nodes, add/remove connections, change settings. No need to send the full workflow.</p>
+    </div>
+    <div class="card gold">
+      <h3>n8n_validate_workflow</h3>
+      <div class="cmd">Validate before deploy</div>
+      <p>Check nodes, connections, expressions, AI tools. Returns errors, warnings, and suggestions. Essential before activating any workflow.</p>
+    </div>
+    <div class="card gold">
+      <h3>n8n_autofix_workflow</h3>
+      <div class="cmd">Auto-fix common issues</div>
+      <p>Automatically fix expression format, typeVersion, error output config, webhook paths. Preview mode available before applying.</p>
+    </div>
+    <div class="card purple">
+      <h3>n8n_test_workflow</h3>
+      <div class="cmd">Test/trigger execution</div>
+      <p>Fire webhook, form, or chat triggers. Send test data and wait for response. Great for verifying workflows work before going live.</p>
+    </div>
+    <div class="card purple">
+      <h3>n8n_executions</h3>
+      <div class="cmd">Execution history</div>
+      <p>List, inspect, and debug workflow executions. Error mode gives optimized debugging with stack traces and upstream data.</p>
+    </div>
+    <div class="card red">
+      <h3>n8n_deploy_template</h3>
+      <div class="cmd">Deploy from 2700+ templates</div>
+      <p>Pick a template from n8n.io and deploy directly to your instance. Auto-fixes common issues and upgrades node versions.</p>
+    </div>
+    <div class="card red">
+      <h3>n8n_workflow_versions</h3>
+      <div class="cmd">Version control</div>
+      <p>Track workflow changes, rollback to previous versions, prune old versions. Never lose a working workflow configuration.</p>
+    </div>
+  </div>
+
+  <div class="callout info">
+    <span class="callout-icon">&#9889;</span>
+    <div><strong>Asking Claude to manage workflows:</strong> Just tell Claude what you need in plain English. Example: <em>"Add a 30-second timeout to the HTTP Request node in workflow 2"</em> &mdash; Claude will use the MCP tools to find the node, update it, deactivate/reactivate the workflow, and confirm.</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 7: QUICK REFERENCE                         -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="section" id="quickref">
+  <div class="section-title">Quick Reference Card</div>
+  <div class="section-desc">Everything at a glance. Print this or keep it open during trading sessions.</div>
+
+  <div class="card-grid">
+    <div class="card gold" style="grid-column: 1 / -1;">
+      <h3 style="font-size: 1.2em; margin-bottom: 12px;">Daily Trading Workflow</h3>
+      <table style="width:100%; border-collapse:collapse;">
+        <tr><th style="text-align:left; padding:8px; color:var(--text2); font-size:0.75em; border-bottom:1px solid var(--border);">TIME</th><th style="text-align:left; padding:8px; color:var(--text2); font-size:0.75em; border-bottom:1px solid var(--border);">ACTION</th><th style="text-align:left; padding:8px; color:var(--text2); font-size:0.75em; border-bottom:1px solid var(--border);">COMMAND</th></tr>
+        <tr><td style="padding:8px; border-bottom:1px solid var(--border);">1:00 AM EST</td><td style="padding:8px; border-bottom:1px solid var(--border);">Check if London KZ is starting</td><td style="padding:8px; border-bottom:1px solid var(--border);"><code>/project:killzone</code></td></tr>
+        <tr><td style="padding:8px; border-bottom:1px solid var(--border);">1:15 AM</td><td style="padding:8px; border-bottom:1px solid var(--border);">Full session briefing</td><td style="padding:8px; border-bottom:1px solid var(--border);"><code>/project:briefing</code></td></tr>
+        <tr><td style="padding:8px; border-bottom:1px solid var(--border);">1:30 AM</td><td style="padding:8px; border-bottom:1px solid var(--border);">GBP basket scan</td><td style="padding:8px; border-bottom:1px solid var(--border);"><code>/project:correlation</code></td></tr>
+        <tr><td style="padding:8px; border-bottom:1px solid var(--border);">During KZ</td><td style="padding:8px; border-bottom:1px solid var(--border);">Get levels for top setup</td><td style="padding:8px; border-bottom:1px solid var(--border);"><code>/project:levels GBPUSD</code></td></tr>
+        <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Before Entry</td><td style="padding:8px; border-bottom:1px solid var(--border);">Score the setup</td><td style="padding:8px; border-bottom:1px solid var(--border);"><code>/project:score GBPUSD BUY 1.2615</code></td></tr>
+        <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Before Entry</td><td style="padding:8px; border-bottom:1px solid var(--border);">Calculate position size</td><td style="padding:8px; border-bottom:1px solid var(--border);"><code>/project:risk 100000 GBPUSD 1.2615 1.2585</code></td></tr>
+        <tr><td style="padding:8px; border-bottom:1px solid var(--border);">After Close</td><td style="padding:8px; border-bottom:1px solid var(--border);">Journal the trade</td><td style="padding:8px; border-bottom:1px solid var(--border);"><code>/project:journal GBPUSD BUY 1.2615 1.2700</code></td></tr>
+        <tr><td style="padding:8px;">Evening</td><td style="padding:8px;">Deep analysis on any symbol</td><td style="padding:8px;"><code>/project:analyze XAUUSD</code></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h3 style="margin: 20px 0 15px; color: var(--accent);">Kill Zone Schedule (EST)</h3>
+  <div class="card-grid">
+    <div class="card green">
+      <h3 style="color: var(--green);">London Kill Zone</h3>
+      <div style="font-size: 1.8em; font-weight: 800; color: var(--green); margin: 8px 0;">1:30 - 4:00 AM</div>
+      <p>Manipulation phase. Watch for liquidity sweeps below Asian lows. Best for GBP basket trades. This is where the real money moves.</p>
+    </div>
+    <div class="card blue">
+      <h3 style="color: var(--accent);">NY Kill Zone</h3>
+      <div style="font-size: 1.8em; font-weight: 800; color: var(--accent); margin: 8px 0;">7:30 - 10:30 AM</div>
+      <p>Distribution phase. Entries should align with London direction. Best for indices and Gold. Highest volume of the day.</p>
+    </div>
+    <div class="card gold">
+      <h3 style="color: var(--gold);">Profit-Taking Window</h3>
+      <div style="font-size: 1.8em; font-weight: 800; color: var(--gold); margin: 8px 0;">10:00 - 11:00 AM</div>
+      <p>80% of the time, the opposite daily extreme posts here. Great for exits. Do NOT enter new trades in this window.</p>
+    </div>
+  </div>
+
+  <h3 style="margin: 20px 0 15px; color: var(--red);">Risk Rules (Non-Negotiable)</h3>
+  <div class="card-grid">
+    <div class="card red">
+      <h3>2% Per Trade</h3>
+      <p>Maximum risk per individual trade. Never exceed. Round lot size DOWN.</p>
+    </div>
+    <div class="card red">
+      <h3>5% Daily Drawdown</h3>
+      <p>If you hit 5% DD for the day, STOP trading. No exceptions. Come back tomorrow.</p>
+    </div>
+    <div class="card red">
+      <h3>10% Total Drawdown</h3>
+      <p>Max total drawdown on the account. If hit, stop and review everything.</p>
+    </div>
+    <div class="card red">
+      <h3>News Block: 15 Minutes</h3>
+      <p>No new trades within 15 minutes of high-impact news. Let the dust settle.</p>
+    </div>
+  </div>
+
+  <h3 style="margin: 20px 0 15px; color: var(--accent2);">ICT/SMC Quick Reference</h3>
+  <div class="detail-card">
+    <div class="detail-header" onclick="toggleDetail(this)">
+      <h3>Power of 3 (PO3) Cycle</h3>
+      <span class="chevron">&#9654;</span>
+    </div>
+    <div class="detail-body">
+      <div class="list-item"><span class="list-bullet">1</span><div class="list-text"><strong>Accumulation</strong> &mdash; Asian session. Price ranges. Smart money builds positions. Low volatility.</div></div>
+      <div class="list-item"><span class="list-bullet">2</span><div class="list-text"><strong>Manipulation</strong> &mdash; London open. Fake move to sweep liquidity (stops). Price spikes above/below the range to trap retail.</div></div>
+      <div class="list-item"><span class="list-bullet">3</span><div class="list-text"><strong>Distribution</strong> &mdash; Real move begins. Price expands in the intended direction. This is where you want to be positioned.</div></div>
+    </div>
+  </div>
+  <div class="detail-card">
+    <div class="detail-header" onclick="toggleDetail(this)">
+      <h3>10-Factor Confluence Checklist</h3>
+      <span class="chevron">&#9654;</span>
+    </div>
+    <div class="detail-body">
+      <div class="list-item"><span class="list-bullet">1</span><div class="list-text"><strong>HTF Bias Alignment</strong> &mdash; D1 + H4 agree with trade direction (MANDATORY)</div></div>
+      <div class="list-item"><span class="list-bullet">2</span><div class="list-text"><strong>Correct Zone</strong> &mdash; Buy in Discount, Sell in Premium (MANDATORY)</div></div>
+      <div class="list-item"><span class="list-bullet">3</span><div class="list-text"><strong>Valid Order Block</strong> &mdash; Last opposite-close candle before displacement near entry</div></div>
+      <div class="list-item"><span class="list-bullet">4</span><div class="list-text"><strong>OTE Level (62-79%)</strong> &mdash; Entry within Optimal Trade Entry zone. 70.5% is the sweet spot</div></div>
+      <div class="list-item"><span class="list-bullet">5</span><div class="list-text"><strong>IDM Swept</strong> &mdash; Liquidity gathered before the real move. Stops hunted first</div></div>
+      <div class="list-item"><span class="list-bullet">6</span><div class="list-text"><strong>Kill Zone Timing</strong> &mdash; Inside London or NY Kill Zone</div></div>
+      <div class="list-item"><span class="list-bullet">7</span><div class="list-text"><strong>FVG Present</strong> &mdash; Fair Value Gap near entry = institutional footprint</div></div>
+      <div class="list-item"><span class="list-bullet">8</span><div class="list-text"><strong>No News Blocking</strong> &mdash; No high-impact event within 15 min (MANDATORY)</div></div>
+      <div class="list-item"><span class="list-bullet">9</span><div class="list-text"><strong>PO3 Phase Correct</strong> &mdash; Entering at end of manipulation / start of distribution</div></div>
+      <div class="list-item"><span class="list-bullet">10</span><div class="list-text"><strong>Institutional Level</strong> &mdash; Near a round number (big fig or mid fig)</div></div>
+    </div>
+  </div>
+  <div class="detail-card">
+    <div class="detail-header" onclick="toggleDetail(this)">
+      <h3>GBP Basket Logic</h3>
+      <span class="chevron">&#9654;</span>
+    </div>
+    <div class="detail-body">
+      <div class="list-item"><span class="list-bullet">&#8595;</span><div class="list-text"><strong>EUR/GBP FALLING</strong> &mdash; GBP is STRONG &rarr; BUY all GBP/XXX pairs</div></div>
+      <div class="list-item"><span class="list-bullet">&#8593;</span><div class="list-text"><strong>EUR/GBP RISING</strong> &mdash; GBP is WEAK &rarr; SELL all GBP/XXX pairs</div></div>
+      <div class="list-item"><span class="list-bullet">&#8596;</span><div class="list-text"><strong>EUR/GBP FLAT</strong> &mdash; GBP is NEUTRAL &rarr; NO BASKET TRADE</div></div>
+      <div style="margin-top:12px; padding:12px; background:rgba(239,68,68,0.08); border-radius:8px; font-size:0.85em; color:var(--text2);">
+        <strong style="color:var(--red);">Risk Rule:</strong> Max 3 basket trades at once. Use 1.5% risk per trade (not 2%) to stay under 5% daily limit.
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin: 20px 0 15px; color: var(--green);">Symbol Name Reference</h3>
+  <div class="detail-card">
+    <div class="detail-header" onclick="toggleDetail(this)">
+      <h3>Forex / Indices / Commodities Naming</h3>
+      <span class="chevron">&#9654;</span>
+    </div>
+    <div class="detail-body">
+      <table>
+        <tr><th>Forex Name</th><th>API Symbol</th><th>Futures</th><th>Notes</th></tr>
+        <tr><td>NAS100</td><td><code>USTEC</code></td><td>NQ</td><td>Use USTEC in API calls</td></tr>
+        <tr><td>SPX500</td><td><code>US500</code></td><td>ES</td><td>Use US500 in API calls</td></tr>
+        <tr><td>Dow Jones</td><td><code>US30</code></td><td>YM</td><td>Same name</td></tr>
+        <tr><td>Gold</td><td><code>XAUUSD</code></td><td>GC</td><td>Same name</td></tr>
+        <tr><td>Crude Oil</td><td><code>USOIL</code></td><td>CL</td><td>Same name</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+</div><!-- end container -->
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div style="text-align:center; padding:40px 20px; border-top:1px solid var(--border); margin-top:40px;">
+  <div style="color:var(--text2); font-size:0.85em;">OXY ALGO Command Center &mdash; Built Feb 2026</div>
+  <div style="color:#334155; font-size:0.75em; margin-top:4px;">Simple &gt; Fancy &bull; Reliable &gt; Clever &bull; Execution &gt; Theory</div>
+</div>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({ top: document.querySelector('.nav').offsetTop, behavior: 'smooth' });
+}
+function toggleDetail(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.chevron');
+  body.classList.toggle('open');
+  chevron.classList.toggle('open');
+}
+</script>
+</body>
+</html>

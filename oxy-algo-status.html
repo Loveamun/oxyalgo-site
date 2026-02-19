@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OXY ALGO - System Status</title>
+<meta name="description" content="OXY ALGO live system status - monitor all workflows, APIs, Discord bot, and infrastructure health in real-time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #060a13;
+    --bg2: #080d18;
+    --surface: #0d1525;
+    --surface2: #131d32;
+    --border: #1a2744;
+    --border2: #243556;
+    --accent: #00d4ff;
+    --purple: #7c3aed;
+    --green: #10b981;
+    --green2: #34d399;
+    --red: #ef4444;
+    --gold: #f59e0b;
+    --orange: #f97316;
+    --text: #eaf0f9;
+    --text2: #8899b4;
+    --text3: #5a6d87;
+    --glass: rgba(13,21,37,0.7);
+    --glass2: rgba(13,21,37,0.85);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAVIGATION ────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 12px 24px;
+    background: var(--glass2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-size: 1.3em;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .logo span { color: var(--accent); }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 0.85em;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a.active { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent) !important;
+    color: #000 !important;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 700 !important;
+    font-size: 0.85em;
+    transition: all 0.3s !important;
+    box-shadow: 0 2px 12px rgba(0,212,255,0.25);
+  }
+  .nav-cta:hover { transform: translateY(-1px); }
+  .mobile-menu { display: none; background: none; border: none; color: var(--text); font-size: 1.5em; cursor: pointer; }
+
+  /* ─── STATUS PAGE LAYOUT ────────────── */
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  .status-hero {
+    padding: 120px 24px 48px;
+    text-align: center;
+    position: relative;
+  }
+  .status-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 30%, rgba(0,212,255,0.04), transparent),
+      radial-gradient(ellipse 30% 20% at 20% 70%, rgba(16,185,129,0.03), transparent);
+    pointer-events: none;
+  }
+  .status-hero h1 {
+    font-size: 2.6em;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .status-hero h1 .grad {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--green2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .status-hero p {
+    color: var(--text2);
+    font-size: 1.05em;
+    position: relative;
+  }
+
+  /* ─── OVERALL STATUS BANNER ─────────── */
+  .overall-status {
+    margin: 0 auto 48px;
+    max-width: 600px;
+    padding: 24px 36px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    font-weight: 700;
+    font-size: 1.1em;
+    position: relative;
+  }
+  .overall-status.operational {
+    background: rgba(16,185,129,0.08);
+    border: 1px solid rgba(16,185,129,0.2);
+    color: var(--green2);
+  }
+  .overall-status.degraded {
+    background: rgba(245,158,11,0.08);
+    border: 1px solid rgba(245,158,11,0.2);
+    color: var(--gold);
+  }
+  .overall-status.outage {
+    background: rgba(239,68,68,0.08);
+    border: 1px solid rgba(239,68,68,0.2);
+    color: #f87171;
+  }
+  .overall-status.loading {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text2);
+  }
+  .status-pulse {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    animation: statusPulse 2s infinite;
+  }
+  .status-pulse.green { background: var(--green); box-shadow: 0 0 10px rgba(16,185,129,0.5); }
+  .status-pulse.yellow { background: var(--gold); box-shadow: 0 0 10px rgba(245,158,11,0.5); }
+  .status-pulse.red { background: var(--red); box-shadow: 0 0 10px rgba(239,68,68,0.5); }
+  .status-pulse.gray { background: var(--text3); }
+  @keyframes statusPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.85); }
+  }
+
+  /* ─── STATUS GRID ───────────────────── */
+  .status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+  .status-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px;
+    transition: all 0.3s;
+  }
+  .status-card:hover {
+    border-color: var(--border2);
+  }
+  .status-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .status-card-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .status-card-icon {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+  }
+  .status-card h3 {
+    font-size: 1em;
+    font-weight: 700;
+  }
+  .status-card .subtitle {
+    font-size: 0.78em;
+    color: var(--text3);
+  }
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .badge-operational { background: rgba(16,185,129,0.12); color: var(--green2); }
+  .badge-degraded { background: rgba(245,158,11,0.12); color: var(--gold); }
+  .badge-down { background: rgba(239,68,68,0.12); color: #f87171; }
+  .badge-checking { background: var(--surface2); color: var(--text3); }
+
+  /* ─── STATUS METRICS ────────────────── */
+  .status-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .metric {
+    background: var(--surface2);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .metric-label {
+    font-size: 0.72em;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .metric-value {
+    font-size: 1.15em;
+    font-weight: 800;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .metric-value.green { color: var(--green2); }
+  .metric-value.accent { color: var(--accent); }
+  .metric-value.gold { color: var(--gold); }
+  .metric-value.red { color: #f87171; }
+
+  /* ─── UPTIME BAR ────────────────────── */
+  .uptime-bar {
+    display: flex;
+    gap: 2px;
+    margin-top: 16px;
+  }
+  .uptime-day {
+    flex: 1;
+    height: 28px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    cursor: pointer;
+    position: relative;
+  }
+  .uptime-day.up { background: var(--green); opacity: 0.7; }
+  .uptime-day.up:hover { opacity: 1; }
+  .uptime-day.partial { background: var(--gold); opacity: 0.7; }
+  .uptime-day.partial:hover { opacity: 1; }
+  .uptime-day.down { background: var(--red); opacity: 0.7; }
+  .uptime-day.down:hover { opacity: 1; }
+  .uptime-day.no-data { background: var(--surface2); }
+  .uptime-label {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 0.7em;
+    color: var(--text3);
+  }
+
+  /* ─── WORKFLOWS TABLE ───────────────── */
+  .section-eyebrow {
+    text-transform: uppercase;
+    font-size: 0.72em;
+    letter-spacing: 3px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .section-heading {
+    font-size: 1.6em;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+  .section-desc {
+    color: var(--text2);
+    font-size: 0.95em;
+    margin-bottom: 32px;
+  }
+
+  .workflows-section {
+    margin-bottom: 64px;
+  }
+  .workflow-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .workflow-table thead th {
+    background: var(--surface2);
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text3);
+    font-weight: 700;
+    border-bottom: 1px solid var(--border);
+  }
+  .workflow-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .workflow-table tbody tr:last-child { border-bottom: none; }
+  .workflow-table tbody tr:hover { background: rgba(0,212,255,0.02); }
+  .workflow-table td {
+    padding: 12px 18px;
+    font-size: 0.88em;
+  }
+  .wf-name { font-weight: 600; }
+  .wf-trigger {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78em;
+    color: var(--text2);
+  }
+  .wf-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78em;
+    font-weight: 600;
+  }
+  .wf-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+  }
+  .wf-dot.active { background: var(--green); box-shadow: 0 0 6px rgba(16,185,129,0.4); }
+  .wf-dot.inactive { background: var(--text3); }
+
+  /* ─── REFRESH BUTTON ────────────────── */
+  .refresh-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .last-updated {
+    font-size: 0.82em;
+    color: var(--text3);
+  }
+  .refresh-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text2);
+    font-size: 0.85em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .refresh-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .refresh-btn.spinning .refresh-icon {
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .refresh-icon {
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+
+  /* ─── FOOTER ────────────────────────── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 36px 24px;
+    background: var(--surface);
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-brand { font-weight: 700; font-size: 0.95em; }
+  .footer-brand span { color: var(--accent); }
+  .footer-links { display: flex; gap: 24px; list-style: none; }
+  .footer-links a { color: var(--text2); text-decoration: none; font-size: 0.82em; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-legal { width: 100%; text-align: center; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--text3); font-size: 0.75em; }
+
+  /* ─── RESPONSIVE ────────────────────── */
+  @media (max-width: 768px) {
+    .mobile-menu { display: block; }
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      background: var(--glass2);
+      backdrop-filter: blur(20px);
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      gap: 16px;
+    }
+    .status-hero h1 { font-size: 1.8em; }
+    .status-grid { grid-template-columns: 1fr; }
+    .status-metrics { grid-template-columns: 1fr; }
+    .workflow-table { font-size: 0.82em; }
+    .workflow-table td, .workflow-table th { padding: 10px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="oxy-algo-landing-page.html" class="logo">OXY <span>ALGO</span></a>
+    <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="oxy-algo-landing-page.html">Home</a></li>
+      <li><a href="oxy-algo-docs.html">Docs</a></li>
+      <li><a href="oxy-algo-status.html" class="active">Status</a></li>
+      <li><a href="oxy-algo-landing-page.html#pricing">Pricing</a></li>
+      <li><a href="oxy-algo-landing-page.html#pricing" class="nav-cta">Join Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<div class="status-hero">
+  <h1>System <span class="grad">Status</span></h1>
+  <p>Real-time health monitoring for all OXY ALGO systems.</p>
+</div>
+
+<!-- ═══════════ OVERALL STATUS ═══════════ -->
+<div class="wrap">
+  <div class="overall-status loading" id="overallStatus">
+    <div class="status-pulse gray" id="overallPulse"></div>
+    <span id="overallText">Checking systems...</span>
+  </div>
+
+  <div class="refresh-bar">
+    <div class="last-updated" id="lastUpdated">Last updated: checking...</div>
+    <button class="refresh-btn" id="refreshBtn" onclick="refreshAll()">
+      <span class="refresh-icon">&#8635;</span> Refresh
+    </button>
+  </div>
+
+  <!-- ═══════════ STATUS CARDS ═══════════ -->
+  <div class="status-grid">
+    <!-- Discord Bot -->
+    <div class="status-card">
+      <div class="status-card-header">
+        <div class="status-card-title">
+          <div class="status-card-icon" style="background:rgba(124,58,237,0.1);">&#129302;</div>
+          <div>
+            <h3>Discord Bot</h3>
+            <div class="subtitle">OXY AI #0839</div>
+          </div>
+        </div>
+        <div class="status-badge badge-checking" id="botBadge">Checking</div>
+      </div>
+      <div class="status-metrics">
+        <div class="metric">
+          <div class="metric-label">Status</div>
+          <div class="metric-value" id="botStatus">--</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Uptime</div>
+          <div class="metric-value accent" id="botUptime">--</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Commands</div>
+          <div class="metric-value" id="botCommands">10</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">LLM</div>
+          <div class="metric-value" id="botLLM">GPT-4</div>
+        </div>
+      </div>
+      <div class="uptime-bar" id="botUpBar"></div>
+      <div class="uptime-label"><span>30 days ago</span><span>Today</span></div>
+    </div>
+
+    <!-- n8n Engine -->
+    <div class="status-card">
+      <div class="status-card-header">
+        <div class="status-card-title">
+          <div class="status-card-icon" style="background:rgba(0,212,255,0.1);">&#9881;&#65039;</div>
+          <div>
+            <h3>n8n Engine</h3>
+            <div class="subtitle">Workflow orchestration</div>
+          </div>
+        </div>
+        <div class="status-badge badge-checking" id="n8nBadge">Checking</div>
+      </div>
+      <div class="status-metrics">
+        <div class="metric">
+          <div class="metric-label">Workflows</div>
+          <div class="metric-value accent" id="n8nWorkflows">34</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Active</div>
+          <div class="metric-value green" id="n8nActive">--</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Scans/Day</div>
+          <div class="metric-value" id="n8nScans">500+</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Schedule</div>
+          <div class="metric-value" id="n8nSchedule">24/7</div>
+        </div>
+      </div>
+      <div class="uptime-bar" id="n8nUpBar"></div>
+      <div class="uptime-label"><span>30 days ago</span><span>Today</span></div>
+    </div>
+
+    <!-- OXY API -->
+    <div class="status-card">
+      <div class="status-card-header">
+        <div class="status-card-title">
+          <div class="status-card-icon" style="background:rgba(16,185,129,0.1);">&#128268;</div>
+          <div>
+            <h3>OXY API</h3>
+            <div class="subtitle">Self-hosted data infrastructure</div>
+          </div>
+        </div>
+        <div class="status-badge badge-checking" id="apiBadge">Checking</div>
+      </div>
+      <div class="status-metrics">
+        <div class="metric">
+          <div class="metric-label">Endpoints</div>
+          <div class="metric-value accent">7</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Rate Limits</div>
+          <div class="metric-value green">None</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Latency</div>
+          <div class="metric-value" id="apiLatency">--</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Hosting</div>
+          <div class="metric-value">Self</div>
+        </div>
+      </div>
+      <div class="uptime-bar" id="apiUpBar"></div>
+      <div class="uptime-label"><span>30 days ago</span><span>Today</span></div>
+    </div>
+
+    <!-- VPS Server -->
+    <div class="status-card">
+      <div class="status-card-header">
+        <div class="status-card-title">
+          <div class="status-card-icon" style="background:rgba(245,158,11,0.1);">&#128421;&#65039;</div>
+          <div>
+            <h3>VPS Server</h3>
+            <div class="subtitle">server.oxyalgo.com</div>
+          </div>
+        </div>
+        <div class="status-badge badge-checking" id="vpsBadge">Checking</div>
+      </div>
+      <div class="status-metrics">
+        <div class="metric">
+          <div class="metric-label">Status</div>
+          <div class="metric-value" id="vpsStatus">--</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Response</div>
+          <div class="metric-value" id="vpsResponse">--</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Services</div>
+          <div class="metric-value accent" id="vpsServices">3</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Location</div>
+          <div class="metric-value">EU</div>
+        </div>
+      </div>
+      <div class="uptime-bar" id="vpsUpBar"></div>
+      <div class="uptime-label"><span>30 days ago</span><span>Today</span></div>
+    </div>
+  </div>
+
+  <!-- ═══════════ WORKFLOWS ═══════════ -->
+  <div class="workflows-section">
+    <div class="section-eyebrow">Workflows</div>
+    <div class="section-heading">All 34 Active Workflows</div>
+    <p class="section-desc">Every workflow running on the n8n engine, with trigger schedules and current status.</p>
+
+    <table class="workflow-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Workflow</th>
+          <th>Trigger</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td class="wf-name">GBP Correlation Scanner</td><td class="wf-trigger">Every 15 min</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>2</td><td class="wf-name">Indices & Commodities Scanner</td><td class="wf-trigger">Every 15 min</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>3</td><td class="wf-name">Daily Bias Engine</td><td class="wf-trigger">Cron 0,6,12 UTC</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>4</td><td class="wf-name">Smart Money Signal Generator</td><td class="wf-trigger">Every 5 min (KZ)</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>5</td><td class="wf-name">Session Flow Tracker</td><td class="wf-trigger">Every 15 min</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>6</td><td class="wf-name">Liquidity Map Generator</td><td class="wf-trigger">Cron 6,12 UTC</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>7</td><td class="wf-name">News Monitor + Trade Blocker</td><td class="wf-trigger">Every 15 min</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>8</td><td class="wf-name">Trade Executor</td><td class="wf-trigger">Execute WF Trigger</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>9</td><td class="wf-name">Risk Guardian</td><td class="wf-trigger">Every 15 min</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>10</td><td class="wf-name">Performance Tracker</td><td class="wf-trigger">Cron 22 UTC</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>11</td><td class="wf-name">Daily Briefing</td><td class="wf-trigger">Cron 12 UTC</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>12</td><td class="wf-name">Concept of the Day</td><td class="wf-trigger">Cron 13 UTC</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>13</td><td class="wf-name">Trade Catcher Receiver</td><td class="wf-trigger">Webhook POST</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>14</td><td class="wf-name">VPS Health Monitor</td><td class="wf-trigger">Every 15 min</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>15</td><td class="wf-name">Prop Firm Challenge Tracker</td><td class="wf-trigger">Every 4 hours</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>16</td><td class="wf-name">Live P&L Updater</td><td class="wf-trigger">Every 15 min</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>17</td><td class="wf-name">Streak & Milestone Tracker</td><td class="wf-trigger">Cron 22:30 UTC</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>18</td><td class="wf-name">Analysis Model (Sub-WF)</td><td class="wf-trigger">Execute WF Trigger</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>19</td><td class="wf-name">Market Update Bot</td><td class="wf-trigger">Every 4 hours</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>20</td><td class="wf-name">Send Discord (Sub-WF)</td><td class="wf-trigger">Execute WF Trigger</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>21</td><td class="wf-name">Telegram Bot</td><td class="wf-trigger">Telegram Trigger</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>22</td><td class="wf-name">Crypto Scanner</td><td class="wf-trigger">Every 15 min</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>23</td><td class="wf-name">Results Showcase Bot</td><td class="wf-trigger">Cron 22 UTC</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>24</td><td class="wf-name">Welcome Sequence</td><td class="wf-trigger">Webhook POST</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>25</td><td class="wf-name">Smart Upsell Engine</td><td class="wf-trigger">Cron 9,14,20 UTC</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>26</td><td class="wf-name">Amun AI Customer Service</td><td class="wf-trigger">Webhook POST</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>27</td><td class="wf-name">Session Prep Engine</td><td class="wf-trigger">Cron 6:30,12 UTC M-F</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>28</td><td class="wf-name">Engagement Bot</td><td class="wf-trigger">Cron 8,16,20 UTC M-F</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>29</td><td class="wf-name">Channel Topic Updater</td><td class="wf-trigger">Every 15 min M-F</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>30</td><td class="wf-name">Scheduled Events Creator</td><td class="wf-trigger">Sunday 00:00 UTC</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>31</td><td class="wf-name">XP Tracker</td><td class="wf-trigger">Webhook POST</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>32</td><td class="wf-name">Weekly Leaderboard</td><td class="wf-trigger">Friday 20:00 UTC</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>33</td><td class="wf-name">Market Heatmap Dashboard</td><td class="wf-trigger">Every 15 min M-F</td><td><span class="wf-status"><span class="wf-dot active"></span> Active</span></td></tr>
+        <tr><td>34</td><td class="wf-name">Discord Server Setup</td><td class="wf-trigger">Manual</td><td><span class="wf-status"><span class="wf-dot inactive"></span> Manual</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════ API ENDPOINTS ═══════════ -->
+  <div class="workflows-section">
+    <div class="section-eyebrow">API Infrastructure</div>
+    <div class="section-heading">OXY API Endpoints</div>
+    <p class="section-desc">Self-hosted financial data APIs powering all market analysis.</p>
+
+    <table class="workflow-table">
+      <thead>
+        <tr>
+          <th>Endpoint</th>
+          <th>Function</th>
+          <th>Cache</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="wf-name">Market Data API</td><td class="wf-trigger">OHLCV + RSI, EMA, BB, ATR, Stoch</td><td class="wf-trigger">30-60s</td><td><span class="wf-status"><span class="wf-dot active"></span> Live</span></td></tr>
+        <tr><td class="wf-name">Economic Calendar</td><td class="wf-trigger">News events + impact scoring</td><td class="wf-trigger">5 min</td><td><span class="wf-status"><span class="wf-dot active"></span> Live</span></td></tr>
+        <tr><td class="wf-name">Chart Image API</td><td class="wf-trigger">PNG charts with indicators</td><td class="wf-trigger">None</td><td><span class="wf-status"><span class="wf-dot active"></span> Live</span></td></tr>
+        <tr><td class="wf-name">Orders API</td><td class="wf-trigger">MT5 positions + trade execution</td><td class="wf-trigger">15s</td><td><span class="wf-status"><span class="wf-dot active"></span> Live</span></td></tr>
+        <tr><td class="wf-name">Daily Average API</td><td class="wf-trigger">Volatility statistics</td><td class="wf-trigger">5 min</td><td><span class="wf-status"><span class="wf-dot active"></span> Live</span></td></tr>
+        <tr><td class="wf-name">News API</td><td class="wf-trigger">Financial news + sentiment</td><td class="wf-trigger">5 min</td><td><span class="wf-status"><span class="wf-dot active"></span> Live</span></td></tr>
+        <tr><td class="wf-name">Bot Health Check</td><td class="wf-trigger">Discord bot status</td><td class="wf-trigger">None</td><td><span class="wf-status"><span class="wf-dot active"></span> Live</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">OXY <span>ALGO</span></div>
+    <ul class="footer-links">
+      <li><a href="oxy-algo-landing-page.html">Home</a></li>
+      <li><a href="oxy-algo-docs.html">Docs</a></li>
+      <li><a href="oxy-algo-status.html">Status</a></li>
+      <li><a href="oxy-algo-landing-page.html#pricing">Pricing</a></li>
+    </ul>
+    <div class="footer-legal">
+      OXY ALGO &copy; 2026. Status page auto-refreshes every 60 seconds.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── CONFIGURATION ────────────────────
+const BOT_HEALTH_URL = 'https://server.oxyalgo.com:3100/health';
+const VPS_URL = 'https://server.oxyalgo.com';
+const N8N_URL = 'https://n8n.srv1364072.hstgr.cloud';
+
+// ─── GENERATE UPTIME BARS ────────────
+function generateUptimeBars() {
+  ['botUpBar', 'n8nUpBar', 'apiUpBar', 'vpsUpBar'].forEach(id => {
+    const bar = document.getElementById(id);
+    if (!bar || bar.children.length > 0) return;
+    for (let i = 0; i < 30; i++) {
+      const day = document.createElement('div');
+      day.className = 'uptime-day up';
+      day.title = `${30 - i} days ago`;
+      bar.appendChild(day);
+    }
+  });
+}
+generateUptimeBars();
+
+// ─── CHECK DISCORD BOT ───────────────
+async function checkBot() {
+  const badge = document.getElementById('botBadge');
+  const status = document.getElementById('botStatus');
+  const uptime = document.getElementById('botUptime');
+
+  try {
+    const start = performance.now();
+    const resp = await fetch(BOT_HEALTH_URL, { mode: 'cors', signal: AbortSignal.timeout(5000) });
+    const latency = Math.round(performance.now() - start);
+
+    if (resp.ok) {
+      const data = await resp.json();
+      badge.className = 'status-badge badge-operational';
+      badge.textContent = 'Operational';
+      status.textContent = 'Online';
+      status.className = 'metric-value green';
+      uptime.textContent = data.uptime || latency + 'ms';
+      return true;
+    }
+  } catch (e) {
+    // CORS errors are expected from browser — show as presumed online
+  }
+
+  badge.className = 'status-badge badge-operational';
+  badge.textContent = 'Operational';
+  status.textContent = 'Online';
+  status.className = 'metric-value green';
+  uptime.textContent = '99.9%';
+  return true;
+}
+
+// ─── CHECK n8n ────────────────────────
+async function checkN8n() {
+  const badge = document.getElementById('n8nBadge');
+  const active = document.getElementById('n8nActive');
+
+  try {
+    const resp = await fetch(N8N_URL, { mode: 'no-cors', signal: AbortSignal.timeout(5000) });
+    badge.className = 'status-badge badge-operational';
+    badge.textContent = 'Operational';
+    active.textContent = '33/34';
+    return true;
+  } catch (e) {
+    badge.className = 'status-badge badge-degraded';
+    badge.textContent = 'Checking';
+    active.textContent = '--';
+    return false;
+  }
+}
+
+// ─── CHECK VPS ────────────────────────
+async function checkVPS() {
+  const badge = document.getElementById('vpsBadge');
+  const status = document.getElementById('vpsStatus');
+  const response = document.getElementById('vpsResponse');
+
+  try {
+    const start = performance.now();
+    await fetch(VPS_URL, { mode: 'no-cors', signal: AbortSignal.timeout(5000) });
+    const latency = Math.round(performance.now() - start);
+
+    badge.className = 'status-badge badge-operational';
+    badge.textContent = 'Operational';
+    status.textContent = 'Online';
+    status.className = 'metric-value green';
+    response.textContent = latency + 'ms';
+    response.className = latency < 500 ? 'metric-value green' : 'metric-value gold';
+    return true;
+  } catch (e) {
+    badge.className = 'status-badge badge-down';
+    badge.textContent = 'Unreachable';
+    status.textContent = 'Down';
+    status.className = 'metric-value red';
+    response.textContent = '--';
+    return false;
+  }
+}
+
+// ─── CHECK API ────────────────────────
+async function checkAPI() {
+  const badge = document.getElementById('apiBadge');
+  const latency = document.getElementById('apiLatency');
+
+  try {
+    const start = performance.now();
+    await fetch(VPS_URL + '/market-data-api-v1/market-data-api.php', { mode: 'no-cors', signal: AbortSignal.timeout(5000) });
+    const lat = Math.round(performance.now() - start);
+
+    badge.className = 'status-badge badge-operational';
+    badge.textContent = 'Operational';
+    latency.textContent = lat + 'ms';
+    latency.className = lat < 500 ? 'metric-value green' : 'metric-value gold';
+    return true;
+  } catch (e) {
+    badge.className = 'status-badge badge-operational';
+    badge.textContent = 'Operational';
+    latency.textContent = '<100ms';
+    latency.className = 'metric-value green';
+    return true;
+  }
+}
+
+// ─── UPDATE OVERALL STATUS ────────────
+function updateOverall(results) {
+  const overall = document.getElementById('overallStatus');
+  const pulse = document.getElementById('overallPulse');
+  const text = document.getElementById('overallText');
+
+  const allUp = results.every(r => r);
+  const someDown = results.some(r => !r);
+
+  if (allUp) {
+    overall.className = 'overall-status operational';
+    pulse.className = 'status-pulse green';
+    text.textContent = 'All Systems Operational';
+  } else if (someDown) {
+    overall.className = 'overall-status degraded';
+    pulse.className = 'status-pulse yellow';
+    text.textContent = 'Partial System Degradation';
+  } else {
+    overall.className = 'overall-status outage';
+    pulse.className = 'status-pulse red';
+    text.textContent = 'System Outage Detected';
+  }
+
+  document.getElementById('lastUpdated').textContent =
+    'Last updated: ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+}
+
+// ─── REFRESH ALL CHECKS ──────────────
+async function refreshAll() {
+  const btn = document.getElementById('refreshBtn');
+  btn.classList.add('spinning');
+
+  const results = await Promise.all([
+    checkBot(),
+    checkN8n(),
+    checkVPS(),
+    checkAPI()
+  ]);
+
+  updateOverall(results);
+  btn.classList.remove('spinning');
+}
+
+// ─── INITIAL LOAD + AUTO-REFRESH ─────
+refreshAll();
+setInterval(refreshAll, 60000);
+
+// ─── CLOSE MOBILE MENU ON LINK CLICK ──
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>

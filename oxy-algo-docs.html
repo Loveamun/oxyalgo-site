@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OXY ALGO - Documentation Hub</title>
+<meta name="description" content="OXY ALGO Documentation - System architecture, API reference, trading playbook, education concepts, and knowledge base.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #060a13;
+    --bg2: #080d18;
+    --surface: #0d1525;
+    --surface2: #131d32;
+    --surface3: #182440;
+    --border: #1a2744;
+    --border2: #243556;
+    --accent: #00d4ff;
+    --accent-dim: #0099bb;
+    --accent-glow: rgba(0,212,255,0.12);
+    --purple: #7c3aed;
+    --purple-glow: rgba(124,58,237,0.12);
+    --green: #10b981;
+    --green2: #34d399;
+    --red: #ef4444;
+    --gold: #f59e0b;
+    --text: #eaf0f9;
+    --text2: #8899b4;
+    --text3: #5a6d87;
+    --glass: rgba(13,21,37,0.7);
+    --glass2: rgba(13,21,37,0.85);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAVIGATION ────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 12px 24px;
+    background: var(--glass2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-size: 1.3em;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .logo span { color: var(--accent); }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 0.85em;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a.active { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent) !important;
+    color: #000 !important;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 700 !important;
+    font-size: 0.85em;
+    transition: all 0.3s !important;
+    box-shadow: 0 2px 12px rgba(0,212,255,0.25);
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(0,212,255,0.35) !important; }
+  .mobile-menu { display: none; background: none; border: none; color: var(--text); font-size: 1.5em; cursor: pointer; }
+
+  /* ─── DOCS LAYOUT ───────────────────── */
+  .docs-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+    padding-top: 65px;
+  }
+
+  /* ─── SIDEBAR ───────────────────────── */
+  .docs-sidebar {
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    padding: 32px 0;
+    position: fixed;
+    top: 65px;
+    left: 0;
+    bottom: 0;
+    width: 260px;
+    overflow-y: auto;
+    z-index: 100;
+  }
+  .sidebar-section {
+    padding: 0 20px;
+    margin-bottom: 28px;
+  }
+  .sidebar-title {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--text3);
+    font-weight: 700;
+    margin-bottom: 12px;
+    padding: 0 12px;
+  }
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 0.88em;
+    font-weight: 500;
+    transition: all 0.2s;
+    margin-bottom: 2px;
+  }
+  .sidebar-link:hover {
+    background: rgba(0,212,255,0.05);
+    color: var(--text);
+  }
+  .sidebar-link.active {
+    background: rgba(0,212,255,0.08);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .sidebar-icon {
+    width: 20px;
+    text-align: center;
+    font-size: 1em;
+    flex-shrink: 0;
+  }
+  .sidebar-badge {
+    margin-left: auto;
+    font-size: 0.65em;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: rgba(0,212,255,0.12);
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ─── MAIN CONTENT ──────────────────── */
+  .docs-main {
+    padding: 48px 56px;
+    max-width: 900px;
+    margin-left: 260px;
+  }
+
+  .docs-hero {
+    margin-bottom: 48px;
+  }
+  .docs-hero h1 {
+    font-size: 2.4em;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    line-height: 1.15;
+  }
+  .docs-hero h1 .grad {
+    background: linear-gradient(135deg, var(--accent) 0%, #60a5fa 40%, var(--purple) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .docs-hero p {
+    color: var(--text2);
+    font-size: 1.05em;
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  /* ─── SEARCH ────────────────────────── */
+  .docs-search {
+    position: relative;
+    margin-bottom: 40px;
+  }
+  .docs-search input {
+    width: 100%;
+    padding: 16px 20px 16px 48px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    color: var(--text);
+    font-size: 0.95em;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .docs-search input::placeholder { color: var(--text3); }
+  .docs-search input:focus { border-color: var(--accent); }
+  .docs-search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text3);
+    font-size: 1.1em;
+    pointer-events: none;
+  }
+
+  /* ─── DOC CARDS ─────────────────────── */
+  .docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .doc-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px 24px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .doc-card:hover {
+    border-color: var(--border2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+  .doc-card:hover::before { opacity: 1; }
+  .doc-card-icon {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    margin-bottom: 16px;
+  }
+  .doc-card h3 {
+    font-size: 1.05em;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .doc-card p {
+    font-size: 0.85em;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+  .doc-card-arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: var(--text3);
+    font-size: 1.2em;
+    transition: all 0.3s;
+  }
+  .doc-card:hover .doc-card-arrow { color: var(--accent); transform: translateX(4px); }
+
+  /* Card color variants */
+  .doc-card.cyan::before { background: linear-gradient(90deg, var(--accent), #60a5fa); }
+  .doc-card.cyan .doc-card-icon { background: rgba(0,212,255,0.1); }
+  .doc-card.purple::before { background: linear-gradient(90deg, var(--purple), #a78bfa); }
+  .doc-card.purple .doc-card-icon { background: rgba(124,58,237,0.1); }
+  .doc-card.green::before { background: linear-gradient(90deg, var(--green), var(--green2)); }
+  .doc-card.green .doc-card-icon { background: rgba(16,185,129,0.1); }
+  .doc-card.gold::before { background: linear-gradient(90deg, var(--gold), #fbbf24); }
+  .doc-card.gold .doc-card-icon { background: rgba(245,158,11,0.1); }
+  .doc-card.red::before { background: linear-gradient(90deg, var(--red), #f87171); }
+  .doc-card.red .doc-card-icon { background: rgba(239,68,68,0.1); }
+
+  /* ─── NOTION EMBED ──────────────────── */
+  .notion-embed-container {
+    display: none;
+    margin-top: 32px;
+  }
+  .notion-embed-container.active {
+    display: block;
+  }
+  .notion-embed-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .notion-embed-header h2 {
+    font-size: 1.4em;
+    font-weight: 800;
+  }
+  .notion-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text2);
+    font-size: 0.85em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .notion-back-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .notion-frame {
+    width: 100%;
+    height: calc(100vh - 220px);
+    min-height: 600px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: #fff;
+    overflow: hidden;
+  }
+  .notion-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 16px;
+  }
+  .notion-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    color: var(--text2);
+    font-size: 0.95em;
+  }
+  .notion-loading .spinner {
+    width: 24px; height: 24px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 12px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ─── SECTION HEADERS ───────────────── */
+  .section-label {
+    font-size: 0.72em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .section-heading {
+    font-size: 1.3em;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+
+  /* ─── QUICK LINKS ───────────────────── */
+  .quick-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  .quick-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 0.82em;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .quick-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  /* ─── FOOTER ────────────────────────── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 36px 24px;
+    background: var(--surface);
+    margin-left: 260px;
+  }
+  .footer-inner {
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-brand { font-weight: 700; font-size: 0.95em; }
+  .footer-brand span { color: var(--accent); }
+  .footer-links { display: flex; gap: 24px; list-style: none; }
+  .footer-links a { color: var(--text2); text-decoration: none; font-size: 0.82em; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-legal { width: 100%; text-align: center; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--text3); font-size: 0.75em; }
+
+  /* ─── RESPONSIVE ────────────────────── */
+  @media (max-width: 768px) {
+    .docs-layout { grid-template-columns: 1fr; }
+    .docs-sidebar {
+      position: fixed;
+      left: -280px;
+      transition: left 0.3s;
+      z-index: 500;
+    }
+    .docs-sidebar.open { left: 0; }
+    .docs-main { margin-left: 0; padding: 32px 20px; }
+    footer { margin-left: 0; }
+    .mobile-menu { display: block; }
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      background: var(--glass2);
+      backdrop-filter: blur(20px);
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      gap: 16px;
+    }
+    .docs-hero h1 { font-size: 1.8em; }
+    .docs-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="oxy-algo-landing-page.html" class="logo">OXY <span>ALGO</span></a>
+    <button class="mobile-menu" onclick="toggleMobileNav()">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="oxy-algo-landing-page.html">Home</a></li>
+      <li><a href="oxy-algo-docs.html" class="active">Docs</a></li>
+      <li><a href="oxy-algo-status.html">Status</a></li>
+      <li><a href="oxy-algo-landing-page.html#pricing">Pricing</a></li>
+      <li><a href="oxy-algo-landing-page.html#pricing" class="nav-cta">Join Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="docs-layout">
+  <!-- ═══════════ SIDEBAR ═══════════ -->
+  <aside class="docs-sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">Getting Started</div>
+      <a href="#" class="sidebar-link active" onclick="showHome(event)">
+        <span class="sidebar-icon">&#127968;</span> Overview
+      </a>
+      <a href="#" class="sidebar-link" onclick="loadNotion(event, 'command-center', 'Command Center', '306b4e387ff1818fa829d6c752b9d6f7')">
+        <span class="sidebar-icon">&#127919;</span> Command Center
+      </a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">Architecture</div>
+      <a href="#" class="sidebar-link" onclick="loadNotion(event, 'architecture', 'System Architecture', '306b4e387ff18151808ef1baa9eacb34')">
+        <span class="sidebar-icon">&#9881;&#65039;</span> System Architecture
+      </a>
+      <a href="#" class="sidebar-link" onclick="loadNotion(event, 'api-ref', 'API Reference', '306b4e387ff181d68a66f19788fb4241')">
+        <span class="sidebar-icon">&#128268;</span> API Reference
+        <span class="sidebar-badge">7 APIs</span>
+      </a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">Trading</div>
+      <a href="#" class="sidebar-link" onclick="loadNotion(event, 'playbook', 'Trading Playbook', '306b4e387ff181ea8d3ff15fe8eadb55')">
+        <span class="sidebar-icon">&#128218;</span> Trading Playbook
+      </a>
+      <a href="#" class="sidebar-link" onclick="loadNotion(event, 'risk-rules', 'Risk Rules', '306b4e387ff181f5b89ec61a1e66f9b3')">
+        <span class="sidebar-icon">&#128737;&#65039;</span> Risk Rules
+      </a>
+      <a href="#" class="sidebar-link" onclick="loadNotion(event, 'instruments', 'Instruments', '306b4e387ff181a78dd5c2d47ef4a3f2')">
+        <span class="sidebar-icon">&#128200;</span> Instruments
+      </a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">Education</div>
+      <a href="#" class="sidebar-link" onclick="loadNotion(event, 'education', 'Education & Concepts', '306b4e387ff181c4a868e4ad024d7f12')">
+        <span class="sidebar-icon">&#128218;</span> ICT/SMC Concepts
+      </a>
+      <a href="#" class="sidebar-link" onclick="loadNotion(event, 'knowledge', 'Knowledge Base', '306b4e387ff181e3a235cdbf555f985e')">
+        <span class="sidebar-icon">&#128161;</span> Knowledge Base
+      </a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">Performance</div>
+      <a href="#" class="sidebar-link" onclick="loadNotion(event, 'performance', 'Performance', '306b4e387ff181ad8fd1d9ebf2f4f5fb')">
+        <span class="sidebar-icon">&#128202;</span> Performance
+      </a>
+      <a href="#" class="sidebar-link" onclick="loadNotion(event, 'journal', 'Trade Journal', '306b4e387ff181948416d1e12c2405c6')">
+        <span class="sidebar-icon">&#128221;</span> Trade Journal
+      </a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">Community</div>
+      <a href="#" class="sidebar-link" onclick="loadNotion(event, 'discord-bible', 'Discord Server Bible', '306b4e387ff181a08e38d16d7a5f1de7')">
+        <span class="sidebar-icon">&#128172;</span> Discord Guide
+      </a>
+    </div>
+  </aside>
+
+  <!-- ═══════════ MAIN CONTENT ═══════════ -->
+  <main class="docs-main">
+    <!-- HOME VIEW -->
+    <div id="docs-home">
+      <div class="docs-hero">
+        <h1>OXY ALGO <span class="grad">Documentation</span></h1>
+        <p>Everything you need to understand the system, master the strategy, and trade with confidence. Explore our Notion-powered knowledge base.</p>
+      </div>
+
+      <div class="docs-search">
+        <span class="docs-search-icon">&#128269;</span>
+        <input type="text" placeholder="Search documentation..." id="docsSearch" oninput="filterDocs(this.value)">
+      </div>
+
+      <div class="quick-links">
+        <a href="#" class="quick-link" onclick="loadNotion(event, 'command-center', 'Command Center', '306b4e387ff1818fa829d6c752b9d6f7')">&#127919; Command Center</a>
+        <a href="#" class="quick-link" onclick="loadNotion(event, 'architecture', 'System Architecture', '306b4e387ff18151808ef1baa9eacb34')">&#9881;&#65039; Architecture</a>
+        <a href="#" class="quick-link" onclick="loadNotion(event, 'api-ref', 'API Reference', '306b4e387ff181d68a66f19788fb4241')">&#128268; API Reference</a>
+        <a href="oxy-algo-status.html" class="quick-link">&#128994; System Status</a>
+      </div>
+
+      <div class="section-label">Core Documentation</div>
+      <div class="section-heading">System & Architecture</div>
+      <div class="docs-grid" id="docsGrid">
+        <div class="doc-card cyan" onclick="loadNotion(event, 'command-center', 'Command Center', '306b4e387ff1818fa829d6c752b9d6f7')">
+          <div class="doc-card-icon">&#127919;</div>
+          <h3>Command Center</h3>
+          <p>Central dashboard with all system controls, workflow status, and quick actions.</p>
+          <span class="doc-card-arrow">&#8594;</span>
+        </div>
+        <div class="doc-card purple" onclick="loadNotion(event, 'architecture', 'System Architecture', '306b4e387ff18151808ef1baa9eacb34')">
+          <div class="doc-card-icon">&#9881;&#65039;</div>
+          <h3>System Architecture</h3>
+          <p>Full technical architecture: n8n workflows, APIs, data flow, and infrastructure.</p>
+          <span class="doc-card-arrow">&#8594;</span>
+        </div>
+        <div class="doc-card green" onclick="loadNotion(event, 'api-ref', 'API Reference', '306b4e387ff181d68a66f19788fb4241')">
+          <div class="doc-card-icon">&#128268;</div>
+          <h3>API Reference</h3>
+          <p>Complete OXY API documentation: endpoints, parameters, response formats.</p>
+          <span class="doc-card-arrow">&#8594;</span>
+        </div>
+      </div>
+
+      <div class="section-label">Trading</div>
+      <div class="section-heading">Strategy & Risk</div>
+      <div class="docs-grid">
+        <div class="doc-card gold" onclick="loadNotion(event, 'playbook', 'Trading Playbook', '306b4e387ff181ea8d3ff15fe8eadb55')">
+          <div class="doc-card-icon">&#128218;</div>
+          <h3>Trading Playbook</h3>
+          <p>ICT/SMC methodology, entry rules, confirmation criteria, and execution framework.</p>
+          <span class="doc-card-arrow">&#8594;</span>
+        </div>
+        <div class="doc-card red" onclick="loadNotion(event, 'risk-rules', 'Risk Rules', '306b4e387ff181f5b89ec61a1e66f9b3')">
+          <div class="doc-card-icon">&#128737;&#65039;</div>
+          <h3>Risk Rules</h3>
+          <p>Position sizing, drawdown limits, news blocking, and capital protection rules.</p>
+          <span class="doc-card-arrow">&#8594;</span>
+        </div>
+        <div class="doc-card cyan" onclick="loadNotion(event, 'instruments', 'Instruments', '306b4e387ff181a78dd5c2d47ef4a3f2')">
+          <div class="doc-card-icon">&#128200;</div>
+          <h3>Instruments</h3>
+          <p>Detailed profiles for all 25+ instruments: forex, crypto, indices, commodities.</p>
+          <span class="doc-card-arrow">&#8594;</span>
+        </div>
+      </div>
+
+      <div class="section-label">Learning</div>
+      <div class="section-heading">Education & Knowledge</div>
+      <div class="docs-grid">
+        <div class="doc-card purple" onclick="loadNotion(event, 'education', 'Education & Concepts', '306b4e387ff181c4a868e4ad024d7f12')">
+          <div class="doc-card-icon">&#128218;</div>
+          <h3>ICT/SMC Concepts</h3>
+          <p>Order Blocks, Fair Value Gaps, Liquidity, Power of 3, Kill Zones, and more.</p>
+          <span class="doc-card-arrow">&#8594;</span>
+        </div>
+        <div class="doc-card green" onclick="loadNotion(event, 'knowledge', 'Knowledge Base', '306b4e387ff181e3a235cdbf555f985e')">
+          <div class="doc-card-icon">&#128161;</div>
+          <h3>Knowledge Base</h3>
+          <p>FAQ, guides, best practices, and troubleshooting for OXY ALGO members.</p>
+          <span class="doc-card-arrow">&#8594;</span>
+        </div>
+        <div class="doc-card gold" onclick="loadNotion(event, 'discord-bible', 'Discord Server Bible', '306b4e387ff181a08e38d16d7a5f1de7')">
+          <div class="doc-card-icon">&#128172;</div>
+          <h3>Discord Guide</h3>
+          <p>Channel guide, bot commands, tier benefits, and community rules.</p>
+          <span class="doc-card-arrow">&#8594;</span>
+        </div>
+      </div>
+
+      <div class="section-label">Tracking</div>
+      <div class="section-heading">Performance & Journal</div>
+      <div class="docs-grid">
+        <div class="doc-card cyan" onclick="loadNotion(event, 'performance', 'Performance', '306b4e387ff181ad8fd1d9ebf2f4f5fb')">
+          <div class="doc-card-icon">&#128202;</div>
+          <h3>Performance</h3>
+          <p>Win rate, P&L tracking, strategy performance, and historical results.</p>
+          <span class="doc-card-arrow">&#8594;</span>
+        </div>
+        <div class="doc-card purple" onclick="loadNotion(event, 'journal', 'Trade Journal', '306b4e387ff181948416d1e12c2405c6')">
+          <div class="doc-card-icon">&#128221;</div>
+          <h3>Trade Journal</h3>
+          <p>Every trade logged with entry, exit, reasoning, and AI review scores.</p>
+          <span class="doc-card-arrow">&#8594;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTION EMBED VIEW -->
+    <div class="notion-embed-container" id="notionView">
+      <div class="notion-embed-header">
+        <h2 id="notionTitle">Loading...</h2>
+        <button class="notion-back-btn" onclick="showHome(event)">&#8592; Back to Docs</button>
+      </div>
+      <div class="notion-frame">
+        <iframe id="notionFrame" title="Notion Document" loading="lazy"></iframe>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">OXY <span>ALGO</span></div>
+    <ul class="footer-links">
+      <li><a href="oxy-algo-landing-page.html">Home</a></li>
+      <li><a href="oxy-algo-docs.html">Docs</a></li>
+      <li><a href="oxy-algo-status.html">Status</a></li>
+      <li><a href="oxy-algo-landing-page.html#pricing">Pricing</a></li>
+    </ul>
+    <div class="footer-legal">
+      OXY ALGO &copy; 2026. Documentation powered by Notion.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── NOTION PAGE LOADING ──────────────
+function loadNotion(e, id, title, pageId) {
+  if (e) e.preventDefault();
+
+  // Update sidebar active state
+  document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+  if (e && e.currentTarget && e.currentTarget.classList.contains('sidebar-link')) {
+    e.currentTarget.classList.add('active');
+  }
+
+  // Show notion view, hide home
+  document.getElementById('docs-home').style.display = 'none';
+  const notionView = document.getElementById('notionView');
+  notionView.classList.add('active');
+
+  // Set title
+  document.getElementById('notionTitle').textContent = title;
+
+  // Build Notion embed URL
+  const embedUrl = 'https://' + 'oxyalgo.notion.site/' + pageId;
+  document.getElementById('notionFrame').src = embedUrl;
+
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showHome(e) {
+  if (e) e.preventDefault();
+
+  document.getElementById('docs-home').style.display = 'block';
+  document.getElementById('notionView').classList.remove('active');
+  document.getElementById('notionFrame').src = '';
+
+  // Reset sidebar
+  document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+  document.querySelector('.sidebar-link').classList.add('active');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── SEARCH FILTER ────────────────────
+function filterDocs(query) {
+  const q = query.toLowerCase();
+  document.querySelectorAll('.doc-card').forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(q) ? '' : 'none';
+  });
+}
+
+// ─── MOBILE NAV ───────────────────────
+function toggleMobileNav() {
+  document.querySelector('.nav-links').classList.toggle('open');
+  document.getElementById('sidebar').classList.toggle('open');
+}
+
+// Close mobile sidebar on link click
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('sidebar').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
