@@ -1,6 +1,16 @@
 {
   "signals": [
     {
+      "symbol": "GBPUSD",
+      "direction": "SHORT",
+      "score": 0,
+      "grade": "B",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-20 00:30:47"
+    },
+    {
       "symbol": "US30",
       "direction": "SHORT",
       "score": 65,
@@ -11,6 +21,6 @@
       "timestamp": "2026-02-19 18:33:00"
     }
   ],
-  "generated_at": "2026-02-20T00:00:04.603Z",
-  "signal_count": 1
+  "generated_at": "2026-02-20T04:00:03.105Z",
+  "signal_count": 2
 }
