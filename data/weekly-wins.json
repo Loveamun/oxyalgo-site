@@ -2,73 +2,73 @@
   "week_of": "2026-02-16",
   "week_label": "Feb 16 – Feb 22, 2026",
   "summary": {
-    "total_signals": 24,
-    "wins": 0,
-    "losses": 1,
+    "total_signals": 105,
+    "wins": 25,
+    "losses": 36,
     "expired": 0,
-    "win_rate": 0,
-    "net_pips": -30.4,
+    "win_rate": 41,
+    "net_pips": -10987.6,
     "best_trade": {
-      "symbol": "AUDCAD",
-      "pips": 0,
+      "symbol": "GBPAUD",
+      "pips": 32.1,
       "rr": "1:2.0"
     }
   },
   "top_trades": [
     {
-      "symbol": "AUDCAD",
+      "symbol": "GBPAUD",
       "direction": "LONG",
-      "entry": 0.96473,
-      "exit": 0.96677,
-      "pips": 0,
-      "rr": "1:2.0",
-      "grade": "A+",
-      "score": 86,
-      "session": "London Kill Zone",
-      "timestamp": "2026-02-20 07:48:02"
-    },
-    {
-      "symbol": "AUDCAD",
-      "direction": "LONG",
-      "entry": 0.96473,
-      "exit": 0.96677,
-      "pips": 0,
-      "rr": "1:2.0",
-      "grade": "A+",
-      "score": 86,
-      "session": "London Kill Zone",
-      "timestamp": "2026-02-20 07:48:01"
-    },
-    {
-      "symbol": "EURAUD",
-      "direction": "SHORT",
-      "entry": 1.66754,
-      "exit": 1.66328,
-      "pips": 0,
+      "entry": 1.90803,
+      "exit": 1.91124,
+      "pips": 32.1,
       "rr": "1:2.0",
       "grade": "A",
-      "score": 80,
+      "score": 83,
       "session": "London Kill Zone",
-      "timestamp": "2026-02-20 07:20:26"
+      "timestamp": "2026-02-20 10:01:19"
     },
     {
-      "symbol": "EURAUD",
-      "direction": "SHORT",
-      "entry": 1.66754,
-      "exit": 1.66328,
-      "pips": 0,
+      "symbol": "GBPAUD",
+      "direction": "LONG",
+      "entry": 1.90803,
+      "exit": 1.91124,
+      "pips": 32.1,
       "rr": "1:2.0",
       "grade": "A",
-      "score": 80,
+      "score": 83,
       "session": "London Kill Zone",
-      "timestamp": "2026-02-20 07:20:26"
+      "timestamp": "2026-02-20 10:01:17"
+    },
+    {
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "entry": 1.3447,
+      "exit": 1.34737,
+      "pips": 26.7,
+      "rr": "1:2.0",
+      "grade": "B",
+      "score": 68,
+      "session": "London Kill Zone",
+      "timestamp": "2026-02-20 08:01:49"
+    },
+    {
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "entry": 1.34465,
+      "exit": 1.34694,
+      "pips": 22.9,
+      "rr": "1.5:1",
+      "grade": "B",
+      "score": 75,
+      "session": "LONDON",
+      "timestamp": "2026-02-20 08:03:10"
     },
     {
       "symbol": "CADJPY",
       "direction": "LONG",
       "entry": 113.316,
       "exit": 113.53008,
-      "pips": 0,
+      "pips": 21.4,
       "rr": "1:2.0",
       "grade": "A",
       "score": 76,
@@ -76,5 +76,5 @@
       "timestamp": "2026-02-20 07:48:05"
     }
   ],
-  "generated_at": "2026-02-20T08:00:02.765Z"
+  "generated_at": "2026-02-20T12:00:03.795Z"
 }
