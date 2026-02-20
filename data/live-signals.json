@@ -1,206 +1,206 @@
 {
   "signals": [
     {
-      "symbol": "CADJPY",
-      "direction": "LONG",
-      "score": 76,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-20 07:48:05"
-    },
-    {
-      "symbol": "CADJPY",
-      "direction": "LONG",
-      "score": 76,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-20 07:48:04"
-    },
-    {
-      "symbol": "AUDCAD",
-      "direction": "LONG",
-      "score": 86,
-      "grade": "A+",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-20 07:48:02"
-    },
-    {
-      "symbol": "AUDCAD",
-      "direction": "LONG",
-      "score": 86,
-      "grade": "A+",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-20 07:48:01"
-    },
-    {
-      "symbol": "EURCAD",
-      "direction": "SHORT",
-      "score": 65,
-      "grade": "B",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-20 07:33:26"
-    },
-    {
-      "symbol": "EURCAD",
-      "direction": "SHORT",
-      "score": 65,
-      "grade": "B",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-20 07:33:24"
-    },
-    {
-      "symbol": "CADCHF",
-      "direction": "LONG",
-      "score": 70,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-20 07:20:32"
-    },
-    {
-      "symbol": "CADCHF",
-      "direction": "LONG",
-      "score": 70,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-20 07:20:30"
-    },
-    {
-      "symbol": "AUDCHF",
-      "direction": "LONG",
-      "score": 70,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-20 07:20:29"
-    },
-    {
-      "symbol": "AUDCHF",
-      "direction": "LONG",
-      "score": 70,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-20 07:20:27"
-    },
-    {
-      "symbol": "EURAUD",
-      "direction": "SHORT",
-      "score": 80,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-20 07:20:26"
-    },
-    {
-      "symbol": "EURAUD",
-      "direction": "SHORT",
-      "score": 80,
-      "grade": "A",
-      "session": "London Kill Zone",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-20 07:20:26"
-    },
-    {
       "symbol": "US30",
       "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
+      "score": 72,
+      "grade": "A",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-20 05:06:05"
+      "timestamp": "2026-02-20 11:06:07"
     },
     {
       "symbol": "XAUUSD",
       "direction": "UNKNOWN",
-      "score": 0,
+      "score": 63,
       "grade": "B",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-20 05:06:04"
+      "timestamp": "2026-02-20 11:06:05"
     },
     {
       "symbol": "GBPCHF",
       "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
+      "score": 74,
+      "grade": "A",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-20 05:06:03"
+      "timestamp": "2026-02-20 11:06:02"
     },
     {
-      "symbol": "GBPCAD",
+      "symbol": "GBPNZD",
       "direction": "UNKNOWN",
-      "score": 0,
+      "score": 58,
       "grade": "B",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-20 05:06:01"
+      "timestamp": "2026-02-20 11:06:00"
     },
     {
       "symbol": "GBPAUD",
       "direction": "UNKNOWN",
-      "score": 0,
+      "score": 59,
       "grade": "B",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-20 05:05:59"
-    },
-    {
-      "symbol": "GBPJPY",
-      "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
-      "session": "N/A",
-      "outcome": "PENDING",
-      "pips": null,
-      "timestamp": "2026-02-20 05:05:58"
+      "timestamp": "2026-02-20 11:05:59"
     },
     {
       "symbol": "GBPUSD",
       "direction": "UNKNOWN",
-      "score": 0,
+      "score": 62,
       "grade": "B",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-20 05:05:55"
+      "timestamp": "2026-02-20 11:05:57"
+    },
+    {
+      "symbol": "GBPJPY",
+      "direction": "UNKNOWN",
+      "score": 74,
+      "grade": "A",
+      "session": "N/A",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-20 11:05:57"
     },
     {
       "symbol": "EURGBP",
       "direction": "UNKNOWN",
-      "score": 0,
-      "grade": "B",
+      "score": 74,
+      "grade": "A",
       "session": "N/A",
       "outcome": "PENDING",
       "pips": null,
-      "timestamp": "2026-02-20 05:05:54"
+      "timestamp": "2026-02-20 11:05:56"
+    },
+    {
+      "symbol": "GBPAUD",
+      "direction": "LONG",
+      "score": 65,
+      "grade": "B",
+      "session": "LONDON",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-20 10:02:06"
+    },
+    {
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "score": 63,
+      "grade": "B",
+      "session": "London Kill Zone",
+      "outcome": "LOSS",
+      "pips": -12.2,
+      "timestamp": "2026-02-20 10:01:33"
+    },
+    {
+      "symbol": "GBPJPY",
+      "direction": "LONG",
+      "score": 63,
+      "grade": "B",
+      "session": "London Kill Zone",
+      "outcome": "LOSS",
+      "pips": -12.2,
+      "timestamp": "2026-02-20 10:01:31"
+    },
+    {
+      "symbol": "GBPUSD",
+      "direction": "LONG",
+      "score": 63,
+      "grade": "B",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-20 10:01:26"
+    },
+    {
+      "symbol": "GBPAUD",
+      "direction": "LONG",
+      "score": 83,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "WIN",
+      "pips": 32.1,
+      "timestamp": "2026-02-20 10:01:19"
+    },
+    {
+      "symbol": "GBPAUD",
+      "direction": "LONG",
+      "score": 83,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "WIN",
+      "pips": 32.1,
+      "timestamp": "2026-02-20 10:01:17"
+    },
+    {
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "score": 73,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "PENDING",
+      "pips": null,
+      "timestamp": "2026-02-20 09:58:56"
+    },
+    {
+      "symbol": "AUDCAD",
+      "direction": "LONG",
+      "score": 65,
+      "grade": "B",
+      "session": "London Kill Zone",
+      "outcome": "LOSS",
+      "pips": -7.6,
+      "timestamp": "2026-02-20 09:48:35"
+    },
+    {
+      "symbol": "AUDCAD",
+      "direction": "LONG",
+      "score": 65,
+      "grade": "B",
+      "session": "London Kill Zone",
+      "outcome": "LOSS",
+      "pips": -7.6,
+      "timestamp": "2026-02-20 09:48:33"
+    },
+    {
+      "symbol": "EURAUD",
+      "direction": "SHORT",
+      "score": 70,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "LOSS",
+      "pips": -14.4,
+      "timestamp": "2026-02-20 09:48:32"
+    },
+    {
+      "symbol": "EURAUD",
+      "direction": "SHORT",
+      "score": 70,
+      "grade": "A",
+      "session": "London Kill Zone",
+      "outcome": "LOSS",
+      "pips": -14.4,
+      "timestamp": "2026-02-20 09:48:30"
+    },
+    {
+      "symbol": "EURGBP",
+      "direction": "LONG",
+      "score": 69,
+      "grade": "B",
+      "session": "London Kill Zone",
+      "outcome": "WIN",
+      "pips": 5.4,
+      "timestamp": "2026-02-20 09:48:29"
     }
   ],
-  "generated_at": "2026-02-20T08:00:02.769Z",
+  "generated_at": "2026-02-20T12:00:03.819Z",
   "signal_count": 20
 }
