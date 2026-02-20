@@ -788,10 +788,10 @@
   <table class="wf-table">
     <tr><th>#</th><th>Name</th><th>Purpose</th><th>Schedule</th><th>Status</th></tr>
     <tr><td>0</td><td>Discord Server Setup</td><td>Created channels, categories, roles, webhooks</td><td>One-time</td><td><span class="status-dot active"></span>Complete</td></tr>
-    <tr><td>1</td><td>GBP Correlation Scanner</td><td>EUR/GBP compass + 6 execution pairs. Posts per-instrument signals with dual charts</td><td>:00/:15/:30/:45 Mon-Fri</td><td><span class="status-dot active"></span>Active</td></tr>
-    <tr><td>2</td><td>Indices & Commodities Scanner</td><td>Gold, NAS100, US30, SPX500, USOIL. Independent setups with dual M15+H4 charts</td><td>:07/:22/:37/:52 Mon-Fri</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>1</td><td>GBP Correlation Scanner</td><td>EUR/GBP compass + 6 execution pairs. 4-layer confluence gate (Delta+COT+Sentiment+H4)</td><td>:02/:32 Mon-Fri (KZ)</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>2</td><td>Global Scanner</td><td>28 forex + Gold, Nasdaq, Dow, S&P, Oil. 4-layer confluence gate with basket routing</td><td>:05/:35 Mon-Fri (KZ)</td><td><span class="status-dot active"></span>Active</td></tr>
     <tr><td>3</td><td>Daily Bias Engine</td><td>HTF bias analysis, 4-question ICT roadmap, DOL targets via AI</td><td>0:00, 6:00, 12:00 UTC Mon-Fri</td><td><span class="status-dot active"></span>Active</td></tr>
-    <tr><td>4</td><td>Smart Money Signal Generator</td><td>ICT setups during Kill Zones only. AI confluence scoring 0-100</td><td>Every 5 min (KZ hours)</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>4</td><td>Smart Money Signal Generator</td><td>DEACTIVATED — Merged into v10 format (Feb 2026)</td><td>DEACTIVATED</td><td><span class="status-dot inactive"></span>Inactive</td></tr>
     <tr><td>5</td><td>Session Flow Tracker</td><td>Real-time PO3 phase tracking: Accumulation &rarr; Manipulation &rarr; Distribution</td><td>Every 15 min</td><td><span class="status-dot active"></span>Active</td></tr>
     <tr><td>6</td><td>Liquidity Map Generator</td><td>BSL/SSL pools, ERL/IRL levels before each session via AI</td><td>6:00, 12:00 UTC Mon-Fri</td><td><span class="status-dot active"></span>Active</td></tr>
     <tr><td>7</td><td>News Monitor + Trade Blocker</td><td>Economic calendar scan, Red Folder alerts, auto-blocks high-impact news</td><td>Every 15 min</td><td><span class="status-dot active"></span>Active</td></tr>
@@ -809,7 +809,7 @@
     <tr><td>19</td><td>Market Update Bot</td><td>4-hour market updates with CDN charts + GPT-4.1 commentary</td><td>Every 4 hours</td><td><span class="status-dot active"></span>Active</td></tr>
     <tr><td>20</td><td>Send Discord (Sub-WF)</td><td>Centralized Discord posting sub-workflow for all signal senders</td><td>Execute Workflow Trigger</td><td><span class="status-dot active"></span>Active</td></tr>
     <tr><td>21</td><td>Telegram Bot</td><td>Voice I/O, chart delivery, trade management. 25 symbols, 9 commands</td><td>Telegram Trigger</td><td><span class="status-dot active"></span>Active</td></tr>
-    <tr><td>22</td><td>Crypto Scanner</td><td>BTC, ETH, XRP, SOL, BNB. 15-min scans with live charts &amp; scoring</td><td>Every 15 min</td><td><span class="status-dot active"></span>Active</td></tr>
+    <tr><td>22</td><td>Crypto Scanner</td><td>BTC, ETH, XRP, SOL, BNB + 5 more. 30-min scans with 4-layer confluence gate</td><td>:08/:38 (7 days, KZ)</td><td><span class="status-dot active"></span>Active</td></tr>
     <tr><td>23</td><td>Results Showcase Bot</td><td>Daily P&amp;L summary to #results-showcase (free tier visible)</td><td>10:00 PM UTC</td><td><span class="status-dot active"></span>Active</td></tr>
     <tr><td>24</td><td>Welcome Sequence</td><td>New member onboarding: DM welcome + #general announcement</td><td>Webhook POST</td><td><span class="status-dot active"></span>Active</td></tr>
   </table>
