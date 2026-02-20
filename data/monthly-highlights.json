@@ -4,23 +4,23 @@
   "month_label": "February 2026",
   "stats": {
     "total_signals": 105,
-    "wins": 25,
-    "losses": 36,
+    "wins": 35,
+    "losses": 50,
     "expired": 0,
-    "win_rate": 41,
+    "win_rate": 41.2,
     "prev_win_rate": 0,
-    "net_pips": -10987.6,
+    "net_pips": -15319.4,
     "prev_net_pips": 0,
-    "trades_executed": 61,
+    "trades_executed": 85,
     "prev_trades_executed": 0,
     "avg_rr": "1.1:1",
     "prev_avg_rr": "0:1",
     "best_instrument": "AUDCHF",
-    "best_instrument_winrate": 80,
-    "best_instrument_pips": 97.8
+    "best_instrument_winrate": 100,
+    "best_instrument_pips": 132.6
   },
   "highlights": [
-    "AUDCHF hit 80% win rate — top performer this month"
+    "AUDCHF hit 100% win rate — top performer this month"
   ],
-  "generated_at": "2026-02-20T12:00:03.817Z"
+  "generated_at": "2026-02-20T16:00:02.148Z"
 }
