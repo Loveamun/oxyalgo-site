@@ -2,18 +2,79 @@
   "week_of": "2026-02-16",
   "week_label": "Feb 16 – Feb 22, 2026",
   "summary": {
-    "total_signals": 2,
+    "total_signals": 24,
     "wins": 0,
     "losses": 1,
     "expired": 0,
     "win_rate": 0,
     "net_pips": -30.4,
     "best_trade": {
-      "symbol": "N/A",
+      "symbol": "AUDCAD",
       "pips": 0,
-      "rr": "0:1"
+      "rr": "1:2.0"
     }
   },
-  "top_trades": [],
-  "generated_at": "2026-02-20T04:00:03.084Z"
+  "top_trades": [
+    {
+      "symbol": "AUDCAD",
+      "direction": "LONG",
+      "entry": 0.96473,
+      "exit": 0.96677,
+      "pips": 0,
+      "rr": "1:2.0",
+      "grade": "A+",
+      "score": 86,
+      "session": "London Kill Zone",
+      "timestamp": "2026-02-20 07:48:02"
+    },
+    {
+      "symbol": "AUDCAD",
+      "direction": "LONG",
+      "entry": 0.96473,
+      "exit": 0.96677,
+      "pips": 0,
+      "rr": "1:2.0",
+      "grade": "A+",
+      "score": 86,
+      "session": "London Kill Zone",
+      "timestamp": "2026-02-20 07:48:01"
+    },
+    {
+      "symbol": "EURAUD",
+      "direction": "SHORT",
+      "entry": 1.66754,
+      "exit": 1.66328,
+      "pips": 0,
+      "rr": "1:2.0",
+      "grade": "A",
+      "score": 80,
+      "session": "London Kill Zone",
+      "timestamp": "2026-02-20 07:20:26"
+    },
+    {
+      "symbol": "EURAUD",
+      "direction": "SHORT",
+      "entry": 1.66754,
+      "exit": 1.66328,
+      "pips": 0,
+      "rr": "1:2.0",
+      "grade": "A",
+      "score": 80,
+      "session": "London Kill Zone",
+      "timestamp": "2026-02-20 07:20:26"
+    },
+    {
+      "symbol": "CADJPY",
+      "direction": "LONG",
+      "entry": 113.316,
+      "exit": 113.53008,
+      "pips": 0,
+      "rr": "1:2.0",
+      "grade": "A",
+      "score": 76,
+      "session": "London Kill Zone",
+      "timestamp": "2026-02-20 07:48:05"
+    }
+  ],
+  "generated_at": "2026-02-20T08:00:02.765Z"
 }
