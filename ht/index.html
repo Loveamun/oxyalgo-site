@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OXY ALGO &mdash; 94% Trader Echwe Prop Challenge. Kite AI Pase Pa Ou.</title>
+<meta name="description" content="8 ajan AI ap tcheke 38 enstriman, fè trade, epi pwoteje kont ou 24/7. Analiz ICT/SMC otomatik. Bon pou prop firm. Risk Guardian ap aplike règ ou yo. Antre gratis.">
+<meta property="og:title" content="OXY ALGO &mdash; 94% Trader Echwe. Kite AI Pase Pou Ou.">
+<meta property="og:description" content="8 ajan AI ap siveye 38 enstriman, analize, egzekite, epi pwoteje &mdash; 24/7 san emosyon. Kontwòl konplè nan Discord. Eseye gratis.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ambient Background -->
+<div class="ambient-bg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+</div>
+<div class="noise-overlay"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo">OXY <span>ALGO</span></a>
+    <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="#pwoblèm">Pwoblèm lan</a></li>
+      <li><a href="#ajan">Ajan yo</a></li>
+      <li><a href="#platfòm">Platfòm</a></li>
+      <li><a href="#entèlijans">Entèlijans</a></li>
+      <li><a href="#pri">Pri</a></li>
+      <li><a href="#faq">Kesyon</a></li>
+      <li><a href="https://whop.com/oxy-algo/?plan=plan_DW3GMI64x3la9" target="_blank" class="nav-cta">Eseye Gratis 2 Semèn &rarr;</a></li>
+      <li><a href="../" title="English" style="font-size:1.3em;line-height:1;">🇺🇸</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <canvas class="hero-particles" id="particles"></canvas>
+  <div class="hero-typewriter" id="heroTypewriter"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="pulse-dot"></span> AKTIF 24/7 &mdash; 42 Workflow + 37 Kòmand + Kontwòl Total</div>
+    <h1>94% Trader Echwe.<br>Kite <span class="grad">AI Pase Pou Ou.</span></h1>
+    <p class="sub">8 ajan AI ap tcheke 38 enstriman chak 30 minit atravè 4 kouch konfirans, fè trade, epi pwoteje kont ou &mdash; tout nan Discord. Pa gen chat pou gade. Pa gen emosyon pou batay. Pa gen setup pou rate. Ap fonksyone 24/7.</p>
+    <div class="hero-btns">
+      <a href="https://whop.com/oxy-algo/?plan=plan_DW3GMI64x3la9" target="_blank" class="btn btn-primary">Eseye Premium Gratis 2 Semèn &rarr;</a>
+      <a href="#pwoblèm" class="btn btn-secondary">Gade Poukisa 94% Echwe</a>
+    </div>
+    <div class="trust-bar">
+      <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div> 24/7 Otonòm</div>
+      <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div> Egzekisyon &lt; 3 segond</div>
+      <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="2"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/></svg></div> AI ki Aprann</div>
+      <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div> Bon Pou Prop Firm</div>
+      <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green2)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div> Chak Siyal Trase</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-section">
+  <div class="stats-grid wrap">
+    <div class="stat"><div class="stat-num" data-target="8">0</div><div class="stat-label">Ajan AI</div></div>
+    <div class="stat"><div class="stat-num" data-target="38">0</div><div class="stat-label">Enstriman</div></div>
+    <div class="stat"><div class="stat-num" data-target="37">0</div><div class="stat-label">Kòmand Discord</div></div>
+    <div class="stat"><div class="stat-num" data-target="350" data-suffix="+">0</div><div class="stat-label">Eskanè / Jou</div></div>
+    <div class="stat"><div class="stat-num no-count">$4.97</div><div class="stat-label">Pa Jou</div></div>
+    <div class="stat"><div class="stat-num no-count">24/7</div><div class="stat-label">Otonòm</div></div>
+  </div>
+</div>
+
+<!-- TECH MARQUEE -->
+<div class="trust-logos">
+  <div class="marquee-track">
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/></svg></span> GPT-4 Vision</div>
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg></span> ElevenLabs Voice AI</div>
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span> Anthropic Claude</div>
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span> n8n Automation</div>
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span> MetaTrader 5</div>
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> Self-Hosted APIs</div>
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> Discord Delivery</div>
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span> Perplexity AI</div>
+    <!-- Duplicate for seamless loop -->
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/></svg></span> GPT-4 Vision</div>
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg></span> ElevenLabs Voice AI</div>
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span> Anthropic Claude</div>
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span> n8n Automation</div>
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span> MetaTrader 5</div>
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> Self-Hosted APIs</div>
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> Discord Delivery</div>
+    <div class="trust-logo-item"><span class="trust-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span> Perplexity AI</div>
+  </div>
+</div>
+
+<!-- FREE TRIAL BANNER -->
+<div class="trial-banner">
+  <div class="trial-banner-content">
+    <div class="trial-banner-flags">🇭🇹 🇭🇹 🇭🇹</div>
+    <h3>PWOMOSYON ESPESYAL POU AYISYEN<br><span class="trial-highlight">2 Semèn Premium GRATIS</span></h3>
+    <p>Pa gen kat kredi nesesè. Teste tout bagay. Upgrade lè ou pare.</p>
+    <div class="trial-platforms">
+      <span>💬 WhatsApp</span>
+      <span>🎮 Discord</span>
+      <span>✈️ Telegram</span>
+    </div>
+    <a href="https://whop.com/oxy-algo/?plan=plan_DW3GMI64x3la9" target="_blank" class="btn btn-primary">Kòmanse Kounye a &rarr;</a>
+  </div>
+</div>
+
+<!-- THE PROBLEM -->
+<section class="problem-section" id="pwoblèm">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag" style="background:rgba(239,68,68,0.06);border-color:rgba(239,68,68,0.12);color:var(--red);">Pwoblèm Lan</div>
+      <h2>Chif yo Pa Manti.<br><span class="grad">Trading Se Yon Simityè.</span></h2>
+      <p class="lead">Sa yo se pa opinyon. Se estatistik verifye de plis ke 300,000 kont trader nan 10 prop firm.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="pain-icon" style="background:rgba(239,68,68,0.06);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>94% Echwe Premye Challenge Yo</h3>
+        <p>Sèlman 14% janm pase yon evalyasyon. Sèlman 7% janm resevwa yon sèl peman. An mwayèn, yon trader depanse $4,270 nan plizyè tantativ anvan li bay vag. Modèl biznis prop firm yo depann de echèk ou.</p>
+      </div>
+      <div class="pain-card reveal reveal-delay-1">
+        <div class="pain-icon" style="background:rgba(245,158,11,0.06);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><circle cx="12" cy="16" r="0.5" fill="var(--gold)"/></svg></div>
+        <h3>80% Kite Nan 2 Ane</h3>
+        <p>Sèlman 1.6% day trader fè lajan nan yon ane. Sèlman 1% reyisi nan 5 ane. Asasen nimewo 1? Emosyon &mdash; pa estrateji, pa kapital, pa kondisyon mache. Ou pèdi paske ou se yon moun.</p>
+      </div>
+      <div class="pain-card reveal reveal-delay-2">
+        <div class="pain-icon" style="background:rgba(124,58,237,0.06);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Revenge Trading Detwi Kont</h3>
+        <p>Ou pèdi yon trade. Ou santi doulè a. Ou kouri antre nan pwochen trade la pou reprann lajan an. 80% violasyon prop firm rive konsa &mdash; emosyon domine règ. Yon move maten, epi challenge ou fini anvan midi.</p>
+      </div>
+      <div class="pain-card reveal reveal-delay-3">
+        <div class="pain-icon" style="background:rgba(0,212,255,0.06);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>$5,000/Ane Nan Zouti Ki Pa Pale</h3>
+        <p>TradingView. Scanner. Jounal. Nouvèl. VPS. Sèvis siyal. Frè challenge. Ou depanse $1,500-5,000 pa ane nan zouti ki pa konekte anvan ou fè yon sèl dola. Epi okenn nan yo pa trade pou ou.</p>
+      </div>
+    </div>
+    <div class="problem-transition reveal">
+      <p>E si ou te ka ranplase tout sa ak <span class="data-value">yon sèl sistèm</span>?</p>
+      <p class="problem-sub">8 ajan AI. 38 enstriman. Scanning otomatik, egzekisyon, ak jesyon risk. Pa gen emosyon. Pa gen ezitasyon. Pa gen setup rate. Jis kòd k ap fè sa moun pa kapab.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THE COST OF DOING NOTHING -->
+<section class="cost-section" id="kou">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag" style="background:rgba(245,158,11,0.06);border-color:rgba(245,158,11,0.12);color:var(--gold);">Kou a</div>
+      <h2>Chak Jou Ou Trade Manyèlman,<br><span class="grad">Ou Pèdi Lajan.</span></h2>
+    </div>
+    <div class="cost-grid">
+      <div class="cost-card reveal">
+        <div class="cost-num" style="color:var(--red);">$500</div>
+        <div class="cost-label">Pa setup rate</div>
+        <p>Ou te nan travay. Ou te ap dòmi. Ou te ezite. Setup la te tire, frape target, epi ou pa t ladan l. Lajan sa a te ka ale lakay pou fanmi.</p>
+      </div>
+      <div class="cost-card reveal reveal-delay-1">
+        <div class="cost-num" style="color:var(--red);">$2,000</div>
+        <div class="cost-label">Pa revenge trade</div>
+        <p>Yon sèl trade emosyonèl apre yon pèt. Pi gwo tay. Pa gen plan. Drawdown frape epi challenge ou fini. Sa se pri Western Union 40 fwa.</p>
+      </div>
+      <div class="cost-card reveal reveal-delay-2">
+        <div class="cost-num" style="color:var(--red);">$500</div>
+        <div class="cost-label">Pa challenge echwe</div>
+        <p>An mwayèn, yon trader eseye 3 challenge pa kont. Sa se $1,500 nan frè &mdash; plis 90 jou tan pèdi &mdash; pa prop firm.</p>
+      </div>
+      <div class="cost-card reveal reveal-delay-3">
+        <div class="cost-num" style="color:var(--red);">8 è</div>
+        <div class="cost-label">Pa jou gade chat</div>
+        <p>Sesyon London. Sesyon NY. Gade bouji, ap tann yon setup ki ka pa janm vini. Ou gen 2 djòb deja. Kilè pou ou trade? AI pa janm fatige.</p>
+      </div>
+    </div>
+    <div class="cost-bottom reveal">
+      <p style="font-family:var(--font-head);font-size:1.4em;font-weight:700;text-align:center;margin-bottom:12px;">OXY ALGO koute <span style="color:var(--accent)">$4.97/jou</span>. Yon sèl trade rate koute plis pase sa.</p>
+      <p style="color:var(--text2);text-align:center;font-size:0.95em;">Kesyon an se pa si ou ka peye l. Se si ou ka afòde pa genyen l.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="kòman">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag section-tag-bracket">[ KÒMAN LI MACHE ]</div>
+      <h2>Twa Etap. <span class="grad">Se Sa.</span></h2>
+      <p class="lead">De zewo a enfrastrikti trading otomatik nan mwens ke 60 segond.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-step reveal">
+        <div class="how-num">01</div>
+        <h3>Antre nan Discord la</h3>
+        <p>Kreye yon kont gratis. Jwenn aksè touswit nan kominote a, asistan AI, alèt nouvèl, edikasyon chak jou, ak rezilta verifye. Gade siyal yo anvan ou depanse yon santim.</p>
+      </div>
+      <div class="how-connector"></div>
+      <div class="how-step reveal reveal-delay-1">
+        <div class="how-num">02</div>
+        <h3>Gade AI ap Travay</h3>
+        <p>8 ajan ap siveye 38 enstriman chak 30 minit atravè 4 kouch entèlijans. Sèlman siyal ak 2+ kouch konfyans ki aliye rive nan kanal ou yo. Chak siyal trase jiska rezilta.</p>
+      </div>
+      <div class="how-connector"></div>
+      <div class="how-step reveal reveal-delay-2">
+        <div class="how-num">03</div>
+        <h3>Upgrade Lè Ou Pare</h3>
+        <p>Lè done yo pale pou tèt yo, deblouke egzekisyon otomatik, P&amp;L an dirèk, AI Mentor, jounal vwa, tracking prop firm, ak kontwòl trade konplè nan Discord.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEKLY WINS -->
+<section class="wins-section" id="rezilta-semèn">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag section-tag-bracket" style="background:rgba(16,185,129,0.06);border-color:rgba(16,185,129,0.15);color:var(--green);">[ SYSTEM.REZILTA ]</div>
+      <h2>Rezilta Semèn Sa a <span class="grad">Verifye.</span></h2>
+      <p class="lead">Chak siyal trase. Chak rezilta verifye pa kòd, pa pa claim. Viktwa AK pèt &mdash; tout transparans.</p>
+    </div>
+    <div id="weekly-wins-data">
+      <p style="color:var(--text3);text-align:center;font-size:0.9em;">Ap chaje rezilta&hellip;</p>
+    </div>
+  </div>
+</section>
+
+<!-- MANUAL vs OXY ALGO -->
+<section class="compare-section" id="konpare">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag section-tag-bracket" style="background:rgba(0,212,255,0.06);border-color:rgba(0,212,255,0.15);color:var(--accent);">[ KONPARE ]</div>
+      <h2>Trading Manyèl vs. <span class="grad">OXY ALGO.</span></h2>
+      <p class="lead">Gade sa ki chanje lè AI dirije operasyon trading ou.</p>
+    </div>
+    <div class="compare-table reveal">
+      <div class="compare-row compare-header">
+        <div class="compare-cell"></div>
+        <div class="compare-cell compare-manual">Trading Manyèl</div>
+        <div class="compare-cell compare-algo">OXY ALGO</div>
+      </div>
+      <div class="compare-row"><div class="compare-cell compare-label">Scanning mache</div><div class="compare-cell compare-manual">Gade 2-3 pè lè ou gen tan</div><div class="compare-cell compare-algo">38 enstriman chak 30 minit, 4-layer confluence gate</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Tan analiz</div><div class="compare-cell compare-manual">30-60 minit pa setup</div><div class="compare-cell compare-algo">Mwens ke 3 segond pa setup</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Desizyon emosyonèl</div><div class="compare-cell compare-manual">Revenge trade, FOMO, ezitasyon</div><div class="compare-cell compare-algo">Zewo emosyon. Kòd egzekite plan an.</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Jesyon risk</div><div class="compare-cell compare-manual">"M ap deplase SL mwen yon ti jan..."</div><div class="compare-cell compare-algo">Guardian aplike règ yo. Pa gen override.</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Setup rate</div><div class="compare-cell compare-manual">Ap dòmi, nan travay, ap manje</div><div class="compare-cell compare-algo">Pa janm rate yon setup. Jamè.</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Jounal trade</div><div class="compare-cell compare-manual">Kòmanse yon spreadsheet, kite nan 2 semèn</div><div class="compare-cell compare-algo">Chak trade loge ak note otomatikman</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Sekirite prop firm</div><div class="compare-cell compare-manual">"M espere m pa depase limit jou a"</div><div class="compare-cell compare-algo">Aplike règ drawdown anvan ou ka kase yo</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Kou pa mwa</div><div class="compare-cell compare-manual">$200-500+ (chat, scanner, jounal, VPS, siyal)</div><div class="compare-cell compare-algo">$149/mwa &mdash; tout nan yon sèl sistèm</div></div>
+      <div class="compare-row"><div class="compare-cell compare-label">Èdtan pa jou</div><div class="compare-cell compare-manual">4-10 è ap gade chat</div><div class="compare-cell compare-algo">Tcheke Discord lè ou vle. Oswa pa tcheke.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 AI AGENTS -->
+<section class="agents-section" id="ajan">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag section-tag-bracket">[ SYSTEM.AJAN ]</div>
+      <h2>Ekip Trading AI Ou.<br><span class="grad">8 Ajan. Zewo Emosyon.</span></h2>
+      <p class="lead">Chak ajan gen yon sèl travay. Ansanm, yo fòme yon operasyon trading konplè ki fonksyone pandan ou ap dòmi.</p>
+    </div>
+    <div class="agents-grid">
+      <div class="agent-card reveal">
+        <div class="agent-header">
+          <div class="agent-icon" style="background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <div class="agent-status"><span class="status-dot"></span> AKTIF</div>
+        </div>
+        <div class="agent-pid">PID: SCANNER-01</div>
+        <h3>Scanner</h3>
+        <div class="agent-role">Siveyans Mache</div>
+        <p>Siveye 38 enstriman nan 7 basket forex chak 30 minit. 4-layer confluence gate: order flow + pozisyon enstitisyonèl + sentiment retail + tandans H4. Sèlman siyal ki gen anpil konfyans pase.</p>
+        <div class="agent-workflows">WF01 &bull; WF02 &bull; WF22 &bull; WF33 &bull; WF39 &bull; WF41</div>
+      </div>
+      <div class="agent-card reveal reveal-delay-1">
+        <div class="agent-header">
+          <div class="agent-icon" style="background:rgba(124,58,237,0.08);border-color:rgba(124,58,237,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="2"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><line x1="9" y1="21" x2="15" y2="21"/></svg></div>
+          <div class="agent-status"><span class="status-dot"></span> AKTIF</div>
+        </div>
+        <div class="agent-pid">PID: ANALYST-01</div>
+        <h3>Analis</h3>
+        <div class="agent-role">Scoring Konfirans</div>
+        <p>Note chak setup 0-100 ak konfirans ICT/SMC, analiz multi-timeframe, kontèks sesyon, ak momentum. Ou wè nòt la anvan trade la tire.</p>
+        <div class="agent-workflows">WF03 &bull; WF06 &bull; WF18 &bull; WF25</div>
+      </div>
+      <div class="agent-card reveal reveal-delay-2">
+        <div class="agent-header">
+          <div class="agent-icon" style="background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div class="agent-status agent-status-live"><span class="status-dot"></span> AP EGZEKITE</div>
+        </div>
+        <div class="agent-pid">PID: EXECUTOR-01</div>
+        <h3>Egzekitè</h3>
+        <div class="agent-role">Egzekisyon Trade An Dirèk</div>
+        <p>Mete vrè trade. 17 aksyon nan Discord: fèmen, modifye SL/TP, break even, trailing stop, pending order, kill switch. Kontwòl total nan telefòn ou.</p>
+        <div class="agent-workflows">WF08 &bull; WF13</div>
+      </div>
+      <div class="agent-card reveal reveal-delay-3">
+        <div class="agent-header">
+          <div class="agent-icon" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="agent-status"><span class="status-dot"></span> AKTIF</div>
+        </div>
+        <div class="agent-pid">PID: GUARDIAN-01</div>
+        <h3>Gadyen</h3>
+        <div class="agent-role">Aplikasyon Risk</div>
+        <p>Aplike 5% drawdown pa jou / 10% total. Trailing stop pwogresif. Blokaj nouvèl. Limit trade. Pa gen override emosyonèl. Kòd aplike disiplin pou ou pa oblije fè l.</p>
+        <div class="agent-workflows">WF07 &bull; WF09</div>
+      </div>
+      <div class="agent-card reveal">
+        <div class="agent-header">
+          <div class="agent-icon" style="background:rgba(96,165,250,0.08);border-color:rgba(96,165,250,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></div>
+          <div class="agent-status agent-status-soon"><span class="status-dot-soon"></span> BYENTO</div>
+        </div>
+        <div class="agent-pid">PID: COPIER-01</div>
+        <h3>Kopyè</h3>
+        <div class="agent-role">Miwa Trade</div>
+        <p>Kopye trade nan broker ou sou MT5, MT4, Tradeovate, Trade Locker, Liquid Broker. Paramèt risk pa ou, kont pa ou, egzekisyon otomatik.</p>
+        <div class="agent-workflows">Cross-platform mirroring</div>
+      </div>
+      <div class="agent-card reveal reveal-delay-1">
+        <div class="agent-header">
+          <div class="agent-icon" style="background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div class="agent-status"><span class="status-dot"></span> AKTIF</div>
+        </div>
+        <div class="agent-pid">PID: INTEL-01</div>
+        <h3>Intel</h3>
+        <div class="agent-role">Entèlijans Mache</div>
+        <p>Kalandriye ekonomik, agwegasyon nouvèl, preparasyon sesyon, ak update mache. Alèt anvan nouvèl ak analiz AI 1 è ak 15 minit anvan evènman enpòtan.</p>
+        <div class="agent-workflows">WF05 &bull; WF11 &bull; WF19 &bull; WF27</div>
+      </div>
+      <div class="agent-card reveal reveal-delay-2">
+        <div class="agent-header">
+          <div class="agent-icon" style="background:rgba(52,211,153,0.08);border-color:rgba(52,211,153,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green2)" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
+          <div class="agent-status"><span class="status-dot"></span> AKTIF</div>
+        </div>
+        <div class="agent-pid">PID: TRACKER-01</div>
+        <h3>Tracker</h3>
+        <div class="agent-role">Analiz Pèfòmans</div>
+        <p>Chak trade trase jiska rezilta. Win rate, P&amp;L, streak, pwogrè prop firm, leaderboard, rekapitilasyon semèn. Tout responsabilite.</p>
+        <div class="agent-workflows">WF10 &bull; WF15 &bull; WF16 &bull; WF17 &bull; WF22b &bull; WF23 &bull; WF32</div>
+      </div>
+      <div class="agent-card reveal reveal-delay-3">
+        <div class="agent-header">
+          <div class="agent-icon" style="background:linear-gradient(135deg,rgba(0,212,255,0.08),rgba(124,58,237,0.08));border-color:rgba(0,212,255,0.15);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div class="agent-status"><span class="status-dot"></span> AKTIF</div>
+        </div>
+        <div class="agent-pid">PID: AMUN-01</div>
+        <h3>Amun</h3>
+        <div class="agent-role">Asistan Trading AI</div>
+        <p>GPT-4 powered. Analize screenshot ou yo. Reponn ak vwa. Sonje chak konvèsasyon. 37 kòmand. Adapte ak estil trading ou. Mentò trading pèsonèl ou.</p>
+        <div class="agent-workflows">Bot v2 &bull; WF24 &bull; WF25 &bull; WF26 &bull; WF28</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM CAPABILITIES -->
+<section class="features-section quant-grid" id="platfòm">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag section-tag-bracket">[ SYSTEM.KAPASITE ]</div>
+      <h2>Bati Pou Trader Prop Firm.<br><span class="grad">Pa Yon Lòt Sèvis Siyal.</span></h2>
+      <p class="lead">Sèvis siyal voye alèt. OXY ALGO siveye, analize, egzekite, jere, trase, epi aprann &mdash; otonòm.</p>
+    </div>
+    <div class="bento-grid">
+      <div class="bento-card span-2 featured-card reveal">
+        <div class="bento-num">01</div>
+        <h3>Motè Scanning 38 Enstriman</h3>
+        <p>28 pè forex nan 7 basket, 10 crypto (24/7), 3 indis, 3 commodity. Chak pè jwenn analiz M15 + H4 ak chat pwofesyonèl. Chak siyal anrichi ak fòs deviz, sentiment, ak done korelasyon.</p>
+      </div>
+      <div class="bento-card reveal reveal-delay-1">
+        <div class="bento-num">02</div>
+        <h3>4-Layer Confluence Gate</h3>
+        <p>Scoring ICT + order flow delta + pozisyon enstitisyonèl CFTC + sentiment retail + aliyman tandans H4. Siyal yo bezwen 2+ kouch entèlijans dakò anvan yo tire.</p>
+      </div>
+      <div class="bento-card reveal">
+        <div class="bento-num">03</div>
+        <h3>Entèlijans Sentiment</h3>
+        <p>Pozisyon retail an dirèk de Myfxbook. 41 enstriman. Lè 80% retail long epi ou ap short, sa se yon avantaj. Scoring kontrè bati nan chak siyal.</p>
+      </div>
+      <div class="bento-card reveal reveal-delay-1">
+        <div class="bento-num">04</div>
+        <h3>Risk Guardian Prop Firm</h3>
+        <p>Fèt pou FTMO, FundedNext, The5ers, ak tout gwo prop firm. Aplike drawdown pa jou, drawdown total, max trade, ak limit pozisyon otomatikman.</p>
+      </div>
+      <div class="bento-card span-2 featured-card reveal reveal-delay-2">
+        <div class="bento-num">05</div>
+        <h3>Kontwòl Trade Konplè Nan Discord</h3>
+        <p>37 kòmand. Fèmen pozisyon, modifye SL/TP, break even tout trade, aktive trailing stop, mete pending order, ak frape kill switch &mdash; tout nan telefòn ou. Pa bezwen MetaTrader. Pa bezwen laptop.</p>
+      </div>
+      <div class="bento-card reveal">
+        <div class="bento-num">06</div>
+        <h3>Entèlijans Evènman Nouvèl</h3>
+        <p>Alèt anvan nouvèl 1 è ak 15 min anvan evènman enpòtan ak analiz AI de sa pou atann. Bloke trade otomatikman pandan piblikasyon.</p>
+      </div>
+      <div class="bento-card reveal reveal-delay-1">
+        <div class="bento-num">07</div>
+        <h3>Matris Fòs Deviz</h3>
+        <p>Klase 8 deviz chak 15 min de pi fò a pi fèb. Deteksyon SMT Divergence. BTC.D Quadrant pou crypto. Tracking DXY pou indis.</p>
+      </div>
+      <div class="bento-card reveal reveal-delay-2">
+        <div class="bento-num">08</div>
+        <h3>Responsabilite Pèfòmans</h3>
+        <p>Chak trade loge, note, revize pa AI. Win rate, P&amp;L, streak, pwogrè prop firm. Transparans total. Chak siyal trase jiska rezilta verifye.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI INTELLIGENCE -->
+<section class="intelligence-section" id="entèlijans">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag section-tag-bracket" style="background:rgba(124,58,237,0.06);border-color:rgba(124,58,237,0.15);color:var(--purple2);">[ SYSTEM.ENTÈLIJANS ]</div>
+      <h2>Pa Yon Bwat Nwa.<br><span class="grad">Ou Wè Tout Bagay.</span></h2>
+      <p class="lead">Chak trade montre nòt, klas, konfyans, tip setup, sesyon, ak rezònman. Sa se transparans total.</p>
+    </div>
+    <div class="intel-grid-v2">
+      <div class="intel-card-v2 reveal">
+        <div class="intel-badge-new">NOUVO</div>
+        <div class="intel-icon-v2" style="background:rgba(0,212,255,0.06);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Vision AI</h3>
+        <p>Voye yon screenshot epi jwenn feedback nivo enstitisyonèl. GPT-4o li chat ou yo, jwenn erè, idantifye kalite setup, epi di ou sa ou te rate.</p>
+        <div class="intel-tech">Powered by GPT-4o Vision</div>
+      </div>
+      <div class="intel-card-v2 reveal reveal-delay-1">
+        <div class="intel-badge-new">NOUVO</div>
+        <div class="intel-icon-v2" style="background:rgba(124,58,237,0.06);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--purple2)" stroke-width="1.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+        <h3>AI Vwa</h3>
+        <p>Voye yon mesaj vwa, jwenn yon repons vwa. Whisper transkripsyon, GPT-4 analize, ElevenLabs pale tounen. Analiz mache san men.</p>
+        <div class="intel-tech">Whisper + GPT-4 + ElevenLabs</div>
+      </div>
+      <div class="intel-card-v2 reveal reveal-delay-2">
+        <div class="intel-icon-v2" style="background:rgba(245,158,11,0.06);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><line x1="9" y1="21" x2="15" y2="21"/></svg></div>
+        <h3>Memwa Adaptif</h3>
+        <p>Sonje konvèsasyon ou, enstriman ou, estil trading ou, erè pase yo. Vin pi entèlijan apre chak entèraksyon. AI pèsonèl ou ki vrèman konnen ou.</p>
+        <div class="intel-tech">SQLite persistence + Self-annotation</div>
+      </div>
+      <div class="intel-card-v2 reveal">
+        <div class="intel-icon-v2" style="background:rgba(16,185,129,0.06);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
+        <h3>Entèlijans Siyal</h3>
+        <p>Chak siyal trase jiska rezilta &mdash; WIN, LOSS, oswa EXPIRED. Verifye chak 15 min. Win rate, pip net, pèfòmans pa enstriman.</p>
+        <div class="intel-tech">Outcome tracking + Pattern recognition</div>
+      </div>
+      <div class="intel-card-v2 reveal reveal-delay-1">
+        <div class="intel-icon-v2" style="background:rgba(96,165,250,0.06);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <h3>Baz Konesans 75 Antre</h3>
+        <p>Playbook ICT/SMC, modèl korelasyon, framework sikoloji 23-liv, estrateji sesyon. Chak repons refere konesans ki pi enpòtan.</p>
+        <div class="intel-tech">RAG retrieval + Dynamic injection</div>
+      </div>
+      <div class="intel-card-v2 reveal reveal-delay-2">
+        <div class="intel-badge-new">NOUVO</div>
+        <div class="intel-icon-v2" style="background:rgba(245,158,11,0.06);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>AI Mentò</h3>
+        <p>Analize modèl trading ou. Idantifye fòs, feblès, ak trigger emosyonèl ou. Coaching pèsonalize baze sou done ou yo. Pa konsèy jenerik &mdash; konsèy bati sou ISTWA ou.</p>
+        <div class="intel-tech">Pattern analysis + Personalized coaching</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE SIGNAL FEED -->
+<section class="signals-section" id="siyal-dirèk">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag section-tag-bracket">[ LIVE.FEED ]</div>
+      <h2>Gade Li Travay. <span class="grad">Kounye a.</span></h2>
+      <p class="lead">Siyal an dirèk nan dènye 24 è. Chak rezilta trase. Pa gen chwa a la kat.</p>
+    </div>
+    <div id="live-signal-feed">
+      <p style="color:var(--text3);text-align:center;font-size:0.9em;">Ap konekte ak feed an dirèk&hellip;</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY CHANNELS -->
+<section class="channels-section" id="kominote">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag" style="background:rgba(37,211,102,0.06);border-color:rgba(37,211,102,0.12);color:var(--whatsapp);">Kominote</div>
+      <h2>Chwazi <span class="grad">Kominote Ou.</span></h2>
+      <p class="lead">Twa platfòm. Chak gen yon wòl. Chwazi sa ki mache pou ou &mdash; oswa antre nan tout twa.</p>
+    </div>
+    <div class="channels-grid">
+      <div class="channel-card whatsapp-card reveal">
+        <div class="channel-icon" style="background:rgba(37,211,102,0.1);">💬</div>
+        <h3>WhatsApp</h3>
+        <div class="channel-role">Kominote &bull; Chat &bull; Sipò</div>
+        <p>Kote tout moun rankontre. Chat, kesyon, sipò, vibes. Se kominote an — kote Ayisyen ede Ayisyen. Pa gen bot, pa gen siyal — jis moun reyèl.</p>
+        <a href="#" class="channel-btn whatsapp-btn">Antre nan WhatsApp &rarr;</a>
+      </div>
+      <div class="channel-card discord-card reveal reveal-delay-1">
+        <div class="channel-icon" style="background:rgba(88,101,242,0.1);">🎮</div>
+        <h3>Discord</h3>
+        <div class="channel-role">Platfòm Trading &bull; Siyal &bull; Bot</div>
+        <p>Se kote AI ap travay. Siyal, dashboard, 37 kòmand, egzekisyon otomatik, edikasyon. Tout enfrastrikti trading lan viv la.</p>
+        <a href="https://discord.gg/nWDH6Swj" target="_blank" class="channel-btn discord-btn">Antre nan Discord &rarr;</a>
+      </div>
+      <div class="channel-card telegram-card reveal reveal-delay-2">
+        <div class="channel-icon" style="background:rgba(0,136,204,0.1);">✈️</div>
+        <h3>Telegram</h3>
+        <div class="channel-role">Alèt &bull; Siyal &bull; Update</div>
+        <p>Alèt trading rapid. Siyal enpòtan. Update sistèm. Si ou vle jis resevwa alèt san tout entèraksyon an — Telegram se pou ou.</p>
+        <a href="https://t.me/+dvr6mBaXJOljNmIx" target="_blank" class="channel-btn telegram-btn">Antre nan Telegram &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pri">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag section-tag-bracket">[ DEPLWAYE ]</div>
+      <h2>Chwazi Avantaj Ou.</h2>
+      <p class="lead">Kòmanse gratis. Gade done yo. Upgrade lè li pale pou tèt li.</p>
+    </div>
+    <div class="founding-banner">
+      <div class="founding-inner">
+        <div class="founding-label">Pri Manm Fondatè</div>
+        <div class="founding-title">Premye 100 manm jwenn <span>pri fiks pou lavi</span></div>
+        <div class="founding-prices">Premium $99/mwa &bull; VIP $249/mwa &bull; Elite $697/mwa</div>
+      </div>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="trial-badge">2 SEMÈN GRATIS</div>
+        <div class="tier-name">Gratis</div>
+        <div class="price"><span class="dollar">$</span>0</div>
+        <div class="period">pou tout tan</div>
+        <div class="founding-price">Pa gen kat kredi nesesè</div>
+        <ul class="price-features">
+          <li><span class="ck">&#10003;</span> Aksè kominote konplè</li>
+          <li><span class="ck">&#10003;</span> Rezilta verifye chak jou</li>
+          <li><span class="ck">&#10003;</span> Alèt nouvèl + kalandriye</li>
+          <li><span class="ck">&#10003;</span> Edikasyon ICT/SMC chak jou</li>
+          <li><span class="ck">&#10003;</span> Asistan AI (7 kòmand)</li>
+          <li><span class="ck">&#10003;</span> Replay siyal + enstriman cho</li>
+          <li><span class="ck">&#10003;</span> 1 watchlist slot</li>
+          <li><span class="no">&#10007;</span> Pa gen kanal siyal</li>
+          <li><span class="no">&#10007;</span> Pa gen egzekisyon otomatik</li>
+        </ul>
+        <a href="https://whop.com/oxy-algo/?plan=plan_MSgL4BVMRz1Xv" target="_blank" class="price-btn outline">Antre Gratis</a>
+      </div>
+      <div class="price-card reveal reveal-delay-1">
+        <div class="trial-badge">2 SEMÈN GRATIS</div>
+        <div class="tier-name">Premium</div>
+        <div class="price"><span class="dollar">$</span>149</div>
+        <div class="period">pa mwa &mdash; <strong style="color:var(--accent)">$4.97/jou</strong></div>
+        <div class="founding-price">$99/mwa pou manm fondatè</div>
+        <ul class="price-features">
+          <li><span class="ck">&#10003;</span> <strong>Tout 7 basket forex + crypto + indis</strong></li>
+          <li><span class="ck">&#10003;</span> <strong>Siyal reyèl-tan + chat an dirèk</strong></li>
+          <li><span class="ck">&#10003;</span> <strong>Signal Intelligence + win rate verifye</strong></li>
+          <li><span class="ck">&#10003;</span> <strong>AI konplè (22 kòmand + Vision + Vwa)</strong></li>
+          <li><span class="ck">&#10003;</span> 5 watchlist + alèt DM</li>
+          <li><span class="ck">&#10003;</span> Konparezon enstriman</li>
+          <li><span class="ck">&#10003;</span> Egzekisyon otomatik &mdash; Estanda</li>
+          <li><span class="ck">&#10003;</span> Briefing chak jou + entèlijans sesyon</li>
+          <li><span class="ck">&#10003;</span> Blokaj nouvèl + alèt risk</li>
+        </ul>
+        <div class="price-best-for">Pi bon pou: Trader aktif pare pou siyal AI</div>
+        <a href="https://whop.com/oxy-algo/?plan=plan_DW3GMI64x3la9" target="_blank" class="price-btn outline">Eseye Premium Gratis &rarr;</a>
+      </div>
+      <div class="price-card featured reveal reveal-delay-2">
+        <div class="tier-name">VIP</div>
+        <div class="price"><span class="dollar">$</span>349</div>
+        <div class="period">pa mwa &mdash; <strong style="color:var(--accent)">$11.63/jou</strong></div>
+        <div class="founding-price">$249/mwa pou manm fondatè</div>
+        <ul class="price-features">
+          <li><span class="ck">&#10003;</span> Tout sa ki nan Premium</li>
+          <li><span class="ck">&#10003;</span> <strong>P&amp;L an dirèk + analiz pèfòmans</strong></li>
+          <li><span class="ck">&#10003;</span> <strong>AI Mentò &mdash; coaching pèsonalize</strong></li>
+          <li><span class="ck">&#10003;</span> <strong>Jounal trade vwa</strong></li>
+          <li><span class="ck">&#10003;</span> <strong>Tracking challenge prop firm</strong></li>
+          <li><span class="ck">&#10003;</span> Revizyon trade pa AI</li>
+          <li><span class="ck">&#10003;</span> 15 watchlist slot</li>
+          <li><span class="ck">&#10003;</span> Rapò vwa semènal</li>
+          <li><span class="ck">&#10003;</span> Egzekisyon otomatik &mdash; Priyorite</li>
+          <li><span class="ck">&#10003;</span> Kanal vwa VIP</li>
+          <li><span class="ck">&#10003;</span> Sipò priyorite</li>
+        </ul>
+        <div class="price-best-for">Pi bon pou: Trader prop firm serye</div>
+        <a href="https://whop.com/oxy-algo/?plan=plan_UokGr4QFYPCIu" target="_blank" class="price-btn primary">Deplwaye VIP &rarr;</a>
+      </div>
+      <div class="price-card reveal reveal-delay-3">
+        <div class="tier-name">Elite</div>
+        <div class="price"><span class="dollar">$</span>997</div>
+        <div class="period">pa mwa &mdash; <strong style="color:var(--accent)">$33.23/jou</strong></div>
+        <div class="founding-price">$697/mwa pou manm fondatè</div>
+        <ul class="price-features">
+          <li><span class="ck">&#10003;</span> Tout sa ki nan VIP</li>
+          <li><span class="ck">&#10003;</span> <strong>Pipeline egzekisyon dedye</strong></li>
+          <li><span class="ck">&#10003;</span> <strong>Konfigirasyon risk pèsonalize</strong></li>
+          <li><span class="ck">&#10003;</span> <strong>Aksè 1-on-1 ak fondatè a</strong></li>
+          <li><span class="ck">&#10003;</span> Watchlist san limit</li>
+          <li><span class="ck">&#10003;</span> Aksè mentò priyorite</li>
+          <li><span class="ck">&#10003;</span> Jounal trade + tracking prop konplè</li>
+          <li><span class="ck">&#10003;</span> Rekapitilasyon pèfòmans semènal</li>
+          <li><span class="ck">&#10003;</span> Kanal vwa War Room</li>
+          <li><span class="ck">&#10003;</span> Limite a 20 plas</li>
+        </ul>
+        <div class="price-best-for">Pi bon pou: Pwofesyonèl a plen tan</div>
+        <a href="https://whop.com/oxy-algo/?plan=plan_dqMBaCxAMP9AJ" target="_blank" class="price-btn outline">Aplike pou Elite &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof-section">
+  <div class="wrap">
+    <div class="section-center">
+      <div class="section-tag">Rezilta</div>
+      <h2>Vrè Trader. <span class="grad">Vrè Chif.</span></h2>
+      <p class="lead">Pa foto stock. Pa temwanyaj AI. Vrè istwa nan Discord la.</p>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-card reveal">
+        <div class="proof-quote">&ldquo;</div>
+        <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="proof-text">"Mwen te echwe 3 challenge prop firm anvan OXY ALGO. Risk Guardian te bloke revenge trade mwen pandan sesyon NY. Mwen pase FTMO challenge mwa apre. Fonksyon sa a sèl te sove m $1,500 nan frè challenge." 🇭🇹</p>
+        <div class="proof-author">
+          <div class="proof-avatar" style="background:linear-gradient(135deg,var(--green),#059669);">JP</div>
+          <div><div class="proof-name">Jean-Pierre M.</div><div class="proof-role">VIP &bull; Funded Trader &bull; FTMO</div></div>
+        </div>
+      </div>
+      <div class="proof-card reveal reveal-delay-1">
+        <div class="proof-quote">&ldquo;</div>
+        <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="proof-text">"Mwen gen 2 djòb. Mwen pa t gen tan pou gade chat 8 è pa jou. Kounye a Scanner a kenbe tout bagay pandan m nan travay. Mwen tcheke telefòn mwen, siyal yo la ak nòt ak chat. Trading finalman sanble yon sistèm, pa yon jwèt aza." 🇭🇹</p>
+        <div class="proof-author">
+          <div class="proof-avatar" style="background:linear-gradient(135deg,var(--accent),var(--purple));">MC</div>
+          <div><div class="proof-name">Marie-Claire D.</div><div class="proof-role">Premium &bull; Trader a Tan Pasyèl</div></div>
+        </div>
+      </div>
+      <div class="proof-card reveal reveal-delay-2">
+        <div class="proof-quote">&ldquo;</div>
+        <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="proof-text">"Transparans lan se sa ki te vann mwen. Mwen ka wè rezilta chak siyal &mdash; viktwa AK pèt. Pa gen lòt sèvis ki fè sa. Done Signal Intelligence a sèl vo pri abònman an. Mwen pran desizyon baze sou done verifye kounye a." 🇭🇹</p>
+        <div class="proof-author">
+          <div class="proof-avatar" style="background:linear-gradient(135deg,var(--gold),var(--orange));">FL</div>
+          <div><div class="proof-name">Frantz L.</div><div class="proof-role">Elite &bull; Manadjè Fon</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="wrap">
+    <div class="section-tag section-tag-bracket">[ FAQ ]</div>
+    <h2>Kesyon Moun Toujou Mande</h2>
+    <p class="lead">Repons dirèk. Pa gen bla bla.</p>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Ki sa OXY ALGO ye egzakteman? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">OXY ALGO se yon platfòm trading AI otonòm. 8 ajan AI espesyalize ap fonksyone 42 workflow otomatik ki siveye 38 enstriman, note setup ak ICT/Smart Money Concepts, egzekite trade, jere risk, epi trase pèfòmans &mdash; 24/7 san entèvansyon moun. Livre atravè Discord ak yon asistan AI GPT-4. Se pa yon sèvis siyal. Se pa yon chatbot. Se yon enfrastrikti trading konplè.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Kòman sa diferan de yon sèvis siyal? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Sèvis siyal voye yon mesaj sou Telegram. Ou kopye trade la. Lè ou antre, setup la deja ale. OXY ALGO gen 8 ajan AI ki siveye, analize, egzekite, ak pwoteje &mdash; otomatikman. Ou gen siyal LA ak egzekisyon AN ak jesyon risk LA ak tracking LA ak aprantisaj LA. Plis yon asistan GPT-4 ak 37 kòmand. A $149/mwa, ou gen plis pase scanner AI ki mande $250-450/mwa pou scanning sèlman.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Èske sa ka ede m pase challenge prop firm mwen? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">OXY ALGO te bati espesyalman pou trader prop firm. Risk Guardian aplike menm règ ke FTMO, FundedNext, The5ers, ak lòt prop firm yo sèvi &mdash; limit drawdown pa jou, plafon drawdown total, maksimòm trade pa jou. Li bloke ou de fè revenge trading, anpeche over-leverage, epi mete yon poz 48 è apre pèt maksimòm pa jou. 94% trader echwe premye challenge yo poutèt desizyon emosyonèl. OXY ALGO retire emosyon nan ekwasyon an.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Ki enstriman li kouvri? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">38 enstriman: 28 pè forex òganize nan 7 basket deviz (GBP, EUR, JPY, AUD, CAD, NZD, CHF), 10 crypto (BTC, ETH, XRP, SOL, BNB, DOGE, ADA, LINK, LTC, DOT) ki fonksyone 24/7, 3 indis (Nasdaq, Dow, S&amp;P 500), ak 3 commodity (Lò, Ajan, Petrole). Chak enstriman trase pa Signal Intelligence ak rezilta verifye.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Èske mwen ka eseye anvan mwen peye? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Wi! Nivo Gratis la gratis pou tout tan &mdash; pa gen kat kredi, pa gen peryòd esè. Ou gen aksè kominote, rezilta chak jou, alèt nouvèl, edikasyon, ak 7 kòmand AI. Plis, gen yon pwomosyon espesyal kounye a: 2 semèn Premium GRATIS pou tout Ayisyen. Gade kòman siyal yo pèfòme. Gade done verifye yo. Lè done yo pale pou tèt yo, upgrade. Pa gen presyon.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Kòman egzekisyon otomatik mache? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Lè sistèm nan jenere yon siyal ki depase sèy konfyans lan (75+), ajan Executor a mete trade la dirèkteman sou kont broker ki konekte a. Tay pozisyon kalkile baze sou paramèt risk ou. Stop Loss ak Take Profit mete otomatikman. Trailing stop pwogresif jere sòti a. Ou ka override tout bagay nan Discord &mdash; fèmen trade, modifye SL/TP, break even, trailing stop, oswa frape kill switch ijans.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Èske mwen ka fè konfyans nan chif yo? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Signal Intelligence trase chak siyal jiska rezilta li &mdash; WIN (TP touche), LOSS (SL touche), oswa EXPIRED (timeout 24è). Sistèm nan verifye rezilta chak 15 minit pa mache bouji M15. Nou montre viktwa AK pèt. Nou montre peryòd drawdown. Nou montre semèn ki pèdi ak semèn ki genyen. Done yo verifye pa kòd, pa pa screenshot.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Èske mwen ka anile nenpòt lè? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Wi. Pa gen kontra, pa gen angajman. Anile nenpòt lè nan dashboard ou. Aksè ou kontinye jiska fen peryòd faktirasyon ou. Si ou bezwen yon poz, ou ka desann nan Gratis olye ou anile &mdash; kenbe aksè kominote ak kòmand AI yo pandan ou deside.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Mwen te boule pa scam trading anvan. Poukisa pou m fè konfyans nan sa? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Nou pa mande ou fè konfyans nan claim. Nou ba ou yon nivo gratis pou ou ka verifye tout bagay ou menm. Chak siyal trase piblikman. Chak rezilta verifye pa kòd. Nou montre pèt ak viktwa. Pa gen "90% win rate" marketing &mdash; nou montre w done reyèl yo. Nivo gratis la egziste paske pwodwi a vann tèt li lè ou wè l ap travay.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Èske gen sipò an Kreyòl? <span class="faq-chevron">&#9654;</span></div><div class="faq-a">Wi! Nou gen yon kominote WhatsApp espesyalman pou Ayisyen kote tout moun pale Kreyòl. Bot Discord la ka reponn an Kreyòl tou. Tout sipò, tout edikasyon, tout kominikasyon disponib an Kreyòl Ayisyen. Ou pa bezwen pale Anglè pou itilize OXY ALGO.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2>Ou Toujou Ap Gade Chat?<br><span class="grad">Ekip AI Ou Pare.</span></h2>
+  <p class="sub">8 ajan. 38 enstriman. 37 kòmand. Kontwòl trade konplè. Bon pou prop firm. A pati de $4.97/jou &mdash; mwens ke yon sèl trade rate.</p>
+  <a href="https://whop.com/oxy-algo/?plan=plan_DW3GMI64x3la9" target="_blank" class="btn btn-primary" style="position:relative;">Eseye Premium Gratis 2 Semèn &rarr;</a>
+  <br>
+  <div class="scarcity-badge">Pri manm fondatè &mdash; premye 100 itilizatè fiks pri pou lavi</div>
+</div>
+
+<!-- STICKY MOBILE CTA -->
+<div class="mobile-sticky-cta" id="mobileCta">
+  <a href="https://whop.com/oxy-algo/?plan=plan_DW3GMI64x3la9" target="_blank" class="btn btn-primary">Eseye Gratis 2 Semèn &rarr;</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">OXY <span>ALGO</span></div>
+    <ul class="footer-links">
+      <li><a href="#ajan">Ajan yo</a></li>
+      <li><a href="#platfòm">Platfòm</a></li>
+      <li><a href="#entèlijans">Entèlijans</a></li>
+      <li><a href="#pri">Pri</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://t.me/+dvr6mBaXJOljNmIx" target="_blank">Telegram</a></li>
+      <li><a href="https://whop.com/oxy-algo/" target="_blank">Magazen</a></li>
+    </ul>
+    <div class="footer-legal">OXY ALGO &copy; 2026. Platfòm Trading AI Otonòm. Trading gen risk. Pèfòmans pase pa garanti rezilta avni. OXY ALGO bay entèlijans trading ak otomatizasyon, pa konsèy finansye. Trade ak responsabilite. Riske sèlman kapital ou ka afòde pèdi.</div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="#" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// SCROLL PROGRESS BAR
+const progressBar = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = (window.scrollY / h * 100) + '%';
+});
+
+// NAVBAR SCROLL
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// FAQ ACCORDION
+function toggleFaq(el) {
+  const a = el.nextElementSibling;
+  const c = el.querySelector('.faq-chevron');
+  document.querySelectorAll('.faq-a.open').forEach(item => {
+    if (item !== a) { item.classList.remove('open'); item.previousElementSibling.querySelector('.faq-chevron').classList.remove('open'); }
+  });
+  a.classList.toggle('open');
+  c.classList.toggle('open');
+}
+
+// SCROLL REVEAL
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ANIMATED COUNTERS
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      if (el.classList.contains('no-count') || el.dataset.counted) return;
+      el.dataset.counted = 'true';
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const duration = 2000;
+      const start = performance.now();
+      function update(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 4);
+        el.textContent = Math.round(ease * target) + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el));
+
+// HERO PARTICLES
+(function() {
+  const canvas = document.getElementById('particles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, particles = [];
+  function resize() {
+    const hero = canvas.parentElement;
+    w = canvas.width = hero.offsetWidth;
+    h = canvas.height = hero.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  for (let i = 0; i < 60; i++) {
+    particles.push({ x: Math.random()*w, y: Math.random()*h, r: Math.random()*1.5+0.3, dx: (Math.random()-0.5)*0.2, dy: (Math.random()-0.5)*0.2, alpha: Math.random()*0.3+0.05 });
+  }
+  function draw() {
+    ctx.clearRect(0,0,w,h);
+    particles.forEach(p => {
+      p.x += p.dx; p.y += p.dy;
+      if (p.x<0) p.x=w; if (p.x>w) p.x=0; if (p.y<0) p.y=h; if (p.y>h) p.y=0;
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(0,212,255,'+p.alpha+')'; ctx.fill();
+    });
+    for (let i=0;i<particles.length;i++) {
+      for (let j=i+1;j<particles.length;j++) {
+        const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y;
+        const dist=Math.sqrt(dx*dx+dy*dy);
+        if (dist<120) { ctx.beginPath(); ctx.moveTo(particles[i].x,particles[i].y); ctx.lineTo(particles[j].x,particles[j].y); ctx.strokeStyle='rgba(0,212,255,'+(0.035*(1-dist/120))+')'; ctx.lineWidth=0.5; ctx.stroke(); }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// HERO TYPEWRITER
+(function() {
+  const container = document.getElementById('heroTypewriter');
+  if (!container) return;
+  const codeLines = [
+    'const scanner = new MarketScanner({ instruments: 38, interval: "30m", baskets: 7 });',
+    'await analyst.score(setup, { model: "ICT_SMC", threshold: 65 });',
+    'guardian.validateRisk({ maxDrawdown: 0.05, maxDailyLoss: 0.10 });',
+    'executor.openPosition({ symbol, direction, lotSize, sl, tp });',
+    'if (signal.confidence >= 75) executor.execute(signal);',
+    'const smt = correlation.detectDivergence("EURUSD", "DXY");',
+    'intelligence.injectContext({ knowledge: 75, signals: true });',
+    'riskGuardian.blockRevengeTrading({ cooldown: "48h" });',
+  ];
+  function createLine() {
+    const line = document.createElement('div');
+    line.className = 'typewriter-line';
+    line.textContent = codeLines[Math.floor(Math.random() * codeLines.length)];
+    line.style.top = Math.random() * 100 + '%';
+    line.style.animationDuration = (18 + Math.random() * 12) + 's';
+    container.appendChild(line);
+    line.addEventListener('animationend', () => line.remove());
+  }
+  for (let i = 0; i < 4; i++) setTimeout(createLine, i * 3000);
+  setInterval(createLine, 4000);
+})();
+
+// LIVE UPTIME COUNTER
+(function() {
+  const badge = document.querySelector('.hero-badge');
+  if (!badge) return;
+  const startDate = new Date('2025-01-01T00:00:00Z');
+  const span = document.createElement('span');
+  span.className = 'uptime-counter';
+  badge.appendChild(span);
+  function update() {
+    const diff = Date.now() - startDate.getTime();
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    span.textContent = d + 'j ' + h + 'è uptime';
+  }
+  update();
+  setInterval(update, 60000);
+})();
+
+// STICKY MOBILE CTA
+(function() {
+  const cta = document.getElementById('mobileCta');
+  if (!cta) return;
+  let shown = false;
+  window.addEventListener('scroll', () => {
+    const s = window.scrollY > 600;
+    if (s && !shown) { cta.classList.add('visible'); shown = true; }
+    if (!s && shown) { cta.classList.remove('visible'); shown = false; }
+  });
+})();
+
+// CLOSE MOBILE MENU ON CLICK
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
+});
+
+// AGENT CARD TILT
+document.querySelectorAll('.agent-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `perspective(800px) rotateY(${x*6}deg) rotateX(${-y*6}deg) translateY(-6px)`;
+  });
+  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+});
+</script>
+<script src="/js/dynamic-sections.js" defer></script>
+<script src="/js/live-feed.js" defer></script>
+</body>
+</html>
