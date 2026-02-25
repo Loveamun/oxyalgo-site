@@ -512,13 +512,38 @@ footer { border-top: 1px solid var(--border); padding: 56px 24px; background: rg
   .arch-layer-stat { text-align: center; }
   .arch-connector { margin-left: auto; margin-right: auto; }
   .risk-checklist-grid { grid-template-columns: 1fr; }
-  .whatsapp-float { bottom: 80px; }
+  .wa-widget { bottom: 80px; }
 }
 
-/* ─── FLOATING WHATSAPP BUTTON ─── */
-.whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 998; width: 60px; height: 60px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: pointer; }
-.whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
-.whatsapp-float svg { width: 32px; height: 32px; fill: #fff; }
+/* ─── WHATSAPP WIDGET ─── */
+.wa-widget { position: fixed; bottom: 24px; right: 24px; z-index: 998; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+
+/* Chat popup bubble */
+.wa-popup { background: #1a1a2e; border: 1px solid rgba(37,211,102,0.3); border-radius: 16px; padding: 20px; max-width: 320px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); transform: translateY(10px); opacity: 0; transition: all 0.3s ease; pointer-events: none; }
+.wa-widget.open .wa-popup { transform: translateY(0); opacity: 1; pointer-events: auto; }
+.wa-popup-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.wa-popup-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #25D366, #128C7E); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.wa-popup-avatar svg { width: 24px; height: 24px; fill: #fff; }
+.wa-popup-name { font-weight: 700; color: #fff; font-size: 0.95em; line-height: 1.3; }
+.wa-popup-name small { display: block; color: #25D366; font-size: 0.8em; font-weight: 400; }
+.wa-popup-msg { background: rgba(37,211,102,0.08); border-radius: 12px; padding: 14px 16px; color: rgba(255,255,255,0.9); font-size: 0.88em; line-height: 1.5; margin-bottom: 14px; border-left: 3px solid #25D366; }
+.wa-popup-cta { display: block; width: 100%; padding: 12px; background: #25D366; color: #fff; font-weight: 700; text-align: center; border-radius: 10px; text-decoration: none; font-size: 0.95em; transition: background 0.2s; }
+.wa-popup-cta:hover { background: #1da851; }
+
+/* Main floating button — expanded with label */
+.wa-btn { display: flex; align-items: center; gap: 10px; background: #25D366; border-radius: 50px; padding: 14px 22px 14px 18px; box-shadow: 0 6px 30px rgba(37,211,102,0.5); cursor: pointer; transition: all 0.3s; text-decoration: none; animation: wa-pulse 2s ease-in-out infinite; border: none; }
+.wa-btn:hover { transform: scale(1.05); box-shadow: 0 10px 40px rgba(37,211,102,0.6); }
+.wa-btn svg { width: 28px; height: 28px; fill: #fff; flex-shrink: 0; }
+.wa-btn-text { color: #fff; font-weight: 700; font-size: 0.95em; white-space: nowrap; }
+.wa-btn-badge { position: absolute; top: -4px; right: -4px; background: #ff3b30; color: #fff; font-size: 0.7em; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+@keyframes wa-pulse { 0%, 100% { box-shadow: 0 6px 30px rgba(37,211,102,0.5); } 50% { box-shadow: 0 6px 30px rgba(37,211,102,0.5), 0 0 0 12px rgba(37,211,102,0.15); } }
+
+/* Close button */
+.wa-close { position: absolute; top: 8px; right: 12px; background: none; border: none; color: rgba(255,255,255,0.4); font-size: 1.4em; cursor: pointer; line-height: 1; }
+.wa-close:hover { color: #fff; }
+
+/* Hide label on tiny screens, keep icon */
+.whatsapp-float { display: none; }
 
 @media (max-width: 480px) {
   .wrap { padding: 0 16px; }
@@ -530,8 +555,10 @@ footer { border-top: 1px solid var(--border); padding: 56px 24px; background: rg
   .cost-num { font-size: 2.2em; }
   .how-num { font-size: 2.4em; }
   .compare-cell { font-size: 0.8em; padding: 8px 12px; }
-  .whatsapp-float { width: 52px; height: 52px; bottom: 76px; right: 16px; }
-  .whatsapp-float svg { width: 28px; height: 28px; }
+  .wa-widget { bottom: 16px; right: 16px; }
+  .wa-popup { max-width: 280px; padding: 16px; }
+  .wa-btn { padding: 12px 18px 12px 14px; }
+  .wa-btn-text { font-size: 0.85em; }
 }
 
 /* ═══════════════════════════════════════════════
