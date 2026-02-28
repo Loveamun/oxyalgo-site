@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://oxyalgo.github.io/sitemap.xml
+# Primary site has moved to oxyalgo.online
+Sitemap: https://oxyalgo.online/sitemap.xml
