@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>OXY ALGO — Partner Command Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050508;--bg2:#0a0a12;--card:#0e0e1a;--border:rgba(255,255,255,.06);--accent:#00d4ff;--purple:#7c3aed;--green:#10b981;--red:#ef4444;--gold:#f59e0b;--orange:#f97316;--pink:#f472b6;--blue:#60a5fa;--text:#e8eaf0;--text2:#8890a8;--text3:#555d78;--fh:'Space Grotesk',sans-serif;--fb:'Inter',sans-serif;--fm:'JetBrains Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ── Nav ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 32px;background:rgba(5,5,8,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--fh);font-size:1.2em;font-weight:700;color:var(--text);text-decoration:none}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.78em;font-weight:500;padding:6px 14px;border-radius:8px;transition:all .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);background:rgba(0,212,255,.06)}
+.badge-private{font-size:.65em;padding:4px 10px;border-radius:100px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);color:var(--red);font-weight:600;letter-spacing:.05em}
+
+/* ── Sections ── */
+section{padding:100px 24px;position:relative}
+.w{max-width:1200px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--fm);font-size:.72em;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.tag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h2{font-family:var(--fh);font-size:clamp(1.8em,3vw,2.6em);font-weight:700;line-height:1.15;margin-bottom:10px;letter-spacing:-.02em}
+.sub{color:var(--text2);font-size:1em;max-width:640px;line-height:1.7;margin-bottom:40px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--accent),var(--purple),transparent);opacity:.25}
+
+/* ── Cards ── */
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;transition:all .3s}
+.card:hover{border-color:rgba(0,212,255,.15);transform:translateY(-2px)}
+.card-grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+
+/* ── Links ── */
+a.live-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);text-decoration:none;font-size:.85em;font-weight:600;padding:6px 14px;border-radius:8px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.1);transition:all .2s;font-family:var(--fm)}
+a.live-link:hover{background:rgba(0,212,255,.12);border-color:rgba(0,212,255,.25);transform:translateY(-1px)}
+a.live-link::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+.link-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
+.link-row:last-child{border-bottom:none}
+.link-label{font-weight:600;font-size:.88em;min-width:180px;color:var(--text)}
+.link-desc{font-size:.82em;color:var(--text3);flex:1}
+
+/* ── Workflow table ── */
+.wf-table{width:100%;border-collapse:collapse;font-size:.85em}
+.wf-table th{text-align:left;padding:10px 14px;font-size:.75em;color:var(--accent);font-family:var(--fm);letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.wf-table td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+.wf-table tr:hover{background:rgba(0,212,255,.02)}
+.wf-name{font-weight:600;color:var(--text)}
+.wf-id{font-family:var(--fm);font-size:.78em;color:var(--text3)}
+.wf-schedule{font-size:.82em;color:var(--text2)}
+
+/* ── Agent cards ── */
+.agent-card{display:flex;gap:16px;align-items:flex-start}
+.agent-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3em;flex-shrink:0}
+.agent-name{font-family:var(--fh);font-weight:700;font-size:1em;margin-bottom:4px}
+.agent-role{font-size:.85em;color:var(--text2);line-height:1.5}
+
+/* ── System cards ── */
+.sys-card{position:relative;overflow:hidden}
+.sys-card .sys-badge{position:absolute;top:12px;right:12px;font-size:.65em;padding:4px 10px;border-radius:100px;font-weight:700;letter-spacing:.04em}
+.sys-online{background:rgba(16,185,129,.1);color:var(--green);border:1px solid rgba(16,185,129,.2)}
+.sys-title{font-family:var(--fh);font-weight:700;font-size:1.1em;margin-bottom:4px}
+.sys-ip{font-family:var(--fm);font-size:.78em;color:var(--accent);margin-bottom:12px}
+.sys-list{list-style:none}
+.sys-list li{font-size:.85em;color:var(--text2);padding:4px 0;padding-left:16px;position:relative}
+.sys-list li::before{content:"";position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--text3)}
+
+/* ── Hero ── */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding-top:80px}
+.hero h1{font-family:var(--fh);font-size:clamp(2.5em,5vw,4em);font-weight:700;line-height:1.1;letter-spacing:-.03em;margin-bottom:20px}
+.hero .gr{background:linear-gradient(135deg,var(--accent),var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--text2);font-size:1.1em;max-width:600px;margin:0 auto 32px;line-height:1.7}
+
+/* ── Tier cards ── */
+.tier{text-align:center;padding:32px 24px}
+.tier-price{font-family:var(--fh);font-size:2.2em;font-weight:700;margin:8px 0}
+.tier-name{font-weight:600;font-size:1em;margin-bottom:4px}
+.tier-desc{font-size:.82em;color:var(--text2);line-height:1.6}
+.tier-per{font-size:.4em;color:var(--text3);font-weight:400}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--text3);border-radius:3px}
+
+/* ── Ambient ── */
+.amb{position:fixed;inset:0;pointer-events:none;z-index:0}
+.bl{position:absolute;border-radius:50%;filter:blur(120px);opacity:.3}
+.bl1{width:500px;height:500px;background:radial-gradient(circle,rgba(0,212,255,.1),transparent 70%);top:-200px;left:-200px}
+.bl2{width:400px;height:400px;background:radial-gradient(circle,rgba(124,58,237,.08),transparent 70%);top:40%;right:-100px}
+
+section:nth-child(even){background:var(--bg2)}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .link-row{flex-wrap:wrap}
+  .link-label{min-width:auto}
+  section{padding:60px 16px}
+}
+</style>
+</head>
+<body>
+<div class="amb"><div class="bl bl1"></div><div class="bl bl2"></div></div>
+
+<!-- NAV -->
+<nav class="nav">
+<div class="nav-inner">
+<a href="#" class="logo">OXY <span>ALGO</span> <span class="badge-private">PRIVATE</span></a>
+<div class="nav-links">
+<a href="#systems">Systems</a>
+<a href="#workflows">Workflows</a>
+<a href="#agents">Agents</a>
+<a href="#discord">Discord</a>
+<a href="#bot">Bot</a>
+<a href="#signals">Signals</a>
+<a href="#risk">Risk</a>
+<a href="#content">Content</a>
+<a href="#revenue">Revenue</a>
+<a href="#deal">Deal</a>
+<a href="#links">Links</a>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div>
+<div style="font-family:var(--fm);font-size:.8em;color:var(--accent);letter-spacing:.1em;margin-bottom:20px">/// PARTNER COMMAND CENTER</div>
+<h1>Behind the Curtain.<br><span class="gr">Everything. Live.</span></h1>
+<p>Every system, every workflow, every link — all clickable. This is how the machine runs. Click anything to see it live.</p>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+<a href="#systems" class="live-link" style="font-size:1em;padding:12px 28px">Explore the System</a>
+<a href="https://n8n.srv1364072.hstgr.cloud" target="_blank" class="live-link" style="font-size:1em;padding:12px 28px;background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.15);color:var(--purple)">Open n8n Dashboard</a>
+</div>
+<p style="font-size:.75em;color:var(--text3);margin-top:24px">CONFIDENTIAL — FOR PARTNER EYES ONLY</p>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SYSTEMS -->
+<section id="systems">
+<div class="w">
+<div class="tag"><span class="dot"></span> COMPUTER SYSTEMS</div>
+<h2>Where Everything Runs</h2>
+<p class="sub">Two servers working together. Self-hosted everything. No third-party rate limits. Click the links to see each system live.</p>
+
+<div class="card-grid g2">
+<!-- Trading VPS -->
+<div class="card sys-card">
+<span class="sys-badge sys-online">ONLINE</span>
+<div class="sys-title">Trading VPS (Linux)</div>
+<div class="sys-ip">187.77.19.93 — Hetzner ~$5/mo</div>
+<a href="https://n8n.srv1364072.hstgr.cloud" target="_blank" class="live-link" style="margin-bottom:14px">Open n8n Dashboard</a>
+<ul class="sys-list">
+<li>n8n automation engine (45 workflows)</li>
+<li>Discord Bot v2 (Node.js, PM2)</li>
+<li>SQLite database (13 tables)</li>
+<li>Health monitoring every 15 min</li>
+<li>Daily backups 04:00 UTC</li>
+<li>PM2 log rotation</li>
+</ul>
+</div>
+
+<!-- OXY API VPS -->
+<div class="card sys-card">
+<span class="sys-badge sys-online">ONLINE</span>
+<div class="sys-title">OXY API VPS (Windows)</div>
+<div class="sys-ip">169.239.182.13 — server.oxyalgo.com</div>
+<a href="https://server.oxyalgo.com" target="_blank" class="live-link" style="margin-bottom:14px">Open API Server</a>
+<ul class="sys-list">
+<li>MetaTrader 5 terminal (AAAFX Global live)</li>
+<li>XAMPP (Apache + PHP) — self-hosted API</li>
+<li>OXY EA bridge (PHP ↔ MT5)</li>
+<li>Market Data API (candles + indicators)</li>
+<li>Chart Image API (generates screenshots)</li>
+<li>Orders API (places trades on MT5)</li>
+</ul>
+</div>
+</div>
+
+<div style="margin-top:24px">
+<div class="card">
+<div class="sys-title" style="margin-bottom:12px">API Endpoints (all self-hosted)</div>
+<div class="card-grid g3" style="gap:8px">
+<a href="https://server.oxyalgo.com/api/market-data.php?symbol=GBPUSD&timeframe=M15" target="_blank" class="live-link">Market Data API</a>
+<a href="https://server.oxyalgo.com/api/calendar.php" target="_blank" class="live-link">Calendar API</a>
+<a href="https://server.oxyalgo.com/api/chart-image.php?symbol=GBPUSD&timeframe=H1" target="_blank" class="live-link">Chart Image API</a>
+<a href="https://server.oxyalgo.com/api/daily-average.php" target="_blank" class="live-link">Daily Average API</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WORKFLOWS -->
+<section id="workflows">
+<div class="w">
+<div class="tag"><span class="dot"></span> THE ENGINE ROOM</div>
+<h2>45 Automated Workflows</h2>
+<p class="sub">n8n is the brain — like Zapier on steroids but self-hosted. Click any workflow to see it live inside n8n.</p>
+
+<div class="card" style="overflow-x:auto">
+<table class="wf-table">
+<thead>
+<tr><th>#</th><th>Workflow</th><th>Live Link</th><th>Trigger</th><th>What It Does</th></tr>
+</thead>
+<tbody>
+<!-- SCANNERS -->
+<tr><td colspan="5" style="color:var(--accent);font-weight:700;font-family:var(--fm);font-size:.75em;letter-spacing:.08em;padding-top:20px">SCANNERS</td></tr>
+<tr><td>01</td><td class="wf-name">GBP Correlation Scanner</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/lNup6cMk8ygMcZk3" target="_blank" class="live-link">Open WF01</a></td><td class="wf-schedule">Every 30 min</td><td class="wf-schedule">Scans 7 GBP pairs with ICT scoring + confluence</td></tr>
+<tr><td>02</td><td class="wf-name">Global Scanner</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/nHExvBTVjR0zSZLh" target="_blank" class="live-link">Open WF02</a></td><td class="wf-schedule">Every 30 min</td><td class="wf-schedule">22 forex + 3 indices + 3 commodities</td></tr>
+<tr><td>22</td><td class="wf-name">Crypto Scanner</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/6PD33BdirOJ6mZfE" target="_blank" class="live-link">Open WF22</a></td><td class="wf-schedule">Every 30 min</td><td class="wf-schedule">10 crypto pairs with BTC.D quadrant</td></tr>
+<tr><td>33</td><td class="wf-name">Market Heatmap</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/CNdG49yBSGmFkAiR" target="_blank" class="live-link">Open WF33</a></td><td class="wf-schedule">Every 15 min (KZ)</td><td class="wf-schedule">Visual heatmap of all instruments</td></tr>
+<tr><td>39</td><td class="wf-name">Currency Strength Matrix</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/oxrRrIZNlG6s0Vmk" target="_blank" class="live-link">Open WF39</a></td><td class="wf-schedule">Every 15 min</td><td class="wf-schedule">Cross-currency strength + sentiment dashboard</td></tr>
+
+<!-- EXECUTION -->
+<tr><td colspan="5" style="color:var(--green);font-weight:700;font-family:var(--fm);font-size:.75em;letter-spacing:.08em;padding-top:20px">EXECUTION</td></tr>
+<tr><td>08</td><td class="wf-name">Trade Executor (LIVE)</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/JfwkU46zsg7dFwjc" target="_blank" class="live-link">Open WF08</a></td><td class="wf-schedule">Trigger</td><td class="wf-schedule">Places real trades on AAAFX Global</td></tr>
+<tr><td>13</td><td class="wf-name">Trade Catcher Receiver</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/y1gwaMg7wIWPmv10" target="_blank" class="live-link">Open WF13</a></td><td class="wf-schedule">Webhook</td><td class="wf-schedule">Receives signals, enriches, routes to executor</td></tr>
+<tr><td>09</td><td class="wf-name">Risk Guardian</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/u7Thbov0G7hAY56j" target="_blank" class="live-link">Open WF09</a></td><td class="wf-schedule">Every 15 min</td><td class="wf-schedule">Monitors open positions, enforces risk rules</td></tr>
+
+<!-- ANALYSIS -->
+<tr><td colspan="5" style="color:var(--purple);font-weight:700;font-family:var(--fm);font-size:.75em;letter-spacing:.08em;padding-top:20px">ANALYSIS</td></tr>
+<tr><td>03</td><td class="wf-name">Daily Bias Engine</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/ZwlwSObcUJLS2okP" target="_blank" class="live-link">Open WF03</a></td><td class="wf-schedule">Cron 0,6,12 UTC</td><td class="wf-schedule">Generates daily directional bias</td></tr>
+<tr><td>06</td><td class="wf-name">Liquidity Map</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/ni44vMZftQwAIJZ2" target="_blank" class="live-link">Open WF06</a></td><td class="wf-schedule">Cron 6,12 UTC</td><td class="wf-schedule">Maps liquidity levels across instruments</td></tr>
+<tr><td>05</td><td class="wf-name">Session Flow Tracker</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/3DT0MoLdYJFdaZOP" target="_blank" class="live-link">Open WF05</a></td><td class="wf-schedule">Every 15 min (KZ)</td><td class="wf-schedule">Tracks session flow during kill zones</td></tr>
+<tr><td>18</td><td class="wf-name">Analysis Model</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/2PzNpYSUdSv6JnbM" target="_blank" class="live-link">Open WF18</a></td><td class="wf-schedule">Sub-workflow</td><td class="wf-schedule">Claude + GPT analysis engine</td></tr>
+
+<!-- CONTENT -->
+<tr><td colspan="5" style="color:var(--gold);font-weight:700;font-family:var(--fm);font-size:.75em;letter-spacing:.08em;padding-top:20px">CONTENT ENGINE</td></tr>
+<tr><td>35</td><td class="wf-name">Signal Snapshots</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/h6a95wEFLWPuazt8" target="_blank" class="live-link">Open WF35</a></td><td class="wf-schedule">Every 2h (8-20 UTC)</td><td class="wf-schedule">~7 videos/day from live signals</td></tr>
+<tr><td>36</td><td class="wf-name">Daily Education</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/X4XhOYuchyWes6FP" target="_blank" class="live-link">Open WF36</a></td><td class="wf-schedule">Daily 13 UTC</td><td class="wf-schedule">1 concept video/day</td></tr>
+<tr><td>37</td><td class="wf-name">Weekly Recap</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/GEl1c36KLgrTEc2U" target="_blank" class="live-link">Open WF37</a></td><td class="wf-schedule">Friday 21 UTC</td><td class="wf-schedule">1 performance video/week</td></tr>
+
+<!-- COMMUNITY -->
+<tr><td colspan="5" style="color:var(--pink);font-weight:700;font-family:var(--fm);font-size:.75em;letter-spacing:.08em;padding-top:20px">COMMUNITY</td></tr>
+<tr><td>07</td><td class="wf-name">News Monitor</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/g3JuxWaTbpPkwho1" target="_blank" class="live-link">Open WF07</a></td><td class="wf-schedule">Every 15 min</td><td class="wf-schedule">High-impact news detection + trade blocker</td></tr>
+<tr><td>11</td><td class="wf-name">Daily Briefing</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/ioTz9oNHTbIcX6GJ" target="_blank" class="live-link">Open WF11</a></td><td class="wf-schedule">Cron 12 UTC</td><td class="wf-schedule">Morning market briefing</td></tr>
+<tr><td>19</td><td class="wf-name">Market Update Bot</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/jWShmD0U21Soy247" target="_blank" class="live-link">Open WF19</a></td><td class="wf-schedule">Every 4 hours (KZ)</td><td class="wf-schedule">Regular market updates to Discord</td></tr>
+<tr><td>28</td><td class="wf-name">Engagement Bot</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/PjmYK0Bb4tJrCXKO" target="_blank" class="live-link">Open WF28</a></td><td class="wf-schedule">Cron 8,16,20 UTC</td><td class="wf-schedule">Keeps Discord active with engagement</td></tr>
+
+<!-- REPORTING -->
+<tr><td colspan="5" style="color:var(--orange);font-weight:700;font-family:var(--fm);font-size:.75em;letter-spacing:.08em;padding-top:20px">REPORTING</td></tr>
+<tr><td>10</td><td class="wf-name">Performance Tracker</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/GZ15hKO5VHv8Zipd" target="_blank" class="live-link">Open WF10</a></td><td class="wf-schedule">Cron 22 UTC</td><td class="wf-schedule">Daily performance tracking</td></tr>
+<tr><td>15</td><td class="wf-name">Prop Firm Tracker</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/mbWbmcrzIeOMgnRq" target="_blank" class="live-link">Open WF15</a></td><td class="wf-schedule">Every 4 hours</td><td class="wf-schedule">Tracks prop firm challenge progress</td></tr>
+<tr><td>23</td><td class="wf-name">Results Showcase</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/3fsKZ1drIU6VM9O4" target="_blank" class="live-link">Open WF23</a></td><td class="wf-schedule">Cron 22 UTC</td><td class="wf-schedule">Posts daily results to #results-showcase</td></tr>
+<tr><td>17</td><td class="wf-name">Streak Tracker</td><td><a href="https://n8n.srv1364072.hstgr.cloud/workflow/DXvgk4EAJr9XGot6" target="_blank" class="live-link">Open WF17</a></td><td class="wf-schedule">Cron 22:30 UTC</td><td class="wf-schedule">Win/loss streaks and milestones</td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:.82em;color:var(--text3);margin-top:16px;text-align:center">Showing 25 key workflows. Full system has 45 active workflows.</p>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 8 AI AGENTS -->
+<section id="agents">
+<div class="w">
+<div class="tag"><span class="dot"></span> YOUR AI TEAM</div>
+<h2>8 Agents. Zero Payroll.</h2>
+<p class="sub">Each agent has one job. They run 24/7. No breaks, no sick days, no bad days.</p>
+
+<div class="card-grid g2">
+<div class="card"><div class="agent-card"><div class="agent-icon" style="background:rgba(0,212,255,.1)">&#128225;</div><div><div class="agent-name" style="color:var(--accent)">SCANNER</div><div class="agent-role">Finds setups across 38 instruments. Runs during kill zones (Asia, London, NY, London Close). Grades every setup with ICT scoring engine.</div></div></div></div>
+
+<div class="card"><div class="agent-card"><div class="agent-icon" style="background:rgba(124,58,237,.1)">&#128200;</div><div><div class="agent-name" style="color:var(--purple)">ANALYST</div><div class="agent-role">Scores 3-layer confluence (COT + Sentiment + H4 Trend). Generates daily directional bias. Maps liquidity levels.</div></div></div></div>
+
+<div class="card"><div class="agent-card"><div class="agent-icon" style="background:rgba(16,185,129,.1)">&#9889;</div><div><div class="agent-name" style="color:var(--green)">EXECUTOR</div><div class="agent-role">Places and manages live trades on MT5. Confidence scoring, dynamic lot sizing, partial profit logic. Fully automated.</div></div></div></div>
+
+<div class="card"><div class="agent-card"><div class="agent-icon" style="background:rgba(249,115,22,.1)">&#128737;</div><div><div class="agent-name" style="color:var(--orange)">GUARDIAN</div><div class="agent-role">Enforces risk rules 24/5. Drawdown protection, news blocking, position limits, kill switch. Prop firm safe.</div></div></div></div>
+
+<div class="card"><div class="agent-card"><div class="agent-icon" style="background:rgba(245,158,11,.1)">&#128257;</div><div><div class="agent-name" style="color:var(--gold)">COPIER</div><div class="agent-role">Mirrors trades to multiple platforms — MT5, MT4, Tradeovate, Trade Locker. One master, many followers.</div></div></div></div>
+
+<div class="card"><div class="agent-card"><div class="agent-icon" style="background:rgba(96,165,250,.1)">&#128240;</div><div><div class="agent-name" style="color:var(--blue)">INTEL</div><div class="agent-role">Market news, session prep, pre-news alerts. Warns members before high-impact events. Routes intel to basket channels.</div></div></div></div>
+
+<div class="card"><div class="agent-card"><div class="agent-icon" style="background:rgba(167,139,250,.1)">&#127942;</div><div><div class="agent-name" style="color:#a78bfa">TRACKER</div><div class="agent-role">P&L tracking, win streaks, prop firm progress, equity curve. Daily/weekly/monthly report cards posted automatically.</div></div></div></div>
+
+<div class="card"><div class="agent-card"><div class="agent-icon" style="background:rgba(244,114,182,.1)">&#129302;</div><div><div class="agent-name" style="color:var(--pink)">AMUN</div><div class="agent-role">Discord AI assistant. GPT-4 powered, 36 slash commands, answers member questions, handles customer service 24/7.</div></div></div></div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DISCORD -->
+<section id="discord">
+<div class="w">
+<div class="tag"><span class="dot"></span> DISCORD SERVER</div>
+<h2>30+ Channels. 9 Categories. 4 Tiers.</h2>
+<p class="sub">Every channel has a purpose. Content flows automatically. Click to see the live server.</p>
+
+<div style="margin-bottom:24px;display:flex;gap:12px;flex-wrap:wrap">
+<a href="https://discord.gg/oxyalgo" target="_blank" class="live-link" style="font-size:1em;padding:12px 24px">Open Live Discord Server</a>
+<a href="https://t.me/+dvr6mBaXJOljNmIx" target="_blank" class="live-link" style="font-size:1em;padding:12px 24px;background:rgba(0,136,204,.08);border-color:rgba(0,136,204,.15);color:#0088cc">Open Telegram Group</a>
+</div>
+
+<div class="card-grid g3">
+<div class="card"><div style="color:var(--green);font-weight:700;font-size:.85em;margin-bottom:8px">START HERE — Free</div><div style="font-size:.85em;color:var(--text2);line-height:1.8">welcome, announcements, rules, results, resources, upgrade</div></div>
+<div class="card"><div style="color:var(--green);font-weight:700;font-size:.85em;margin-bottom:8px">COMMUNITY — Free</div><div style="font-size:.85em;color:var(--text2);line-height:1.8">general, learn</div></div>
+<div class="card"><div style="color:var(--accent);font-weight:700;font-size:.85em;margin-bottom:8px">SCANNER — Premium+</div><div style="font-size:.85em;color:var(--text2);line-height:1.8">gbp-basket, eur-basket, jpy-basket, aud-basket, cad-basket, nzd-basket, chf-basket</div></div>
+<div class="card"><div style="color:var(--accent);font-weight:700;font-size:.85em;margin-bottom:8px">MARKETS — Premium+</div><div style="font-size:.85em;color:var(--text2);line-height:1.8">indices, commodities, crypto, smart-money, liquidity-map, live-trades</div></div>
+<div class="card"><div style="color:var(--purple);font-weight:700;font-size:.85em;margin-bottom:8px">ANALYST — Premium+</div><div style="font-size:.85em;color:var(--text2);line-height:1.8">correlation, daily-bias, briefing, news, sessions</div></div>
+<div class="card"><div style="color:#a78bfa;font-weight:700;font-size:.85em;margin-bottom:8px">TRACKER — VIP+</div><div style="font-size:.85em;color:var(--text2);line-height:1.8">live-pnl, journal, prop-tracker, weekly-recap, timelapses</div></div>
+<div class="card"><div style="color:var(--gold);font-weight:700;font-size:.85em;margin-bottom:8px">THE VAULT — Elite</div><div style="font-size:.85em;color:var(--text2);line-height:1.8">inner-circle, direct-line, War Room (voice)</div></div>
+<div class="card"><div style="color:var(--orange);font-weight:700;font-size:.85em;margin-bottom:8px">VOICE — Mixed</div><div style="font-size:.85em;color:var(--text2);line-height:1.8">Trading Floor (Premium+), Strategy Room (VIP+)</div></div>
+<div class="card"><div style="color:var(--red);font-weight:700;font-size:.85em;margin-bottom:8px">SYSTEM — Admin Only</div><div style="font-size:.85em;color:var(--text2);line-height:1.8">bot-status (locked, admin only)</div></div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BOT -->
+<section id="bot">
+<div class="w">
+<div class="tag"><span class="dot"></span> AI DISCORD BOT</div>
+<h2>36 Commands. Two AI Brains.</h2>
+<p class="sub">GPT-4 handles personality. Claude handles analysis. 68-entry knowledge base. 3 agent personas with voices.</p>
+
+<div class="card-grid g2">
+<div class="card">
+<div style="color:var(--accent);font-weight:700;font-size:.9em;margin-bottom:14px">ANALYSIS COMMANDS</div>
+<div style="font-family:var(--fm);font-size:.82em;color:var(--text2);line-height:2.2">/chart &nbsp; /analyze &nbsp; /levels &nbsp; /bias &nbsp; /delta &nbsp; /market &nbsp; /setup &nbsp; /compare &nbsp; /backtest</div>
+</div>
+<div class="card">
+<div style="color:var(--green);font-weight:700;font-size:.9em;margin-bottom:14px">TRADING COMMANDS</div>
+<div style="font-family:var(--fm);font-size:.82em;color:var(--text2);line-height:2.2">/trade (positions, close, closeall, modify, trail, breakeven) &nbsp; /pending &nbsp; /killswitch &nbsp; /force &nbsp; /riskmode</div>
+</div>
+<div class="card">
+<div style="color:var(--purple);font-weight:700;font-size:.9em;margin-bottom:14px">INTELLIGENCE</div>
+<div style="font-family:var(--fm);font-size:.82em;color:var(--text2);line-height:2.2">/news &nbsp; /killzone &nbsp; /signals (stats, symbol, hot, history) &nbsp; /watchlist &nbsp; /riskcheck</div>
+</div>
+<div class="card">
+<div style="color:var(--gold);font-weight:700;font-size:.9em;margin-bottom:14px">COMMUNITY</div>
+<div style="font-family:var(--fm);font-size:.82em;color:var(--text2);line-height:2.2">/ask &nbsp; /help &nbsp; /status &nbsp; /xp &nbsp; /journal &nbsp; /results &nbsp; /dashboard &nbsp; /whosshot &nbsp; /challenge &nbsp; /mentor &nbsp; /gj &nbsp; /prop</div>
+</div>
+</div>
+
+<div class="card" style="margin-top:16px">
+<div style="font-weight:700;margin-bottom:14px">Key Bot Features</div>
+<div class="card-grid g3" style="gap:10px">
+<div style="font-size:.85em;color:var(--text2)"><span style="color:var(--green)">&#10003;</span> 68-entry RAG knowledge base</div>
+<div style="font-size:.85em;color:var(--text2)"><span style="color:var(--green)">&#10003;</span> 3 AI agent personas with voices</div>
+<div style="font-size:.85em;color:var(--text2)"><span style="color:var(--green)">&#10003;</span> Signal tracking + pattern analysis</div>
+<div style="font-size:.85em;color:var(--text2)"><span style="color:var(--green)">&#10003;</span> User profiling + personalization</div>
+<div style="font-size:.85em;color:var(--text2)"><span style="color:var(--green)">&#10003;</span> Sales intelligence + objection handling</div>
+<div style="font-size:.85em;color:var(--text2)"><span style="color:var(--green)">&#10003;</span> XP system with 14 badges</div>
+<div style="font-size:.85em;color:var(--text2)"><span style="color:var(--green)">&#10003;</span> Daily classroom (2x/day)</div>
+<div style="font-size:.85em;color:var(--text2)"><span style="color:var(--green)">&#10003;</span> Pre-news alerts to basket channels</div>
+<div style="font-size:.85em;color:var(--text2)"><span style="color:var(--green)">&#10003;</span> ElevenLabs voice notes</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SIGNAL FLOW -->
+<section id="signals">
+<div class="w">
+<div class="tag"><span class="dot"></span> SIGNAL FLOW</div>
+<h2>From Raw Data to Discord Signal</h2>
+<p class="sub">Here's the exact pipeline. Each step takes seconds. The whole flow runs on autopilot every 30 minutes during kill zones.</p>
+
+<div class="card-grid" style="grid-template-columns:repeat(6,1fr);gap:12px">
+<div class="card" style="text-align:center;padding:20px 12px"><div style="font-size:1.8em;margin-bottom:8px">&#128200;</div><div style="font-size:.75em;color:var(--accent);font-weight:700;margin-bottom:6px">MT5 TERMINAL</div><div style="font-size:.75em;color:var(--text2)">Reads live price data from broker</div></div>
+<div class="card" style="text-align:center;padding:20px 12px"><div style="font-size:1.8em;margin-bottom:8px">&#128268;</div><div style="font-size:.75em;color:var(--accent);font-weight:700;margin-bottom:6px">OXY API</div><div style="font-size:.75em;color:var(--text2)">Candles + EMA + RSI + ATR indicators</div></div>
+<div class="card" style="text-align:center;padding:20px 12px"><div style="font-size:1.8em;margin-bottom:8px">&#9889;</div><div style="font-size:.75em;color:var(--accent);font-weight:700;margin-bottom:6px">n8n SCANNER</div><div style="font-size:.75em;color:var(--text2)">ICT setup detection every 30 min</div></div>
+<div class="card" style="text-align:center;padding:20px 12px"><div style="font-size:1.8em;margin-bottom:8px">&#127919;</div><div style="font-size:.75em;color:var(--accent);font-weight:700;margin-bottom:6px">ICT SCORING</div><div style="font-size:.75em;color:var(--text2)">OBs, FVGs, sweeps, displacement</div></div>
+<div class="card" style="text-align:center;padding:20px 12px"><div style="font-size:1.8em;margin-bottom:8px">&#128274;</div><div style="font-size:.75em;color:var(--accent);font-weight:700;margin-bottom:6px">CONFLUENCE</div><div style="font-size:.75em;color:var(--text2)">COT + Sentiment + H4 Trend gate</div></div>
+<div class="card" style="text-align:center;padding:20px 12px"><div style="font-size:1.8em;margin-bottom:8px">&#128241;</div><div style="font-size:.75em;color:var(--accent);font-weight:700;margin-bottom:6px">DISCORD</div><div style="font-size:.75em;color:var(--text2)">Signal + chart + levels + R:R</div></div>
+</div>
+
+<div class="card" style="margin-top:16px;text-align:center;padding:16px">
+<span style="font-size:.85em;color:var(--text2)"><strong style="color:var(--accent)">Kill Zone Gate</strong> — Scans ONLY during active sessions: Asia (00-03 UTC) &bull; London (07-10) &bull; New York (12-15) &bull; London Close (15-16)</span>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RISK -->
+<section id="risk">
+<div class="w">
+<div class="tag"><span class="dot"></span> RISK MANAGEMENT</div>
+<h2>Prop Firm Safe. Zero Excuses.</h2>
+<p class="sub">Hard rules that can NEVER be bypassed. Not by you, not by the AI, not by anyone. Click to see the Risk Guardian live.</p>
+
+<a href="https://n8n.srv1364072.hstgr.cloud/workflow/u7Thbov0G7hAY56j" target="_blank" class="live-link" style="margin-bottom:24px;display:inline-flex">Open Risk Guardian (WF09)</a>
+
+<div class="card-grid g2">
+<div class="card" style="border-color:rgba(239,68,68,.15)">
+<div style="color:var(--red);font-weight:700;margin-bottom:14px">HARD RULES (NEVER BYPASSED)</div>
+<div style="font-size:.88em;color:var(--text2);line-height:2.2">
+&#128721; 48h cooldown after 3 consecutive losses<br>
+&#128721; Max 2 trades per instrument per day<br>
+&#128721; News block within ±15 minutes of high-impact<br>
+&#128721; SL% can't exceed max (forex 1%, BTC 2%, alts 3%)<br>
+&#128721; Invalid SL/TP direction = instant block<br>
+&#128721; Circuit breaker: kill ALL at -$1,000 floating<br>
+&#128721; Daily loss limit: pause at -$800 realized
+</div>
+</div>
+<div class="card" style="border-color:rgba(16,185,129,.15)">
+<div style="color:var(--green);font-weight:700;margin-bottom:14px">SMART FEATURES</div>
+<div style="font-size:.88em;color:var(--text2);line-height:2.2">
+&#10003; Confidence scoring (50-100 per trade)<br>
+&#10003; Dynamic volume — scales with account balance<br>
+&#10003; Partial profits — 30% TP1, 70% runner<br>
+&#10003; /killswitch — close ALL positions instantly<br>
+&#10003; Two modes: SAFE (strict) or AGGRESSIVE (wider)<br>
+&#10003; /force — manual override with safeguards<br>
+&#10003; Round-number SL avoidance (shifts 5 pips)
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTENT ENGINE -->
+<section id="content">
+<div class="w">
+<div class="tag"><span class="dot"></span> CONTENT ENGINE</div>
+<h2>36+ Videos Per Week. Zero Effort.</h2>
+<p class="sub">Real trading data turns into viral short-form content automatically. Click to see the workflows and content output.</p>
+
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px">
+<a href="https://n8n.srv1364072.hstgr.cloud/workflow/h6a95wEFLWPuazt8" target="_blank" class="live-link">Open WF35 — Signal Snapshots</a>
+<a href="https://n8n.srv1364072.hstgr.cloud/workflow/X4XhOYuchyWes6FP" target="_blank" class="live-link">Open WF36 — Daily Education</a>
+<a href="https://n8n.srv1364072.hstgr.cloud/workflow/GEl1c36KLgrTEc2U" target="_blank" class="live-link">Open WF37 — Weekly Recap</a>
+<a href="https://airtable.com/apprnWLN2LFrzULkl/tbl7C0cKIR0Tipi2Y" target="_blank" class="live-link" style="background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.15);color:var(--gold)">Open Airtable Content Pipeline</a>
+</div>
+
+<div class="card-grid g3">
+<div class="card"><div style="font-weight:700;color:var(--accent);margin-bottom:8px">Signal Snapshots (WF35)</div><div style="font-size:.85em;color:var(--text2);line-height:1.7">~7 videos/day from live signals. 8 viral formats: live_signal, would_you, three_reasons, chart_dont_lie, contrarian, question, bold_claim, mistake. Runs every 2 hours.</div></div>
+<div class="card"><div style="font-weight:700;color:var(--accent);margin-bottom:8px">Daily Education (WF36)</div><div style="font-size:.85em;color:var(--text2);line-height:1.7">1 concept video/day. 8 formats: what_is, stop_doing, secret, myth_bust, listicle, loss_story, speed_lesson, smart_vs_retail. Runs daily.</div></div>
+<div class="card"><div style="font-weight:700;color:var(--accent);margin-bottom:8px">Weekly Recap (WF37)</div><div style="font-size:.85em;color:var(--text2);line-height:1.7">1 performance video/week. 6 formats: results, worst_trade, best_trade, would_you, honest, challenge. Runs Friday.</div></div>
+</div>
+
+<div class="card" style="margin-top:16px">
+<div style="font-weight:700;margin-bottom:14px">Content Pipeline</div>
+<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:.88em;color:var(--text2)">
+<span style="color:var(--accent);font-weight:600">n8n</span> &#8594;
+<span style="color:var(--accent);font-weight:600">Perplexity AI</span> (script) &#8594;
+<span style="color:var(--accent);font-weight:600">OXY Chart API</span> (background) &#8594;
+<span style="color:var(--accent);font-weight:600">Airtable</span> (pre-filled) &#8594;
+<span style="color:var(--accent);font-weight:600">HeyGen</span> (clone video) &#8594;
+<span style="color:var(--accent);font-weight:600">9 Platforms</span> (TikTok, YT, IG, FB, X...)
+</div>
+<div style="margin-top:12px;font-size:.82em;color:var(--text3)">3-second hook rule &bull; 70-95 word scripts &bull; rotating hashtags &bull; engagement CTAs &bull; SFX cues</div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- REVENUE -->
+<section id="revenue">
+<div class="w">
+<div class="tag"><span class="dot"></span> REVENUE MODEL</div>
+<h2>You Set the Prices. You Keep the Money.</h2>
+<p class="sub">Suggested tiers. You charge whatever you want. Your business, your call.</p>
+
+<div class="card-grid g4">
+<div class="card tier"><div class="tier-name">Free</div><div class="tier-price" style="color:var(--green)">$0</div><div class="tier-desc">Gets them in the door. Community, lessons, results. They watch. They want more. They upgrade.</div></div>
+<div class="card tier" style="border-color:rgba(0,212,255,.15)"><div class="tier-name">Premium</div><div class="tier-price" style="color:var(--accent)">$149<span class="tier-per">/mo</span></div><div class="tier-desc">All signals, intel, live trades. This is your main income. Bulk of revenue comes here.</div></div>
+<div class="card tier"><div class="tier-name">VIP</div><div class="tier-price" style="color:#a78bfa">$349<span class="tier-per">/mo</span></div><div class="tier-desc">Performance, journal, prop tracker, voice recaps. Serious traders pay serious money.</div></div>
+<div class="card tier"><div class="tier-name">Elite</div><div class="tier-price" style="color:var(--gold)">$997<span class="tier-per">/mo</span></div><div class="tier-desc">Inner circle, direct line, War Room. High-ticket anchor. Makes everything else look cheap.</div></div>
+</div>
+
+<div class="card" style="margin-top:24px;text-align:center;padding:28px;border-color:rgba(0,212,255,.12)">
+<div style="font-family:var(--fh);font-size:1.8em;font-weight:700;color:var(--accent)">$20K+ in 30 Days</div>
+<div style="font-size:.95em;color:var(--text2);margin-top:8px">50 Premium ($7,450) + 10 VIP ($3,490) + 5 Elite ($4,985) = <strong style="color:var(--text)">$20K+</strong></div>
+<div style="font-size:.82em;color:var(--text3);margin-top:6px">5% conversion rate on 1,000 free members &bull; industry average is 5-8%</div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- THE DEAL -->
+<section id="deal">
+<div class="w">
+<div class="tag"><span class="dot"></span> THE DEAL</div>
+<h2>$500 Setup. 70/30 Split. We Eat Together.</h2>
+<p class="sub">Simple terms. No hidden fees. I don't make a dime until your platform works.</p>
+
+<div class="card-grid g2">
+<div class="card" style="border-color:rgba(0,212,255,.12)">
+<div style="color:var(--accent);font-weight:700;font-size:1.1em;margin-bottom:16px">YOUR INVESTMENT</div>
+<div style="font-family:var(--fh);font-size:3em;font-weight:700;margin-bottom:8px">$500</div>
+<div style="font-size:.9em;color:var(--text2);margin-bottom:16px">One-time setup fee</div>
+<div style="font-size:.88em;color:var(--text2);line-height:2">
+&#10003; Server infrastructure<br>
+&#10003; Domain registration<br>
+&#10003; Full platform build + deployment<br>
+&#10003; 1-on-1 onboarding call<br>
+&#10003; 30 days private support
+</div>
+</div>
+<div class="card" style="border-color:rgba(16,185,129,.12)">
+<div style="color:var(--green);font-weight:700;font-size:1.1em;margin-bottom:16px">REVENUE SPLIT</div>
+<div style="display:flex;align-items:baseline;gap:16px;margin-bottom:8px">
+<div><span style="font-family:var(--fh);font-size:3em;font-weight:700">70%</span><div style="font-size:.82em;color:var(--green);font-weight:600">YOU KEEP</div></div>
+<div style="font-size:2em;color:var(--text3)">/</div>
+<div><span style="font-family:var(--fh);font-size:3em;font-weight:700;color:var(--accent)">30%</span><div style="font-size:.82em;color:var(--accent);font-weight:600">OXY ALGO</div></div>
+</div>
+<div style="font-size:.88em;color:var(--text2);line-height:2;margin-top:16px">
+&#10003; You keep 70% of all member revenue<br>
+&#10003; 30% kicks in when clients start paying<br>
+&#10003; We don't make a dime until it works<br>
+&#10003; No recurring license fees<br>
+&#10003; Your brand, your pricing, your call
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ALL LINKS -->
+<section id="links">
+<div class="w">
+<div class="tag"><span class="dot"></span> COMMAND CENTER</div>
+<h2>Every Link You Need</h2>
+<p class="sub">Bookmark this page. Every system, every tool, every resource — one click away.</p>
+
+<div class="card">
+<div style="font-weight:700;color:var(--accent);margin-bottom:16px;font-size:1em">WEBSITES</div>
+<div class="link-row"><div class="link-label">Main Website</div><a href="https://oxyalgo.online" target="_blank" class="live-link">oxyalgo.online</a><div class="link-desc">Live OXY ALGO website (yours will look like this)</div></div>
+<div class="link-row"><div class="link-label">White-Label Page</div><a href="https://oxyalgo.github.io/white-label/" target="_blank" class="live-link">oxyalgo.github.io/white-label</a><div class="link-desc">Full partner program breakdown</div></div>
+<div class="link-row"><div class="link-label">Store Page</div><a href="https://oxyalgo.online/en/store/white-label-license" target="_blank" class="live-link">oxyalgo.online/en/store</a><div class="link-desc">White-label license checkout</div></div>
+</div>
+
+<div class="card" style="margin-top:16px">
+<div style="font-weight:700;color:var(--green);margin-bottom:16px;font-size:1em">AUTOMATION</div>
+<div class="link-row"><div class="link-label">n8n Dashboard</div><a href="https://n8n.srv1364072.hstgr.cloud" target="_blank" class="live-link">n8n.srv1364072.hstgr.cloud</a><div class="link-desc">45 workflows — the entire engine room</div></div>
+<div class="link-row"><div class="link-label">OXY API Server</div><a href="https://server.oxyalgo.com" target="_blank" class="live-link">server.oxyalgo.com</a><div class="link-desc">Self-hosted APIs — market data, charts, orders</div></div>
+<div class="link-row"><div class="link-label">Content Pipeline</div><a href="https://airtable.com/apprnWLN2LFrzULkl/tbl7C0cKIR0Tipi2Y" target="_blank" class="live-link">Airtable Base</a><div class="link-desc">36+ video packages/week auto-generated</div></div>
+</div>
+
+<div class="card" style="margin-top:16px">
+<div style="font-weight:700;color:var(--purple);margin-bottom:16px;font-size:1em">COMMUNITY</div>
+<div class="link-row"><div class="link-label">Discord Server</div><a href="https://discord.gg/oxyalgo" target="_blank" class="live-link">discord.gg/oxyalgo</a><div class="link-desc">Live server — 30+ channels, AI bot, signals</div></div>
+<div class="link-row"><div class="link-label">Telegram Group</div><a href="https://t.me/+dvr6mBaXJOljNmIx" target="_blank" class="live-link">t.me/OXY ALGO</a><div class="link-desc">Telegram community channel</div></div>
+<div class="link-row"><div class="link-label">WhatsApp</div><a href="https://wa.me/18312436218" target="_blank" class="live-link">wa.me/18312436218</a><div class="link-desc">Direct line to the team</div></div>
+</div>
+
+<div class="card" style="margin-top:16px">
+<div style="font-weight:700;color:var(--gold);margin-bottom:16px;font-size:1em">KEY WORKFLOWS (click to open live)</div>
+<div class="link-row"><div class="link-label">GBP Scanner</div><a href="https://n8n.srv1364072.hstgr.cloud/workflow/lNup6cMk8ygMcZk3" target="_blank" class="live-link">WF01</a><div class="link-desc">7 GBP pairs, ICT scoring, confluence gate</div></div>
+<div class="link-row"><div class="link-label">Global Scanner</div><a href="https://n8n.srv1364072.hstgr.cloud/workflow/nHExvBTVjR0zSZLh" target="_blank" class="live-link">WF02</a><div class="link-desc">22 forex + 3 indices + 3 commodities</div></div>
+<div class="link-row"><div class="link-label">Crypto Scanner</div><a href="https://n8n.srv1364072.hstgr.cloud/workflow/6PD33BdirOJ6mZfE" target="_blank" class="live-link">WF22</a><div class="link-desc">10 crypto pairs with BTC.D quadrant</div></div>
+<div class="link-row"><div class="link-label">Trade Executor</div><a href="https://n8n.srv1364072.hstgr.cloud/workflow/JfwkU46zsg7dFwjc" target="_blank" class="live-link">WF08</a><div class="link-desc">LIVE trades on AAAFX Global</div></div>
+<div class="link-row"><div class="link-label">Trade Catcher</div><a href="https://n8n.srv1364072.hstgr.cloud/workflow/y1gwaMg7wIWPmv10" target="_blank" class="live-link">WF13</a><div class="link-desc">Signal enrichment + routing hub</div></div>
+<div class="link-row"><div class="link-label">Content Snapshots</div><a href="https://n8n.srv1364072.hstgr.cloud/workflow/h6a95wEFLWPuazt8" target="_blank" class="live-link">WF35</a><div class="link-desc">~7 videos/day from live signals</div></div>
+<div class="link-row"><div class="link-label">Currency Matrix</div><a href="https://n8n.srv1364072.hstgr.cloud/workflow/oxrRrIZNlG6s0Vmk" target="_blank" class="live-link">WF39</a><div class="link-desc">Cross-currency strength + sentiment</div></div>
+</div>
+
+<div class="card" style="margin-top:16px">
+<div style="font-weight:700;color:var(--orange);margin-bottom:16px;font-size:1em">TOOLS WE USE</div>
+<div style="font-size:.88em;color:var(--text2);line-height:2.4">
+<strong style="color:var(--text)">n8n</strong> — automation engine (45 workflows) &bull;
+<strong style="color:var(--text)">Discord.js v14</strong> — bot framework &bull;
+<strong style="color:var(--text)">Node.js 20</strong> — runtime &bull;
+<strong style="color:var(--text)">SQLite</strong> — database (13 tables) &bull;
+<strong style="color:var(--text)">Claude (Anthropic)</strong> — analysis brain &bull;
+<strong style="color:var(--text)">GPT-4 (OpenAI)</strong> — personality brain &bull;
+<strong style="color:var(--text)">ElevenLabs</strong> — voice notes &bull;
+<strong style="color:var(--text)">Perplexity AI</strong> — content scripts &bull;
+<strong style="color:var(--text)">Airtable</strong> — content pipeline &bull;
+<strong style="color:var(--text)">MetaTrader 5</strong> — broker connection &bull;
+<strong style="color:var(--text)">XAMPP</strong> — self-hosted PHP APIs &bull;
+<strong style="color:var(--text)">PM2</strong> — process management &bull;
+<strong style="color:var(--text)">HeyGen</strong> — AI avatar video
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="padding:48px 24px;border-top:1px solid var(--border);text-align:center">
+<div style="font-family:var(--fh);font-size:1.1em;font-weight:700;margin-bottom:8px">OXY <span style="color:var(--accent)">ALGO</span></div>
+<div style="font-size:.78em;color:var(--text3)">Partner Command Center &bull; Confidential &bull; &copy; 2026</div>
+</footer>
+
+<script>
+// Active nav highlight on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 200) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+</body>
+</html>
