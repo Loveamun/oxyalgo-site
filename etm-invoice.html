@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eTM ALGO — Project Invoice & Cost Breakdown</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #050508;
+    color: #E8E8F0;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      linear-gradient(rgba(0,102,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,102,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    text-align: center;
+    padding: 50px 0 40px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(0,102,255,0.12);
+    border: 1px solid rgba(0,102,255,0.25);
+    color: #0088FF;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #fff 30%, #0088FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero p {
+    font-size: 17px;
+    color: #8888AA;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  /* ─── SECTION ─── */
+  .section { margin-top: 52px; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0088FF;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .section-subtitle {
+    font-size: 15px;
+    color: #666688;
+    margin-bottom: 24px;
+  }
+
+  /* ─── DELIVERED ITEMS ─── */
+  .delivered-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .delivered {
+    background: rgba(0,255,136,0.03);
+    border: 1px solid rgba(0,255,136,0.1);
+    border-radius: 14px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .delivered-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+  }
+
+  .check {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(0,255,136,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    color: #00FF88;
+  }
+
+  .delivered-info h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 1px;
+  }
+
+  .delivered-info p {
+    font-size: 13px;
+    color: #777799;
+  }
+
+  .delivered-value {
+    font-size: 17px;
+    font-weight: 700;
+    color: #00DD77;
+    white-space: nowrap;
+    padding-left: 16px;
+  }
+
+  .delivered-value span {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    color: #558866;
+    text-align: right;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ─── COST CARDS ─── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: border-color 0.2s;
+  }
+
+  .card:hover { border-color: rgba(0,102,255,0.2); }
+
+  .card-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+  }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .card-icon.server { background: rgba(0,102,255,0.12); }
+  .card-icon.ai { background: rgba(168,85,247,0.12); }
+  .card-icon.tool { background: rgba(255,170,0,0.1); }
+  .card-icon.dev { background: rgba(255,85,85,0.1); }
+
+  .card-info h3 { font-size: 15px; font-weight: 600; margin-bottom: 1px; }
+  .card-info p { font-size: 13px; color: #666688; }
+
+  .card-cost {
+    font-size: 17px;
+    font-weight: 700;
+    color: #FF6B6B;
+    white-space: nowrap;
+    padding-left: 16px;
+  }
+
+  .card-cost span {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    color: #666688;
+    text-align: right;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ─── TOTAL BARS ─── */
+  .total-bar {
+    border-radius: 16px;
+    padding: 22px 28px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .total-bar.green {
+    background: linear-gradient(135deg, rgba(0,255,136,0.06), rgba(0,102,255,0.04));
+    border: 1px solid rgba(0,255,136,0.15);
+  }
+
+  .total-bar.red {
+    background: linear-gradient(135deg, rgba(255,85,85,0.06), rgba(255,170,0,0.04));
+    border: 1px solid rgba(255,85,85,0.15);
+  }
+
+  .total-bar .label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #8888AA;
+  }
+
+  .total-bar .label strong {
+    display: block;
+    font-size: 12px;
+    color: #666688;
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  .total-bar .amount {
+    font-size: 28px;
+    font-weight: 800;
+  }
+
+  .total-bar.green .amount { color: #00DD77; }
+  .total-bar.red .amount { color: #FF5555; }
+
+  .total-bar .amount span { font-size: 13px; color: #888; font-weight: 400; }
+
+  /* ─── PAYMENT LEDGER ─── */
+  .ledger {
+    margin-top: 24px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .ledger-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .ledger-row:last-child { border-bottom: none; }
+
+  .ledger-row .item { font-size: 14px; font-weight: 500; }
+  .ledger-row .item span { color: #666688; font-weight: 400; }
+  .ledger-row .val { font-size: 16px; font-weight: 700; }
+
+  .ledger-row.paid .val { color: #00DD77; }
+  .ledger-row.total .val { color: #FFAA00; }
+  .ledger-row.due {
+    background: rgba(255,170,0,0.06);
+  }
+  .ledger-row.due .val { color: #FFAA00; font-size: 20px; }
+  .ledger-row.due .item { font-weight: 700; }
+
+  /* ─── NEXT PHASE ─── */
+  .next-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .next-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .next-num {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: rgba(0,102,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0088FF;
+    flex-shrink: 0;
+  }
+
+  .next-item h4 { font-size: 14px; font-weight: 600; margin-bottom: 1px; }
+  .next-item p { font-size: 13px; color: #666688; }
+
+  /* ─── COMPARISON ─── */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  @media (max-width: 600px) { .compare { grid-template-columns: 1fr; } }
+
+  .compare-card {
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .compare-card.them {
+    background: rgba(255,55,55,0.05);
+    border: 1px solid rgba(255,55,55,0.15);
+  }
+
+  .compare-card.us {
+    background: rgba(0,255,136,0.05);
+    border: 1px solid rgba(0,255,136,0.2);
+  }
+
+  .compare-card .price {
+    font-size: 40px;
+    font-weight: 900;
+    margin: 8px 0 4px;
+  }
+
+  .compare-card.them .price { color: #FF5555; }
+  .compare-card.us .price { color: #00FF88; }
+
+  .compare-card .tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .compare-card.them .tag { color: #FF8888; }
+  .compare-card.us .tag { color: #00DD77; }
+
+  .compare-card .desc { font-size: 13px; color: #8888AA; }
+
+  /* ─── BOTTOM LINE ─── */
+  .bottom-line {
+    text-align: center;
+    margin-top: 60px;
+    padding: 44px 24px;
+    background: linear-gradient(180deg, rgba(0,102,255,0.06) 0%, transparent 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(0,102,255,0.1);
+  }
+
+  .bottom-line h2 {
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 800;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #00FF88, #0088FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bottom-line p {
+    font-size: 15px;
+    color: #8888AA;
+    max-width: 550px;
+    margin: 0 auto 24px;
+  }
+
+  .bottom-line .final-price {
+    font-size: 52px;
+    font-weight: 900;
+    color: #FFAA00;
+  }
+
+  .bottom-line .final-price span {
+    font-size: 16px;
+    color: #666;
+    font-weight: 400;
+  }
+
+  .bottom-line .context {
+    display: inline-block;
+    margin-top: 12px;
+    background: rgba(0,255,136,0.08);
+    border: 1px solid rgba(0,255,136,0.15);
+    color: #00DD77;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+  }
+
+  /* ─── NOTE ─── */
+  .note {
+    background: rgba(255,170,0,0.05);
+    border-left: 3px solid #FFAA00;
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #AAAACC;
+  }
+
+  .note strong { color: #FFAA00; }
+
+  .footer {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 13px;
+    color: #444466;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="badge">eTM ALGO — Project Breakdown</div>
+    <h1>Here's What Was Built<br>And What It Costs</h1>
+    <p>A full breakdown of the infrastructure, work delivered, and what's still needed to finish your system.</p>
+  </div>
+
+  <!-- ─── SECTION 1: WHAT WAS ALREADY DELIVERED ─── -->
+  <div class="section">
+    <div class="section-label">Completed</div>
+    <div class="section-title">What's Already Been Built For You</div>
+    <div class="section-subtitle">Live and running right now</div>
+
+    <div class="delivered-grid">
+      <div class="delivered">
+        <div class="delivered-left">
+          <div class="check">&#10003;</div>
+          <div class="delivered-info">
+            <h3>Full Website — etmalgo.com</h3>
+            <p>Professional landing page with pricing tiers, proof section, copy trading info, mobile-responsive</p>
+          </div>
+        </div>
+        <div class="delivered-value">$800+<span>market value</span></div>
+      </div>
+
+      <div class="delivered">
+        <div class="delivered-left">
+          <div class="check">&#10003;</div>
+          <div class="delivered-info">
+            <h3>Whop Store — 4 Tier Pricing</h3>
+            <p>Free / Premium $149 / VIP $349 / Elite $997 — payment processing, checkout pages, product setup</p>
+          </div>
+        </div>
+        <div class="delivered-value">$300+<span>market value</span></div>
+      </div>
+
+      <div class="delivered">
+        <div class="delivered-left">
+          <div class="check">&#10003;</div>
+          <div class="delivered-info">
+            <h3>Discord Server + AI Bot</h3>
+            <p>Full channel structure, signal routing, AI assistant, 36 slash commands, 3 AI agent personas</p>
+          </div>
+        </div>
+        <div class="delivered-value">$2,000+<span>market value</span></div>
+      </div>
+
+      <div class="delivered">
+        <div class="delivered-left">
+          <div class="check">&#10003;</div>
+          <div class="delivered-info">
+            <h3>Telegram Automation</h3>
+            <p>Signal forwarding, bot commands, community channel setup</p>
+          </div>
+        </div>
+        <div class="delivered-value">$400+<span>market value</span></div>
+      </div>
+
+      <div class="delivered">
+        <div class="delivered-left">
+          <div class="check">&#10003;</div>
+          <div class="delivered-info">
+            <h3>Live Trading Signals — 38 Instruments</h3>
+            <p>28 forex pairs + 3 indices + 3 commodities + 10 crypto scanning 24/7</p>
+          </div>
+        </div>
+        <div class="delivered-value">$1,500+<span>market value</span></div>
+      </div>
+
+      <div class="delivered">
+        <div class="delivered-left">
+          <div class="check">&#10003;</div>
+          <div class="delivered-info">
+            <h3>8 AI Agents Running Your System</h3>
+            <p>Scanner, Analyst, Executor, Guardian, Intel, Tracker, Copier, Support — all automated</p>
+          </div>
+        </div>
+        <div class="delivered-value">$1,000+<span>market value</span></div>
+      </div>
+    </div>
+
+    <div class="total-bar green">
+      <div class="label">
+        Total Value Delivered So Far
+        <strong>All live and operational</strong>
+      </div>
+      <div class="amount">$6,000+ <span>value</span></div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 2: INFRASTRUCTURE BEHIND IT ─── -->
+  <div class="section">
+    <div class="section-label">Behind The Scenes</div>
+    <div class="section-title">Infrastructure Running Your System</div>
+    <div class="section-subtitle">These servers and AI services run 24/7 to keep everything alive</div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-left">
+          <div class="card-icon server">&#128421;</div>
+          <div class="card-info">
+            <h3>Trading VPS (Linux)</h3>
+            <p>45 automation workflows + Discord Bot + monitoring</p>
+          </div>
+        </div>
+        <div class="card-cost">$45<span>/ month</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-left">
+          <div class="card-icon server">&#128421;</div>
+          <div class="card-info">
+            <h3>API & Trading Server (Windows)</h3>
+            <p>MetaTrader 5 + market data API + trade execution bridge</p>
+          </div>
+        </div>
+        <div class="card-cost">$55<span>/ month</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-left">
+          <div class="card-icon server">&#128421;</div>
+          <div class="card-info">
+            <h3>Command Center VPS</h3>
+            <p>Monitors and controls all other servers</p>
+          </div>
+        </div>
+        <div class="card-cost">$30<span>/ month</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-left">
+          <div class="card-icon server">&#128421;</div>
+          <div class="card-info">
+            <h3>2 Always-On Machines</h3>
+            <p>Backup automation + browser tasks running 24/7</p>
+          </div>
+        </div>
+        <div class="card-cost">$25<span>/ month</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-left">
+          <div class="card-icon ai">&#129504;</div>
+          <div class="card-info">
+            <h3>AI Services (Claude + GPT-4 + ElevenLabs + Perplexity)</h3>
+            <p>Market analysis, AI assistant, voice notes, content generation</p>
+          </div>
+        </div>
+        <div class="card-cost">$117<span>/ month</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-left">
+          <div class="card-icon dev">&#128187;</div>
+          <div class="card-info">
+            <h3>Claude Code (AI Development Tool)</h3>
+            <p>The tool used to build and maintain this entire system</p>
+          </div>
+        </div>
+        <div class="card-cost">$200<span>/ month</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-left">
+          <div class="card-icon tool">&#127760;</div>
+          <div class="card-info">
+            <h3>Domains + Hosting + CDN</h3>
+            <p>etmalgo.com hosting, SSL, domain registration</p>
+          </div>
+        </div>
+        <div class="card-cost">$15<span>/ month</span></div>
+      </div>
+    </div>
+
+    <div class="total-bar red">
+      <div class="label">
+        Monthly Operating Cost
+        <strong>Paid every month to keep your system running</strong>
+      </div>
+      <div class="amount">$487 <span>/ mo</span></div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 3: NEXT PHASE ─── -->
+  <div class="section">
+    <div class="section-label">Next Phase</div>
+    <div class="section-title">What Still Needs To Be Built</div>
+    <div class="section-subtitle">The $250 covers the remaining work to complete your system</div>
+
+    <div class="next-grid">
+      <div class="next-item">
+        <div class="next-num">1</div>
+        <div>
+          <h4>Copy Trading System</h4>
+          <p>Mirror trades from master account to your members' prop firm accounts (MT5, MT4)</p>
+        </div>
+      </div>
+      <div class="next-item">
+        <div class="next-num">2</div>
+        <div>
+          <h4>Prop Firm Integration</h4>
+          <p>FTMO, MyFundedFX, Alpha Futures compatibility + drawdown rules + challenge tracking</p>
+        </div>
+      </div>
+      <div class="next-item">
+        <div class="next-num">3</div>
+        <div>
+          <h4>Risk Guardian for Prop Firms</h4>
+          <p>Auto-enforces prop firm rules — max daily loss, max drawdown, news blocks, lot sizing</p>
+        </div>
+      </div>
+      <div class="next-item">
+        <div class="next-num">4</div>
+        <div>
+          <h4>Performance Dashboard</h4>
+          <p>Live P&L tracking, equity curve, win rate, prop challenge progress for your members</p>
+        </div>
+      </div>
+      <div class="next-item">
+        <div class="next-num">5</div>
+        <div>
+          <h4>Testing, QA & Launch Support</h4>
+          <p>Full end-to-end testing + go-live support + troubleshooting</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── PAYMENT LEDGER ─── -->
+  <div class="section">
+    <div class="section-label">Payment Summary</div>
+    <div class="section-title">Project Invoice</div>
+    <div class="section-subtitle">What's been paid and what's remaining</div>
+
+    <div class="ledger">
+      <div class="ledger-row">
+        <div class="item">Total project value <span>(website + Whop + Discord + Telegram + signals + AI)</span></div>
+        <div class="val" style="color:#8888AA;">$6,000+</div>
+      </div>
+      <div class="ledger-row">
+        <div class="item">Your total project price <span>(heavily discounted)</span></div>
+        <div class="val" style="color:#fff;">$376</div>
+      </div>
+      <div class="ledger-row paid">
+        <div class="item">Already paid</div>
+        <div class="val">- $126</div>
+      </div>
+      <div class="ledger-row due">
+        <div class="item">Remaining Balance Due</div>
+        <div class="val">$250</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>This $250 covers everything remaining</strong> — copy trading setup, prop firm integration, risk guardian, performance dashboard, testing, and launch support. No hidden fees. No monthly charges to me.
+    </div>
+  </div>
+
+  <!-- ─── COMPARISON ─── -->
+  <div class="section">
+    <div class="section-label">For Context</div>
+    <div class="section-title">What This Would Cost Anywhere Else</div>
+
+    <div class="compare">
+      <div class="compare-card them">
+        <div class="tag">Hire a Freelancer</div>
+        <div class="price">$5,000+</div>
+        <div class="desc">
+          Website ($800) + Discord bot ($2,000) + Whop setup ($300) + Telegram ($400) + copy trading ($1,500) + ongoing maintenance
+        </div>
+      </div>
+      <div class="compare-card us">
+        <div class="tag">Your Total Cost</div>
+        <div class="price">$376</div>
+        <div class="desc">
+          Everything built, configured, and running. $126 already paid. Just $250 left to finish the whole system.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── BOTTOM LINE ─── -->
+  <div class="bottom-line">
+    <h2>$6,000+ In Value.<br>$250 To Finish It.</h2>
+    <p>Your website is live. Your Whop store is taking payments. Your Discord and Telegram are automated. The only thing left is the copy trading and prop firm setup. Let's get it done.</p>
+    <div class="final-price">$250 <span>remaining balance</span></div>
+    <div class="context">That's less than 2 months of one Premium subscriber paying you $149/mo</div>
+  </div>
+
+  <div class="footer">
+    <p>eTM ALGO &mdash; <a href="https://www.etmalgo.com" style="color:#0088FF;text-decoration:none;">etmalgo.com</a> &mdash; Project Invoice, March 2026</p>
+  </div>
+
+</div>
+
+</body>
+</html>
